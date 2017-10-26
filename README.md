@@ -22,3 +22,5 @@ TODO:
 - [ ] figure out why `detailed` mode does not appear to be working.
 - [ ] figure out a better way to determine that all processes in event loop
    have terminated (except the inspector session).
+- [ ] process.exit() can't perform an async operation; how can we track coverage
+  for scripts that exit?
