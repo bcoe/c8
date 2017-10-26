@@ -1,6 +1,6 @@
 {
   "name": "c8",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "collect test coverage using v8's profiler",
   "main": "index.js",
   "bin": "./bin/c8.js",
