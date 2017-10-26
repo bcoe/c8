@@ -1,4 +1,4 @@
-# c8 - native code-coverage
+# c8 - native v8 code-coverage
 
 Code-coverage using [v8's Profiler](https://nodejs.org/dist/latest-v8.x/docs/api/inspector.html)
 compatible with [Istanbul's reporters](https://istanbul.js.org/docs/advanced/alternative-reporters/).
