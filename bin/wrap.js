@@ -48,5 +48,5 @@ async function outputCoverageAndExit (client, Profiler) {
   })
   console.log(JSON.stringify(result, null, 2))
   client.close()
-  process.exit(0)
+  process.exit(process.exitCode || 0)
 }
