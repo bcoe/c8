@@ -4,10 +4,6 @@ const CRI = require('chrome-remote-interface');
 const getPort = require('get-port');
 const inspector = require('inspector')
 
-// if there are N or less active handles
-// in the event loop, dump coverage and exit.
-const EXIT_HANDLE_COUNT = 4
-
 getPort().then(async port => {
   // start an inspector session on an unused port.
   inspector.open(port, true)
@@ -15,21 +11,15 @@ getPort().then(async port => {
   const {Profiler} = client
   await Profiler.enable()
   await Profiler.startPreciseCoverage({callCount: true, detailed: true})
+  client._ws._socket.unref()
+
+  process.on('beforeExit', async () => {
+    await outputCoverageAndExit(client, Profiler)
+    client.close()
+  })
 
   // run the original "main" now that we've started the inspector.
   sw.runMain()
-
-  // wait for everything in event loop to terminate
-  // except for inspector session.
-  setInterval(() => {
-    const handleCount = process._getActiveHandles().length
-      + process._getActiveRequests().length
-    if (handleCount <= EXIT_HANDLE_COUNT) {
-      outputCoverageAndExit(client, Profiler)
-    }
-  }, 100)
-}).catch(err => {
-  throw err
 })
 
 async function outputCoverageAndExit (client, Profiler) {
