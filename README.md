@@ -1,6 +1,6 @@
 # c8 - native v8 code-coverage
 
-Code-coverage using [v8's Profiler](https://nodejs.org/dist/latest-v8.x/docs/api/inspector.html)
+Code-coverage using [v8's Inspector](https://nodejs.org/dist/latest-v8.x/docs/api/inspector.html)
 that's compatible with [Istanbul's reporters](https://istanbul.js.org/docs/advanced/alternative-reporters/).
 
 Like [nyc](https://github.com/istanbuljs/nyc), c8 just magically works, simply:
@@ -10,7 +10,7 @@ npm i c8 -g
 c8 node foo.js
 ```
 
-The above example will collect coverage for `foo.js` using v8's profiler.
+The above example will collect coverage for `foo.js` using v8's inspector.
 
 TODO:
 
@@ -29,4 +29,5 @@ TODO:
 - [x] process.exit() can't perform an async operation; how can we track coverage
   for scripts that exit?
   * we can now listen for the `Runtime.executionContextDestroyed` event.
-- [ ]
+- [ ] figure out why instrumentation of .mjs files does not work:
+  * see: https://github.com/nodejs/node/issues/17336
