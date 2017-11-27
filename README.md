@@ -14,13 +14,19 @@ The above example will collect coverage for `foo.js` using v8's profiler.
 
 TODO:
 
-- [ ] write logic for converting v8 coverage output to [Istanbul Coverage.json format](https://github.com/gotwarlost/istanbul/blob/master/coverage.json.md).
+- [x] write logic for converting v8 coverage output to [Istanbul Coverage.json format](https://github.com/gotwarlost/istanbul/blob/master/coverage.json.md).
+  * https://github.com/bcoe/v8-to-istanbul
+
 - [ ] talk to Node.js project about silencing messages:
 
    > `Debugger listening on ws://127.0.0.1:56399/e850110a-c5df-41d8-8ef2-400f6829617f`.
 
-- [ ] figure out why `detailed` mode does not appear to be working.
-- [ ] figure out a better way to determine that all processes in event loop
+- [x] figure out why `detailed` mode does not appear to be working.
+  * this is fixed in v8, as long as you start with `--inspect-brk` you
+    can collect coverage in detailed mode.
+- [x] figure out a better way to determine that all processes in event loop
    have terminated (except the inspector session).
-- [ ] process.exit() can't perform an async operation; how can we track coverage
+- [x] process.exit() can't perform an async operation; how can we track coverage
   for scripts that exit?
+  * we can now listen for the `Runtime.executionContextDestroyed` event.
+- [ ]
