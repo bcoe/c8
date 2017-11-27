@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+'use strict'
 
 const argv = require('yargs').parse()
 const CRI = require('chrome-remote-interface')
@@ -6,26 +7,42 @@ const spawn = require('../lib/spawn')
 
 ;(async () => {
   try {
-    info = await spawn(process.execPath,
-                       [`--inspect-brk=0`].concat(process.argv.slice(2)))                      
+    const info = await spawn(process.execPath,
+                             [`--inspect-brk=0`].concat(process.argv.slice(2)))                      
     const client = await CRI({port: info.port})
 
+    const initialPause = new Promise((resolve) => {
+      client.once('Debugger.paused', resolve)
+    })
+
+    const mainContextInfo = new Promise((resolve) => {
+      client.once('Runtime.executionContextCreated', (message) => {
+        resolve(message.context)
+      })
+    })
+
+    const executionComplete = new Promise((resolve) => {
+      client.on('Runtime.executionContextDestroyed', async (message) => {
+        if (message.executionContextId === (await mainContextInfo).id) {
+          resolve(message)
+        }
+      })
+    })
+
     const {Debugger, Runtime, Profiler} = client
-    await Runtime.runIfWaitingForDebugger()
-    await Runtime.enable()
-    await Profiler.enable()
-    await Profiler.startPreciseCoverage({callCount: true, detailed: true})
-    await Debugger.enable()
-    await Debugger.paused()
+    await Promise.all([
+      Profiler.enable(),
+      Runtime.enable(),
+      Debugger.enable(),
+      Profiler.startPreciseCoverage({callCount: true, detailed: true}),
+      Runtime.runIfWaitingForDebugger(),
+      initialPause
+    ])
     await Debugger.resume()
 
-    client.on('event', async (message) => {
-      // console.info(message)
-      if (message.method === 'Runtime.executionContextDestroyed') {
-        await outputCoverage(Profiler)
-        client.close()
-      }
-    })
+    await executionComplete
+    await outputCoverage(Profiler)
+    client.close()
 
   } catch (err) {
     console.error(err)
