@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict'
 
+const {isAbsolute} = require('path')
 const argv = require('yargs').parse()
 const CRI = require('chrome-remote-interface')
 const spawn = require('../lib/spawn')
@@ -57,12 +58,8 @@ async function outputCoverage (Profiler) {
     /node-spawn-wrap/
   ]
   let {result} = await Profiler.takePreciseCoverage()
-  result = result.filter(coverage => {
-    for (var ignored, i = 0; (ignored = IGNORED_PATHS[i]) !== undefined; i++) {
-      if (ignored.test(coverage.url)) return false
-    }
-    if (!/^\//.test(coverage.url)) return false
-    else return true
+  result = result.filter(({url}) => {
+    return isAbsolute(url) && IGNORED_PATHS.every(ignored => !ignored.test(url))
   })
   console.log(JSON.stringify(result, null, 2))
 }
