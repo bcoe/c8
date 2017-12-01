@@ -7,7 +7,7 @@ Like [nyc](https://github.com/istanbuljs/nyc), c8 just magically works:
 
 ```bash
 npm i c8 -g
-c8 foo.js
+c8 node foo.js
 ```
 
 The above example will collect coverage for `foo.js` using v8's inspector.

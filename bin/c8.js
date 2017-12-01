@@ -28,7 +28,8 @@ const exclude = Exclude({
 
 ;(async function executeWithCoverage (instrumenteeArgv) {
   try {
-    const info = await spawn(process.execPath,
+    const bin = instrumenteeArgv.shift()
+    const info = await spawn(bin,
                              [`--inspect-brk=0`].concat(instrumenteeArgv))
     const client = await CRI({port: info.port})
 
@@ -78,8 +79,7 @@ const exclude = Exclude({
 
 async function collectV8Coverage (Profiler) {
   let {result} = await Profiler.takePreciseCoverage()
-  result = result.filter(({url}) => {
-    url = url.replace('file://', '/') // ES6 modules.
+  result = result.filter({url} => {
     return isAbsolute(url) && exclude.shouldInstrument(url)
   })
   return result
