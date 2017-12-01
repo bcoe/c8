@@ -23,9 +23,6 @@
   "license": "ISC",
   "dependencies": {
     "chrome-remote-interface": "^0.25.2",
-    "foreground-child": "^1.5.6",
-    "get-port": "^3.2.0",
-    "wait-till-port-open": "^1.0.0",
     "yargs": "^10.0.3"
   },
   "devDependencies": {
