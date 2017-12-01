@@ -5,13 +5,13 @@
   "main": "index.js",
   "bin": "./bin/c8.js",
   "scripts": {
-    "test": "nyc mocha ./test/*.js",
+    "test": "./bin/c8.js node ./node_modules/.bin/_mocha ./test/*.js",
     "posttest": "standard",
     "release": "standard-version"
   },
   "c8": {
     "exclude": [
-      "test/integration.js"
+      "test/*.js"
     ]
   },
   "standard": {
@@ -49,7 +49,6 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "mocha": "^4.0.1",
-    "nyc": "^11.3.0",
     "standard": "^10.0.3",
     "standard-version": "^4.2.0"
   }

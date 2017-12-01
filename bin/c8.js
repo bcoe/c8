@@ -79,7 +79,7 @@ const exclude = Exclude({
 
 async function collectV8Coverage (Profiler) {
   let {result} = await Profiler.takePreciseCoverage()
-  result = result.filter({url} => {
+  result = result.filter(({url}) => {
     return isAbsolute(url) && exclude.shouldInstrument(url)
   })
   return result
