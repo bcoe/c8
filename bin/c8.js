@@ -2,20 +2,13 @@
 
 const argv = require('yargs').parse()
 const CRI = require('chrome-remote-interface')
-const getPort = require('get-port');
-const foreground = require('foreground-child')
-const waitTillPortOpen = require('wait-till-port-open')
+const spawn = require('../lib/spawn')
 
-getPort().then(async port => {
-  foreground(
-    ['node', `--inspect-brk=${port}`].concat(process.argv.slice(2)),
-    (done) => {
-      console.info('actually got here')
-    }
-  )
+;(async () => {
   try {
-    await waitTillPortOpen(port)
-    const client = await CRI({port: port})
+    info = await spawn(process.execPath,
+                       [`--inspect-brk=0`].concat(process.argv.slice(2)))                      
+    const client = await CRI({port: info.port})
 
     const {Debugger, Runtime, Profiler} = client
     await Runtime.runIfWaitingForDebugger()
@@ -38,7 +31,7 @@ getPort().then(async port => {
     console.error(err)
     process.exit(1)
   }
-})
+})()
 
 async function outputCoverage (Profiler) {
   const IGNORED_PATHS = [
