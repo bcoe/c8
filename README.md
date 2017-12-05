@@ -29,5 +29,5 @@ The above example will collect coverage for `foo.js` using v8's inspector.
 - [x] process.exit() can't perform an async operation; how can we track coverage
   for scripts that exit?
   * we can now listen for the `Runtime.executionContextDestroyed` event.
-- [ ] figure out why instrumentation of .mjs files does not work:
+- [x] figure out why instrumentation of .mjs files does not work:
   * see: https://github.com/nodejs/node/issues/17336

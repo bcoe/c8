@@ -42,7 +42,7 @@
     "rimraf": "^2.6.2",
     "test-exclude": "^4.1.1",
     "uuid": "^3.1.0",
-    "v8-to-istanbul": "^1.1.0",
+    "v8-to-istanbul": "^1.2.0",
     "yargs": "^10.0.3",
     "yargs-parser": "^8.0.0"
   },
