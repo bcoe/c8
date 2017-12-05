@@ -1,15 +1,36 @@
 #!/usr/bin/env node
 'use strict'
 
-const {isAbsolute} = require('path')
-const argv = require('yargs').parse()
 const CRI = require('chrome-remote-interface')
+const Exclude = require('test-exclude')
+const {isAbsolute} = require('path')
+const mkdirp = require('mkdirp')
+const report = require('../lib/report')
+const {resolve} = require('path')
+const rimraf = require('rimraf')
 const spawn = require('../lib/spawn')
+const uuid = require('uuid')
+const v8ToIstanbul = require('v8-to-istanbul')
+const {writeFileSync} = require('fs')
+const {
+  hideInstrumenteeArgs,
+  hideInstrumenterArgs,
+  yargs
+} = require('../lib/parse-args')
 
-;(async () => {
+const instrumenterArgs = hideInstrumenteeArgs()
+const argv = yargs.parse(instrumenterArgs)
+
+const exclude = Exclude({
+  include: argv.include,
+  exclude: argv.exclude
+})
+
+;(async function executeWithCoverage (instrumenteeArgv) {
   try {
-    const info = await spawn(process.execPath,
-                             [`--inspect-brk=0`].concat(process.argv.slice(2)))                      
+    const bin = instrumenteeArgv.shift()
+    const info = await spawn(bin,
+                             [`--inspect-brk=0`].concat(instrumenteeArgv))
     const client = await CRI({port: info.port})
 
     const initialPause = new Promise((resolve) => {
@@ -42,24 +63,40 @@ const spawn = require('../lib/spawn')
     await Debugger.resume()
 
     await executionComplete
-    await outputCoverage(Profiler)
-    client.close()
-
+    const allV8Coverage = await collectV8Coverage(Profiler)
+    writeIstanbulFormatCoverage(allV8Coverage)
+    await client.close()
+    report({
+      reporter: Array.isArray(argv.reporter) ? argv.reporter : [argv.reporter],
+      coverageDirectory: argv.coverageDirectory,
+      watermarks: argv.watermarks
+    })
   } catch (err) {
     console.error(err)
     process.exit(1)
   }
-})()
+})(hideInstrumenterArgs(argv))
 
-async function outputCoverage (Profiler) {
-  const IGNORED_PATHS = [
-    /\/bin\/wrap.js/,
-    /\/node_modules\//,
-    /node-spawn-wrap/
-  ]
+async function collectV8Coverage (Profiler) {
   let {result} = await Profiler.takePreciseCoverage()
   result = result.filter(({url}) => {
-    return isAbsolute(url) && IGNORED_PATHS.every(ignored => !ignored.test(url))
+    url = url.replace('file://', '')
+    return isAbsolute(url) && exclude.shouldInstrument(url)
   })
-  console.log(JSON.stringify(result, null, 2))
+  return result
+}
+
+function writeIstanbulFormatCoverage (allV8Coverage) {
+  const tmpDirctory = resolve(argv.coverageDirectory, './tmp')
+  rimraf.sync(tmpDirctory)
+  mkdirp.sync(tmpDirctory)
+  allV8Coverage.forEach((v8) => {
+    const script = v8ToIstanbul(v8.url)
+    script.applyCoverage(v8.functions)
+    writeFileSync(
+      resolve(tmpDirctory, `./${uuid.v4()}.json`),
+      JSON.stringify(script.toIstanbul(), null, 2),
+      'utf8'
+    )
+  })
 }
