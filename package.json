@@ -1,10 +1,11 @@
 {
   "name": "c8",
-  "version": "3.0.0-alpha.0",
+  "version": "3.0.0-alpha.2",
   "description": "collect test coverage using v8's inspector",
   "main": "index.js",
   "bin": "./bin/c8.js",
   "scripts": {
+    "bundle": "bundle-dependencies update",
     "test": "./bin/c8.js node ./node_modules/.bin/_mocha ./test/*.js",
     "posttest": "standard",
     "release": "standard-version"
@@ -49,9 +50,26 @@
     "yargs-parser": "^8.0.0"
   },
   "devDependencies": {
+    "bundle-dependencies": "^1.0.2",
     "chai": "^4.1.2",
     "mocha": "^4.0.1",
     "standard": "^10.0.3",
     "standard-version": "^4.2.0"
-  }
+  },
+  "bundledDependencies": [
+    "find-up",
+    "foreground-child",
+    "istanbul-lib-coverage",
+    "istanbul-lib-report",
+    "istanbul-reports",
+    "mkdirp",
+    "rimraf",
+    "signal-exit",
+    "spawn-wrap",
+    "test-exclude",
+    "uuid",
+    "v8-to-istanbul",
+    "yargs",
+    "yargs-parser"
+  ]
 }
