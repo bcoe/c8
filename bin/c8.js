@@ -2,7 +2,10 @@
 'use strict'
 
 const foreground = require('foreground-child')
+const mkdirp = require('mkdirp')
 const report = require('../lib/report')
+const {resolve} = require('path')
+const rimraf = require('rimraf')
 const sw = require('spawn-wrap')
 const {
   hideInstrumenteeArgs,
@@ -11,7 +14,12 @@ const {
 } = require('../lib/parse-args')
 
 const instrumenterArgs = hideInstrumenteeArgs()
+
 const argv = yargs.parse(instrumenterArgs)
+
+const tmpDirctory = resolve(argv.coverageDirectory, './tmp')
+rimraf.sync(tmpDirctory)
+mkdirp.sync(tmpDirctory)
 
 sw([require.resolve('../lib/wrap')], {
   C8_ARGV: JSON.stringify(argv)
