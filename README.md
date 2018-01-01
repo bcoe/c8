@@ -12,22 +12,18 @@ c8 node foo.js
 
 The above example will collect coverage for `foo.js` using v8's inspector.
 
-## remaining work
+## Disclaimer
 
-- [x] write logic for converting v8 coverage output to [Istanbul Coverage.json format](https://github.com/gotwarlost/istanbul/blob/master/coverage.json.md).
-  * https://github.com/bcoe/v8-to-istanbul
+c8 uses bleeding edge v8 features (_it's an ongoing experiment, testing
+what will eventually be possible in the realm of test coverage in Node.js_).
 
-- [ ] talk to node.js project about silencing messages:
+For the best experience, try running with [a canary build of Node.js](https://github.com/v8/node).
 
-   > `Debugger listening on ws://127.0.0.1:56399/e850110a-c5df-41d8-8ef2-400f6829617f`.
+## How it Works
 
-- [x] figure out why `detailed` mode does not appear to be working.
-  * this is fixed in v8, as long as you start with `--inspect-brk` you
-    can collect coverage in detailed mode.
-- [x] figure out a better way to determine that all processes in event loop
-   have terminated (except the inspector session).
-- [x] process.exit() can't perform an async operation; how can we track coverage
-  for scripts that exit?
-  * we can now listen for the `Runtime.executionContextDestroyed` event.
-- [x] figure out why instrumentation of .mjs files does not work:
-  * see: https://github.com/nodejs/node/issues/17336
+Before running your application c8 creates [an inspector session](https://nodejs.org/api/inspector.html) in v8 and enables v8's
+[built in coverage reporting](https://v8project.blogspot.com/2017/12/javascript-code-coverage.html).
+
+Just before your application exits, c8 fetches the coverage information from
+v8 and writes it to disk in a format compatible with
+[Istanbul's reporters](https://istanbul.js.org/).
