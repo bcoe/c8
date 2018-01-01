@@ -1,4 +1,4 @@
-require('./b')
+require('./timeout')
 
 console.info('i am a line of code')
 
@@ -9,6 +9,10 @@ function apple (awesome) {
   if (true || false) {
     console.log('hey')
   }
+}
+
+function missed () {
+  
 }
 
 apple()
