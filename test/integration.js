@@ -7,7 +7,8 @@ require('chai').should()
 
 describe('c8', () => {
   it('reports coverage for script that exits normally', () => {
-    const {output} = spawnSync(c8Path, [
+    const {output} = spawnSync(process.execPath, [
+      c8Path,
       process.execPath,
       require.resolve('./fixtures/normal')
     ], {
