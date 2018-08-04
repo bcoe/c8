@@ -27,3 +27,17 @@ Before running your application c8 creates [an inspector session](https://nodejs
 Just before your application exits, c8 fetches the coverage information from
 v8 and writes it to disk in a format compatible with
 [Istanbul's reporters](https://istanbul.js.org/).
+
+
+## Node API
+
+```js
+const {run, report} = require('c8')
+
+run(argv, async () => {
+  // run your code
+}).then(reports => report({
+  reports,
+  reporter: ['text', 'lcov']
+}))
+```
