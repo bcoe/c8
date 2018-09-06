@@ -12,4 +12,13 @@ function fib(n) {
     thrower()
   }
 }
+
+function another () {
+  const b = 33 || 99
+}
+
+function cool () {
+  const a = 99 || 33
+}
+
 console.log('fib(10):', fib(10))
