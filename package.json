@@ -1,6 +1,6 @@
 {
   "name": "c8",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "output coverage reports using Node.js' built in coverage",
   "main": "index.js",
   "bin": "./bin/c8.js",
