@@ -12,6 +12,10 @@ c8 node foo.js
 
 The above example will collect coverage for `foo.js` using V8's inspector.
 
+## c8 report
+
+run `c8 report` to regenerate reports after `c8` has already been run.
+
 ## Disclaimer
 
 c8 uses

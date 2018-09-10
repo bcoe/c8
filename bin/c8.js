@@ -4,28 +4,36 @@
 const foreground = require('foreground-child')
 const mkdirp = require('mkdirp')
 const report = require('../lib/report')
-const { resolve } = require('path')
 const rimraf = require('rimraf')
 const {
   hideInstrumenteeArgs,
   hideInstrumenterArgs,
   yargs
 } = require('../lib/parse-args')
+
 const instrumenterArgs = hideInstrumenteeArgs()
-const argv = yargs.parse(instrumenterArgs)
-const tmpDirctory = resolve(argv.coverageDirectory, './tmp')
-rimraf.sync(tmpDirctory)
-mkdirp.sync(tmpDirctory)
+let argv = yargs.parse(instrumenterArgs)
 
-process.env.NODE_V8_COVERAGE = tmpDirctory
+if (argv._[0] === 'report') {
+  argv = yargs.parse(process.argv) // support flag arguments after "report".
+  outputReport()
+} else {
+  rimraf.sync(argv.tempDirectory)
+  mkdirp.sync(argv.tempDirectory)
+  process.env.NODE_V8_COVERAGE = argv.tempDirectory
 
-foreground(hideInstrumenterArgs(argv), (out) => {
+  foreground(hideInstrumenterArgs(argv), () => {
+    outputReport()
+  })
+}
+
+function outputReport () {
   report({
     include: argv.include,
     exclude: argv.exclude,
     reporter: Array.isArray(argv.reporter) ? argv.reporter : [argv.reporter],
-    coverageDirectory: argv.coverageDirectory,
+    tempDirectory: argv.tempDirectory,
     watermarks: argv.watermarks,
     resolve: argv.resolve
   })
-})
+}
