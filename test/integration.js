@@ -1,26 +1,40 @@
 /* global describe, it */
 
-const {spawnSync} = require('child_process')
+const { spawnSync } = require('child_process')
 const c8Path = require.resolve('../bin/c8')
 
 require('chai').should()
 
 describe('c8', () => {
   it('reports coverage for script that exits normally', () => {
-    const {output} = spawnSync(c8Path, [
+    const { output } = spawnSync(c8Path, [
+      '--exclude="test/*.js"',
       process.execPath,
       require.resolve('./fixtures/normal')
-    ], {
-      env: process.env,
-      cwd: process.cwd()
-    })
+    ])
     output.toString('utf8').should.include(`
-------------|----------|----------|----------|----------|----------------|
-File        |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
-------------|----------|----------|----------|----------|----------------|
-All files   |    91.67 |      100 |       80 |    91.67 |                |
- normal.js  |    85.71 |      100 |       50 |    85.71 |       14,15,16 |
- timeout.js |      100 |      100 |      100 |      100 |                |
-------------|----------|----------|----------|----------|----------------|`)
+-----------|----------|----------|----------|----------|-------------------|
+File       |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+-----------|----------|----------|----------|----------|-------------------|
+All files  |    91.18 |    88.89 |        0 |    91.18 |                   |
+ async.js  |      100 |      100 |      100 |      100 |                   |
+ normal.js |    85.71 |       75 |        0 |    85.71 |          14,15,16 |
+-----------|----------|----------|----------|----------|-------------------|`)
+  })
+
+  it('merges reports from subprocesses together', () => {
+    const { output } = spawnSync(c8Path, [
+      '--exclude="test/*.js"',
+      process.execPath,
+      require.resolve('./fixtures/multiple-spawn')
+    ])
+    output.toString('utf8').should.include(`
+-------------------|----------|----------|----------|----------|-------------------|
+File               |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+-------------------|----------|----------|----------|----------|-------------------|
+All files          |      100 |    77.78 |      100 |      100 |                   |
+ multiple-spawn.js |      100 |      100 |      100 |      100 |                   |
+ subprocess.js     |      100 |    71.43 |      100 |      100 |              9,13 |
+-------------------|----------|----------|----------|----------|-------------------|`)
   })
 })

@@ -1,4 +1,4 @@
-require('./timeout')
+require('./async')
 
 console.info('i am a line of code')
 

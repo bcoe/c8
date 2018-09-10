@@ -4,9 +4,7 @@
 const foreground = require('foreground-child')
 const mkdirp = require('mkdirp')
 const report = require('../lib/report')
-const {resolve} = require('path')
 const rimraf = require('rimraf')
-const sw = require('spawn-wrap')
 const {
   hideInstrumenteeArgs,
   hideInstrumenterArgs,
@@ -14,21 +12,28 @@ const {
 } = require('../lib/parse-args')
 
 const instrumenterArgs = hideInstrumenteeArgs()
+let argv = yargs.parse(instrumenterArgs)
 
-const argv = yargs.parse(instrumenterArgs)
+if (argv._[0] === 'report') {
+  argv = yargs.parse(process.argv) // support flag arguments after "report".
+  outputReport()
+} else {
+  rimraf.sync(argv.tempDirectory)
+  mkdirp.sync(argv.tempDirectory)
+  process.env.NODE_V8_COVERAGE = argv.tempDirectory
 
-const tmpDirctory = resolve(argv.coverageDirectory, './tmp')
-rimraf.sync(tmpDirctory)
-mkdirp.sync(tmpDirctory)
-
-sw([require.resolve('../lib/wrap')], {
-  C8_ARGV: JSON.stringify(argv)
-})
-
-foreground(hideInstrumenterArgs(argv), (out) => {
-  report({
-    reporter: Array.isArray(argv.reporter) ? argv.reporter : [argv.reporter],
-    coverageDirectory: argv.coverageDirectory,
-    watermarks: argv.watermarks
+  foreground(hideInstrumenterArgs(argv), () => {
+    outputReport()
   })
-})
+}
+
+function outputReport () {
+  report({
+    include: argv.include,
+    exclude: argv.exclude,
+    reporter: Array.isArray(argv.reporter) ? argv.reporter : [argv.reporter],
+    tempDirectory: argv.tempDirectory,
+    watermarks: argv.watermarks,
+    resolve: argv.resolve
+  })
+}

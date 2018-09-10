@@ -1,5 +1,3 @@
-const a = 'apple' ? 'banana' : 'grape'
-
 function cool () {
 
 }
