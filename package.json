@@ -1,7 +1,7 @@
 {
   "name": "c8",
   "version": "3.0.1",
-  "description": "collect test coverage using v8's inspector",
+  "description": "output coverage reports using Node.js' built in coverage",
   "main": "index.js",
   "bin": "./bin/c8.js",
   "scripts": {
@@ -21,7 +21,8 @@
     "test",
     "istanbul",
     "profiler",
-    "inspector"
+    "inspector",
+    "node"
   ],
   "author": "Ben Coe <ben@npmjs.com>",
   "license": "ISC",
