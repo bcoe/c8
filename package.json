@@ -4,6 +4,10 @@
   "description": "output coverage reports using Node.js' built in coverage",
   "main": "index.js",
   "bin": "./bin/c8.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bcoe/c8.git"
+  },
   "scripts": {
     "test": "./bin/c8.js --reporter=html --reporter=text mocha ./test/*.js",
     "posttest": "standard",
