@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/bcoe/c8/compare/v3.0.3...v3.1.0) (2018-09-11)
+
+
+### Features
+
+* allow relative paths to be optionally included ([3806c79](https://github.com/bcoe/c8/commit/3806c79))
+
+
+
 <a name="3.0.3"></a>
 ## [3.0.3](https://github.com/bcoe/c8/compare/v3.0.2...v3.0.3) (2018-09-10)
 
