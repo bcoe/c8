@@ -34,6 +34,7 @@ function outputReport () {
     reporter: Array.isArray(argv.reporter) ? argv.reporter : [argv.reporter],
     tempDirectory: argv.tempDirectory,
     watermarks: argv.watermarks,
-    resolve: argv.resolve
+    resolve: argv.resolve,
+    omitRelative: argv.omitRelative
   })
 }
