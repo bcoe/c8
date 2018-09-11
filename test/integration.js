@@ -2,14 +2,16 @@
 
 const { spawnSync } = require('child_process')
 const c8Path = require.resolve('../bin/c8')
+const nodePath = process.execPath
 
 require('chai').should()
 
 describe('c8', () => {
   it('reports coverage for script that exits normally', () => {
-    const { output } = spawnSync(c8Path, [
+    const { output } = spawnSync(nodePath, [
+      c8Path,
       '--exclude="test/*.js"',
-      process.execPath,
+      nodePath,
       require.resolve('./fixtures/normal')
     ])
     output.toString('utf8').should.include(`
@@ -23,9 +25,10 @@ All files  |    91.18 |    88.89 |        0 |    91.18 |                   |
   })
 
   it('merges reports from subprocesses together', () => {
-    const { output } = spawnSync(c8Path, [
+    const { output } = spawnSync(nodePath, [
+      c8Path,
       '--exclude="test/*.js"',
-      process.execPath,
+      nodePath,
       require.resolve('./fixtures/multiple-spawn')
     ])
     output.toString('utf8').should.include(`
@@ -39,10 +42,11 @@ All files          |      100 |    77.78 |      100 |      100 |                
   })
 
   it('omit-relative can be set to false', () => {
-    const { output } = spawnSync(c8Path, [
+    const { output } = spawnSync(nodePath, [
+      c8Path,
       '--exclude="test/*.js"',
       '--omit-relative=false',
-      process.execPath,
+      nodePath,
       require.resolve('./fixtures/multiple-spawn')
     ])
     output.toString('utf8').should.match(
