@@ -9,7 +9,7 @@
     "url": "git@github.com:bcoe/c8.git"
   },
   "scripts": {
-    "test": "./bin/c8.js --reporter=html --reporter=text mocha ./test/*.js",
+    "test": "node ./bin/c8.js --reporter=html --reporter=text mocha ./test/*.js",
     "posttest": "standard",
     "coverage": "./bin/c8.js report --reporter=text-lcov | coveralls",
     "release": "standard-version"
