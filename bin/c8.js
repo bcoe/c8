@@ -18,8 +18,10 @@ if (argv._[0] === 'report') {
   argv = yargs.parse(process.argv) // support flag arguments after "report".
   outputReport()
 } else {
-  rimraf.sync(argv.tempDirectory)
-  mkdirp.sync(argv.tempDirectory)
+  if (argv.clean) {
+    rimraf.sync(argv.tempDirectory)
+    mkdirp.sync(argv.tempDirectory)
+  }
   process.env.NODE_V8_COVERAGE = argv.tempDirectory
 
   foreground(hideInstrumenterArgs(argv), () => {
