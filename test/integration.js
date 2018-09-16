@@ -1,44 +1,37 @@
-/* global describe, it */
+/* global describe, beforeEach, it */
 
 const { spawnSync } = require('child_process')
 const c8Path = require.resolve('../bin/c8')
 const nodePath = process.execPath
+const chaiJestSnapshot = require('chai-jest-snapshot')
 
-require('chai').should()
+require('chai')
+  .use(chaiJestSnapshot)
+  .should()
+
+beforeEach(function () { chaiJestSnapshot.configureUsingMochaContext(this) })
 
 describe('c8', () => {
   it('reports coverage for script that exits normally', () => {
     const { output } = spawnSync(nodePath, [
       c8Path,
       '--exclude="test/*.js"',
+      '--clean=false',
       nodePath,
       require.resolve('./fixtures/normal')
     ])
-    output.toString('utf8').should.include(`
------------|----------|----------|----------|----------|-------------------|
-File       |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
------------|----------|----------|----------|----------|-------------------|
-All files  |    91.18 |    88.89 |        0 |    91.18 |                   |
- async.js  |      100 |      100 |      100 |      100 |                   |
- normal.js |    85.71 |       75 |        0 |    85.71 |          14,15,16 |
------------|----------|----------|----------|----------|-------------------|`)
+    output.toString('utf8').should.matchSnapshot()
   })
 
   it('merges reports from subprocesses together', () => {
     const { output } = spawnSync(nodePath, [
       c8Path,
       '--exclude="test/*.js"',
+      '--clean=false',
       nodePath,
       require.resolve('./fixtures/multiple-spawn')
     ])
-    output.toString('utf8').should.include(`
--------------------|----------|----------|----------|----------|-------------------|
-File               |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
--------------------|----------|----------|----------|----------|-------------------|
-All files          |      100 |    77.78 |      100 |      100 |                   |
- multiple-spawn.js |      100 |      100 |      100 |      100 |                   |
- subprocess.js     |      100 |    71.43 |      100 |      100 |              9,13 |
--------------------|----------|----------|----------|----------|-------------------|`)
+    output.toString('utf8').should.matchSnapshot()
   })
 
   it('omit-relative can be set to false', () => {
@@ -46,6 +39,7 @@ All files          |      100 |    77.78 |      100 |      100 |                
       c8Path,
       '--exclude="test/*.js"',
       '--omit-relative=false',
+      '--clean=false',
       nodePath,
       require.resolve('./fixtures/multiple-spawn')
     ])
