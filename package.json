@@ -37,7 +37,6 @@
     "istanbul-lib-coverage": "^2.0.1",
     "istanbul-lib-report": "^2.0.1",
     "istanbul-reports": "^2.0.0",
-    "mkdirp": "^0.5.1",
     "rimraf": "^2.6.2",
     "test-exclude": "^5.0.0",
     "uuid": "^3.3.2",
@@ -55,7 +54,7 @@
     "standard-version": "^4.4.0"
   },
   "engines": {
-    "node": ">=10.10.0"
+    "node": ">=10.12.0"
   },
   "files": [
     "lib",
