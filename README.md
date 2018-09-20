@@ -32,4 +32,4 @@ A fully functional code coverage solution using only V8's native coverage
 features and minimal user-land modules:
 
 * no parsing of JavaScript code.
-* no mucking with Node's runtime environment.
+* no mucking with Node.js' runtime environment.
