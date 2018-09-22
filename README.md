@@ -20,8 +20,16 @@ The above example will output coverage metrics for `foo.js`.
 
 run `c8 report` to regenerate reports after `c8` has already been run.
 
-## Disclaimer
+## Supported Node.js Versions
 
 c8 uses
 [bleeding edge Node.js features](https://github.com/nodejs/node/pull/22527),
 make sure you're running Node.js `>= 10.10.0`.
+
+## Goals of the Project
+
+A fully functional code coverage solution using only V8's native coverage
+features and minimal user-land modules, so that we fit these constraints:
+
+* No parsing of JavaScript code.
+* No mucking with Node.js' runtime environment.
