@@ -33,3 +33,7 @@ features and minimal user-land modules, so that we fit these constraints:
 
 * No parsing of JavaScript code.
 * No mucking with Node.js' runtime environment.
+
+## Contributing to `c8`
+
+See the [contributing guide here](./CONTRIBUTING.md).
