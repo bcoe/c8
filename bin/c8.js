@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 'use strict'
 
+const fs = require('fs')
+const util = require('util')
+
 const foreground = require('foreground-child')
-const mkdirp = require('mkdirp')
 const report = require('../lib/report')
 const rimraf = require('rimraf')
 const {
@@ -14,20 +16,7 @@ const {
 const instrumenterArgs = hideInstrumenteeArgs()
 let argv = yargs.parse(instrumenterArgs)
 
-if (argv._[0] === 'report') {
-  argv = yargs.parse(process.argv) // support flag arguments after "report".
-  outputReport()
-} else {
-  if (argv.clean) {
-    rimraf.sync(argv.tempDirectory)
-    mkdirp.sync(argv.tempDirectory)
-  }
-  process.env.NODE_V8_COVERAGE = argv.tempDirectory
-
-  foreground(hideInstrumenterArgs(argv), () => {
-    outputReport()
-  })
-}
+const _p = util.promisify
 
 function outputReport () {
   report({
@@ -40,3 +29,20 @@ function outputReport () {
     omitRelative: argv.omitRelative
   })
 }
+
+(async function run () {
+  if (argv._[0] === 'report') {
+    argv = yargs.parse(process.argv) // support flag arguments after "report".
+    outputReport()
+  } else {
+    if (argv.clean) {
+      await _p(rimraf)(argv.tempDirectory)
+      await _p(fs.mkdir)(argv.tempDirectory, { recursive: true })
+    }
+    process.env.NODE_V8_COVERAGE = argv.tempDirectory
+
+    foreground(hideInstrumenterArgs(argv), () => {
+      outputReport()
+    })
+  }
+})()
