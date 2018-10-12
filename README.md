@@ -24,7 +24,7 @@ run `c8 report` to regenerate reports after `c8` has already been run.
 
 c8 uses
 [bleeding edge Node.js features](https://github.com/nodejs/node/pull/22527),
-make sure you're running Node.js `>= 10.10.0`.
+make sure you're running Node.js `>= 10.12.0`.
 
 ## Goals of the Project
 
