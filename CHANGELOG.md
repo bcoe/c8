@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.2.1"></a>
+## [3.2.1](https://github.com/bcoe/c8/compare/v3.2.0...v3.2.1) (2018-10-21)
+
+
+### Bug Fixes
+
+* address file:// issue with CJS ([#39](https://github.com/bcoe/c8/issues/39)) ([d4f9cab](https://github.com/bcoe/c8/commit/d4f9cab))
+* process coverage merging ([#37](https://github.com/bcoe/c8/issues/37)) ([67959b4](https://github.com/bcoe/c8/commit/67959b4))
+
+
+
 <a name="3.2.0"></a>
 # [3.2.0](https://github.com/bcoe/c8/compare/v3.1.0...v3.2.0) (2018-09-16)
 
