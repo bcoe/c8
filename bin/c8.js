@@ -26,7 +26,8 @@ function outputReport () {
     tempDirectory: argv.tempDirectory,
     watermarks: argv.watermarks,
     resolve: argv.resolve,
-    omitRelative: argv.omitRelative
+    omitRelative: argv.omitRelative,
+    wrapperLength: argv.wrapperLength
   })
 }
 
