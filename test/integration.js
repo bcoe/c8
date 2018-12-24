@@ -2,8 +2,8 @@
 
 const { spawnSync } = require('child_process')
 const c8Path = require.resolve('../bin/c8')
-const nodePath = process.execPath
 const chaiJestSnapshot = require('chai-jest-snapshot')
+const nodePath = process.execPath
 
 require('chai')
   .use(chaiJestSnapshot)

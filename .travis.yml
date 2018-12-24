@@ -4,5 +4,5 @@ os:
   - osx
   - windows
 node_js:
-  - "node"
+  - "11"
 after_success: npm run coverage
