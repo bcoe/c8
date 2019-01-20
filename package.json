@@ -35,7 +35,6 @@
     "@bcoe/v8-coverage": "^0.1.0",
     "find-up": "^3.0.0",
     "foreground-child": "^1.5.6",
-    "furi": "^1.0.0",
     "istanbul-lib-coverage": "^2.0.1",
     "istanbul-lib-report": "^2.0.1",
     "istanbul-reports": "^2.0.0",

@@ -4,7 +4,7 @@ os:
   - osx
   # need to figure out why offsets
   # are slightly off on Windows.
-  # - windows
+  - windows
 node_js:
   - "11"
 after_success: npm run coverage
