@@ -1,4 +1,10 @@
 language: node_js
+os:
+  - linux
+  - osx
+  # need to figure out why offsets
+  # are slightly off on Windows.
+  # - windows
 node_js:
-  - "10.10"
+  - "11"
 after_success: npm run coverage
