@@ -22,18 +22,18 @@ run `c8 report` to regenerate reports after `c8` has already been run.
 
 ## Checking coverage
 
-nyc can fail tests if coverage falls below a threshold.
-After running your tests with nyc, simply run:
+c8 can fail tests if coverage falls below a threshold.
+After running your tests with c8, simply run:
 
 ```shell
-nyc check-coverage --lines 95 --functions 95 --branches 95
+c8 check-coverage --lines 95 --functions 95 --branches 95
 ```
 
-nyc also accepts a `--check-coverage` shorthand, which can be used to
+c8 also accepts a `--check-coverage` shorthand, which can be used to
 both run tests and check that coverage falls within the threshold provided:
 
 ```shell
-nyc --check-coverage --lines 100 npm test
+c8 --check-coverage --lines 100 npm test
 ```
 
 The above check fails if coverage falls below 100%.
@@ -41,7 +41,7 @@ The above check fails if coverage falls below 100%.
 To check thresholds on a per-file basis run:
 
 ```shell
-nyc check-coverage --lines 95 --per-file
+c8 check-coverage --lines 95 --per-file
 ```
 
 ## Supported Node.js Versions
