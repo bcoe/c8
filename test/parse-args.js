@@ -1,9 +1,9 @@
 /* global describe, it */
 
 const {
+  buildYargs,
   hideInstrumenteeArgs,
-  hideInstrumenterArgs,
-  yargs
+  hideInstrumenterArgs
 } = require('../lib/parse-args')
 
 describe('parse-args', () => {
@@ -18,7 +18,7 @@ describe('parse-args', () => {
   describe('hideInstrumenterArgs', () => {
     it('hides arguments passed to c8 bin', () => {
       process.argv = ['node', 'c8', '--foo=99', 'my-app', '--help']
-      const argv = yargs.parse(hideInstrumenteeArgs())
+      const argv = buildYargs().parse(hideInstrumenteeArgs())
       const instrumenteeArgs = hideInstrumenterArgs(argv)
       instrumenteeArgs.should.eql(['my-app', '--help'])
     })
