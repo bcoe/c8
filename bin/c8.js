@@ -4,6 +4,7 @@
 const fs = require('fs')
 const foreground = require('foreground-child')
 const { outputReport } = require('../lib/commands/report')
+const { checkCoverages } = require('../lib/commands/check-coverage')
 const { promisify } = require('util')
 const rimraf = require('rimraf')
 const {
@@ -28,7 +29,8 @@ let argv = buildYargs().parse(instrumenterArgs)
     process.env.NODE_V8_COVERAGE = argv.tempDirectory
 
     foreground(hideInstrumenterArgs(argv), () => {
-      outputReport(argv)
+      const report = outputReport(argv)
+      if (argv.checkCoverage) checkCoverages(argv, report)
     })
   }
 })()

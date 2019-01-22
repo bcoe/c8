@@ -34,7 +34,7 @@ describe('c8', () => {
     output.toString('utf8').should.matchSnapshot()
   })
 
-  it('omit-relative can be set to false', () => {
+  it('allows relative files to be included', () => {
     const { output } = spawnSync(nodePath, [
       c8Path,
       '--exclude="test/*.js"',
@@ -46,5 +46,55 @@ describe('c8', () => {
     output.toString('utf8').should.match(
       /Error: ENOENT: no such file or directory.*loaders\.js/
     )
+  })
+
+  describe('check-coverage', () => {
+    it('exits with 0 if coverage within threshold', () => {
+      const { output, status } = spawnSync(nodePath, [
+        c8Path,
+        'check-coverage',
+        '--exclude="test/*.js"',
+        '--lines=80'
+      ])
+      status.should.equal(0)
+      output.toString('utf8').should.matchSnapshot()
+    })
+
+    it('allows threshold to be applied on per-file basis', () => {
+      const { output, status } = spawnSync(nodePath, [
+        c8Path,
+        'check-coverage',
+        '--exclude="test/*.js"',
+        '--lines=80',
+        '--per-file'
+      ])
+      status.should.equal(1)
+      output.toString('utf8').should.matchSnapshot()
+    })
+
+    it('exits with 1 if coverage is below threshold', () => {
+      const { output, status } = spawnSync(nodePath, [
+        c8Path,
+        'check-coverage',
+        '--exclude="test/*.js"',
+        '--lines=101'
+      ])
+      status.should.equal(1)
+      output.toString('utf8').should.matchSnapshot()
+    })
+
+    it('allows --check-coverage when executing script', () => {
+      const { output, status } = spawnSync(nodePath, [
+        c8Path,
+        '--exclude="test/*.js"',
+        '--clean=false',
+        '--lines=101',
+        '--check-coverage',
+        nodePath,
+        require.resolve('./fixtures/normal')
+      ])
+      status.should.equal(1)
+      output.toString('utf8').should.matchSnapshot()
+    })
   })
 })

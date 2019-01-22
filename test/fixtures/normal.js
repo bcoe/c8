@@ -15,6 +15,10 @@ function missed () {
   
 }
 
+function missed2 () {
+  
+}
+
 apple()
 apple()
 apple()
