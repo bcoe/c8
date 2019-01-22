@@ -26,8 +26,8 @@ let argv = buildYargs().parse(instrumenterArgs)
       await promisify(rimraf)(argv.tempDirectory)
       await promisify(fs.mkdir)(argv.tempDirectory, { recursive: true })
     }
-    process.env.NODE_V8_COVERAGE = argv.tempDirectory
 
+    process.env.NODE_V8_COVERAGE = argv.tempDirectory
     foreground(hideInstrumenterArgs(argv), () => {
       const report = outputReport(argv)
       if (argv.checkCoverage) checkCoverages(argv, report)
