@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.3.0"></a>
+# [3.3.0](https://github.com/bcoe/c8/compare/v3.2.1...v3.3.0) (2019-01-23)
+
+
+### Bug Fixes
+
+* file URL to system path conversion ([#46](https://github.com/bcoe/c8/issues/46)) ([e7f8cf2](https://github.com/bcoe/c8/commit/e7f8cf2))
+* float patch for branch/function coverage merge bug ([#56](https://github.com/bcoe/c8/issues/56)) ([1de0cca](https://github.com/bcoe/c8/commit/1de0cca))
+* snapshot ([7fd9e13](https://github.com/bcoe/c8/commit/7fd9e13))
+
+
+### Features
+
+* add thresholds for enforcing coverage percentage ([#59](https://github.com/bcoe/c8/issues/59)) ([70e8943](https://github.com/bcoe/c8/commit/70e8943))
+* allow script wrapper length to be specified ([#51](https://github.com/bcoe/c8/issues/51)) ([a22c4e0](https://github.com/bcoe/c8/commit/a22c4e0))
+
+
+
 <a name="3.2.1"></a>
 ## [3.2.1](https://github.com/bcoe/c8/compare/v3.2.0...v3.2.1) (2018-10-21)
 
