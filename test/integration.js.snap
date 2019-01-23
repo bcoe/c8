@@ -1,5 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`c8 check-coverage allows --check-coverage when executing script 1`] = `
+",hey
+i am a line of code
+what
+hey
+what
+hey
+what
+hey
+--------------------|----------|----------|----------|----------|-------------------|
+File                |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+--------------------|----------|----------|----------|----------|-------------------|
+All files           |    95.42 |     75.9 |    89.66 |    95.42 |                   |
+ bin                |    86.49 |    71.43 |      100 |    86.49 |                   |
+  c8.js             |    86.49 |    71.43 |      100 |    86.49 |    26,34,35,36,37 |
+ lib                |    97.05 |       65 |      100 |    97.05 |                   |
+  parse-args.js     |    98.35 |    53.85 |      100 |    98.35 |             97,98 |
+  report.js         |       96 |    70.37 |      100 |       96 |... 08,134,135,136 |
+ lib/commands       |    97.65 |    84.21 |     87.5 |    97.65 |                   |
+  check-coverage.js |      100 |    92.86 |      100 |      100 |                17 |
+  report.js         |       92 |       60 |       50 |       92 |               8,9 |
+ test/fixtures      |    90.91 |    94.12 |       75 |    90.91 |                   |
+  async.js          |      100 |      100 |      100 |      100 |                   |
+  multiple-spawn.js |      100 |      100 |      100 |      100 |                   |
+  normal.js         |       76 |       75 |    33.33 |       76 | 14,15,16,18,19,20 |
+  subprocess.js     |      100 |      100 |      100 |      100 |                   |
+--------------------|----------|----------|----------|----------|-------------------|
+,ERROR: Coverage for lines (95.42%) does not meet global threshold (101%)
+"
+`;
+
+exports[`c8 check-coverage allows threshold to be applied on per-file basis 1`] = `
+",,ERROR: Coverage for lines (78.33%) does not meet threshold (80%) for lib/commands/check-coverage.js
+ERROR: Coverage for lines (76%) does not meet threshold (80%) for test/fixtures/normal.js
+"
+`;
+
+exports[`c8 check-coverage exits with 0 if coverage within threshold 1`] = `",,"`;
+
+exports[`c8 check-coverage exits with 1 if coverage is below threshold 1`] = `
+",,ERROR: Coverage for lines (94.99%) does not meet global threshold (101%)
+"
+`;
+
 exports[`c8 merges reports from subprocesses together 1`] = `
 ",first
 
@@ -8,16 +52,19 @@ second
 --------------------|----------|----------|----------|----------|-------------------|
 File                |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
 --------------------|----------|----------|----------|----------|-------------------|
-All files           |     94.4 |    71.43 |       95 |     94.4 |                   |
- bin                |       88 |     62.5 |      100 |       88 |                   |
-  c8.js             |       88 |     62.5 |      100 |       88 | 36,40,47,48,49,50 |
- lib                |    95.59 |    61.29 |      100 |    95.59 |                   |
-  parse-args.js     |    97.59 |    44.44 |      100 |    97.59 |             59,60 |
-  report.js         |    94.44 |    68.18 |      100 |    94.44 |... 01,127,128,129 |
- test/fixtures      |    95.16 |    94.12 |    85.71 |    95.16 |                   |
+All files           |    84.53 |    67.16 |    74.07 |    84.53 |                   |
+ bin                |    86.49 |    57.14 |      100 |    86.49 |                   |
+  c8.js             |    86.49 |    57.14 |      100 |    86.49 |    26,34,35,36,37 |
+ lib                |    95.57 |    55.56 |      100 |    95.57 |                   |
+  parse-args.js     |    96.69 |    41.67 |      100 |    96.69 |       83,84,97,98 |
+  report.js         |    94.67 |     62.5 |      100 |    94.67 |... 08,134,135,136 |
+ lib/commands       |    43.53 |    71.43 |    16.67 |    43.53 |                   |
+  check-coverage.js |    23.33 |      100 |        0 |    23.33 |... 55,56,57,58,59 |
+  report.js         |       92 |       60 |       50 |       92 |               8,9 |
+ test/fixtures      |    90.91 |    94.12 |       75 |    90.91 |                   |
   async.js          |      100 |      100 |      100 |      100 |                   |
   multiple-spawn.js |      100 |      100 |      100 |      100 |                   |
-  normal.js         |    85.71 |       75 |       50 |    85.71 |          14,15,16 |
+  normal.js         |       76 |       75 |    33.33 |       76 | 14,15,16,18,19,20 |
   subprocess.js     |      100 |      100 |      100 |      100 |                   |
 --------------------|----------|----------|----------|----------|-------------------|
 ,"
@@ -35,9 +82,9 @@ hey
 -----------|----------|----------|----------|----------|-------------------|
 File       |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
 -----------|----------|----------|----------|----------|-------------------|
-All files  |    91.18 |    88.89 |       80 |    91.18 |                   |
+All files  |    84.21 |    88.89 |    66.67 |    84.21 |                   |
  async.js  |      100 |      100 |      100 |      100 |                   |
- normal.js |    85.71 |       75 |       50 |    85.71 |          14,15,16 |
+ normal.js |       76 |       75 |    33.33 |       76 | 14,15,16,18,19,20 |
 -----------|----------|----------|----------|----------|-------------------|
 ,"
 `;
