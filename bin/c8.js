@@ -2,48 +2,35 @@
 'use strict'
 
 const fs = require('fs')
-const util = require('util')
-
 const foreground = require('foreground-child')
-const report = require('../lib/report')
+const { outputReport } = require('../lib/commands/report')
+const { checkCoverages } = require('../lib/commands/check-coverage')
+const { promisify } = require('util')
 const rimraf = require('rimraf')
 const {
+  buildYargs,
   hideInstrumenteeArgs,
-  hideInstrumenterArgs,
-  yargs
+  hideInstrumenterArgs
 } = require('../lib/parse-args')
 
 const instrumenterArgs = hideInstrumenteeArgs()
-let argv = yargs.parse(instrumenterArgs)
+let argv = buildYargs().parse(instrumenterArgs)
 
-const _p = util.promisify
-
-function outputReport () {
-  report({
-    include: argv.include,
-    exclude: argv.exclude,
-    reporter: Array.isArray(argv.reporter) ? argv.reporter : [argv.reporter],
-    tempDirectory: argv.tempDirectory,
-    watermarks: argv.watermarks,
-    resolve: argv.resolve,
-    omitRelative: argv.omitRelative,
-    wrapperLength: argv.wrapperLength
-  })
-}
-
-(async function run () {
-  if (argv._[0] === 'report') {
-    argv = yargs.parse(process.argv) // support flag arguments after "report".
-    outputReport()
+;(async function run () {
+  if ([
+    'check-coverage', 'report'
+  ].indexOf(argv._[0]) !== -1) {
+    argv = buildYargs(true).parse(process.argv.slice(2))
   } else {
     if (argv.clean) {
-      await _p(rimraf)(argv.tempDirectory)
-      await _p(fs.mkdir)(argv.tempDirectory, { recursive: true })
+      await promisify(rimraf)(argv.tempDirectory)
+      await promisify(fs.mkdir)(argv.tempDirectory, { recursive: true })
     }
-    process.env.NODE_V8_COVERAGE = argv.tempDirectory
 
+    process.env.NODE_V8_COVERAGE = argv.tempDirectory
     foreground(hideInstrumenterArgs(argv), () => {
-      outputReport()
+      const report = outputReport(argv)
+      if (argv.checkCoverage) checkCoverages(argv, report)
     })
   }
 })()
