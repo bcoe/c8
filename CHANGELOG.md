@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.4.0"></a>
+# [3.4.0](https://github.com/bcoe/c8/compare/v3.3.0...v3.4.0) (2019-01-24)
+
+
+### Features
+
+* support --check-coverage for reports ([#60](https://github.com/bcoe/c8/issues/60)) ([b542930](https://github.com/bcoe/c8/commit/b542930))
+
+
+
 <a name="3.3.0"></a>
 # [3.3.0](https://github.com/bcoe/c8/compare/v3.2.1...v3.3.0) (2019-01-23)
 
