@@ -97,4 +97,29 @@ describe('c8', () => {
       output.toString('utf8').should.matchSnapshot()
     })
   })
+
+  describe('report', () => {
+    it('generates report from existing temporary files', () => {
+      const { output } = spawnSync(nodePath, [
+        c8Path,
+        'report',
+        '--exclude="test/*.js"',
+        '--clean=false'
+      ])
+      output.toString('utf8').should.matchSnapshot()
+    })
+
+    it('supports --check-coverage, when generating reports', () => {
+      const { output, status } = spawnSync(nodePath, [
+        c8Path,
+        'report',
+        '--check-coverage',
+        '--lines=101',
+        '--exclude="test/*.js"',
+        '--clean=false'
+      ])
+      status.should.equal(1)
+      output.toString('utf8').should.matchSnapshot()
+    })
+  })
 })
