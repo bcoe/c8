@@ -1,0 +1,3 @@
+test/snapshots/*
+package*.json
+CHANGELOG.md

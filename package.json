@@ -9,8 +9,8 @@
     "url": "git@github.com:bcoe/c8.git"
   },
   "scripts": {
-    "test": "node ./bin/c8.js --reporter=html --reporter=text mocha --timeout=4000 ./test/*.js",
-    "test:snap": "CHAI_JEST_SNAPSHOT_UPDATE_ALL=true npm test",
+    "test": "node ./bin/c8.js --include lib --reporter=html --reporter=text ava",
+    "test:snap": "ava -u",
     "posttest": "standard",
     "coverage": "./bin/c8.js report --reporter=text-lcov | coveralls",
     "release": "standard-version"
@@ -47,10 +47,10 @@
     "yargs-parser": "^10.1.0"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "chai-jest-snapshot": "^2.0.0",
+    "ava": "^1.2.1",
+    "await-spawn": "^2.1.2",
     "coveralls": "^3.0.2",
-    "mocha": "^5.2.0",
+    "prettier": "^1.16.4",
     "standard": "^12.0.1",
     "standard-version": "^4.4.0"
   },
@@ -61,5 +61,9 @@
     "lib",
     "bin",
     "LICENSE"
-  ]
+  ],
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
+  }
 }
