@@ -122,4 +122,19 @@ describe('c8', () => {
       output.toString('utf8').should.matchSnapshot()
     })
   })
+
+  describe('ESM Modules', () => {
+    it('collects coverage for ESM modules', () => {
+      const { output } = spawnSync(nodePath, [
+        c8Path,
+        '--exclude="test/*.js"',
+        '--clean=false',
+        nodePath,
+        '--experimental-modules',
+        '--no-warnings',
+        require.resolve('./fixtures/import.mjs')
+      ])
+      output.toString('utf8').should.matchSnapshot()
+    })
+  })
 })
