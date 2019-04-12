@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [3.5.0](https://github.com/bcoe/c8/compare/v3.4.0...v3.5.0) (2019-04-12)
+
+
+### Features
+
+* allow  --reports-dir to be configured ([#65](https://github.com/bcoe/c8/issues/65)) ([5ab31f5](https://github.com/bcoe/c8/commit/5ab31f5))
+
+
+
 <a name="3.4.0"></a>
 # [3.4.0](https://github.com/bcoe/c8/compare/v3.3.0...v3.4.0) (2019-01-24)
 
