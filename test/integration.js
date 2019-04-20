@@ -1,14 +1,16 @@
-/* global describe, beforeEach, it */
+/* global describe, before, beforeEach, it */
 
 const { spawnSync } = require('child_process')
 const c8Path = require.resolve('../bin/c8')
 const nodePath = process.execPath
 const chaiJestSnapshot = require('chai-jest-snapshot')
+const rimraf = require('rimraf')
 
 require('chai')
   .use(chaiJestSnapshot)
   .should()
 
+before(cb => rimraf('tmp', cb))
 beforeEach(function () { chaiJestSnapshot.configureUsingMochaContext(this) })
 
 describe('c8', () => {
@@ -16,6 +18,7 @@ describe('c8', () => {
     const { output } = spawnSync(nodePath, [
       c8Path,
       '--exclude="test/*.js"',
+      '--temp-directory=tmp/normal',
       '--clean=false',
       nodePath,
       require.resolve('./fixtures/normal')
@@ -27,6 +30,7 @@ describe('c8', () => {
     const { output } = spawnSync(nodePath, [
       c8Path,
       '--exclude="test/*.js"',
+      '--temp-directory=tmp/multiple-spawn',
       '--clean=false',
       nodePath,
       require.resolve('./fixtures/multiple-spawn')
@@ -38,6 +42,7 @@ describe('c8', () => {
     const { output } = spawnSync(nodePath, [
       c8Path,
       '--exclude="test/*.js"',
+      '--temp-directory=tmp/multiple-spawn-2',
       '--omit-relative=false',
       '--clean=false',
       nodePath,
@@ -49,26 +54,26 @@ describe('c8', () => {
   })
 
   describe('check-coverage', () => {
+    before(() => {
+      spawnSync(nodePath, [
+        c8Path,
+        '--exclude="test/*.js"',
+        '--temp-directory=tmp/check-coverage',
+        '--clean=false',
+        nodePath,
+        require.resolve('./fixtures/normal')
+      ])
+    })
+
     it('exits with 0 if coverage within threshold', () => {
       const { output, status } = spawnSync(nodePath, [
         c8Path,
         'check-coverage',
         '--exclude="test/*.js"',
+        '--temp-directory=tmp/check-coverage',
         '--lines=80'
       ])
       status.should.equal(0)
-      output.toString('utf8').should.matchSnapshot()
-    })
-
-    it('allows threshold to be applied on per-file basis', () => {
-      const { output, status } = spawnSync(nodePath, [
-        c8Path,
-        'check-coverage',
-        '--exclude="test/*.js"',
-        '--lines=80',
-        '--per-file'
-      ])
-      status.should.equal(1)
       output.toString('utf8').should.matchSnapshot()
     })
 
@@ -77,7 +82,21 @@ describe('c8', () => {
         c8Path,
         'check-coverage',
         '--exclude="test/*.js"',
+        '--temp-directory=tmp/check-coverage',
         '--lines=101'
+      ])
+      status.should.equal(1)
+      output.toString('utf8').should.matchSnapshot()
+    })
+
+    it('allows threshold to be applied on per-file basis', () => {
+      const { output, status } = spawnSync(nodePath, [
+        c8Path,
+        'check-coverage',
+        '--exclude="test/*.js"',
+        '--temp-directory=tmp/check-coverage',
+        '--lines=101',
+        '--per-file'
       ])
       status.should.equal(1)
       output.toString('utf8').should.matchSnapshot()
@@ -88,6 +107,7 @@ describe('c8', () => {
         c8Path,
         '--exclude="test/*.js"',
         '--clean=false',
+        '--temp-directory=tmp/check-coverage',
         '--lines=101',
         '--check-coverage',
         nodePath,
@@ -99,11 +119,23 @@ describe('c8', () => {
   })
 
   describe('report', () => {
+    before(() => {
+      spawnSync(nodePath, [
+        c8Path,
+        '--exclude="test/*.js"',
+        '--temp-directory=tmp/report',
+        '--clean=false',
+        nodePath,
+        require.resolve('./fixtures/normal')
+      ])
+    })
+
     it('generates report from existing temporary files', () => {
       const { output } = spawnSync(nodePath, [
         c8Path,
         'report',
         '--exclude="test/*.js"',
+        '--temp-directory=tmp/report',
         '--clean=false'
       ])
       output.toString('utf8').should.matchSnapshot()
@@ -116,6 +148,7 @@ describe('c8', () => {
         '--check-coverage',
         '--lines=101',
         '--exclude="test/*.js"',
+        '--temp-directory=tmp/report',
         '--clean=false'
       ])
       status.should.equal(1)
@@ -129,6 +162,7 @@ describe('c8', () => {
         c8Path,
         '--exclude="test/*.js"',
         '--clean=false',
+        '--temp-directory=tmp/esm',
         nodePath,
         '--experimental-modules',
         '--no-warnings',
