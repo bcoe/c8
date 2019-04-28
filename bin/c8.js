@@ -29,6 +29,7 @@ let argv = buildYargs().parse(instrumenterArgs)
     process.env.NODE_V8_COVERAGE = argv.tempDirectory
     foreground(hideInstrumenterArgs(argv), () => {
       outputReport(argv)
+      process.exit();
     })
   }
 })()
