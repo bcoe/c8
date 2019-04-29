@@ -1,3 +1,3 @@
-import foo from './export'
+import foo from './export.mjs'
 
 console.info(foo())
