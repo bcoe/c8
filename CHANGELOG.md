@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [4.0.0](https://github.com/bcoe/c8/compare/v3.5.0...v4.0.0) (2019-05-02)
+
+
+### Features
+
+* add support for 1:1 source-maps ([#85](https://github.com/bcoe/c8/issues/85)) ([6ca4345](https://github.com/bcoe/c8/commit/6ca4345))
+* foreground-child's done() method was not being called ([#82](https://github.com/bcoe/c8/issues/82)) ([fde596e](https://github.com/bcoe/c8/commit/fde596e))
+
+
+### BREAKING CHANGES
+
+* c8 will now load source-maps if possible and remap coverage accordingly
+
+
+
 # [3.5.0](https://github.com/bcoe/c8/compare/v3.4.0...v3.5.0) (2019-04-12)
 
 
