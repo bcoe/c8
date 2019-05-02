@@ -50,7 +50,7 @@ Sometimes you might find yourself wanting to ignore uncovered portions of your
 codebase. For example, perhaps you run your tests on Linux, but
 there's some logic that only executes on Windows.
 
-To ignore lines, branches and functions, use the special comment:
+To ignore lines, blocks, and functions, use the special comment:
 
 `/* c8 ignore next */`.
 
