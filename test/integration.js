@@ -172,6 +172,20 @@ describe('c8', () => {
     })
   })
 
+  describe('/* c8 ignore next */', () => {
+    it('ignores lines with special comment', () => {
+      const { output } = spawnSync(nodePath, [
+        c8Path,
+        '--exclude="test/*.js"',
+        '--clean=false',
+        '--temp-directory=tmp/normal',
+        nodePath,
+        require.resolve('./fixtures/c8-ignore-next.js')
+      ])
+      output.toString('utf8').should.matchSnapshot()
+    })
+  })
+
   describe('source-maps', () => {
     beforeEach(cb => rimraf('tmp/source-map', cb))
 
