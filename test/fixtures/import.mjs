@@ -1,3 +1,4 @@
-import foo from './export.mjs'
+import esm from './export.mjs'
+import cjs from './export.cjs'
 
-console.info(foo())
+console.log(esm(), cjs())
