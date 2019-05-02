@@ -41,8 +41,7 @@
     "istanbul-reports": "^2.0.0",
     "rimraf": "^2.6.2",
     "test-exclude": "^5.0.0",
-    "uuid": "^3.3.2",
-    "v8-to-istanbul": "^2.0.4",
+    "v8-to-istanbul": "^3.0.1",
     "yargs": "^13.1.0",
     "yargs-parser": "^10.1.0"
   },

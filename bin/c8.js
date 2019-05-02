@@ -27,8 +27,8 @@ let argv = buildYargs().parse(instrumenterArgs)
     }
 
     process.env.NODE_V8_COVERAGE = argv.tempDirectory
-    foreground(hideInstrumenterArgs(argv), done => {
-      outputReport(argv)
+    foreground(hideInstrumenterArgs(argv), async (done) => {
+      await outputReport(argv)
       done()
     })
   }

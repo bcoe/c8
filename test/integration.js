@@ -171,4 +171,100 @@ describe('c8', () => {
       output.toString('utf8').should.matchSnapshot()
     })
   })
+
+  describe('source-maps', () => {
+    beforeEach(cb => rimraf('tmp/source-map', cb))
+
+    describe('TypeScript', () => {
+      // Bugs:
+      //   closing '}' on `if` is not covered.
+      it('remaps branches', () => {
+        const { output } = spawnSync(nodePath, [
+          c8Path,
+          '--exclude="test/*.js"',
+          '--temp-directory=tmp/source-map',
+          '--clean=true',
+          nodePath,
+          require.resolve('./fixtures/source-maps/branches/branches.typescript.js')
+        ])
+        output.toString('utf8').should.matchSnapshot()
+      })
+
+      // Bugs:
+      //   closing '}' on `if` is not covered.
+      it('remaps classes', () => {
+        const { output } = spawnSync(nodePath, [
+          c8Path,
+          '--exclude="test/*.js"',
+          '--temp-directory=tmp/source-map',
+          '--clean=true',
+          nodePath,
+          require.resolve('./fixtures/source-maps/classes/classes.typescript.js')
+        ])
+        output.toString('utf8').should.matchSnapshot()
+      })
+    })
+
+    describe('UglifyJS', () => {
+      // Bugs:
+      //   string in `console.info` shown as uncovered branch.
+      it('remaps branches', () => {
+        const { output } = spawnSync(nodePath, [
+          c8Path,
+          '--exclude="test/*.js"',
+          '--temp-directory=tmp/source-map',
+          '--clean=true',
+          nodePath,
+          require.resolve('./fixtures/source-maps/branches/branches.uglify.js')
+        ])
+        output.toString('utf8').should.matchSnapshot()
+      })
+
+      // Bugs:
+      //   string in `console.info` shown as uncovered branch.
+      it('remaps classes', () => {
+        const { output } = spawnSync(nodePath, [
+          c8Path,
+          '--exclude="test/*.js"',
+          '--temp-directory=tmp/source-map',
+          '--clean=true',
+          nodePath,
+          require.resolve('./fixtures/source-maps/classes/classes.uglify.js')
+        ])
+        output.toString('utf8').should.matchSnapshot()
+      })
+    })
+
+    describe('nyc', () => {
+      // Bugs:
+      //  first 'if' statement indicates two odd missing branches.
+      //  line 4 should be covered.
+      it('remaps branches', () => {
+        const { output } = spawnSync(nodePath, [
+          c8Path,
+          '--exclude="test/*.js"',
+          '--temp-directory=tmp/source-map',
+          '--clean=true',
+          nodePath,
+          require.resolve('./fixtures/source-maps/branches/branches.nyc.js')
+        ])
+        output.toString('utf8').should.matchSnapshot()
+      })
+
+      // Bugs:
+      //  the portion `class F` of `class Foo` indicates missing branch.
+      //  line 6 should be covered.
+      it('remaps classes', () => {
+        const { output } = spawnSync(nodePath, [
+          c8Path,
+          '--exclude="test/*.js"',
+          '--temp-directory=tmp/source-map',
+          '--clean=true',
+          nodePath,
+          require.resolve('./fixtures/source-maps/classes/classes.nyc.js')
+        ])
+        output.toString('utf8').should.matchSnapshot()
+      })
+    })
+  })
 })
