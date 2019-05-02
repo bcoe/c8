@@ -44,19 +44,46 @@ To check thresholds on a per-file basis run:
 c8 check-coverage --lines 95 --per-file
 ```
 
+## Ignoring Uncovered Lines, Functions, and Blocks
+
+Sometimes you might find yourself wanting to ignore uncovered portions of your
+codebase. For example, perhaps you run your tests on Linux, but
+there's some logic that only executes on Windows.
+
+To ignore lines, branches and functions, use the special comment:
+
+`/* c8 ignore next */`.
+
+### ignoring the next elements
+
+```js
+const myVariable = 99
+/* c8 ignore next */
+if (process.platform === 'win32') console.info('hello world')
+```
+
+### ignoring the next N elements
+
+```js
+const myVariable = 99
+/* c8 ignore next 3 */
+if (process.platform === 'win32') {
+  console.info('hello world')
+}
+```
+
+### ignoring a block on the current line
+
+```js
+const myVariable = 99
+const os = process.platform === 'darwin' ? 'OSXy' /* c8 ignore next */ : 'Windowsy' 
+```
+
 ## Supported Node.js Versions
 
 c8 uses
 [bleeding edge Node.js features](https://github.com/nodejs/node/pull/22527),
 make sure you're running Node.js `>= 10.12.0`.
-
-## Goals of the Project
-
-A fully functional code coverage solution using only V8's native coverage
-features and minimal user-land modules, so that we fit these constraints:
-
-* No parsing of JavaScript code.
-* No mucking with Node.js' runtime environment.
 
 ## Contributing to `c8`
 
