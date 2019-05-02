@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 'use strict'
 
-const minNode = `10.12.0`
 const semver = require('semver')
+const minNode = semver.minVersion(require('../package.json').engines.node)
 
 /* c8 ignore next 3 */
 if (semver.lt(process.version, minNode)) {
