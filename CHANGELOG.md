@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.1.2](https://github.com/bcoe/c8/compare/v4.1.1...v4.1.2) (2019-05-02)
+
+
+### Bug Fixes
+
+* make tmp directory regardless of clean ([44d2185](https://github.com/bcoe/c8/commit/44d2185))
+
+
+
 ## [4.1.1](https://github.com/bcoe/c8/compare/v4.1.0...v4.1.1) (2019-05-02)
 
 
