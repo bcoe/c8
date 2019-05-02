@@ -33,4 +33,3 @@ let argv = buildYargs().parse(instrumenterArgs)
     })
   }
 })()
-
