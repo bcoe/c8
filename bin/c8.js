@@ -23,8 +23,8 @@ let argv = buildYargs().parse(instrumenterArgs)
   } else {
     if (argv.clean) {
       await promisify(rimraf)(argv.tempDirectory)
-      await promisify(fs.mkdir)(argv.tempDirectory, { recursive: true })
     }
+    await promisify(fs.mkdir)(argv.tempDirectory, { recursive: true })
 
     process.env.NODE_V8_COVERAGE = argv.tempDirectory
     foreground(hideInstrumenterArgs(argv), async (done) => {
