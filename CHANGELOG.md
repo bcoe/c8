@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [4.1.0](https://github.com/bcoe/c8/compare/v4.0.0...v4.1.0) (2019-05-02)
+
+
+### Bug Fixes
+
+* exclude coverage of the CJS-ESM bridge from results ([#83](https://github.com/bcoe/c8/issues/83)) ([da2c945](https://github.com/bcoe/c8/commit/da2c945))
+* upgrade to @bcoe/v8-coverage with breaking regex dropped ([6c28e7f](https://github.com/bcoe/c8/commit/6c28e7f))
+
+
+### Features
+
+* add --report-dir alias (for consistency with nyc) ([0dd1b04](https://github.com/bcoe/c8/commit/0dd1b04))
+* add support for ignoring lines, functions, and blocks ([#87](https://github.com/bcoe/c8/issues/87)) ([c66950e](https://github.com/bcoe/c8/commit/c66950e))
+
+
+
 # [4.0.0](https://github.com/bcoe/c8/compare/v3.5.0...v4.0.0) (2019-05-02)
 
 
