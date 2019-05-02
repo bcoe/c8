@@ -171,4 +171,57 @@ describe('c8', () => {
       output.toString('utf8').should.matchSnapshot()
     })
   })
+
+  describe('source-maps', () => {
+    beforeEach(cb => rimraf('tmp/source-map', cb))
+
+    describe('TypeScript', () => {
+      // Bugs:
+      //   closing '}' on `if` is not covered.
+      it('remaps branches', () => {
+        const { output } = spawnSync(nodePath, [
+          c8Path,
+          '--exclude="test/*.js"',
+          '--temp-directory=tmp/source-map',
+          '--clean=false',
+          nodePath,
+          require.resolve('./fixtures/source-maps/branches/branches.typescript.js')
+        ])
+        output.toString('utf8').should.matchSnapshot()
+      })
+    })
+
+    // Bugs:
+    //   string in `console.info` shown as uncovered branch.
+    describe('UglifyJS 3', () => {
+      it('remaps branches', () => {
+        const { output } = spawnSync(nodePath, [
+          c8Path,
+          '--exclude="test/*.js"',
+          '--temp-directory=tmp/source-map',
+          '--clean=false',
+          nodePath,
+          require.resolve('./fixtures/source-maps/branches/branches.uglify.js')
+        ])
+        output.toString('utf8').should.matchSnapshot()
+      })
+    })
+
+    describe('nyc', () => {
+      // Bugs:
+      //  first 'if' statement indicates two odd missing branches.
+      //  line 4 should be covered.
+      it('remaps branches', () => {
+        const { output } = spawnSync(nodePath, [
+          c8Path,
+          '--exclude="test/*.js"',
+          '--temp-directory=tmp/source-map',
+          '--clean=false',
+          nodePath,
+          require.resolve('./fixtures/source-maps/branches/branches.nyc.js')
+        ])
+        output.toString('utf8').should.matchSnapshot()
+      })
+    })
+  })
 })
