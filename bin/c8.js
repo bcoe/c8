@@ -3,7 +3,7 @@
 
 const foreground = require('foreground-child')
 const { outputReport } = require('../lib/commands/report')
-const mkdirp = require('mkdirp')
+const { promises } = require('fs')
 const { promisify } = require('util')
 const rimraf = require('rimraf')
 const {
@@ -25,7 +25,9 @@ async function run () {
       await promisify(rimraf)(argv.tempDirectory)
     }
     // allow c8 to run on Node 8 (coverage just won't work).
-    await promisify(mkdirp)(argv.tempDirectory)
+    if (promises) {
+      await promises.mkdir(argv.tempDirectory, { recursive: true })
+    }
 
     process.env.NODE_V8_COVERAGE = argv.tempDirectory
     foreground(hideInstrumenterArgs(argv), async (done) => {
