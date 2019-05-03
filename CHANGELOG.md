@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.1.3](https://github.com/bcoe/c8/compare/v4.1.2...v4.1.3) (2019-05-03)
+
+
+### Bug Fixes
+
+* switch to mkdirp for Node 8 ([206b83f](https://github.com/bcoe/c8/commit/206b83f))
+
+
+
 ## [4.1.2](https://github.com/bcoe/c8/compare/v4.1.1...v4.1.2) (2019-05-02)
 
 
