@@ -15,7 +15,7 @@ const {
 const instrumenterArgs = hideInstrumenteeArgs()
 let argv = buildYargs().parse(instrumenterArgs)
 
-;(async function run () {
+async function run () {
   if ([
     'check-coverage', 'report'
   ].indexOf(argv._[0]) !== -1) {
@@ -33,4 +33,9 @@ let argv = buildYargs().parse(instrumenterArgs)
       done()
     })
   }
-})()
+}
+
+run().catch((err) => {
+  console.error(err.stack)
+  process.exitCode = 1
+})
