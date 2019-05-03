@@ -29,7 +29,12 @@ async function run () {
 
     process.env.NODE_V8_COVERAGE = argv.tempDirectory
     foreground(hideInstrumenterArgs(argv), async (done) => {
-      await outputReport(argv)
+      try {
+        await outputReport(argv)
+      } catch (err) {
+        console.error(err.stack)
+        process.exitCode = 1
+      }
       done()
     })
   }
