@@ -53,6 +53,18 @@ describe('c8', () => {
     )
   })
 
+  it('exits with 1 when report output fails', () => {
+    const { status, stderr } = spawnSync(nodePath, [
+      c8Path,
+      '--clean=false',
+      '--reporter=unknown',
+      nodePath,
+      '--version'
+    ])
+    status.should.equal(1)
+    stderr.toString().should.match(/Cannot find module 'unknown'/u)
+  })
+
   describe('check-coverage', () => {
     before(() => {
       spawnSync(nodePath, [
