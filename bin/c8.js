@@ -21,7 +21,8 @@ async function run () {
   ].indexOf(argv._[0]) !== -1) {
     argv = buildYargs(true).parse(process.argv.slice(2))
   } else {
-    // allow c8 to run on Node 8 (coverage just won't work).
+    // fs.promises was not added until Node.js v10.0.0, if it doesn't
+    // exist, assume we're Node.js v8.x and skip coverage.
     if (!promises) {
       foreground(hideInstrumenterArgs(argv))
       return
