@@ -26,6 +26,21 @@ describe('c8', () => {
     output.toString('utf8').should.matchSnapshot()
   })
 
+  it('supports exeternally set NODE_V8_COVERAGE', () => {
+    const { output } = spawnSync(nodePath, [
+      c8Path,
+      '--exclude="test/*.js"',
+      '--clean=false',
+      nodePath,
+      require.resolve('./fixtures/normal')
+    ], {
+      env: {
+        'NODE_V8_COVERAGE': './coverage/tmp_'
+      }
+    })
+    output.toString('utf8').should.matchSnapshot()
+  })
+
   it('merges reports from subprocesses together', () => {
     const { output } = spawnSync(nodePath, [
       c8Path,
