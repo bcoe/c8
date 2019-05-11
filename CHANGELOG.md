@@ -1,6 +1,16 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [4.1.5](https://github.com/bcoe/c8/compare/v4.1.4...v4.1.5) (2019-05-11)
+
+
+### Bug Fixes
+
+* exit with code 1 when report output fails ([#92](https://github.com/bcoe/c8/issues/92)) ([a27b694](https://github.com/bcoe/c8/commit/a27b694))
+* remove the unmaintained mkdirp dependency ([#91](https://github.com/bcoe/c8/issues/91)) ([a465b65](https://github.com/bcoe/c8/commit/a465b65))
+
+
 
 ## [4.1.4](https://github.com/bcoe/c8/compare/v4.1.3...v4.1.4) (2019-05-03)
 
