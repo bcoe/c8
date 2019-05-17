@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.1.6](https://www.github.com/bcoe/c8/compare/v4.1.5...v4.1.6) (2019-05-17)
+
 ### [4.1.5](https://github.com/bcoe/c8/compare/v4.1.4...v4.1.5) (2019-05-11)
 
 
