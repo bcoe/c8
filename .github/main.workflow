@@ -1,27 +1,13 @@
-workflow "Candidate Issue" {
-  on = "schedule(*/8 * * * *)"
-  resolves = ["candidate-issue"]
+workflow "Groom Release PR" {
+  on = "push"
+  resolves = ["release-pr"]
 }
 
-action "candidate-issue" {
+action "release-pr" {
   uses = "googleapis/release-please/.github/action/release-please@master"
   env = {
     PACKAGE_NAME = "c8"
-    RELEASE_PLEASE_COMMAND = "candidate-issue"
-  }
-  secrets = ["GITHUB_TOKEN"]
-}
-
-workflow "Detect Checked" {
-  on = "schedule(*/4 * * * *)"
-  resolves = ["detect-checked"]
-}
-
-action "detect-checked" {
-  uses = "googleapis/release-please/.github/action/release-please@master"
-  env = {
-    PACKAGE_NAME = "c8"
-    RELEASE_PLEASE_COMMAND = "detect-checked"
+    RELEASE_PLEASE_COMMAND = "release-pr"
   }
   secrets = ["GITHUB_TOKEN"]
 }
@@ -39,4 +25,3 @@ action "github-release" {
   }
   secrets = ["GITHUB_TOKEN"]
 }
-
