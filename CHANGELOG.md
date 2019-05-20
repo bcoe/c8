@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.1](https://www.github.com/bcoe/c8/compare/v5.0.0...v5.0.1) (2019-05-20)
+
+
+### Bug Fixes
+
+* temporary files should be in tmp folder ([#106](https://www.github.com/bcoe/c8/issues/106)) ([64dd2e6](https://www.github.com/bcoe/c8/commit/64dd2e6))
+
 ## [5.0.0](https://www.github.com/bcoe/c8/compare/v4.1.5...v5.0.0) (2019-05-20)
 
 
