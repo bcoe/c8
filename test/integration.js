@@ -1,6 +1,7 @@
 /* global describe, before, beforeEach, it */
 
 const { spawnSync } = require('child_process')
+const { statSync } = require('fs')
 const c8Path = require.resolve('../bin/c8')
 const nodePath = process.execPath
 const chaiJestSnapshot = require('chai-jest-snapshot')
@@ -23,6 +24,23 @@ describe('c8', () => {
       nodePath,
       require.resolve('./fixtures/normal')
     ])
+    output.toString('utf8').should.matchSnapshot()
+  })
+
+  it('supports exeternally set NODE_V8_COVERAGE', () => {
+    const { output } = spawnSync(nodePath, [
+      c8Path,
+      '--exclude="test/*.js"',
+      '--clean=false',
+      nodePath,
+      require.resolve('./fixtures/normal')
+    ], {
+      env: {
+        'NODE_V8_COVERAGE': 'tmp/override'
+      }
+    })
+    const stats = statSync('tmp/override')
+    stats.isDirectory().should.equal(true)
     output.toString('utf8').should.matchSnapshot()
   })
 
