@@ -1,5 +1,5 @@
 workflow "Groom Release PR" {
-  on = "push"
+  on = "pull_request"
   resolves = ["release-pr"]
 }
 
@@ -13,7 +13,7 @@ action "release-pr" {
 }
 
 workflow "GitHub Release" {
-  on = "push"
+  on = "pull_request"
   resolves = ["github-release"]
 }
 
