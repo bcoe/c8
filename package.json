@@ -9,7 +9,7 @@
     "url": "git@github.com:bcoe/c8.git"
   },
   "scripts": {
-    "test": "node ./bin/c8.js --reporter=html --reporter=text mocha --timeout=4000 ./test/*.js",
+    "test": "node ./bin/c8.js --reporter=html --reporter=text mocha --timeout=8000 ./test/*.js",
     "test:snap": "CHAI_JEST_SNAPSHOT_UPDATE_ALL=true npm test",
     "posttest": "standard",
     "coverage": "./bin/c8.js report --reporter=html --reporter=text-lcov | coveralls",
