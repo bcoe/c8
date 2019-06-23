@@ -23,7 +23,7 @@ describe('parse-args', () => {
       const argv = buildYargs().parse(hideInstrumenteeArgs())
       const instrumenteeArgs = hideInstrumenterArgs(argv)
       instrumenteeArgs.should.eql(['my-app', '--help'])
-      argv.tempDirectory.endsWith('/coverage/tmp').should.be.equal(true)
+      argv.tempDirectory.endsWith(join('coverage', 'tmp')).should.be.equal(true)
     })
   })
 
@@ -33,7 +33,7 @@ describe('parse-args', () => {
       process.env.NODE_V8_COVERAGE = './coverage/tmp_'
       process.argv = ['node', 'c8', '--foo=99', 'my-app', '--help']
       const argv = buildYargs().parse(hideInstrumenteeArgs())
-      argv.tempDirectory.endsWith(join('coverage', 'tmp_')).should.be.equal(true)
+      argv.tempDirectory.endsWith('/coverage/tmp_').should.be.equal(true)
       process.env.NODE_V8_COVERAGE = NODE_V8_COVERAGE
     })
   })
