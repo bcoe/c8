@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.2](https://www.github.com/bcoe/c8/compare/v5.0.1...v5.0.2) (2019-06-24)
+
+
+### Bug Fixes
+
+* HTML report now has correct source positions for Node >10.16.0 ([#125](https://www.github.com/bcoe/c8/issues/125)) ([c49fa7f](https://www.github.com/bcoe/c8/commit/c49fa7f))
+* **deps:** update dependency find-up to v4 ([#119](https://www.github.com/bcoe/c8/issues/119)) ([c568d96](https://www.github.com/bcoe/c8/commit/c568d96))
+* **deps:** update dependency yargs-parser to v13 ([#124](https://www.github.com/bcoe/c8/issues/124)) ([1eb3394](https://www.github.com/bcoe/c8/commit/1eb3394))
+* do not override NODE_V8_COVERAGE if set ([#70](https://www.github.com/bcoe/c8/issues/70)) ([8bb67b0](https://www.github.com/bcoe/c8/commit/8bb67b0))
+
 ### [5.0.1](https://www.github.com/bcoe/c8/compare/v5.0.0...v5.0.1) (2019-05-20)
 
 
