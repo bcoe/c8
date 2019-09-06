@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.3](https://www.github.com/bcoe/c8/compare/v5.0.2...v5.0.3) (2019-09-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency rimraf to v3 ([#132](https://www.github.com/bcoe/c8/issues/132)) ([7601748](https://www.github.com/bcoe/c8/commit/7601748))
+* **deps:** update dependency yargs to v14 ([#134](https://www.github.com/bcoe/c8/issues/134)) ([e49737f](https://www.github.com/bcoe/c8/commit/e49737f))
+* **deps:** update deps to address warning in cross-spawn ([#141](https://www.github.com/bcoe/c8/issues/141)) ([4b66221](https://www.github.com/bcoe/c8/commit/4b66221))
+
 ### [5.0.2](https://www.github.com/bcoe/c8/compare/v5.0.1...v5.0.2) (2019-06-24)
 
 
