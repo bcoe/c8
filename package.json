@@ -32,7 +32,7 @@
   "author": "Ben Coe <ben@npmjs.com>",
   "license": "ISC",
   "dependencies": {
-    "@bcoe/v8-coverage": "^0.2.1",
+    "@bcoe/v8-coverage": "^0.2.3",
     "find-up": "^4.0.0",
     "foreground-child": "^2.0.0",
     "furi": "^1.3.0",
