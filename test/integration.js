@@ -36,7 +36,7 @@ describe('c8', () => {
       require.resolve('./fixtures/normal')
     ], {
       env: {
-        'NODE_V8_COVERAGE': 'tmp/override'
+        NODE_V8_COVERAGE: 'tmp/override'
       }
     })
     const stats = statSync('tmp/override')
