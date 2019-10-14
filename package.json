@@ -41,7 +41,7 @@
     "istanbul-reports": "^2.2.6",
     "rimraf": "^3.0.0",
     "test-exclude": "^5.2.3",
-    "v8-to-istanbul": "^3.2.6",
+    "v8-to-istanbul": "git+https://github.com/istanbuljs/v8-to-istanbul.git#empty-report",
     "yargs": "^14.0.0",
     "yargs-parser": "^15.0.0"
   },
