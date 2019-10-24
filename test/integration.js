@@ -311,4 +311,20 @@ describe('c8', () => {
       })
     })
   })
+
+  describe('ts-node', () => {
+    beforeEach(cb => rimraf('tmp/source-map', cb))
+
+    it('reads source-map from cache, and applies to coverage', () => {
+      const { output } = spawnSync(nodePath, [
+        c8Path,
+        '--exclude="test/*.js"',
+        '--temp-directory=tmp/source-map',
+        '--clean=true',
+        './node_modules/.bin/ts-node',
+        require.resolve('./fixtures/ts-node-basic.ts')
+      ])
+      output.toString('utf8').should.matchSnapshot()
+    })
+  })
 })
