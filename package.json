@@ -41,7 +41,7 @@
     "istanbul-reports": "^2.2.6",
     "rimraf": "^3.0.0",
     "test-exclude": "^5.2.3",
-    "v8-to-istanbul": "^3.2.3",
+    "v8-to-istanbul": "^3.2.6",
     "yargs": "^14.0.0",
     "yargs-parser": "^14.0.0"
   },
@@ -51,7 +51,9 @@
     "coveralls": "^3.0.6",
     "mocha": "^6.2.0",
     "standard": "^14.1.0",
-    "standard-version": "^7.0.0"
+    "standard-version": "^7.0.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
   },
   "engines": {
     "node": ">=10.12.0"
