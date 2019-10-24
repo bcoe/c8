@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.0.0](https://github.com/bcoe/c8/compare/v5.0.4...v6.0.0) (2019-10-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node.js' source-map and lineLength cache is now used to remap coverage output (this allows tools like ts-node to be supported, which transpile at runtime).
+
+### Features
+
+* use Node.js' source-map cache, to support tools like ts-node ([#152](https://github.com/bcoe/c8/issues/152)) ([53bba15](https://github.com/bcoe/c8/commit/53bba15bee07e8f0446fd85cc59d2b562fe34a21))
+
+
+### Bug Fixes
+
+* **deps:** update dependency yargs-parser to v15 ([#153](https://github.com/bcoe/c8/issues/153)) ([80153de](https://github.com/bcoe/c8/commit/80153de61be8e5830f1c228945184e4878f8cf0c))
+
 ### [5.0.4](https://github.com/bcoe/c8/compare/v5.0.3...v5.0.4) (2019-09-06)
 
 
