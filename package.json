@@ -12,8 +12,7 @@
     "test": "node ./bin/c8.js --reporter=html --reporter=text mocha --timeout=8000 ./test/*.js",
     "test:snap": "CHAI_JEST_SNAPSHOT_UPDATE_ALL=true npm test",
     "posttest": "standard",
-    "coverage": "./bin/c8.js report --reporter=html --reporter=text-lcov | coveralls",
-    "release": "standard-version"
+    "coverage": "./bin/c8.js report --reporter=html --reporter=text-lcov | coveralls"
   },
   "standard": {
     "ignore": [
@@ -51,7 +50,6 @@
     "coveralls": "^3.0.6",
     "mocha": "^6.2.0",
     "standard": "^14.1.0",
-    "standard-version": "^7.0.0",
     "ts-node": "^8.4.1",
     "typescript": "^3.6.4"
   },
