@@ -41,7 +41,7 @@
     "rimraf": "^3.0.0",
     "test-exclude": "^5.2.3",
     "v8-to-istanbul": "^3.2.6",
-    "yargs": "^14.0.0",
+    "yargs": "^15.0.0",
     "yargs-parser": "^16.0.0"
   },
   "devDependencies": {
