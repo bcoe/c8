@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.0.1](https://github.com/bcoe/c8/compare/v6.0.0...v6.0.1) (2019-10-26)
+
+
+### Bug Fixes
+
+* regex flags in dependency were breaking Node 8 ([a9d9645](https://github.com/bcoe/c8/commit/a9d9645858031cee985087828f5e04cfd8922868))
+
 ## [6.0.0](https://github.com/bcoe/c8/compare/v5.0.4...v6.0.0) (2019-10-24)
 
 
