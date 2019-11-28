@@ -327,4 +327,47 @@ describe('c8', () => {
       output.toString('utf8').should.matchSnapshot()
     })
   })
+  describe('--all', () => {
+    it('reports coverage for unloaded js files as 0 for line, branch and function', () => {
+      const { output } = spawnSync(nodePath, [
+        c8Path,
+        '--temp-directory=tmp/vanilla-all',
+        '--clean=false',
+        '--all=true',
+        '--include=test/fixtures/all/vanilla/**/*.js',
+        '--exclude=**/*.ts', // add an exclude to avoid default excludes of test/**
+        nodePath,
+        require.resolve('./fixtures/all/vanilla/main')
+      ])
+      output.toString('utf8').should.matchSnapshot()
+    })
+
+    it('reports coverage for unloaded transpiled ts files as 0 for line, branch and function', () => {
+      const { output } = spawnSync(nodePath, [
+        c8Path,
+        '--temp-directory=tmp/all-ts',
+        '--clean=false',
+        '--all=true',
+        '--include=test/fixtures/all/ts-compiled/**/*.js',
+        '--exclude="test/*.js"', // add an exclude to avoid default excludes of test/**
+        nodePath,
+        require.resolve('./fixtures/all/ts-compiled/main.js')
+      ])
+      output.toString('utf8').should.matchSnapshot()
+    })
+
+    it('reports coverage for unloaded ts files as 0 for line, branch and function when using ts-node', () => {
+      const { output } = spawnSync(nodePath, [
+        c8Path,
+        '--temp-directory=tmp/all-ts-node',
+        '--clean=false',
+        '--all=true',
+        '--include=test/fixtures/all/ts-only/**/*.ts',
+        '--exclude="test/*.js"', // add an exclude to avoid default excludes of test/**
+        './node_modules/.bin/ts-node',
+        require.resolve('./fixtures/all/ts-only/main.ts')
+      ])
+      output.toString('utf8').should.matchSnapshot()
+    })
+  })
 })
