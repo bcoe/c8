@@ -348,10 +348,10 @@ describe('c8', () => {
         '--temp-directory=tmp/all-ts',
         '--clean=false',
         '--all=true',
-        '--include=test/fixtures/all/ts-compiled/**/*.ts',
+        '--include=test/fixtures/all/ts-compiled/**/*.js',
         '--exclude="test/*.js"', // add an exclude to avoid default excludes of test/**
         nodePath,
-        require.resolve('./fixtures/all/ts-compiled/main')
+        require.resolve('./fixtures/all/ts-compiled/main.js')
       ])
       output.toString('utf8').should.matchSnapshot()
     })
