@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.0.0](https://www.github.com/bcoe/c8/compare/v6.0.1...v7.0.0) (2019-12-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* new test-exclude with modified exclude rules (#179)
+* **istanbul-reports:** lcov reports now use relative paths (#168)
+
+### Features
+
+* adds --all functionality ([#158](https://www.github.com/bcoe/c8/issues/158)) ([2eb631e](https://www.github.com/bcoe/c8/commit/2eb631e460eba3d06925ee1d128e0db82ec50b6c))
+* **istanbul-reports:** lcov reports now use relative paths ([#168](https://www.github.com/bcoe/c8/issues/168)) ([35d9338](https://www.github.com/bcoe/c8/commit/35d9338b69ba803c19a19d16ff601e3ec5692fa6))
+* new test-exclude with modified exclude rules ([#179](https://www.github.com/bcoe/c8/issues/179)) ([af7d94d](https://www.github.com/bcoe/c8/commit/af7d94d715ab98d67e6b5bff5dfba19430681c9c))
+
+
+### Bug Fixes
+
+* **deps:** update dependency v8-to-istanbul to v4 ([#167](https://www.github.com/bcoe/c8/issues/167)) ([97b9769](https://www.github.com/bcoe/c8/commit/97b97699870ddc4af780cedb25cbb3a87e0eb777))
+* **deps:** update dependency yargs to v15 ([#164](https://www.github.com/bcoe/c8/issues/164)) ([e41a483](https://www.github.com/bcoe/c8/commit/e41a4831aac92591f303d48038a327e9631affee))
+* **deps:** update dependency yargs-parser to v16 ([#157](https://www.github.com/bcoe/c8/issues/157)) ([15746e5](https://www.github.com/bcoe/c8/commit/15746e51640e6e172f27f02c12056e2977342005))
+
 ### [6.0.1](https://github.com/bcoe/c8/compare/v6.0.0...v6.0.1) (2019-10-26)
 
 
