@@ -65,6 +65,29 @@ All files     |   64.29 |    66.67 |      50 |   64.29 |
 ,"
 `;
 
+exports[`c8 --all should allow for --all to be used in conjunction with --check-coverage 1`] = `
+",zero
+positive
+negative
+--------------|---------|----------|---------|---------|-------------------
+File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------|---------|----------|---------|---------|-------------------
+All files     |   64.29 |    66.67 |      50 |   64.29 |                   
+ vanilla      |   78.26 |       75 |     100 |   78.26 |                   
+  loaded.js   |   73.68 |    71.43 |     100 |   73.68 | 4,5,16-18         
+  main.js     |     100 |      100 |     100 |     100 |                   
+ vanilla/dir  |       0 |        0 |       0 |       0 |                   
+  unloaded.js |       0 |        0 |       0 |       0 | 1-5               
+--------------|---------|----------|---------|---------|-------------------
+,ERROR: Coverage for lines (64.29%) does not meet global threshold (100%)
+"
+`;
+
+exports[`c8 --all should allow for --all to be used with the check-coverage command (2 invocations) 1`] = `
+",,ERROR: Coverage for lines (64.29%) does not meet global threshold (90%)
+"
+`;
+
 exports[`c8 ESM Modules collects coverage for ESM modules 1`] = `
 ",bar foo
 ------------|---------|----------|---------|---------|-------------------
