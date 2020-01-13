@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.0.1](https://www.github.com/bcoe/c8/compare/v7.0.0...v7.0.1) (2020-01-13)
+
+
+### Bug Fixes
+
+* all flag not propagated to check-coverage command ([#188](https://www.github.com/bcoe/c8/issues/188)) ([86eaf72](https://www.github.com/bcoe/c8/commit/86eaf72a8c7af93d6ec9699b741d11df50017a8d))
+
 ## [7.0.0](https://www.github.com/bcoe/c8/compare/v6.0.1...v7.0.0) (2019-12-22)
 
 
