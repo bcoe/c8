@@ -4,6 +4,7 @@ const { spawnSync } = require('child_process')
 const { statSync } = require('fs')
 const c8Path = require.resolve('../bin/c8')
 const nodePath = process.execPath
+const tsNodePath = './node_modules/.bin/ts-node'
 const chaiJestSnapshot = require('chai-jest-snapshot')
 const rimraf = require('rimraf')
 
@@ -321,7 +322,7 @@ describe('c8', () => {
         '--exclude="test/*.js"',
         '--temp-directory=tmp/source-map',
         '--clean=true',
-        './node_modules/.bin/ts-node',
+        tsNodePath,
         require.resolve('./fixtures/ts-node-basic.ts')
       ])
       output.toString('utf8').should.matchSnapshot()
@@ -364,8 +365,53 @@ describe('c8', () => {
         '--all=true',
         '--include=test/fixtures/all/ts-only/**/*.ts',
         '--exclude="test/*.js"', // add an exclude to avoid default excludes of test/**
-        './node_modules/.bin/ts-node',
+        tsNodePath,
         require.resolve('./fixtures/all/ts-only/main.ts')
+      ])
+      output.toString('utf8').should.matchSnapshot()
+    })
+
+    it('should allow for --all to be used in conjunction with --check-coverage', () => {
+      const { output } = spawnSync(nodePath, [
+        c8Path,
+        '--temp-directory=tmp/all-check-coverage',
+        '--clean=false',
+        '--check-coverage',
+        '--lines=100',
+        '--all=true',
+        '--include=test/fixtures/all/vanilla/**/*.js',
+        '--exclude=**/*.ts', // add an exclude to avoid default excludes of test/**
+        nodePath,
+        require.resolve('./fixtures/all/vanilla/main')
+      ])
+      output.toString('utf8').should.matchSnapshot()
+    })
+
+    it('should allow for --all to be used with the check-coverage command (2 invocations)', () => {
+      // generate v8 output
+      spawnSync(nodePath, [
+        c8Path,
+        '--temp-directory=tmp/all-check-coverage-as-command',
+        '--clean=false',
+        '--check-coverage',
+        '--lines=90',
+        '--all=true',
+        '--include=test/fixtures/all/vanilla/**/*.js',
+        '--exclude=**/*.ts', // add an exclude to avoid default excludes of test/**
+        nodePath,
+        require.resolve('./fixtures/all/vanilla/main')
+      ])
+
+      // invoke check-coverage as a command with --all
+      const { output } = spawnSync(nodePath, [
+        c8Path,
+        'check-coverage',
+        '--lines=90',
+        '--temp-directory=tmp/all-check-coverage-as-command',
+        '--clean=false',
+        '--all=true',
+        '--include=test/fixtures/all/vanilla/**/*.js',
+        '--exclude=**/*.ts' // add an exclude to avoid default excludes of test/**
       ])
       output.toString('utf8').should.matchSnapshot()
     })
