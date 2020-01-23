@@ -1,7 +1,15 @@
 /* global describe, before, beforeEach, it */
 
 const { spawnSync } = require('child_process')
-const { statSync } = require('fs')
+
+const {
+  statSync,
+  readFileSync,
+  writeFileSync,
+  existsSync,
+  mkdirSync
+} = require('fs')
+
 const c8Path = require.resolve('../bin/c8')
 const nodePath = process.execPath
 const tsNodePath = './node_modules/.bin/ts-node'
@@ -415,5 +423,39 @@ describe('c8', () => {
       ])
       output.toString('utf8').should.matchSnapshot()
     })
+
+    if (process.platform === 'win32') {
+      // issue: https://github.com/bcoe/c8/issues/191
+      it('should, given path casing mismatches between path.resolve and v8 output, NOT contain duplicate report entries', async () => {
+        // make a fake v8 blob using a template from fixtures that
+        // purposely contains case mismatches with nodes path.resolve on windows
+        const cwd = process.cwd()
+        const mockOutput = readFileSync('./test/fixtures/all/mock-v8-output/bad-casing.json')
+          .toString('utf8')
+          .replace(/TEST_CWD/g, process.cwd().replace(/\\/g, '/'))
+        const tmpDir = `${cwd}/tmp/mockcwd/`
+        if (!existsSync(tmpDir)) {
+          mkdirSync(tmpDir, { recursive: true })
+        }
+        writeFileSync(`${tmpDir}/v8.json`, mockOutput, 'utf-8')
+
+        // run c8
+        const { output } = spawnSync(nodePath, [
+          c8Path,
+          'report',
+          `--temp-directory=${tmpDir}`,
+          '--clean=true',
+          '--all=true',
+          '--include=test/fixtures/all/vanilla/**/*.js',
+          '--exclude=**/*.ts', // add an exclude to avoid default excludes of test/**
+          nodePath,
+          require.resolve('./fixtures/all/vanilla/main')
+        ])
+
+        // prior to issue 191 all would provide an extra 0 coverage record
+        // for each mismatched file
+        output.toString('utf8').should.matchSnapshot()
+      })
+    }
   })
 })

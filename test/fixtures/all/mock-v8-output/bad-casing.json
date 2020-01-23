@@ -1,0 +1,74 @@
+{
+  "result": [
+    {
+      "scriptId": "51",
+      "url": "file:///TEST_CWD/test/fixtures/all/vanilla/MAIN.js",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 0,
+              "endOffset": 111,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "52",
+      "url": "file:///TEST_CWD/test/fixtures/all/vanilla/LOADED.js",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 0,
+              "endOffset": 309,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "getString",
+          "ranges": [
+            {
+              "startOffset": 17,
+              "endOffset": 309,
+              "count": 3
+            },
+            {
+              "startOffset": 89,
+              "endOffset": 117,
+              "count": 0
+            },
+            {
+              "startOffset": 140,
+              "endOffset": 169,
+              "count": 1
+            },
+            {
+              "startOffset": 169,
+              "endOffset": 267,
+              "count": 2
+            },
+            {
+              "startOffset": 190,
+              "endOffset": 267,
+              "count": 1
+            },
+            {
+              "startOffset": 272,
+              "endOffset": 306,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": true
+        }
+      ]
+    }
+    ]
+}

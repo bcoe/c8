@@ -88,6 +88,20 @@ exports[`c8 --all should allow for --all to be used with the check-coverage comm
 "
 `;
 
+exports[`c8 --all should, given path casing mismatches between path.resolve and v8 output, NOT contain duplicate report entries 1`] = `
+",--------------|---------|----------|---------|---------|-------------------
+File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------|---------|----------|---------|---------|-------------------
+All files     |   64.29 |    66.67 |      50 |   64.29 |                   
+ vanilla      |   78.26 |       75 |     100 |   78.26 |                   
+  LOADED.js   |   73.68 |    71.43 |     100 |   73.68 | 4,5,16-18         
+  MAIN.js     |     100 |      100 |     100 |     100 |                   
+ vanilla/dir  |       0 |        0 |       0 |       0 |                   
+  unloaded.js |       0 |        0 |       0 |       0 | 1-5               
+--------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
 exports[`c8 ESM Modules collects coverage for ESM modules 1`] = `
 ",bar foo
 ------------|---------|----------|---------|---------|-------------------
