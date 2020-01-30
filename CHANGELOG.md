@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.0.2](https://www.github.com/bcoe/c8/compare/v7.0.1...v7.0.2) (2020-01-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency furi to v2 ([#193](https://www.github.com/bcoe/c8/issues/193)) ([6b9af6e](https://www.github.com/bcoe/c8/commit/6b9af6ee8cbbacd85eea91dc49bb269fe3651c12))
+
 ### [7.0.1](https://www.github.com/bcoe/c8/compare/v7.0.0...v7.0.1) (2020-01-13)
 
 
