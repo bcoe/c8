@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.1.0](https://www.github.com/bcoe/c8/compare/v7.0.1...v7.1.0) (2020-02-09)
+
+
+### Features
+
+* adds TypeScript definitions ([d39801b](https://www.github.com/bcoe/c8/commit/d39801bc9b2713aa56592010e6394a295bd12b0b)), closes [#195](https://www.github.com/bcoe/c8/issues/195)
+
+
+### Bug Fixes
+
+* **deps:** update dependency furi to v2 ([#193](https://www.github.com/bcoe/c8/issues/193)) ([6b9af6e](https://www.github.com/bcoe/c8/commit/6b9af6ee8cbbacd85eea91dc49bb269fe3651c12))
+* **deps:** v8-to-istanbul with patch for crasher ([#200](https://www.github.com/bcoe/c8/issues/200)) ([d4b7d80](https://www.github.com/bcoe/c8/commit/d4b7d80d78f3d1cb2e9a2e9e106af0cef327b446))
+
 ### [7.0.1](https://www.github.com/bcoe/c8/compare/v7.0.0...v7.0.1) (2020-01-13)
 
 
