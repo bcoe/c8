@@ -2,7 +2,8 @@
   "name": "c8",
   "version": "7.0.1",
   "description": "output coverage reports using Node.js' built in coverage",
-  "main": "index.js",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "bin": "./bin/c8.js",
   "repository": {
     "type": "git",
@@ -58,6 +59,8 @@
     "node": ">=10.12.0"
   },
   "files": [
+    "index.js",
+    "index.d.ts",
     "lib",
     "bin",
     "LICENSE"
