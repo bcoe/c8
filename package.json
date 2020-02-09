@@ -42,7 +42,7 @@
     "istanbul-reports": "^3.0.0",
     "rimraf": "^3.0.0",
     "test-exclude": "^6.0.0",
-    "v8-to-istanbul": "^4.0.1",
+    "v8-to-istanbul": "^4.1.2",
     "yargs": "^15.0.0",
     "yargs-parser": "^16.0.0"
   },
