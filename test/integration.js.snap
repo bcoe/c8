@@ -134,6 +134,55 @@ exports[`c8 check-coverage exits with 1 if coverage is below threshold 1`] = `
 "
 `;
 
+exports[`c8 cobertura report escapes special characters 1`] = `
+"<?xml version=\\"1.0\\" ?>
+<!DOCTYPE coverage SYSTEM \\"http://cobertura.sourceforge.net/xml/coverage-04.dtd\\">
+<coverage lines-valid=\\"15\\" lines-covered=\\"15\\" line-rate=\\"1\\" branches-valid=\\"4\\" branches-covered=\\"4\\" branch-rate=\\"1\\" timestamp=\\"nnnn\\" complexity=\\"0\\" version=\\"0.1\\">
+  <sources>
+    <source>/Users/bencoe/oss/c8</source>
+  </sources>
+  <packages>
+    <class name=\\"computed-method.js\\" filename=\\"test/fixtures/computed-method.js\\" line-rate=\\"1\\" branch-rate=\\"1\\">
+      <methods>
+        <method name=\\"Test\\" hits=\\"1\\" signature=\\"()V\\">
+          <lines>
+            <line number=\\"2\\" hits=\\"1\\"/>
+          </lines>
+        </method>
+        <method name=\\"run\\" hits=\\"1\\" signature=\\"()V\\">
+          <lines>
+            <line number=\\"6\\" hits=\\"1\\"/>
+          </lines>
+        </method>
+        <method name=\\"map.&lt;computed&gt;.f\\" hits=\\"1\\" signature=\\"()V\\">
+          <lines>
+            <line number=\\"8\\" hits=\\"1\\"/>
+          </lines>
+        </method>
+      </methods>
+      <lines>
+        <line number=\\"1\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+        <line number=\\"2\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+        <line number=\\"3\\" hits=\\"1\\" branch=\\"false\\"/>
+        <line number=\\"4\\" hits=\\"1\\" branch=\\"false\\"/>
+        <line number=\\"5\\" hits=\\"1\\" branch=\\"false\\"/>
+        <line number=\\"6\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+        <line number=\\"7\\" hits=\\"1\\" branch=\\"false\\"/>
+        <line number=\\"8\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+        <line number=\\"9\\" hits=\\"1\\" branch=\\"false\\"/>
+        <line number=\\"10\\" hits=\\"1\\" branch=\\"false\\"/>
+        <line number=\\"11\\" hits=\\"1\\" branch=\\"false\\"/>
+        <line number=\\"12\\" hits=\\"1\\" branch=\\"false\\"/>
+        <line number=\\"13\\" hits=\\"1\\" branch=\\"false\\"/>
+        <line number=\\"14\\" hits=\\"1\\" branch=\\"false\\"/>
+        <line number=\\"15\\" hits=\\"1\\" branch=\\"false\\"/>
+      </lines>
+    </class>
+  </packages>
+</coverage>
+"
+`;
+
 exports[`c8 merges reports from subprocesses together 1`] = `
 ",first
 
