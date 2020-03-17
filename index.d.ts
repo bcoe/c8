@@ -17,7 +17,8 @@ export declare class Report {
         wrapperLength?: number,
         resolve?: string,
         all?: boolean,
+        src?: Array<string>,
+        allowExternal: boolean
     })
-
     run(): Promise<void>;
 }

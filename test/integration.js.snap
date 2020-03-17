@@ -230,6 +230,29 @@ ERROR: Coverage for statements (83.33%) does not meet global threshold (96%)
 "
 `;
 
+exports[`c8 report supports reporting on directories outside cwd 1`] = `
+",-----------|---------|----------|---------|---------|-------------------
+File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------|---------|----------|---------|---------|-------------------
+All files  |       0 |        0 |       0 |       0 |                   
+ multidir1 |       0 |        0 |       0 |       0 |                   
+  file1.js |       0 |        0 |       0 |       0 | 1                 
+ multidir2 |       0 |        0 |       0 |       0 |                   
+  file2.js |       0 |        0 |       0 |       0 | 1                 
+-----------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 report supports reporting on single directories outside cwd 1`] = `
+",----------|---------|----------|---------|---------|-------------------
+File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------|---------|----------|---------|---------|-------------------
+All files |       0 |        0 |       0 |       0 |                   
+ file1.js |       0 |        0 |       0 |       0 | 1                 
+----------|---------|----------|---------|---------|-------------------
+,"
+`;
+
 exports[`c8 reports coverage for script that exits normally 1`] = `
 ",hey
 i am a line of code
