@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.1.1](https://www.github.com/bcoe/c8/compare/v7.1.0...v7.1.1) (2020-04-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency yargs-parser to v17 ([#201](https://www.github.com/bcoe/c8/issues/201)) ([d730c63](https://www.github.com/bcoe/c8/commit/d730c63235c1292da65cdc19ba68ffcb9d316dc2))
+* escaping issue with cobertura reporter ([#203](https://www.github.com/bcoe/c8/issues/203)) ([e93747b](https://www.github.com/bcoe/c8/commit/e93747b9e9044fa14f5ceebda9d0d789aba1c655))
+
 ## [7.1.0](https://www.github.com/bcoe/c8/compare/v7.0.1...v7.1.0) (2020-02-09)
 
 
