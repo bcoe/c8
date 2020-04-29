@@ -1,5 +1,7 @@
 /* global describe, before, beforeEach, it */
 
+const { readFileSync } = require('fs')
+const { resolve } = require('path')
 const { spawnSync } = require('child_process')
 const { statSync } = require('fs')
 const c8Path = require.resolve('../bin/c8')
@@ -415,5 +417,21 @@ describe('c8', () => {
       ])
       output.toString('utf8').should.matchSnapshot()
     })
+  })
+
+  // see: https://github.com/bcoe/c8/issues/149
+  it('cobertura report escapes special characters', () => {
+    spawnSync(nodePath, [
+      c8Path,
+      '--exclude="test/*.js"',
+      '--temp-directory=tmp/cobertura',
+      '--clean=false',
+      '--reporter=cobertura',
+      nodePath,
+      require.resolve('./fixtures/computed-method')
+    ])
+    const cobertura = readFileSync(resolve(process.cwd(), './coverage/cobertura-coverage.xml'), 'utf8')
+      .replace(/[0-9]{13,}/, 'nnnn')
+    cobertura.toString('utf8').should.matchSnapshot()
   })
 })

@@ -12,6 +12,7 @@
   "scripts": {
     "test": "node ./bin/c8.js --reporter=html --reporter=text mocha --timeout=8000 ./test/*.js",
     "test:snap": "CHAI_JEST_SNAPSHOT_UPDATE_ALL=true npm test",
+    "fix": "standard --fix",
     "posttest": "standard",
     "coverage": "./bin/c8.js report --reporter=html --reporter=text-lcov | coveralls"
   },
@@ -39,7 +40,7 @@
     "furi": "^2.0.0",
     "istanbul-lib-coverage": "^3.0.0",
     "istanbul-lib-report": "^3.0.0",
-    "istanbul-reports": "^3.0.0",
+    "istanbul-reports": "^3.0.2",
     "rimraf": "^3.0.0",
     "test-exclude": "^6.0.0",
     "v8-to-istanbul": "^4.1.2",
