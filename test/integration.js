@@ -15,7 +15,17 @@ require('chai')
   .should()
 
 before(cb => rimraf('tmp', cb))
-beforeEach(function () { chaiJestSnapshot.configureUsingMochaContext(this) })
+
+const nodeMajorVersion = Number(process.version.slice(1).split('.')[0])
+beforeEach(function () {
+  // Node 10 is missing some of the patches to V8 that improve coverage in
+  // newer Node.js versions, for this reason it requires its own snapshot file.
+  if (nodeMajorVersion === 10) {
+    const file = this.currentTest.file
+    this.currentTest.file = `${file}_10`
+  }
+  chaiJestSnapshot.configureUsingMochaContext(this)
+})
 
 describe('c8', () => {
   it('reports coverage for script that exits normally', () => {
@@ -104,9 +114,9 @@ describe('c8', () => {
         'check-coverage',
         '--exclude="test/*.js"',
         '--temp-directory=tmp/check-coverage',
-        '--lines=80',
-        '--branches=80',
-        '--statements=80'
+        '--lines=70',
+        '--branches=60',
+        '--statements=70'
       ])
       status.should.equal(0)
       output.toString('utf8').should.matchSnapshot()
@@ -193,6 +203,7 @@ describe('c8', () => {
 
   describe('ESM Modules', () => {
     it('collects coverage for ESM modules', () => {
+      if (nodeMajorVersion === 10) return
       const { output } = spawnSync(nodePath, [
         c8Path,
         '--exclude="test/*.js"',
@@ -434,6 +445,8 @@ describe('c8', () => {
     ])
     const cobertura = readFileSync(resolve(process.cwd(), './coverage/cobertura-coverage.xml'), 'utf8')
       .replace(/[0-9]{13,}/, 'nnnn')
+      .replace(/<source>.*<\/source>/, '<source>/foo/file</source>')
+      .replace(/\\/g, '/')
     cobertura.toString('utf8').should.matchSnapshot()
   })
 })
