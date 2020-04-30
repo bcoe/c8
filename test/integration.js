@@ -104,7 +104,9 @@ describe('c8', () => {
         'check-coverage',
         '--exclude="test/*.js"',
         '--temp-directory=tmp/check-coverage',
-        '--lines=80'
+        '--lines=80',
+        '--branches=80',
+        '--statements=80'
       ])
       status.should.equal(0)
       output.toString('utf8').should.matchSnapshot()

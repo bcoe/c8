@@ -80,11 +80,15 @@ All files     |   64.29 |    66.67 |      50 |   64.29 |
   unloaded.js |       0 |        0 |       0 |       0 | 1-5               
 --------------|---------|----------|---------|---------|-------------------
 ,ERROR: Coverage for lines (64.29%) does not meet global threshold (100%)
+ERROR: Coverage for branches (66.67%) does not meet global threshold (82%)
+ERROR: Coverage for statements (64.29%) does not meet global threshold (96%)
 "
 `;
 
 exports[`c8 --all should allow for --all to be used with the check-coverage command (2 invocations) 1`] = `
 ",,ERROR: Coverage for lines (64.29%) does not meet global threshold (90%)
+ERROR: Coverage for branches (66.67%) does not meet global threshold (82%)
+ERROR: Coverage for statements (64.29%) does not meet global threshold (96%)
 "
 `;
 
@@ -118,12 +122,15 @@ All files  |   83.33 |    85.71 |      60 |   83.33 |
  normal.js |      75 |    66.67 |   33.33 |      75 | 14-16,18-20       
 -----------|---------|----------|---------|---------|-------------------
 ,ERROR: Coverage for lines (83.33%) does not meet global threshold (101%)
+ERROR: Coverage for statements (83.33%) does not meet global threshold (96%)
 "
 `;
 
 exports[`c8 check-coverage allows threshold to be applied on per-file basis 1`] = `
 ",,ERROR: Coverage for lines (100%) does not meet threshold (101%) for test/fixtures/async.js
 ERROR: Coverage for lines (75%) does not meet threshold (101%) for test/fixtures/normal.js
+ERROR: Coverage for branches (66.67%) does not meet threshold (82%) for test/fixtures/normal.js
+ERROR: Coverage for statements (75%) does not meet threshold (96%) for test/fixtures/normal.js
 "
 `;
 
@@ -131,6 +138,7 @@ exports[`c8 check-coverage exits with 0 if coverage within threshold 1`] = `",,"
 
 exports[`c8 check-coverage exits with 1 if coverage is below threshold 1`] = `
 ",,ERROR: Coverage for lines (83.33%) does not meet global threshold (101%)
+ERROR: Coverage for statements (83.33%) does not meet global threshold (96%)
 "
 `;
 
@@ -218,6 +226,7 @@ All files  |   83.33 |    85.71 |      60 |   83.33 |
  normal.js |      75 |    66.67 |   33.33 |      75 | 14-16,18-20       
 -----------|---------|----------|---------|---------|-------------------
 ,ERROR: Coverage for lines (83.33%) does not meet global threshold (101%)
+ERROR: Coverage for statements (83.33%) does not meet global threshold (96%)
 "
 `;
 
