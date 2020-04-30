@@ -1,6 +1,6 @@
 # c8 - native V8 code-coverage
 
-[![Build Status](https://travis-ci.org/bcoe/c8.svg?branch=master)](https://travis-ci.org/bcoe/c8)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/bcoe/c8/ci)
 [![Coverage Status](https://coveralls.io/repos/github/bcoe/c8/badge.svg?branch=master)](https://coveralls.io/github/bcoe/c8?branch=master)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
