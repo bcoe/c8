@@ -1,0 +1,9 @@
+  {
+    "reporter": [
+      "html",
+      "text"
+    ],
+    "lines": 96,
+    "branches": "82",
+    "statements": "96"
+  }
