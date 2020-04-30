@@ -1,7 +1,7 @@
 # c8 - native V8 code-coverage
 
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/bcoe/c8/ci)
-[![Coverage Status](https://coveralls.io/repos/github/bcoe/c8/badge.svg?branch=master)](https://coveralls.io/github/bcoe/c8?branch=master)
+![nycrc config on GitHub](https://img.shields.io/nycrc/bcoe/c8)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 Code-coverage using [Node.js' built in functionality](https://nodejs.org/dist/latest-v10.x/docs/api/cli.html#cli_node_v8_coverage_dir)

@@ -203,6 +203,7 @@ describe('c8', () => {
 
   describe('ESM Modules', () => {
     it('collects coverage for ESM modules', () => {
+      if (nodeMajorVersion === 10) return
       const { output } = spawnSync(nodePath, [
         c8Path,
         '--exclude="test/*.js"',
@@ -445,6 +446,7 @@ describe('c8', () => {
     const cobertura = readFileSync(resolve(process.cwd(), './coverage/cobertura-coverage.xml'), 'utf8')
       .replace(/[0-9]{13,}/, 'nnnn')
       .replace(/<source>.*<\/source>/, '<source>/foo/file</source>')
+      .replace(/\\/g, '/')
     cobertura.toString('utf8').should.matchSnapshot()
   })
 })
