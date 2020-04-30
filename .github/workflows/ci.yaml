@@ -35,4 +35,4 @@ jobs:
         with:
           node-version: 14
       - run: npm install
-      - run: node ./bin/c8.js --check-coverage mocha --timeout=8000 ./test/*.js
+      - run: npm run coverage
