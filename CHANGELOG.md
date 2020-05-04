@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.1.2](https://www.github.com/bcoe/c8/compare/v7.1.1...v7.1.2) (2020-05-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency yargs-parser to v18 ([#202](https://www.github.com/bcoe/c8/issues/202)) ([983de44](https://www.github.com/bcoe/c8/commit/983de440cf8876eb223975f06ddb658a7b8f4220))
+
 ### [7.1.1](https://www.github.com/bcoe/c8/compare/v7.1.0...v7.1.1) (2020-04-29)
 
 
