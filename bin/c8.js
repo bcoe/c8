@@ -24,7 +24,6 @@ async function run () {
     // fs.promises was not added until Node.js v10.0.0, if it doesn't
     // exist, assume we're Node.js v8.x and skip coverage.
     if (!promises) {
-      //added a comment
       foreground(hideInstrumenterArgs(argv))
       return
     }
