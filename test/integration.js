@@ -97,6 +97,53 @@ describe('c8', () => {
     stderr.toString().should.match(/Cannot find module 'unknown'/u)
   })
 
+  it('should allow for files outside of cwd', () => {
+    // Here we nest this test into the report directory making the multidir
+    // directories outside of cwd. If the `--allowExternal` flag is not provided
+    // the multidir files will now show up in the file report, even though they were
+    // required in
+    const { output, status } = spawnSync(nodePath, [
+      c8Path,
+      '--exclude="test/*.js"',
+      '--temp-directory=tmp/allowExternal',
+      '--clean=true',
+      '--allowExternal',
+      '--reporter=text',
+      nodePath,
+      require.resolve('./fixtures/report/allowExternal.js')
+    ], {
+      cwd: dirname(require.resolve('./fixtures/report/allowExternal.js'))
+    })
+    status.should.equal(0)
+    output.toString('utf8').should.matchSnapshot()
+  })
+
+  it('should allow for multiple overrides of src location for --all', () => {
+    // Here we nest this test into the report directory making the multidir
+    // directories outside of cwd. Note, that the target srcOverride does not
+    // require fiels from these directories but we want them initialized to 0
+    // via --all. As such we --allowExternal and provide multiple --src patterns
+    // to override cwd.
+    const { output, status } = spawnSync(nodePath, [
+      c8Path,
+      '--exclude="test/*.js"',
+      '--temp-directory=../tmp/src',
+      '--clean=true',
+      '--allowExternal',
+      '--reporter=text',
+      '--all',
+      `--src=${dirname(require.resolve('./fixtures/multidir1/file1.js'))}`,
+      `--src=${dirname(require.resolve('./fixtures/multidir2/file2.js'))}`,
+      `--src=${dirname(require.resolve('./fixtures/report/srcOverride.js'))}`,
+      nodePath,
+      require.resolve('./fixtures/report/srcOverride.js')
+    ], {
+      cwd: dirname(require.resolve('./fixtures/report/srcOverride.js'))
+    })
+    status.should.equal(0)
+    output.toString('utf8').should.matchSnapshot()
+  })
+
   describe('check-coverage', () => {
     before(() => {
       spawnSync(nodePath, [
@@ -169,7 +216,7 @@ describe('c8', () => {
       spawnSync(nodePath, [
         c8Path,
         '--exclude="test/*.js"',
-        '--temp-directory=tmp/report',
+        '--temp-directory=./tmp/report',
         '--clean=false',
         nodePath,
         require.resolve('./fixtures/normal')
@@ -181,7 +228,7 @@ describe('c8', () => {
         c8Path,
         'report',
         '--exclude="test/*.js"',
-        '--temp-directory=tmp/report',
+        '--temp-directory=./tmp/report',
         '--clean=false'
       ])
       output.toString('utf8').should.matchSnapshot()
