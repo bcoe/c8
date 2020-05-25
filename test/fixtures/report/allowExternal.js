@@ -1,0 +1,1 @@
+require("../multidir1/file1")

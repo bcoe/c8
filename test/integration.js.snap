@@ -105,6 +105,20 @@ All files   |   83.33 |      100 |   66.67 |   83.33 |
 ,"
 `;
 
+exports[`c8 can allow for files outside of cwd 1`] = `
+",hi
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |     100 |      100 |     100 |     100 |                   
+ multidir1         |     100 |      100 |     100 |     100 |                   
+  file1.js         |     100 |      100 |     100 |     100 |                   
+ report            |     100 |      100 |     100 |     100 |                   
+  allowExternal.js |     100 |      100 |     100 |     100 |                   
+-------------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
 exports[`c8 check-coverage allows --check-coverage when executing script 1`] = `
 ",hey
 i am a line of code
@@ -230,6 +244,29 @@ ERROR: Coverage for statements (83.33%) does not meet global threshold (96%)
 "
 `;
 
+exports[`c8 report supports reporting on directories outside cwd 1`] = `
+",-----------|---------|----------|---------|---------|-------------------
+File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------|---------|----------|---------|---------|-------------------
+All files  |       0 |        0 |       0 |       0 |                   
+ multidir1 |       0 |        0 |       0 |       0 |                   
+  file1.js |       0 |        0 |       0 |       0 | 1                 
+ multidir2 |       0 |        0 |       0 |       0 |                   
+  file2.js |       0 |        0 |       0 |       0 | 1                 
+-----------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 report supports reporting on single directories outside cwd 1`] = `
+",----------|---------|----------|---------|---------|-------------------
+File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------|---------|----------|---------|---------|-------------------
+All files |       0 |        0 |       0 |       0 |                   
+ file1.js |       0 |        0 |       0 |       0 | 1                 
+----------|---------|----------|---------|---------|-------------------
+,"
+`;
+
 exports[`c8 reports coverage for script that exits normally 1`] = `
 ",hey
 i am a line of code
@@ -246,6 +283,39 @@ All files  |   83.33 |    85.71 |      60 |   83.33 |
  async.js  |     100 |      100 |     100 |     100 |                   
  normal.js |      75 |    66.67 |   33.33 |      75 | 14-16,18-20       
 -----------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 should allow for files outside of cwd 1`] = `
+",hi
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |     100 |      100 |     100 |     100 |                   
+ multidir1         |     100 |      100 |     100 |     100 |                   
+  file1.js         |     100 |      100 |     100 |     100 |                   
+ report            |     100 |      100 |     100 |     100 |                   
+  allowExternal.js |     100 |      100 |     100 |     100 |                   
+-------------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 should allow for multiple overrides of src location for --all 1`] = `
+",hihi
+--------------------------------|---------|----------|---------|---------|-------------------
+File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------------------------|---------|----------|---------|---------|-------------------
+All files                       |    3.57 |    16.67 |       0 |    3.57 |                   
+ multidir1                      |       0 |        0 |       0 |       0 |                   
+  file1.js                      |       0 |        0 |       0 |       0 | 1                 
+ multidir2                      |       0 |        0 |       0 |       0 |                   
+  file2.js                      |       0 |        0 |       0 |       0 | 1                 
+ report                         |    3.85 |       25 |       0 |    3.85 |                   
+  allowExternal.js              |       0 |        0 |       0 |       0 | 1                 
+  report-multi-dir-external.js  |       0 |        0 |       0 |       0 | 1-12              
+  report-single-dir-external.js |       0 |        0 |       0 |       0 | 1-12              
+  srcOverride.js                |     100 |      100 |     100 |     100 |                   
+--------------------------------|---------|----------|---------|---------|-------------------
 ,"
 `;
 
