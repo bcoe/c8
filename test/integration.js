@@ -4,6 +4,7 @@ const { readFileSync } = require('fs')
 const { resolve } = require('path')
 const { spawnSync } = require('child_process')
 const { statSync } = require('fs')
+const { dirname } = require('path')
 const c8Path = require.resolve('../bin/c8')
 const nodePath = process.execPath
 const tsNodePath = './node_modules/.bin/ts-node'
@@ -96,6 +97,53 @@ describe('c8', () => {
     stderr.toString().should.match(/Cannot find module 'unknown'/u)
   })
 
+  it('should allow for files outside of cwd', () => {
+    // Here we nest this test into the report directory making the multidir
+    // directories outside of cwd. If the `--allowExternal` flag is not provided
+    // the multidir files will now show up in the file report, even though they were
+    // required in
+    const { output, status } = spawnSync(nodePath, [
+      c8Path,
+      '--exclude="test/*.js"',
+      '--temp-directory=tmp/allowExternal',
+      '--clean=true',
+      '--allowExternal',
+      '--reporter=text',
+      nodePath,
+      require.resolve('./fixtures/report/allowExternal.js')
+    ], {
+      cwd: dirname(require.resolve('./fixtures/report/allowExternal.js'))
+    })
+    status.should.equal(0)
+    output.toString('utf8').should.matchSnapshot()
+  })
+
+  it('should allow for multiple overrides of src location for --all', () => {
+    // Here we nest this test into the report directory making the multidir
+    // directories outside of cwd. Note, that the target srcOverride does not
+    // require fiels from these directories but we want them initialized to 0
+    // via --all. As such we --allowExternal and provide multiple --src patterns
+    // to override cwd.
+    const { output, status } = spawnSync(nodePath, [
+      c8Path,
+      '--exclude="test/*.js"',
+      '--temp-directory=../tmp/src',
+      '--clean=true',
+      '--allowExternal',
+      '--reporter=text',
+      '--all',
+      `--src=${dirname(require.resolve('./fixtures/multidir1/file1.js'))}`,
+      `--src=${dirname(require.resolve('./fixtures/multidir2/file2.js'))}`,
+      `--src=${dirname(require.resolve('./fixtures/report/srcOverride.js'))}`,
+      nodePath,
+      require.resolve('./fixtures/report/srcOverride.js')
+    ], {
+      cwd: dirname(require.resolve('./fixtures/report/srcOverride.js'))
+    })
+    status.should.equal(0)
+    output.toString('utf8').should.matchSnapshot()
+  })
+
   describe('check-coverage', () => {
     before(() => {
       spawnSync(nodePath, [
@@ -112,10 +160,10 @@ describe('c8', () => {
       const { output, status } = spawnSync(nodePath, [
         c8Path,
         'check-coverage',
-        '--exclude="test/*.js"',
+        '--exclude="test/fixtures/*.js"',
         '--temp-directory=tmp/check-coverage',
         '--lines=70',
-        '--branches=60',
+        '--branches=56',
         '--statements=70'
       ])
       status.should.equal(0)
@@ -168,7 +216,7 @@ describe('c8', () => {
       spawnSync(nodePath, [
         c8Path,
         '--exclude="test/*.js"',
-        '--temp-directory=tmp/report',
+        '--temp-directory=./tmp/report',
         '--clean=false',
         nodePath,
         require.resolve('./fixtures/normal')
@@ -180,7 +228,7 @@ describe('c8', () => {
         c8Path,
         'report',
         '--exclude="test/*.js"',
-        '--temp-directory=tmp/report',
+        '--temp-directory=./tmp/report',
         '--clean=false'
       ])
       output.toString('utf8').should.matchSnapshot()
@@ -431,7 +479,6 @@ describe('c8', () => {
       output.toString('utf8').should.matchSnapshot()
     })
   })
-
   // see: https://github.com/bcoe/c8/issues/149
   it('cobertura report escapes special characters', () => {
     spawnSync(nodePath, [
@@ -448,5 +495,28 @@ describe('c8', () => {
       .replace(/<source>.*<\/source>/, '<source>/foo/file</source>')
       .replace(/\\/g, '/')
     cobertura.toString('utf8').should.matchSnapshot()
+  })
+  describe('report', () => {
+    it('supports reporting on directories outside cwd', () => {
+      // invoke a script that uses report as an api and supplies src dirs out
+      // of cwd
+      const { output } = spawnSync(nodePath, [
+        require.resolve('./fixtures/report/report-multi-dir-external.js')
+      ], {
+        cwd: dirname(require.resolve('./fixtures/report/report-multi-dir-external.js'))
+      })
+      output.toString('utf8').should.matchSnapshot()
+    })
+
+    it('supports reporting on single directories outside cwd', () => {
+      // invoke a script that uses report as an api and supplies src dirs out
+      // of cwd.
+      const { output } = spawnSync(nodePath, [
+        require.resolve('./fixtures/report/report-single-dir-external.js')
+      ], {
+        cwd: dirname(require.resolve('./fixtures/report/report-single-dir-external.js'))
+      })
+      output.toString('utf8').should.matchSnapshot()
+    })
   })
 })
