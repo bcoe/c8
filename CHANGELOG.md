@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.2.0](https://www.github.com/bcoe/c8/compare/v7.1.2...v7.2.0) (2020-05-25)
+
+
+### Features
+
+* support for instrumenting files outside of current working directory ([7e53a0e](https://www.github.com/bcoe/c8/commit/7e53a0ecf93eda5467e2a8ac7d33cf8d6af84cf1))
+
 ### [7.1.2](https://www.github.com/bcoe/c8/compare/v7.1.1...v7.1.2) (2020-05-04)
 
 
