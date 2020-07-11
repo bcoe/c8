@@ -374,19 +374,28 @@ describe('c8', () => {
         output.toString('utf8').should.matchSnapshot()
       })
     })
-  })
-
-  describe('ts-node', () => {
-    beforeEach(cb => rimraf('tmp/source-map', cb))
-
-    it('reads source-map from cache, and applies to coverage', () => {
+    describe('ts-node', () => {
+      it('reads source-map from cache, and applies to coverage', () => {
+        const { output } = spawnSync(nodePath, [
+          c8Path,
+          '--exclude="test/*.js"',
+          '--temp-directory=tmp/source-map',
+          '--clean=true',
+          tsNodePath,
+          require.resolve('./fixtures/ts-node-basic.ts')
+        ])
+        output.toString('utf8').should.matchSnapshot()
+      })
+    })
+    // See: https://github.com/bcoe/c8/issues/232
+    it("does not attempt to load source map URLs that aren't", () => {
       const { output } = spawnSync(nodePath, [
         c8Path,
         '--exclude="test/*.js"',
         '--temp-directory=tmp/source-map',
         '--clean=true',
-        tsNodePath,
-        require.resolve('./fixtures/ts-node-basic.ts')
+        nodePath,
+        require.resolve('./fixtures/source-maps/fake-source-map.js')
       ])
       output.toString('utf8').should.matchSnapshot()
     })
