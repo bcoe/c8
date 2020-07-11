@@ -375,6 +375,16 @@ All files   |   85.19 |    83.33 |      60 |   85.19 |
 ,"
 `;
 
+exports[`c8 source-maps does not attempt to load source map URLs that aren't 1`] = `
+",--------------------|---------|----------|---------|---------|-------------------
+File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------------|---------|----------|---------|---------|-------------------
+All files           |   71.43 |       50 |     100 |   71.43 |                   
+ fake-source-map.js |   71.43 |       50 |     100 |   71.43 | 5-6               
+--------------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
 exports[`c8 source-maps nyc remaps branches 1`] = `
 ",reachable
 a = true
@@ -400,6 +410,21 @@ File        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
 All files   |   70.37 |    66.67 |      60 |   70.37 |                   
  classes.js |   70.37 |    66.67 |      60 |   70.37 | 5-8,15-16,21-22   
 ------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 source-maps ts-node reads source-map from cache, and applies to coverage 1`] = `
+",covered
+covered
+covered
+covered
+covered
+------------------|---------|----------|---------|---------|-------------------
+File              | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------------|---------|----------|---------|---------|-------------------
+All files         |   88.24 |     87.5 |      80 |   88.24 |                   
+ ts-node-basic.ts |   88.24 |     87.5 |      80 |   88.24 | 12-13,28-29       
+------------------|---------|----------|---------|---------|-------------------
 ,"
 `;
 
