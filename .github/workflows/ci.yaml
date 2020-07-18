@@ -18,6 +18,14 @@ jobs:
       - run: node --version
       - run: npm install
       - run: npm test
+      - name: track flaky tests
+        uses: GoogleCloudPlatform/flaky-service/packages/action
+        with:
+          github: ${{toJson(github)}}
+          matrix: ${{toJson(matrix)}}
+          os: ${{toJson(runner)}}
+          logtype: TAP
+          filepath: ${{github.workspace}}/test.tap
   windows:
     runs-on: windows-latest
     steps:
@@ -27,6 +35,14 @@ jobs:
           node-version: 14
       - run: npm install
       - run: npm test
+      - name: track flaky tests
+        uses: GoogleCloudPlatform/flaky-service/packages/action
+        with:
+          github: ${{toJson(github)}}
+          matrix: ${{toJson(matrix)}}
+          os: ${{toJson(runner)}}
+          logtype: TAP
+          filepath: ${{github.workspace}}/test.tap
   coverage:
     runs-on: ubuntu-latest
     steps:
