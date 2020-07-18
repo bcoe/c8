@@ -19,7 +19,7 @@ jobs:
       - run: npm install
       - run: npm test
       - name: track flaky tests
-        uses: GoogleCloudPlatform/flaky-service/packages/action
+        uses: GoogleCloudPlatform/flaky-service/packages/action@master
         with:
           github: ${{toJson(github)}}
           matrix: ${{toJson(matrix)}}
@@ -36,7 +36,7 @@ jobs:
       - run: npm install
       - run: npm test
       - name: track flaky tests
-        uses: GoogleCloudPlatform/flaky-service/packages/action
+        uses: GoogleCloudPlatform/flaky-service/packages/action@master
         with:
           github: ${{toJson(github)}}
           matrix: ${{toJson(matrix)}}
