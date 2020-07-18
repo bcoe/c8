@@ -10,7 +10,7 @@
     "url": "git@github.com:bcoe/c8.git"
   },
   "scripts": {
-    "test": "node ./bin/c8.js mocha --reporter=tap --timeout=8000 ./test/*.js | tee test.tap | tap-spec",
+    "test": "node ./bin/c8.js mocha --reporter=tap --timeout=8000 ./test/*.js | tee flaky-tap-log.tap | tap-spec",
     "coverage": "node ./bin/c8.js --check-coverage mocha --timeout=8000 ./test/*.js",
     "test:snap": "CHAI_JEST_SNAPSHOT_UPDATE_ALL=true npm test",
     "fix": "standard --fix",
