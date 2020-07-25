@@ -19,6 +19,7 @@ jobs:
       - run: npm install
       - run: npm test
       - name: track flaky tests
+        if: ${{ always() }}
         uses: GoogleCloudPlatform/flaky-service/packages/action@ee9cc51f3b42fc8e9e43bee8a2cf86d8bc82c03e
         with:
           github: ${{toJson(github)}}
