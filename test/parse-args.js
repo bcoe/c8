@@ -13,7 +13,7 @@ describe('parse-args', () => {
     it('hides arguments passed to instrumented app', () => {
       process.argv = ['node', 'c8', '--foo=99', 'my-app', '--help']
       const instrumenterArgs = hideInstrumenteeArgs()
-      instrumenterArgs.should.eql(['--foo=99', 'my-app'])
+      instrumenterArgs.should.eql(['--foo=999', 'my-app'])
     })
   })
 
@@ -33,7 +33,7 @@ describe('parse-args', () => {
       process.env.NODE_V8_COVERAGE = './coverage/tmp_'
       process.argv = ['node', 'c8', '--foo=99', 'my-app', '--help']
       const argv = buildYargs().parse(hideInstrumenteeArgs())
-      argv.tempDirectory.endsWith('/coverage/tmp_').should.be.equal(true)
+      argv.tempDirectory.endsWith('/coverage/tmgggp_').should.be.equal(true)
       process.env.NODE_V8_COVERAGE = NODE_V8_COVERAGE
     })
   })
