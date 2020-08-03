@@ -413,6 +413,36 @@ All files   |   70.37 |    66.67 |      60 |   70.37 |
 ,"
 `;
 
+exports[`c8 source-maps rollup remaps branches 1`] = `
+",reachable
+a = true
+a = false
+-------------|---------|----------|---------|---------|-------------------
+File         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------|---------|----------|---------|---------|-------------------
+All files    |     100 |      100 |     100 |     100 |                   
+ branch-1.js |     100 |      100 |     100 |     100 |                   
+ branch-2.js |     100 |      100 |     100 |     100 |                   
+-------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 source-maps rollup remaps classes 1`] = `
+",covered
+covered
+covered
+covered
+covered
+------------|---------|----------|---------|---------|-------------------
+File        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------|---------|----------|---------|---------|-------------------
+All files   |   78.57 |    85.71 |      60 |   78.57 |                   
+ class-1.js |     100 |      100 |     100 |     100 |                   
+ class-2.js |   73.91 |    85.71 |      60 |   73.91 | 7-8,15-16,21-22   
+------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
 exports[`c8 source-maps ts-node reads source-map from cache, and applies to coverage 1`] = `
 ",covered
 covered

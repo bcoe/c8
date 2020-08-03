@@ -374,6 +374,31 @@ describe('c8', () => {
         output.toString('utf8').should.matchSnapshot()
       })
     })
+    describe('rollup', () => {
+      it('remaps branches', () => {
+        const { output } = spawnSync(nodePath, [
+          c8Path,
+          '--exclude="test/*.js"',
+          '--temp-directory=tmp/source-map',
+          '--clean=true',
+          nodePath,
+          require.resolve('./fixtures/source-maps/branches/branches.rollup.js')
+        ])
+        output.toString('utf8').should.matchSnapshot()
+      })
+
+      it('remaps classes', () => {
+        const { output } = spawnSync(nodePath, [
+          c8Path,
+          '--exclude="test/*.js"',
+          '--temp-directory=tmp/source-map',
+          '--clean=true',
+          nodePath,
+          require.resolve('./fixtures/source-maps/classes/classes.rollup.js')
+        ])
+        output.toString('utf8').should.matchSnapshot()
+      })
+    })
     describe('ts-node', () => {
       it('reads source-map from cache, and applies to coverage', () => {
         const { output } = spawnSync(nodePath, [
