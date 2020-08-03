@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.3.0](https://www.github.com/bcoe/c8/compare/v7.2.1...v7.3.0) (2020-08-03)
+
+
+### Features
+
+* adds support for 1:many source maps ([#238](https://www.github.com/bcoe/c8/issues/238)) ([dbf94a0](https://www.github.com/bcoe/c8/commit/dbf94a0dcf8104ef8d5ec1ccd6198594bc6c2bd3))
+
 ### [7.2.1](https://www.github.com/bcoe/c8/compare/v7.2.0...v7.2.1) (2020-07-11)
 
 
