@@ -45,7 +45,7 @@
     "test-exclude": "^6.0.0",
     "v8-to-istanbul": "^5.0.0",
     "yargs": "^15.0.0",
-    "yargs-parser": "^19.0.0"
+    "yargs-parser": "^20.0.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
