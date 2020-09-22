@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.3.1](https://www.github.com/bcoe/c8/compare/v7.3.0...v7.3.1) (2020-09-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency yargs to v16 ([#251](https://www.github.com/bcoe/c8/issues/251)) ([0436816](https://www.github.com/bcoe/c8/commit/0436816ef0ceb4cff25f65dfff1843a2bad80ca1))
+* **deps:** update dependency yargs-parser to v20 ([#252](https://www.github.com/bcoe/c8/issues/252)) ([ae845f0](https://www.github.com/bcoe/c8/commit/ae845f0bf52c5b1547263079f210ad99c6bd4d7b))
+* add missing space in text ([#245](https://www.github.com/bcoe/c8/issues/245)) ([efe6d04](https://www.github.com/bcoe/c8/commit/efe6d041aa0a1620f9b2e4717ba5d2a96da7a5a3))
+* **deps:** update dependency find-up to v5 ([#242](https://www.github.com/bcoe/c8/issues/242)) ([8a0cfd7](https://www.github.com/bcoe/c8/commit/8a0cfd702e35fa9d7e87ef99f0fd08dd92cd9614))
+* **deps:** update dependency yargs-parser to v19 ([#241](https://www.github.com/bcoe/c8/issues/241)) ([baa01df](https://www.github.com/bcoe/c8/commit/baa01df3dede86373773acfae086647da2b43549))
+
 ## [7.3.0](https://www.github.com/bcoe/c8/compare/v7.2.1...v7.3.0) (2020-08-03)
 
 
