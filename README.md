@@ -18,13 +18,13 @@ The above example will output coverage metrics for `foo.js`.
 
 ## Checking for "full" source coverage using `--all`
 
-By default v8 will only give us coverage for files that were loaded by the engine. If there are source files in your 
+By default v8 will only give us coverage for files that were loaded by the engine. If there are source files in your
 project that are flexed in production but not in your tests, your coverage numbers will not reflect this. For example,
-if your project's `main.js` loads `a.js` and `b.js` but your unit tests only load `a.js` your total coverage 
-could show as `100%` for `a.js` when in fact both `main.js` and `b.js` are uncovered.  
+if your project's `main.js` loads `a.js` and `b.js` but your unit tests only load `a.js` your total coverage
+could show as `100%` for `a.js` when in fact both `main.js` and `b.js` are uncovered.
 
 By supplying `--all` to c8, all files in `cwd` that pass the `--include` and `--exclude` flag checks, will be loaded into the
-report. If any of those files remain uncovered they will be factored into the report with a default of 0% coverage. 
+report. If any of those files remain uncovered they will be factored into the report with a default of 0% coverage.
 
 ## c8 report
 
@@ -86,13 +86,13 @@ if (process.platform === 'win32') {
 
 ```js
 const myVariable = 99
-const os = process.platform === 'darwin' ? 'OSXy' /* c8 ignore next */ : 'Windowsy' 
+const os = process.platform === 'darwin' ? 'OSXy' /* c8 ignore next */ : 'Windowsy'
 ```
 
 ## Supported Node.js Versions
 
 c8 uses
-[bleeding edge Node.js features](https://github.com/nodejs/node/pull/22527),
+[native V8 coverage](https://github.com/nodejs/node/pull/22527),
 make sure you're running Node.js `>= 10.12.0`.
 
 ## Contributing to `c8`
