@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.3.2](https://www.github.com/bcoe/c8/compare/v7.3.1...v7.3.2) (2020-10-08)
+
+
+### Bug Fixes
+
+* **v8-to-istanbul:** pull in fix for missing branches ([#258](https://www.github.com/bcoe/c8/issues/258)) ([eaffa78](https://www.github.com/bcoe/c8/commit/eaffa7836155d051a0d13899f70a728819860bdb))
+
 ### [7.3.1](https://www.github.com/bcoe/c8/compare/v7.3.0...v7.3.1) (2020-09-10)
 
 
