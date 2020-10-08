@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.0](https://www.github.com/bcoe/c8/compare/v7.3.2...v8.0.0) (2020-10-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* switches to using NODE_V8_COVERAGE rather than inspector directly
+* dropped subprocess support for the time being, while we march towards an initial implementation.
+
+### Features
+
+* allow relative paths to be optionally included ([3806c79](https://www.github.com/bcoe/c8/commit/3806c79dd189bfa4c66f5a1e4f5305f3c9eac263))
+* first pass at functional prototype without subprocess support ([#5](https://www.github.com/bcoe/c8/issues/5)) ([9534f56](https://www.github.com/bcoe/c8/commit/9534f56592ebbc7adeef3e15c715c9f29256b962))
+* implement Istanbul reporting ([#8](https://www.github.com/bcoe/c8/issues/8)) ([8e430bf](https://www.github.com/bcoe/c8/commit/8e430bf5e051395406562cb62222c13a39781ee4))
+* improve test assertions ([#28](https://www.github.com/bcoe/c8/issues/28)) ([522720e](https://www.github.com/bcoe/c8/commit/522720e23fc2d735fc073cabdb5ffc94cb911880))
+* playing around with initial implementation ([18f5471](https://www.github.com/bcoe/c8/commit/18f5471aa32154f97b97652b2f932f114c129f17))
+* switch to stderr and default port ([#7](https://www.github.com/bcoe/c8/issues/7)) ([bb117b7](https://www.github.com/bcoe/c8/commit/bb117b7c5ed53cb3e768c8bf26f164d4ff217c3d))
+* switch to using Node's built in coverage ([#22](https://www.github.com/bcoe/c8/issues/22)) ([3c1b92b](https://www.github.com/bcoe/c8/commit/3c1b92b621b7f18f9927395a7e95dc8ac73f0bc7))
+* warn instead of throw on exception ([#29](https://www.github.com/bcoe/c8/issues/29)) ([a8620d4](https://www.github.com/bcoe/c8/commit/a8620d49fffdcd0b04c85eef2473958b642f6f0b))
+
+
+### Bug Fixes
+
+* make tests run on Windows ([#25](https://www.github.com/bcoe/c8/issues/25)) ([08e44d0](https://www.github.com/bcoe/c8/commit/08e44d004e01f0f5ba44063f0aa283f4e2e4242a))
+* pin to functional version of spawn-wrap ([d1ced8c](https://www.github.com/bcoe/c8/commit/d1ced8cd8b2355b7388046936be03a6726c5e672))
+* tweak inspector event timing ([#6](https://www.github.com/bcoe/c8/issues/6)) ([01f654e](https://www.github.com/bcoe/c8/commit/01f654e1ba49a1c3b94ef40b929241558a4beb43))
+
 ### [7.3.2](https://www.github.com/bcoe/c8/compare/v7.3.1...v7.3.2) (2020-10-08)
 
 
