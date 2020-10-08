@@ -278,6 +278,20 @@ describe('c8', () => {
       ])
       output.toString('utf8').should.matchSnapshot()
     })
+
+    // see: https://github.com/bcoe/c8/issues/254
+    it('does not incorrectly mark previous branch as uncovered (see #254)', () => {
+      const { output } = spawnSync(nodePath, [
+        c8Path,
+        '--exclude="test/*.js"',
+        '--temp-directory=tmp/issue-254',
+        '--clean=true',
+        '--reporter=text',
+        nodePath,
+        require.resolve('./fixtures/issue-254')
+      ])
+      output.toString('utf8').should.matchSnapshot()
+    })
   })
 
   describe('source-maps', () => {
@@ -344,9 +358,6 @@ describe('c8', () => {
     })
 
     describe('nyc', () => {
-      // Bugs:
-      //  first 'if' statement indicates two odd missing branches.
-      //  line 4 should be covered.
       it('remaps branches', () => {
         const { output } = spawnSync(nodePath, [
           c8Path,
@@ -359,9 +370,6 @@ describe('c8', () => {
         output.toString('utf8').should.matchSnapshot()
       })
 
-      // Bugs:
-      //  the portion `class F` of `class Foo` indicates missing branch.
-      //  line 6 should be covered.
       it('remaps classes', () => {
         const { output } = spawnSync(nodePath, [
           c8Path,
