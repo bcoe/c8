@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.3.3](https://www.github.com/bcoe/c8/compare/v7.3.2...v7.3.3) (2020-10-09)
+
+
+### Bug Fixes
+
+* **v8-to-istanbul:** revert off by one that broke TypeScript ([#262](https://www.github.com/bcoe/c8/issues/262)) ([81ab5b7](https://www.github.com/bcoe/c8/commit/81ab5b7bf0ceccef3e5c936eb6b77f06a727a109))
+
 ### [7.3.2](https://www.github.com/bcoe/c8/compare/v7.3.1...v7.3.2) (2020-10-08)
 
 
