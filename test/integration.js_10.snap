@@ -102,14 +102,14 @@ All files     |   64.29 |    66.67 |      50 |   64.29 |
 --------------|---------|----------|---------|---------|-------------------
 ,ERROR: Coverage for lines (64.29%) does not meet global threshold (100%)
 ERROR: Coverage for branches (66.67%) does not meet global threshold (82%)
-ERROR: Coverage for statements (64.29%) does not meet global threshold (96%)
+ERROR: Coverage for statements (64.29%) does not meet global threshold (95%)
 "
 `;
 
 exports[`c8 --all should allow for --all to be used with the check-coverage command (2 invocations) 1`] = `
 ",,ERROR: Coverage for lines (64.29%) does not meet global threshold (90%)
 ERROR: Coverage for branches (66.67%) does not meet global threshold (82%)
-ERROR: Coverage for statements (64.29%) does not meet global threshold (96%)
+ERROR: Coverage for statements (64.29%) does not meet global threshold (95%)
 "
 `;
 
@@ -157,33 +157,33 @@ All files                 |   75.69 |    58.75 |   67.65 |   75.69 |
 --------------------------|---------|----------|---------|---------|--------------------------------
 ,ERROR: Coverage for lines (75.69%) does not meet global threshold (101%)
 ERROR: Coverage for branches (58.75%) does not meet global threshold (82%)
-ERROR: Coverage for statements (75.69%) does not meet global threshold (96%)
+ERROR: Coverage for statements (75.69%) does not meet global threshold (95%)
 "
 `;
 
 exports[`c8 check-coverage allows threshold to be applied on per-file basis 1`] = `
 ",,ERROR: Coverage for lines (78.85%) does not meet threshold (101%) for bin/c8.js
 ERROR: Coverage for branches (60%) does not meet threshold (82%) for bin/c8.js
-ERROR: Coverage for statements (78.85%) does not meet threshold (96%) for bin/c8.js
+ERROR: Coverage for statements (78.85%) does not meet threshold (95%) for bin/c8.js
 ERROR: Coverage for lines (21.31%) does not meet threshold (101%) for lib/commands/check-coverage.js
-ERROR: Coverage for statements (21.31%) does not meet threshold (96%) for lib/commands/check-coverage.js
+ERROR: Coverage for statements (21.31%) does not meet threshold (95%) for lib/commands/check-coverage.js
 ERROR: Coverage for lines (93.1%) does not meet threshold (101%) for lib/commands/report.js
 ERROR: Coverage for branches (71.43%) does not meet threshold (82%) for lib/commands/report.js
-ERROR: Coverage for statements (93.1%) does not meet threshold (96%) for lib/commands/report.js
+ERROR: Coverage for statements (93.1%) does not meet threshold (95%) for lib/commands/report.js
 ERROR: Coverage for lines (90%) does not meet threshold (101%) for lib/is-cjs-esm-bridge.js
 ERROR: Coverage for branches (25%) does not meet threshold (82%) for lib/is-cjs-esm-bridge.js
-ERROR: Coverage for statements (90%) does not meet threshold (96%) for lib/is-cjs-esm-bridge.js
+ERROR: Coverage for statements (90%) does not meet threshold (95%) for lib/is-cjs-esm-bridge.js
 ERROR: Coverage for lines (96.13%) does not meet threshold (101%) for lib/parse-args.js
 ERROR: Coverage for branches (45.45%) does not meet threshold (82%) for lib/parse-args.js
 ERROR: Coverage for lines (75.17%) does not meet threshold (101%) for lib/report.js
 ERROR: Coverage for branches (60%) does not meet threshold (82%) for lib/report.js
-ERROR: Coverage for statements (75.17%) does not meet threshold (96%) for lib/report.js
+ERROR: Coverage for statements (75.17%) does not meet threshold (95%) for lib/report.js
 ERROR: Coverage for lines (44%) does not meet threshold (101%) for lib/source-map-from-file.js
-ERROR: Coverage for statements (44%) does not meet threshold (96%) for lib/source-map-from-file.js
+ERROR: Coverage for statements (44%) does not meet threshold (95%) for lib/source-map-from-file.js
 ERROR: Coverage for lines (100%) does not meet threshold (101%) for test/fixtures/async.js
 ERROR: Coverage for lines (75%) does not meet threshold (101%) for test/fixtures/normal.js
 ERROR: Coverage for branches (66.67%) does not meet threshold (82%) for test/fixtures/normal.js
-ERROR: Coverage for statements (75%) does not meet threshold (96%) for test/fixtures/normal.js
+ERROR: Coverage for statements (75%) does not meet threshold (95%) for test/fixtures/normal.js
 "
 `;
 
@@ -192,7 +192,7 @@ exports[`c8 check-coverage exits with 0 if coverage within threshold 1`] = `",,"
 exports[`c8 check-coverage exits with 1 if coverage is below threshold 1`] = `
 ",,ERROR: Coverage for lines (75.69%) does not meet global threshold (101%)
 ERROR: Coverage for branches (58.75%) does not meet global threshold (82%)
-ERROR: Coverage for statements (75.69%) does not meet global threshold (96%)
+ERROR: Coverage for statements (75.69%) does not meet global threshold (95%)
 "
 `;
 
@@ -303,7 +303,7 @@ All files                 |   75.69 |    58.75 |   67.65 |   75.69 |
 --------------------------|---------|----------|---------|---------|--------------------------------
 ,ERROR: Coverage for lines (75.69%) does not meet global threshold (101%)
 ERROR: Coverage for branches (58.75%) does not meet global threshold (82%)
-ERROR: Coverage for statements (75.69%) does not meet global threshold (96%)
+ERROR: Coverage for statements (75.69%) does not meet global threshold (95%)
 "
 `;
 
