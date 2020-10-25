@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.3.5](https://www.github.com/bcoe/c8/compare/v7.3.4...v7.3.5) (2020-10-25)
+
+
+### Bug Fixes
+
+* **v8-to-istanbul:** fixes shebang handling/ignore behavior ([#267](https://www.github.com/bcoe/c8/issues/267)) ([21cd41f](https://www.github.com/bcoe/c8/commit/21cd41f5ed2b7b3ef81bbad2ae57b531934915cc))
+
 ### [7.3.4](https://www.github.com/bcoe/c8/compare/v7.3.3...v7.3.4) (2020-10-15)
 
 
