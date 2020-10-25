@@ -561,4 +561,15 @@ describe('c8', () => {
       output.toString('utf8').should.matchSnapshot()
     })
   })
+
+  it('collects coverage for script with shebang', () => {
+    const { output } = spawnSync(nodePath, [
+      c8Path,
+      '--exclude="test/*.js"',
+      '--temp-directory=tmp/shebang',
+      '--clean=false',
+      require.resolve('./fixtures/shebang')
+    ])
+    output.toString('utf8').should.matchSnapshot()
+  })
 })
