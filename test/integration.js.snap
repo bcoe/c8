@@ -226,17 +226,6 @@ All files   |      75 |       50 |     100 |      75 |
 ,"
 `;
 
-exports[`c8 collects coverage for shebang 1`] = `
-",hello world
-------------|---------|----------|---------|---------|-------------------
-File        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-------------|---------|----------|---------|---------|-------------------
-All files   |     100 |      100 |     100 |     100 |                   
- shebang.js |     100 |      100 |     100 |     100 |                   
-------------|---------|----------|---------|---------|-------------------
-,"
-`;
-
 exports[`c8 merges reports from subprocesses together 1`] = `
 ",first
 
