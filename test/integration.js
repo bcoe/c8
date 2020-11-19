@@ -9,13 +9,13 @@ const c8Path = require.resolve('../bin/c8')
 const nodePath = process.execPath
 const tsNodePath = './node_modules/.bin/ts-node'
 const chaiJestSnapshot = require('chai-jest-snapshot')
-const rimraf = require('rimraf')
+const rmrf = require('../lib/rmrf')
 
 require('chai')
   .use(chaiJestSnapshot)
   .should()
 
-before(cb => rimraf('tmp', cb))
+before(cb => rmrf('tmp', cb))
 
 const nodeMajorVersion = Number(process.version.slice(1).split('.')[0])
 beforeEach(function () {
@@ -295,7 +295,7 @@ describe('c8', () => {
   })
 
   describe('source-maps', () => {
-    beforeEach(cb => rimraf('tmp/source-map', cb))
+    beforeEach(cb => rmrf('tmp/source-map', cb))
 
     describe('TypeScript', () => {
       // Bugs:
