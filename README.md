@@ -64,7 +64,7 @@ To ignore lines, blocks, and functions, use the special comment:
 
 `/* c8 ignore next */`.
 
-### Ignoring the next element
+### Ignoring the next line
 
 ```js
 const myVariable = 99
@@ -72,7 +72,7 @@ const myVariable = 99
 if (process.platform === 'win32') console.info('hello world')
 ```
 
-### Ignoring the next N elements
+### Ignoring the next N lines
 
 ```js
 const myVariable = 99
@@ -80,6 +80,16 @@ const myVariable = 99
 if (process.platform === 'win32') {
   console.info('hello world')
 }
+```
+
+### Ignoring all lines until told
+
+```js
+/* c8 ignore start */
+function dontMindMe() {
+  // ...
+}
+/* c8 ignore stop */
 ```
 
 ### Ignoring a block on the current line
