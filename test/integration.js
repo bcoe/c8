@@ -272,7 +272,7 @@ describe('c8', () => {
         c8Path,
         '--exclude="test/*.js"',
         '--clean=false',
-        '--temp-directory=tmp/normal',
+        '--temp-directory=tmp/special-comment',
         nodePath,
         require.resolve('./fixtures/c8-ignore-next.js')
       ])
@@ -300,7 +300,7 @@ describe('c8', () => {
         c8Path,
         '--exclude="test/*.js"',
         '--clean=false',
-        '--temp-directory=tmp/normal',
+        '--temp-directory=tmp/start-stop',
         nodePath,
         require.resolve('./fixtures/c8-ignore-start-stop.js')
       ])
