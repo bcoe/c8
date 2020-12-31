@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.4.0](https://www.github.com/bcoe/c8/compare/v7.3.5...v7.4.0) (2020-12-31)
+
+
+### Features
+
+* support ignore start/stop comment ([#273](https://www.github.com/bcoe/c8/issues/273)) ([90949fa](https://www.github.com/bcoe/c8/commit/90949fa2deac7fccb9fc4b83ecca70f4de025ae9)), closes [#271](https://www.github.com/bcoe/c8/issues/271)
+* use debuglog rather than console.warn ([#279](https://www.github.com/bcoe/c8/issues/279)) ([7c04a4d](https://www.github.com/bcoe/c8/commit/7c04a4dc47ee9496d89fcae9062da24a6f642f39))
+
 ### [7.3.5](https://www.github.com/bcoe/c8/compare/v7.3.4...v7.3.5) (2020-10-25)
 
 
