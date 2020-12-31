@@ -79,7 +79,9 @@ describe('c8', () => {
       '--clean=false',
       nodePath,
       require.resolve('./fixtures/multiple-spawn')
-    ])
+    ], {
+      env: { NODE_DEBUG: 'c8' }
+    })
     output.toString('utf8').should.match(
       /Error: ENOENT: no such file or directory.*loaders\.js/
     )
