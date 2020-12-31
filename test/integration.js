@@ -163,7 +163,7 @@ describe('c8', () => {
         '--exclude="test/fixtures/*.js"',
         '--temp-directory=tmp/check-coverage',
         '--lines=70',
-        '--branches=56',
+        '--branches=55',
         '--statements=70'
       ])
       status.should.equal(0)
