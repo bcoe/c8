@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.5.0](https://www.github.com/bcoe/c8/compare/v7.4.0...v7.5.0) (2021-02-01)
+
+
+### Features
+
+* **all:** handle base64 inline source maps ([#283](https://www.github.com/bcoe/c8/issues/283)) ([3f12dd4](https://www.github.com/bcoe/c8/commit/3f12dd4cd4b903b396c60c9c6d76cdf990ec6cbe))
+
 ## [7.4.0](https://www.github.com/bcoe/c8/compare/v7.3.5...v7.4.0) (2020-12-31)
 
 
