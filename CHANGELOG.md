@@ -2,6 +2,101 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.0.0 (2021-02-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* new test-exclude with modified exclude rules (#179)
+* **istanbul-reports:** lcov reports now use relative paths (#168)
+* Node.js' source-map and lineLength cache is now used to remap coverage output (this allows tools like ts-node to be supported, which transpile at runtime).
+* temp directory now defaults to setting for report directory
+* c8 will now load source-maps if possible and remap coverage accordingly
+* switches to using NODE_V8_COVERAGE rather than inspector directly
+* dropped subprocess support for the time being, while we march towards an initial implementation.
+
+### Features
+
+* add --report-dir alias (for consistency with nyc) ([0dd1b04](https://www.github.com/bcoe/c8/commit/0dd1b045527947619c9ca22f0fb4e72cdb59ce50))
+* add support for 1:1 source-maps ([#85](https://www.github.com/bcoe/c8/issues/85)) ([6ca4345](https://www.github.com/bcoe/c8/commit/6ca434524de5900e90a30141dcb35e57b3e2c4fe))
+* add support for ignoring lines, functions, and blocks ([#87](https://www.github.com/bcoe/c8/issues/87)) ([c66950e](https://www.github.com/bcoe/c8/commit/c66950e93c536181be50e83407f137d715f467e8))
+* add thresholds for enforcing coverage percentage ([#59](https://www.github.com/bcoe/c8/issues/59)) ([70e8943](https://www.github.com/bcoe/c8/commit/70e8943b81d4120b6fefdc77a20c34c022a9a691))
+* adds --all functionality ([#158](https://www.github.com/bcoe/c8/issues/158)) ([2eb631e](https://www.github.com/bcoe/c8/commit/2eb631e460eba3d06925ee1d128e0db82ec50b6c))
+* adds support for 1:many source maps ([#238](https://www.github.com/bcoe/c8/issues/238)) ([dbf94a0](https://www.github.com/bcoe/c8/commit/dbf94a0dcf8104ef8d5ec1ccd6198594bc6c2bd3))
+* adds TypeScript definitions ([d39801b](https://www.github.com/bcoe/c8/commit/d39801bc9b2713aa56592010e6394a295bd12b0b)), closes [#195](https://www.github.com/bcoe/c8/issues/195)
+* **all:** handle base64 inline source maps ([#283](https://www.github.com/bcoe/c8/issues/283)) ([3f12dd4](https://www.github.com/bcoe/c8/commit/3f12dd4cd4b903b396c60c9c6d76cdf990ec6cbe))
+* allow  --reports-dir to be configured ([#65](https://www.github.com/bcoe/c8/issues/65)) ([5ab31f5](https://www.github.com/bcoe/c8/commit/5ab31f5b5b8ea77b1bc4a2357547373fbfc77f06))
+* allow relative paths to be optionally included ([3806c79](https://www.github.com/bcoe/c8/commit/3806c79dd189bfa4c66f5a1e4f5305f3c9eac263))
+* allow script wrapper length to be specified ([#51](https://www.github.com/bcoe/c8/issues/51)) ([a22c4e0](https://www.github.com/bcoe/c8/commit/a22c4e0ecbc61423965424dbc405024067a754d6))
+* default temp directory to report directory ([#102](https://www.github.com/bcoe/c8/issues/102)) ([8602f4a](https://www.github.com/bcoe/c8/commit/8602f4aa742ed3a05d8cb3c52bf978ea7572229e))
+* first pass at functional prototype without subprocess support ([#5](https://www.github.com/bcoe/c8/issues/5)) ([9534f56](https://www.github.com/bcoe/c8/commit/9534f56592ebbc7adeef3e15c715c9f29256b962))
+* foreground-child's done() method was not being called ([#82](https://www.github.com/bcoe/c8/issues/82)) ([fde596e](https://www.github.com/bcoe/c8/commit/fde596edf5b6ccaa6681fb4c340c312bc639966b))
+* implement Istanbul reporting ([#8](https://www.github.com/bcoe/c8/issues/8)) ([8e430bf](https://www.github.com/bcoe/c8/commit/8e430bf5e051395406562cb62222c13a39781ee4))
+* improve test assertions ([#28](https://www.github.com/bcoe/c8/issues/28)) ([522720e](https://www.github.com/bcoe/c8/commit/522720e23fc2d735fc073cabdb5ffc94cb911880))
+* **istanbul-reports:** lcov reports now use relative paths ([#168](https://www.github.com/bcoe/c8/issues/168)) ([35d9338](https://www.github.com/bcoe/c8/commit/35d9338b69ba803c19a19d16ff601e3ec5692fa6))
+* load .nycrc/.nycrc.json to simplify migration ([#100](https://www.github.com/bcoe/c8/issues/100)) ([bd7484f](https://www.github.com/bcoe/c8/commit/bd7484f5a1d8ed01ab2aaa175641327da81d4e98))
+* new test-exclude with modified exclude rules ([#179](https://www.github.com/bcoe/c8/issues/179)) ([af7d94d](https://www.github.com/bcoe/c8/commit/af7d94d715ab98d67e6b5bff5dfba19430681c9c))
+* playing around with initial implementation ([18f5471](https://www.github.com/bcoe/c8/commit/18f5471aa32154f97b97652b2f932f114c129f17))
+* support --check-coverage for reports ([#60](https://www.github.com/bcoe/c8/issues/60)) ([b542930](https://www.github.com/bcoe/c8/commit/b542930338f2feb069a552e9fbf8bbd35159555d))
+* support for instrumenting files outside of current working directory ([7e53a0e](https://www.github.com/bcoe/c8/commit/7e53a0ecf93eda5467e2a8ac7d33cf8d6af84cf1))
+* support ignore start/stop comment ([#273](https://www.github.com/bcoe/c8/issues/273)) ([90949fa](https://www.github.com/bcoe/c8/commit/90949fa2deac7fccb9fc4b83ecca70f4de025ae9)), closes [#271](https://www.github.com/bcoe/c8/issues/271)
+* switch to stderr and default port ([#7](https://www.github.com/bcoe/c8/issues/7)) ([bb117b7](https://www.github.com/bcoe/c8/commit/bb117b7c5ed53cb3e768c8bf26f164d4ff217c3d))
+* switch to using Node's built in coverage ([#22](https://www.github.com/bcoe/c8/issues/22)) ([3c1b92b](https://www.github.com/bcoe/c8/commit/3c1b92b621b7f18f9927395a7e95dc8ac73f0bc7))
+* use debuglog rather than console.warn ([#279](https://www.github.com/bcoe/c8/issues/279)) ([7c04a4d](https://www.github.com/bcoe/c8/commit/7c04a4dc47ee9496d89fcae9062da24a6f642f39))
+* use Node.js' source-map cache, to support tools like ts-node ([#152](https://www.github.com/bcoe/c8/issues/152)) ([53bba15](https://www.github.com/bcoe/c8/commit/53bba15bee07e8f0446fd85cc59d2b562fe34a21))
+* warn instead of throw on exception ([#29](https://www.github.com/bcoe/c8/issues/29)) ([a8620d4](https://www.github.com/bcoe/c8/commit/a8620d49fffdcd0b04c85eef2473958b642f6f0b))
+
+
+### Bug Fixes
+
+* add missing space in text ([#245](https://www.github.com/bcoe/c8/issues/245)) ([efe6d04](https://www.github.com/bcoe/c8/commit/efe6d041aa0a1620f9b2e4717ba5d2a96da7a5a3))
+* address file:// issue with CJS ([#39](https://www.github.com/bcoe/c8/issues/39)) ([d4f9cab](https://www.github.com/bcoe/c8/commit/d4f9cab69f31dac63e40afb165bcfb1532919d86))
+* all flag not propagated to check-coverage command ([#188](https://www.github.com/bcoe/c8/issues/188)) ([86eaf72](https://www.github.com/bcoe/c8/commit/86eaf72a8c7af93d6ec9699b741d11df50017a8d))
+* **deps:** merging failed when the same script occurred multiple times in the same report ([#147](https://www.github.com/bcoe/c8/issues/147)) ([1ebcaf9](https://www.github.com/bcoe/c8/commit/1ebcaf984e6dbe5881a45763942c863b1f64dda9))
+* **deps:** update dependency find-up to v4 ([#119](https://www.github.com/bcoe/c8/issues/119)) ([c568d96](https://www.github.com/bcoe/c8/commit/c568d969786b2fb71f2bf33b904259fc364c8d5b))
+* **deps:** update dependency find-up to v5 ([#242](https://www.github.com/bcoe/c8/issues/242)) ([8a0cfd7](https://www.github.com/bcoe/c8/commit/8a0cfd702e35fa9d7e87ef99f0fd08dd92cd9614))
+* **deps:** update dependency furi to v2 ([#193](https://www.github.com/bcoe/c8/issues/193)) ([6b9af6e](https://www.github.com/bcoe/c8/commit/6b9af6ee8cbbacd85eea91dc49bb269fe3651c12))
+* **deps:** update dependency rimraf to v3 ([#132](https://www.github.com/bcoe/c8/issues/132)) ([7601748](https://www.github.com/bcoe/c8/commit/7601748426d1eed073ec1591918c28f970c66b88))
+* **deps:** update dependency v8-to-istanbul to v4 ([#167](https://www.github.com/bcoe/c8/issues/167)) ([97b9769](https://www.github.com/bcoe/c8/commit/97b97699870ddc4af780cedb25cbb3a87e0eb777))
+* **deps:** update dependency yargs to v14 ([#134](https://www.github.com/bcoe/c8/issues/134)) ([e49737f](https://www.github.com/bcoe/c8/commit/e49737f6d839d93be3249fa74feb25e2a025667b))
+* **deps:** update dependency yargs to v15 ([#164](https://www.github.com/bcoe/c8/issues/164)) ([e41a483](https://www.github.com/bcoe/c8/commit/e41a4831aac92591f303d48038a327e9631affee))
+* **deps:** update dependency yargs to v16 ([#251](https://www.github.com/bcoe/c8/issues/251)) ([0436816](https://www.github.com/bcoe/c8/commit/0436816ef0ceb4cff25f65dfff1843a2bad80ca1))
+* **deps:** update dependency yargs-parser to v13 ([#124](https://www.github.com/bcoe/c8/issues/124)) ([1eb3394](https://www.github.com/bcoe/c8/commit/1eb3394f0716fe656ab35e59ad93f080bb7d24b9))
+* **deps:** update dependency yargs-parser to v14 ([#144](https://www.github.com/bcoe/c8/issues/144)) ([9b3d089](https://www.github.com/bcoe/c8/commit/9b3d0898167e8e6d3e25d5d97d9083b8f1e6a086))
+* **deps:** update dependency yargs-parser to v15 ([#153](https://www.github.com/bcoe/c8/issues/153)) ([80153de](https://www.github.com/bcoe/c8/commit/80153de61be8e5830f1c228945184e4878f8cf0c))
+* **deps:** update dependency yargs-parser to v16 ([#157](https://www.github.com/bcoe/c8/issues/157)) ([15746e5](https://www.github.com/bcoe/c8/commit/15746e51640e6e172f27f02c12056e2977342005))
+* **deps:** update dependency yargs-parser to v17 ([#201](https://www.github.com/bcoe/c8/issues/201)) ([d730c63](https://www.github.com/bcoe/c8/commit/d730c63235c1292da65cdc19ba68ffcb9d316dc2))
+* **deps:** update dependency yargs-parser to v18 ([#202](https://www.github.com/bcoe/c8/issues/202)) ([983de44](https://www.github.com/bcoe/c8/commit/983de440cf8876eb223975f06ddb658a7b8f4220))
+* **deps:** update dependency yargs-parser to v19 ([#241](https://www.github.com/bcoe/c8/issues/241)) ([baa01df](https://www.github.com/bcoe/c8/commit/baa01df3dede86373773acfae086647da2b43549))
+* **deps:** update dependency yargs-parser to v20 ([#252](https://www.github.com/bcoe/c8/issues/252)) ([ae845f0](https://www.github.com/bcoe/c8/commit/ae845f0bf52c5b1547263079f210ad99c6bd4d7b))
+* **deps:** update deps to address warning in cross-spawn ([#141](https://www.github.com/bcoe/c8/issues/141)) ([4b66221](https://www.github.com/bcoe/c8/commit/4b66221cb3f34bc6d105f45191a1cc8d489f2e0f))
+* **deps:** v8-to-istanbul with patch for crasher ([#200](https://www.github.com/bcoe/c8/issues/200)) ([d4b7d80](https://www.github.com/bcoe/c8/commit/d4b7d80d78f3d1cb2e9a2e9e106af0cef327b446))
+* do not override NODE_V8_COVERAGE if set ([#70](https://www.github.com/bcoe/c8/issues/70)) ([8bb67b0](https://www.github.com/bcoe/c8/commit/8bb67b0150e4de058b962fa45b1a81a5c8ef3edc))
+* don't load JSON that does not look like coverage ([#146](https://www.github.com/bcoe/c8/issues/146)) ([a6481f1](https://www.github.com/bcoe/c8/commit/a6481f1d3012a07e721ff080dc35c327f5c6cafe))
+* escaping issue with cobertura reporter ([#203](https://www.github.com/bcoe/c8/issues/203)) ([e93747b](https://www.github.com/bcoe/c8/commit/e93747b9e9044fa14f5ceebda9d0d789aba1c655))
+* exclude coverage of the CJS-ESM bridge from results ([#83](https://www.github.com/bcoe/c8/issues/83)) ([da2c945](https://www.github.com/bcoe/c8/commit/da2c945d44134752c015fc23dd0978ee97405ce2))
+* exit with code 1 when report output fails ([#92](https://www.github.com/bcoe/c8/issues/92)) ([a27b694](https://www.github.com/bcoe/c8/commit/a27b694fed7fc1fa77a2e1cb18fdca13d8d6e550))
+* file URL to system path conversion ([#46](https://www.github.com/bcoe/c8/issues/46)) ([e7f8cf2](https://www.github.com/bcoe/c8/commit/e7f8cf29440ba867df0119922348cebf8bb7026b))
+* float patch for branch/function coverage merge bug ([#56](https://www.github.com/bcoe/c8/issues/56)) ([1de0cca](https://www.github.com/bcoe/c8/commit/1de0ccaae539cc3e91fe1233ed034d35a29b0163))
+* HTML report now has correct source positions for Node >10.16.0 ([#125](https://www.github.com/bcoe/c8/issues/125)) ([c49fa7f](https://www.github.com/bcoe/c8/commit/c49fa7fad11bf0086e614973a8836b8f86a33051))
+* ignore missing source maps in raw coverage output ([#233](https://www.github.com/bcoe/c8/issues/233)) ([eed98af](https://www.github.com/bcoe/c8/commit/eed98afae8dc6878c64b157d5007b0d9ce3bd59f))
+* make tests run on Windows ([#25](https://www.github.com/bcoe/c8/issues/25)) ([08e44d0](https://www.github.com/bcoe/c8/commit/08e44d004e01f0f5ba44063f0aa283f4e2e4242a))
+* make tmp directory regardless of clean ([44d2185](https://www.github.com/bcoe/c8/commit/44d2185a6152303a7624176bbe9c013440e59c8b))
+* pin to functional version of spawn-wrap ([d1ced8c](https://www.github.com/bcoe/c8/commit/d1ced8cd8b2355b7388046936be03a6726c5e672))
+* process coverage merging ([#37](https://www.github.com/bcoe/c8/issues/37)) ([67959b4](https://www.github.com/bcoe/c8/commit/67959b4855636e75a6afce910e1aa5fc207a6e86))
+* regex flags in dependency were breaking Node 8 ([a9d9645](https://www.github.com/bcoe/c8/commit/a9d9645858031cee985087828f5e04cfd8922868))
+* remove the unmaintained mkdirp dependency ([#91](https://www.github.com/bcoe/c8/issues/91)) ([a465b65](https://www.github.com/bcoe/c8/commit/a465b65d907b669714cfc3dca949efd667f499c3))
+* snapshot ([7fd9e13](https://www.github.com/bcoe/c8/commit/7fd9e13a7bfef7e39110db8ac6d307ae4a1c8113))
+* support node@v15.x.x built-in modules ([#265](https://www.github.com/bcoe/c8/issues/265)) ([1b90a22](https://www.github.com/bcoe/c8/commit/1b90a221d540354c552da10d90ef7d1f7a8e8227))
+* switch to mkdirp for Node 8 ([206b83f](https://www.github.com/bcoe/c8/commit/206b83f156ff93d1a7b211d61bd4fd8e9a4cd95f))
+* temporary files should be in tmp folder ([#106](https://www.github.com/bcoe/c8/issues/106)) ([64dd2e6](https://www.github.com/bcoe/c8/commit/64dd2e6ebe3a83a1aa57abcaaaec96476f7256dc))
+* tweak inspector event timing ([#6](https://www.github.com/bcoe/c8/issues/6)) ([01f654e](https://www.github.com/bcoe/c8/commit/01f654e1ba49a1c3b94ef40b929241558a4beb43))
+* upgrade to @bcoe/v8-coverage with breaking regex dropped ([6c28e7f](https://www.github.com/bcoe/c8/commit/6c28e7f0d9a278aa807421d21a441c0afc34086e))
+* **v8-to-istanbul:** fixes shebang handling/ignore behavior ([#267](https://www.github.com/bcoe/c8/issues/267)) ([21cd41f](https://www.github.com/bcoe/c8/commit/21cd41f5ed2b7b3ef81bbad2ae57b531934915cc))
+* **v8-to-istanbul:** pull in fix for missing branches ([#258](https://www.github.com/bcoe/c8/issues/258)) ([eaffa78](https://www.github.com/bcoe/c8/commit/eaffa7836155d051a0d13899f70a728819860bdb))
+* **v8-to-istanbul:** revert off by one that broke TypeScript ([#262](https://www.github.com/bcoe/c8/issues/262)) ([81ab5b7](https://www.github.com/bcoe/c8/commit/81ab5b7bf0ceccef3e5c936eb6b77f06a727a109))
+* we were not exiting with 1 if mkdir failed ([#89](https://www.github.com/bcoe/c8/issues/89)) ([fb02ed6](https://www.github.com/bcoe/c8/commit/fb02ed6b97380ce8308b0edc8a05a6e2830b5043))
+
 ## [7.5.0](https://www.github.com/bcoe/c8/compare/v7.4.0...v7.5.0) (2021-02-01)
 
 
