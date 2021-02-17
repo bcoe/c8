@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.6.0](https://www.github.com/bcoe/c8/compare/v7.5.0...v7.6.0) (2021-02-17)
+
+
+### Features
+
+* add --skip-full ([#287](https://www.github.com/bcoe/c8/issues/287)) ([8b01b63](https://www.github.com/bcoe/c8/commit/8b01b63740d7af75fe83d0164c0f18021592e1a6))
+
 ## [7.5.0](https://www.github.com/bcoe/c8/compare/v7.4.0...v7.5.0) (2021-02-01)
 
 
