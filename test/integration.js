@@ -588,4 +588,20 @@ describe('c8', () => {
     ])
     output.toString('utf8').should.matchSnapshot()
   })
+
+  describe('--exclude-after-remap', () => {
+    it('applies exclude rules after source-maps are applied', () => {
+      const { output } = spawnSync(nodePath, [
+        c8Path,
+        '--exclude="test/*.js"',
+        '--exclude="**/branch-1.js"',
+        '--exclude-after-remap',
+        '--temp-directory=tmp/source-map',
+        '--clean=true',
+        nodePath,
+        require.resolve('./fixtures/source-maps/branches/branches.rollup.js')
+      ])
+      output.toString('utf8').should.matchSnapshot()
+    })
+  })
 })
