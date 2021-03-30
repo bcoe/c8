@@ -112,6 +112,19 @@ ERROR: Coverage for statements (64.29%) does not meet global threshold (95%)
 "
 `;
 
+exports[`c8 --exclude-after-remap applies exclude rules after source-maps are applied 1`] = `
+",reachable
+a = true
+a = false
+-------------|---------|----------|---------|---------|-------------------
+File         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------|---------|----------|---------|---------|-------------------
+All files    |     100 |      100 |     100 |     100 |                   
+ branch-2.js |     100 |      100 |     100 |     100 |                   
+-------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
 exports[`c8 ESM Modules collects coverage for ESM modules 1`] = `
 ",bar foo
 ------------|---------|----------|---------|---------|-------------------
