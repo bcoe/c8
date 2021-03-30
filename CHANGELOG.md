@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.7.0](https://www.github.com/bcoe/c8/compare/v7.6.0...v7.7.0) (2021-03-30)
+
+
+### Features
+
+* introduce --exclude-after-remap flag ([#293](https://www.github.com/bcoe/c8/issues/293)) ([53c4234](https://www.github.com/bcoe/c8/commit/53c42347e0ed4eb29e37b84d40768eed89bf9eb0)), closes [#224](https://www.github.com/bcoe/c8/issues/224)
+
 ## [7.6.0](https://www.github.com/bcoe/c8/compare/v7.5.0...v7.6.0) (2021-02-17)
 
 
