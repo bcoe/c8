@@ -3,6 +3,7 @@ export type Watermark = [number, number];
 export declare class Report {
     constructor(opts: {
         exclude?: any[],
+        excludeAfterRemap?: boolean,
         include?: any[],
         reporter: string[],
         reportsDirectory?: string,
