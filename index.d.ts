@@ -19,7 +19,7 @@ export declare class Report {
         resolve?: string,
         all?: boolean,
         src?: Array<string>,
-        allowExternal: boolean
+        allowExternal?: boolean
     })
     run(): Promise<void>;
 }
