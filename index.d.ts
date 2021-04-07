@@ -2,8 +2,9 @@ export type Watermark = [number, number];
 
 export declare class Report {
     constructor(opts: {
-        exclude?: any[],
-        include?: any[],
+        exclude?: string | string[],
+        excludeAfterRemap?: boolean,
+        include?: string | string[],
         reporter: string[],
         reportsDirectory?: string,
         tempDirectory?: string,
@@ -18,7 +19,7 @@ export declare class Report {
         resolve?: string,
         all?: boolean,
         src?: Array<string>,
-        allowExternal: boolean
+        allowExternal?: boolean
     })
     run(): Promise<void>;
 }
