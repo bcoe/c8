@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.7.1](https://www.github.com/bcoe/c8/compare/v7.7.0...v7.7.1) (2021-04-07)
+
+
+### Bug Fixes
+
+* **types:** add excludeAfterRemap and allowExternal  ([#297](https://www.github.com/bcoe/c8/issues/297)) ([e32a53f](https://www.github.com/bcoe/c8/commit/e32a53ff050b5faf740da4e9c3fb08e70e29d60d))
+
 ## [7.7.0](https://www.github.com/bcoe/c8/compare/v7.6.0...v7.7.0) (2021-03-30)
 
 
