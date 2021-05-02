@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.7.2](https://www.github.com/bcoe/c8/compare/v7.7.1...v7.7.2) (2021-05-02)
+
+
+### Bug Fixes
+
+* address bugs with source remapping on Windows ([#301](https://www.github.com/bcoe/c8/issues/301)) ([c817902](https://www.github.com/bcoe/c8/commit/c81790262f843c01b3d14390fde81dbdbcf2226f))
+
 ### [7.7.1](https://www.github.com/bcoe/c8/compare/v7.7.0...v7.7.1) (2021-04-07)
 
 
