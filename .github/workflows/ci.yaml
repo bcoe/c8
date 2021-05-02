@@ -10,14 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [10, 12, 14]
+        node: [10, 12, 14, 16]
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
       - run: node --version
-      - run: npm install
+      - run: npm install --engine-strict
       - run: npm test
   windows:
     runs-on: windows-latest
