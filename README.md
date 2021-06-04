@@ -32,9 +32,9 @@ Here is a list of common options. Run `c8 --help` for the full list and document
 | `-c`, `--config` | path to JSON configuration file | `string` | See above |
 | `-r`, `--reporter` | coverage reporter(s) to use | `Array<string>` | `['text']` |
 | `-o`, `--reports-dir`, `--report-dir` | directory where coverage reports will be output to | `string` | `./coverage` |
-| `--all` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `Array<string>` | `['**']`|
+| `--all` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `boolean` | `false` |
 | `--src` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `Array<string>` | `[process.cwd()]`|
-| `-n`, `--include` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `Array<string>` | `[]`|
+| `-n`, `--include` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `Array<string>` | `[]` (include all files) |
 | `-x`, `--exclude` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `Array<string>` | [list](https://github.com/istanbuljs/schema/blob/master/default-exclude.js) |
 | `--skip-full` | do not show files with 100% statement, branch, and function coverage | `boolean` | `false` |
 | `--check-coverage` | check whether coverage is within thresholds provided | `boolean` | `false` |
