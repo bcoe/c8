@@ -18,13 +18,12 @@ The above example will output coverage metrics for `foo.js`.
 
 ## CLI Options / Configuration
 
-c8 can be configured via command-line options.
+c8 can be configured via command-line flags, a `c8` section in `package.json`, or a JSON configuration file on disk.
 
-Options can also be specified in the `c8` section of `package.json`, and/or in a JSON configuration file by passing its
-path on the command line with `--config` or `-c`. When using `package.json` configuration or a dedicated configuration
-file, omit the `--` prefix from the long-form of the desired command-line option. If a configuration file is not
-given on the command-line, c8 searches for files named `.c8rc`, `.c8rc.json`, `.nycrc`, or `.nycrc.json`, starting from
+A configuration file can be specified by passing its path on the command line with `--config` or `-c`. If no config option is provided, c8 searches for files named `.c8rc`, `.c8rc.json`, `.nycrc`, or `.nycrc.json`, starting from
 `cwd` and walking up the filesystem tree.
+
+When using `package.json` configuration or a dedicated configuration file, omit the `--` prefix from the long-form of the desired command-line option.
 
 Here is a list of common options. Run `c8 --help` for the full list and documentation.
 
