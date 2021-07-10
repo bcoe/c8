@@ -16,6 +16,31 @@ c8 node foo.js
 
 The above example will output coverage metrics for `foo.js`.
 
+## CLI Options / Configuration
+
+c8 can be configured via command-line flags, a `c8` section in `package.json`, or a JSON configuration file on disk.
+
+A configuration file can be specified by passing its path on the command line with `--config` or `-c`. If no config option is provided, c8 searches for files named `.c8rc`, `.c8rc.json`, `.nycrc`, or `.nycrc.json`, starting from
+`cwd` and walking up the filesystem tree.
+
+When using `package.json` configuration or a dedicated configuration file, omit the `--` prefix from the long-form of the desired command-line option.
+
+Here is a list of common options. Run `c8 --help` for the full list and documentation.
+
+| Option | Description | Type | Default |
+| ------ | ----------- | ---- | ------- |
+| `-c`, `--config` | path to JSON configuration file | `string` | See above |
+| `-r`, `--reporter` | coverage reporter(s) to use | `Array<string>` | `['text']` |
+| `-o`, `--reports-dir`, `--report-dir` | directory where coverage reports will be output to | `string` | `./coverage` |
+| `--all` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `boolean` | `false` |
+| `--src` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `Array<string>` | `[process.cwd()]`|
+| `-n`, `--include` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `Array<string>` | `[]` (include all files) |
+| `-x`, `--exclude` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `Array<string>` | [list](https://github.com/istanbuljs/schema/blob/master/default-exclude.js) |
+| `--skip-full` | do not show files with 100% statement, branch, and function coverage | `boolean` | `false` |
+| `--check-coverage` | check whether coverage is within thresholds provided | `boolean` | `false` |
+| `--temp-directory` | directory V8 coverage data is written to and read from | `string` | `process.env.NODE_V8_COVERAGE` |
+| `--clean` | should temp files be deleted before script execution | `boolean` | `true` |
+
 ## Checking for "full" source coverage using `--all`
 
 By default v8 will only give us coverage for files that were loaded by the engine. If there are source files in your
@@ -23,8 +48,9 @@ project that are flexed in production but not in your tests, your coverage numbe
 if your project's `main.js` loads `a.js` and `b.js` but your unit tests only load `a.js` your total coverage
 could show as `100%` for `a.js` when in fact both `main.js` and `b.js` are uncovered.
 
-By supplying `--all` to c8, all files in `cwd` that pass the `--include` and `--exclude` flag checks, will be loaded into the
-report. If any of those files remain uncovered they will be factored into the report with a default of 0% coverage.
+By supplying `--all` to c8, all files in directories specified with `--src` (defaults to `cwd`) that pass the `--include`
+and `--exclude` flag checks, will be loaded into the report. If any of those files remain uncovered they will be factored
+into the report with a default of 0% coverage.
 
 ## c8 report
 
