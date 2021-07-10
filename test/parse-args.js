@@ -37,4 +37,25 @@ describe('parse-args', () => {
       process.env.NODE_V8_COVERAGE = NODE_V8_COVERAGE
     })
   })
+
+  describe('--config', () => {
+    it('should resolve to .nycrc at cwd', () => {
+      const argv = buildYargs().parse(['node', 'c8', 'my-app'])
+      argv.lines.should.be.equal(95)
+    })
+    it('should use config file specified in --config', () => {
+      const argv = buildYargs().parse(['node', 'c8', '--config', require.resolve('./fixtures/config/.c8rc.json')])
+      argv.lines.should.be.equal(101)
+      argv.tempDirectory.should.be.equal('./foo')
+    })
+    it('should have -c as an alias', () => {
+      const argv = buildYargs().parse(['node', 'c8', '-c', require.resolve('./fixtures/config/.c8rc.json')])
+      argv.lines.should.be.equal(101)
+      argv.tempDirectory.should.be.equal('./foo')
+    })
+    it('should respect options on the command line over config file', () => {
+      const argv = buildYargs().parse(['node', 'c8', '--lines', '100', '--config', require.resolve('./fixtures/config/.c8rc.json')])
+      argv.lines.should.be.equal(100)
+    })
+  })
 })
