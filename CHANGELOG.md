@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.8.0](https://www.github.com/bcoe/c8/compare/v7.7.3...v7.8.0) (2021-07-10)
+
+
+### Features
+
+* add --config option and documentation on options and configs ([#308](https://www.github.com/bcoe/c8/issues/308)) ([99436ef](https://www.github.com/bcoe/c8/commit/99436ef131c2ab966174b5012fe22e499fb44ccd))
+
 ### [7.7.3](https://www.github.com/bcoe/c8/compare/v7.7.2...v7.7.3) (2021-06-03)
 
 
