@@ -1,4 +1,4 @@
-export default function getString(i){
+export default function getString(i: number){
   if (typeof i === 'number'){
     if (isNaN(i)){
       return 'NaN'
