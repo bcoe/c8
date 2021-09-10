@@ -47,11 +47,12 @@
     "yargs-parser": "^20.2.7"
   },
   "devDependencies": {
+    "@types/node": "^16.9.1",
     "chai": "^4.2.0",
     "chai-jest-snapshot": "^2.0.0",
     "mocha": "^9.0.0",
     "standard": "^16.0.3",
-    "ts-node": "^9.0.0",
+    "ts-node": "^10.0.0",
     "typescript": "^4.0.0"
   },
   "engines": {
