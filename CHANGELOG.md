@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.9.0](https://www.github.com/bcoe/c8/compare/v7.8.0...v7.9.0) (2021-09-10)
+
+
+### Features
+
+* add --exclude-node-modules option ([#321](https://www.github.com/bcoe/c8/issues/321)) ([a4733c6](https://www.github.com/bcoe/c8/commit/a4733c68abd778757bb6ed641e074be94b79c417))
+
 ## [7.8.0](https://www.github.com/bcoe/c8/compare/v7.7.3...v7.8.0) (2021-07-10)
 
 
