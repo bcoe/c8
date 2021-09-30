@@ -125,6 +125,25 @@ All files    |     100 |      100 |     100 |     100 |
 ,"
 `;
 
+exports[`c8 --extension includes coverage when extensions specified 1`] = `
+",hey
+i am a line of code
+what
+hey
+what
+hey
+what
+hey
+--------------------|---------|----------|---------|---------|-------------------
+File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------------|---------|----------|---------|---------|-------------------
+All files           |   83.33 |    85.71 |      60 |   83.33 |                   
+ async.js           |     100 |      100 |     100 |     100 |                   
+ custom-ext.special |      75 |    66.66 |   33.33 |      75 | 14-16,18-20       
+--------------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
 exports[`c8 ESM Modules collects coverage for ESM modules 1`] = `
 ",bar foo
 ------------|---------|----------|---------|---------|-------------------
