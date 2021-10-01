@@ -211,6 +211,23 @@ describe('c8', () => {
       status.should.equal(1)
       output.toString('utf8').should.matchSnapshot()
     })
+
+    it('--100 ', () => {
+      const { output, status } = spawnSync(nodePath, [
+        c8Path,
+        '--exclude="test/*.js"',
+        '--temp-directory=tmp/check-coverage',
+        '--100',
+        nodePath,
+        require.resolve('./fixtures/normal')
+      ])
+      console.log(`output`);
+      console.log(output.toString("utf8"));
+      
+      status.should.equal(1)
+      output.toString('utf8').should.matchSnapshot()
+
+    })
   })
 
   describe('report', () => {
