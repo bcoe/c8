@@ -221,12 +221,9 @@ describe('c8', () => {
         nodePath,
         require.resolve('./fixtures/normal')
       ])
-      console.log(`output`);
-      console.log(output.toString("utf8"));
-      
+
       status.should.equal(1)
       output.toString('utf8').should.matchSnapshot()
-
     })
   })
 
