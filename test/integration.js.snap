@@ -175,6 +175,29 @@ ERROR: Coverage for statements (83.33%) does not meet global threshold (95%)
 "
 `;
 
+exports[`c8 check-coverage --100 1`] = `
+",hey
+i am a line of code
+what
+hey
+what
+hey
+what
+hey
+-----------|---------|----------|---------|---------|-------------------
+File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------|---------|----------|---------|---------|-------------------
+All files  |   83.33 |    85.71 |      60 |   83.33 |                   
+ async.js  |     100 |      100 |     100 |     100 |                   
+ normal.js |      75 |    66.66 |   33.33 |      75 | 14-16,18-20       
+-----------|---------|----------|---------|---------|-------------------
+,ERROR: Coverage for lines (83.33%) does not meet global threshold (100%)
+ERROR: Coverage for functions (60%) does not meet global threshold (100%)
+ERROR: Coverage for branches (85.71%) does not meet global threshold (100%)
+ERROR: Coverage for statements (83.33%) does not meet global threshold (95%)
+"
+`;
+
 exports[`c8 check-coverage allows --check-coverage when executing script 1`] = `
 ",hey
 i am a line of code

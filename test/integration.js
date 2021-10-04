@@ -212,7 +212,7 @@ describe('c8', () => {
       output.toString('utf8').should.matchSnapshot()
     })
 
-    it('--100 ', () => {
+    it('--100', () => {
       const { output, status } = spawnSync(nodePath, [
         c8Path,
         '--exclude="test/*.js"',
