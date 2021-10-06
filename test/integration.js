@@ -211,6 +211,32 @@ describe('c8', () => {
       status.should.equal(1)
       output.toString('utf8').should.matchSnapshot()
     })
+
+    it('--100', () => {
+      const { output, status } = spawnSync(nodePath, [
+        c8Path,
+        '--exclude="test/*.js"',
+        '--temp-directory=tmp/check-coverage',
+        '--100',
+        nodePath,
+        require.resolve('./fixtures/normal')
+      ])
+
+      status.should.equal(1)
+      output.toString('utf8').should.matchSnapshot()
+    })
+
+    it('check-coverage command with --100', () => {
+      const { output, status } = spawnSync(nodePath, [
+        c8Path,
+        'check-coverage',
+        '--exclude="test/*.js"',
+        '--temp-directory=tmp/check-coverage',
+        '--100'
+      ])
+      status.should.equal(1)
+      output.toString('utf8').should.matchSnapshot()
+    })
   })
 
   describe('report', () => {

@@ -140,6 +140,29 @@ All files |       0 |        0 |       0 |       0 |
 "
 `;
 
+exports[`c8 check-coverage --100 1`] = `
+",hey
+i am a line of code
+what
+hey
+what
+hey
+what
+hey
+-----------|---------|----------|---------|---------|-------------------
+File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------|---------|----------|---------|---------|-------------------
+All files  |   83.33 |    85.71 |   66.66 |   83.33 |                   
+ async.js  |     100 |      100 |     100 |     100 |                   
+ normal.js |      75 |    66.66 |   33.33 |      75 | 14-16,18-20       
+-----------|---------|----------|---------|---------|-------------------
+,ERROR: Coverage for lines (83.33%) does not meet global threshold (100%)
+ERROR: Coverage for functions (66.66%) does not meet global threshold (100%)
+ERROR: Coverage for branches (85.71%) does not meet global threshold (100%)
+ERROR: Coverage for statements (83.33%) does not meet global threshold (100%)
+"
+`;
+
 exports[`c8 check-coverage allows --check-coverage when executing script 1`] = `
 ",hey
 i am a line of code
@@ -152,24 +175,24 @@ hey
 --------------------------|---------|----------|---------|---------|--------------------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
 --------------------------|---------|----------|---------|---------|--------------------------------
-All files                 |   73.96 |    59.75 |    62.5 |   73.96 |                                
+All files                 |   73.37 |    59.03 |    62.5 |   73.37 |                                
  bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
   c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
- lib                      |   77.19 |    54.38 |      72 |   77.19 |                                
+ lib                      |   77.88 |    54.38 |      72 |   77.88 |                                
   is-cjs-esm-bridge.js    |      90 |       25 |     100 |      90 | 9                              
-  parse-args.js           |    96.8 |    58.33 |     100 |    96.8 | 142-143,151-152,165-166        
+  parse-args.js           |    97.1 |    58.33 |     100 |    97.1 | 148-149,170-171,184-185        
   report.js               |   75.31 |    58.33 |   78.57 |   75.31 | ...249,276-277,283-285,306-311 
   source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
- lib/commands             |   46.23 |       75 |   16.66 |   46.23 |                                
-  check-coverage.js       |   21.31 |      100 |       0 |   21.31 | 9-11,14-27,30-44,46-61         
-  report.js               |   93.75 |    71.42 |      50 |   93.75 | 9-10                           
+ lib/commands             |   41.28 |    66.66 |   16.66 |   41.28 |                                
+  check-coverage.js       |   18.84 |      100 |       0 |   18.84 | 9-11,14-35,38-52,54-69         
+  report.js               |      80 |     62.5 |      50 |      80 | 9-10,15-20                     
  test/fixtures            |   83.33 |    85.71 |   66.66 |   83.33 |                                
   async.js                |     100 |      100 |     100 |     100 |                                
   normal.js               |      75 |    66.66 |   33.33 |      75 | 14-16,18-20                    
 --------------------------|---------|----------|---------|---------|--------------------------------
-,ERROR: Coverage for lines (73.96%) does not meet global threshold (101%)
-ERROR: Coverage for branches (59.75%) does not meet global threshold (82%)
-ERROR: Coverage for statements (73.96%) does not meet global threshold (95%)
+,ERROR: Coverage for lines (73.37%) does not meet global threshold (101%)
+ERROR: Coverage for branches (59.03%) does not meet global threshold (82%)
+ERROR: Coverage for statements (73.37%) does not meet global threshold (95%)
 "
 `;
 
@@ -177,15 +200,15 @@ exports[`c8 check-coverage allows threshold to be applied on per-file basis 1`] 
 ",,ERROR: Coverage for lines (78.84%) does not meet threshold (101%) for bin/c8.js
 ERROR: Coverage for branches (60%) does not meet threshold (82%) for bin/c8.js
 ERROR: Coverage for statements (78.84%) does not meet threshold (95%) for bin/c8.js
-ERROR: Coverage for lines (21.31%) does not meet threshold (101%) for lib/commands/check-coverage.js
-ERROR: Coverage for statements (21.31%) does not meet threshold (95%) for lib/commands/check-coverage.js
-ERROR: Coverage for lines (93.75%) does not meet threshold (101%) for lib/commands/report.js
-ERROR: Coverage for branches (71.42%) does not meet threshold (82%) for lib/commands/report.js
-ERROR: Coverage for statements (93.75%) does not meet threshold (95%) for lib/commands/report.js
+ERROR: Coverage for lines (18.84%) does not meet threshold (101%) for lib/commands/check-coverage.js
+ERROR: Coverage for statements (18.84%) does not meet threshold (95%) for lib/commands/check-coverage.js
+ERROR: Coverage for lines (80%) does not meet threshold (101%) for lib/commands/report.js
+ERROR: Coverage for branches (62.5%) does not meet threshold (82%) for lib/commands/report.js
+ERROR: Coverage for statements (80%) does not meet threshold (95%) for lib/commands/report.js
 ERROR: Coverage for lines (90%) does not meet threshold (101%) for lib/is-cjs-esm-bridge.js
 ERROR: Coverage for branches (25%) does not meet threshold (82%) for lib/is-cjs-esm-bridge.js
 ERROR: Coverage for statements (90%) does not meet threshold (95%) for lib/is-cjs-esm-bridge.js
-ERROR: Coverage for lines (96.8%) does not meet threshold (101%) for lib/parse-args.js
+ERROR: Coverage for lines (97.1%) does not meet threshold (101%) for lib/parse-args.js
 ERROR: Coverage for branches (58.33%) does not meet threshold (82%) for lib/parse-args.js
 ERROR: Coverage for lines (75.31%) does not meet threshold (101%) for lib/report.js
 ERROR: Coverage for branches (58.33%) does not meet threshold (82%) for lib/report.js
@@ -199,12 +222,20 @@ ERROR: Coverage for statements (75%) does not meet threshold (95%) for test/fixt
 "
 `;
 
+exports[`c8 check-coverage check-coverage command with --100 1`] = `
+",,ERROR: Coverage for lines (77.22%) does not meet global threshold (100%)
+ERROR: Coverage for functions (66.66%) does not meet global threshold (100%)
+ERROR: Coverage for branches (62.35%) does not meet global threshold (100%)
+ERROR: Coverage for statements (77.22%) does not meet global threshold (100%)
+"
+`;
+
 exports[`c8 check-coverage exits with 0 if coverage within threshold 1`] = `",,"`;
 
 exports[`c8 check-coverage exits with 1 if coverage is below threshold 1`] = `
-",,ERROR: Coverage for lines (73.96%) does not meet global threshold (101%)
-ERROR: Coverage for branches (59.75%) does not meet global threshold (82%)
-ERROR: Coverage for statements (73.96%) does not meet global threshold (95%)
+",,ERROR: Coverage for lines (73.37%) does not meet global threshold (101%)
+ERROR: Coverage for branches (59.03%) does not meet global threshold (82%)
+ERROR: Coverage for statements (73.37%) does not meet global threshold (95%)
 "
 `;
 
@@ -287,17 +318,17 @@ exports[`c8 report generates report from existing temporary files 1`] = `
 ",--------------------------|---------|----------|---------|---------|--------------------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
 --------------------------|---------|----------|---------|---------|--------------------------------
-All files                 |   73.96 |    59.75 |    62.5 |   73.96 |                                
+All files                 |   73.37 |    59.03 |    62.5 |   73.37 |                                
  bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
   c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
- lib                      |   77.19 |    54.38 |      72 |   77.19 |                                
+ lib                      |   77.88 |    54.38 |      72 |   77.88 |                                
   is-cjs-esm-bridge.js    |      90 |       25 |     100 |      90 | 9                              
-  parse-args.js           |    96.8 |    58.33 |     100 |    96.8 | 142-143,151-152,165-166        
+  parse-args.js           |    97.1 |    58.33 |     100 |    97.1 | 148-149,170-171,184-185        
   report.js               |   75.31 |    58.33 |   78.57 |   75.31 | ...249,276-277,283-285,306-311 
   source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
- lib/commands             |   46.23 |       75 |   16.66 |   46.23 |                                
-  check-coverage.js       |   21.31 |      100 |       0 |   21.31 | 9-11,14-27,30-44,46-61         
-  report.js               |   93.75 |    71.42 |      50 |   93.75 | 9-10                           
+ lib/commands             |   41.28 |    66.66 |   16.66 |   41.28 |                                
+  check-coverage.js       |   18.84 |      100 |       0 |   18.84 | 9-11,14-35,38-52,54-69         
+  report.js               |      80 |     62.5 |      50 |      80 | 9-10,15-20                     
  test/fixtures            |   83.33 |    85.71 |   66.66 |   83.33 |                                
   async.js                |     100 |      100 |     100 |     100 |                                
   normal.js               |      75 |    66.66 |   33.33 |      75 | 14-16,18-20                    
@@ -309,24 +340,24 @@ exports[`c8 report supports --check-coverage, when generating reports 1`] = `
 ",--------------------------|---------|----------|---------|---------|--------------------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
 --------------------------|---------|----------|---------|---------|--------------------------------
-All files                 |   73.96 |    59.75 |    62.5 |   73.96 |                                
+All files                 |   73.37 |    59.03 |    62.5 |   73.37 |                                
  bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
   c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
- lib                      |   77.19 |    54.38 |      72 |   77.19 |                                
+ lib                      |   77.88 |    54.38 |      72 |   77.88 |                                
   is-cjs-esm-bridge.js    |      90 |       25 |     100 |      90 | 9                              
-  parse-args.js           |    96.8 |    58.33 |     100 |    96.8 | 142-143,151-152,165-166        
+  parse-args.js           |    97.1 |    58.33 |     100 |    97.1 | 148-149,170-171,184-185        
   report.js               |   75.31 |    58.33 |   78.57 |   75.31 | ...249,276-277,283-285,306-311 
   source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
- lib/commands             |   46.23 |       75 |   16.66 |   46.23 |                                
-  check-coverage.js       |   21.31 |      100 |       0 |   21.31 | 9-11,14-27,30-44,46-61         
-  report.js               |   93.75 |    71.42 |      50 |   93.75 | 9-10                           
+ lib/commands             |   41.28 |    66.66 |   16.66 |   41.28 |                                
+  check-coverage.js       |   18.84 |      100 |       0 |   18.84 | 9-11,14-35,38-52,54-69         
+  report.js               |      80 |     62.5 |      50 |      80 | 9-10,15-20                     
  test/fixtures            |   83.33 |    85.71 |   66.66 |   83.33 |                                
   async.js                |     100 |      100 |     100 |     100 |                                
   normal.js               |      75 |    66.66 |   33.33 |      75 | 14-16,18-20                    
 --------------------------|---------|----------|---------|---------|--------------------------------
-,ERROR: Coverage for lines (73.96%) does not meet global threshold (101%)
-ERROR: Coverage for branches (59.75%) does not meet global threshold (82%)
-ERROR: Coverage for statements (73.96%) does not meet global threshold (95%)
+,ERROR: Coverage for lines (73.37%) does not meet global threshold (101%)
+ERROR: Coverage for branches (59.03%) does not meet global threshold (82%)
+ERROR: Coverage for statements (73.37%) does not meet global threshold (95%)
 "
 `;
 
