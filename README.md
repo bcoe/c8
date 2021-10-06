@@ -80,6 +80,24 @@ To check thresholds on a per-file basis run:
 c8 check-coverage --lines 95 --per-file
 ```
 
+If you want to check for 100% coverage across all dimensions, use `--100`:
+
+```shell
+c8 --100 npm test
+```
+
+Is equivalent to
+
+```shell
+c8 --check-coverage --lines 100 --functions 100 --branches 100 --statements 100  npm test
+```
+
+The `--100` flag can be set for the `check-coverage` as well:
+
+```shell
+c8 check-coverage --100
+```
+
 ## Ignoring Uncovered Lines, Functions, and Blocks
 
 Sometimes you might find yourself wanting to ignore uncovered portions of your
