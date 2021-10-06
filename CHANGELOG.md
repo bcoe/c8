@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.10.0](https://www.github.com/bcoe/c8/compare/v7.9.0...v7.10.0) (2021-10-06)
+
+
+### Features
+
+* `--100` ([#332](https://www.github.com/bcoe/c8/issues/332)) ([4205f2f](https://www.github.com/bcoe/c8/commit/4205f2f33585693d82c2500d0d6850571965bb8b))
+
 ## [7.9.0](https://www.github.com/bcoe/c8/compare/v7.8.0...v7.9.0) (2021-09-10)
 
 
