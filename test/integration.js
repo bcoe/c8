@@ -631,14 +631,14 @@ describe('c8', () => {
     })
   })
 
-  describe.only('--extension', () => {
+  describe('--extension', () => {
     it('includes coverage when extensions specified', () => {
       const { output } = spawnSync(nodePath, [
         c8Path,
         '--exclude="test/*.js"',
         '--extension=.js',
         '--extension=.special',
-        '--temp-directory=tmp/normal',
+        '--temp-directory=tmp/extension',
         '--clean=false',
         nodePath,
         require.resolve('./fixtures/custom-ext.special')
