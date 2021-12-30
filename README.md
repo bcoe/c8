@@ -35,7 +35,8 @@ Here is a list of common options. Run `c8 --help` for the full list and document
 | `--all` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `boolean` | `false` |
 | `--src` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `Array<string>` | `[process.cwd()]`|
 | `-n`, `--include` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `Array<string>` | `[]` (include all files) |
-| `-x`, `--exclude` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `Array<string>` | [list](https://github.com/istanbuljs/schema/blob/main/default-exclude.js) |
+| `-x`, `--exclude` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `Array<string>` | [list](https://github.com/istanbuljs/schema/blob/master/default-exclude.js) |
+| `-e`, `--extension` | only files matching these extensions will show coverage | `string | Array<string>` | [list](https://github.com/istanbuljs/schema/blob/master/default-extension.js) |
 | `--skip-full` | do not show files with 100% statement, branch, and function coverage | `boolean` | `false` |
 | `--check-coverage` | check whether coverage is within thresholds provided | `boolean` | `false` |
 | `--temp-directory` | directory V8 coverage data is written to and read from | `string` | `process.env.NODE_V8_COVERAGE` |
