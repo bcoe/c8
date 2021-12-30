@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.11.0](https://github.com/bcoe/c8/compare/v7.10.0...v7.11.0) (2021-12-30)
+
+
+### Features
+
+* add --extension option ([#331](https://github.com/bcoe/c8/issues/331)) ([ff01cd8](https://github.com/bcoe/c8/commit/ff01cd832a155494892b24c30c5a1c8f0169fd8e))
+
+
+### Bug Fixes
+
+* **config:** support configuration inheritance ([#343](https://github.com/bcoe/c8/issues/343)) ([e81ed5d](https://github.com/bcoe/c8/commit/e81ed5dd9ef5dac1a1f2f6dc26a07abb6c05d709))
+
 ## [7.10.0](https://www.github.com/bcoe/c8/compare/v7.9.0...v7.10.0) (2021-10-06)
 
 
