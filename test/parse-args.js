@@ -57,5 +57,11 @@ describe('parse-args', () => {
       const argv = buildYargs().parse(['node', 'c8', '--lines', '100', '--config', require.resolve('./fixtures/config/.c8rc.json')])
       argv.lines.should.be.equal(100)
     })
+    it('should allow config files to extend each other', () => {
+      const argv = buildYargs().parse(['node', 'c8', '--lines', '100', '--config', require.resolve('./fixtures/config/.c8rc-base.json')])
+      argv.branches.should.be.equal(55)
+      argv.lines.should.be.equal(100)
+      argv.functions.should.be.equal(24)
+    })
   })
 })

@@ -1,4 +1,5 @@
 {
   "temp-directory": "./foo",
-  "lines": 101
+  "lines": 101,
+  "functions": 24
 }
