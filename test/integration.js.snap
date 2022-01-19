@@ -289,6 +289,17 @@ All files   |      75 |       50 |     100 |      75 |
 ,"
 `;
 
+exports[`c8 exclude unexpected file in result 1`] = `
+",reachable
+----------|---------|----------|---------|---------|-------------------
+File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------|---------|----------|---------|---------|-------------------
+All files |     100 |      100 |     100 |     100 |                   
+ index.js |     100 |      100 |     100 |     100 |                   
+----------|---------|----------|---------|---------|-------------------
+,"
+`;
+
 exports[`c8 merges reports from subprocesses together 1`] = `
 ",first
 

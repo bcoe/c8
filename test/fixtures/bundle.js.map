@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["node_modules/path-exists/index.js", "index.js"],
+  "sourcesContent": ["'use strict';\nconst fs = require('fs');\nconst {promisify} = require('util');\n\nconst pAccess = promisify(fs.access);\n\nmodule.exports = async path => {\n\ttry {\n\t\tawait pAccess(path);\n\t\treturn true;\n\t} catch (_) {\n\t\treturn false;\n\t}\n};\n\nmodule.exports.sync = path => {\n\ttry {\n\t\tfs.accessSync(path);\n\t\treturn true;\n\t} catch (_) {\n\t\treturn false;\n\t}\n};\n", "const {sync} = require('path-exists')\n\ntry {\n\tsync({\n\t\tcwd: require.resolve('aaaa')\n\t})\n} catch (err) {\n\tconsole.log('reachable')\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AACA,QAAM,KAAK,QAAQ;AACnB,QAAM,EAAC,cAAa,QAAQ;AAE5B,QAAM,UAAU,UAAU,GAAG;AAE7B,YAAO,UAAU,OAAM,SAAQ;AAC9B,UAAI;AACH,cAAM,QAAQ;AACd,eAAO;AAAA,eACC,GAAP;AACD,eAAO;AAAA;AAAA;AAIT,YAAO,QAAQ,OAAO,UAAQ;AAC7B,UAAI;AACH,WAAG,WAAW;AACd,eAAO;AAAA,eACC,GAAP;AACD,eAAO;AAAA;AAAA;AAAA;AAAA;;;ACpBT,IAAM,EAAC,SAAQ;AAEf,IAAI;AACH,OAAK;AAAA,IACJ,KAAqB;AAAA;AAAA,SAEd,KAAP;AACD,UAAQ,IAAI;AAAA;",
+  "names": []
+}
