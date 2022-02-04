@@ -1,12 +1,13 @@
-/* global describe, it */
+/* eslint-env mocha */
 
+'use strict'
+
+const { join } = require('path')
 const {
   buildYargs,
   hideInstrumenteeArgs,
   hideInstrumenterArgs
 } = require('../lib/parse-args')
-
-const { join } = require('path')
 
 describe('parse-args', () => {
   describe('hideInstrumenteeArgs', () => {

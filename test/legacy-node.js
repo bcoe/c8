@@ -1,9 +1,12 @@
-/* global describe, it */
+/* eslint-env mocha */
+
+'use strict'
 
 const { execFile } = require('child_process')
 const { existsSync } = require('fs')
 const { join } = require('path')
 const { promisify } = require('util')
+
 const c8Path = require.resolve('./fixtures/disable-fs-promises')
 
 describe('c8 on Node.js < 10', () => {

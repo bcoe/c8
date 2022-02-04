@@ -1,15 +1,16 @@
-/* global describe, before, beforeEach, it */
+/* eslint-env mocha */
 
-const { readFileSync } = require('fs')
-const { resolve } = require('path')
+'use strict'
+
 const { spawnSync } = require('child_process')
-const { statSync } = require('fs')
-const { dirname } = require('path')
+const { readFileSync, statSync } = require('fs')
+const { resolve, dirname } = require('path')
+const chaiJestSnapshot = require('chai-jest-snapshot')
+const rimraf = require('rimraf')
+
 const c8Path = require.resolve('../bin/c8')
 const nodePath = process.execPath
 const tsNodePath = './node_modules/.bin/ts-node'
-const chaiJestSnapshot = require('chai-jest-snapshot')
-const rimraf = require('rimraf')
 
 require('chai')
   .use(chaiJestSnapshot)
@@ -22,7 +23,7 @@ beforeEach(function () {
   // Node 10 is missing some of the patches to V8 that improve coverage in
   // newer Node.js versions, for this reason it requires its own snapshot file.
   if (nodeMajorVersion === 10) {
-    const file = this.currentTest.file
+    const { file } = this.currentTest
     this.currentTest.file = `${file}_10`
   }
   chaiJestSnapshot.configureUsingMochaContext(this)

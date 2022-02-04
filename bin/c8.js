@@ -1,24 +1,23 @@
 #!/usr/bin/env node
+
 'use strict'
 
-const foreground = require('foreground-child')
-const { outputReport } = require('../lib/commands/report')
 const { promises } = require('fs')
 const { promisify } = require('util')
+const foreground = require('foreground-child')
 const rimraf = require('rimraf')
+const { outputReport } = require('../lib/commands/report')
 const {
   buildYargs,
   hideInstrumenteeArgs,
   hideInstrumenterArgs
 } = require('../lib/parse-args')
 
-const instrumenterArgs = hideInstrumenteeArgs()
-let argv = buildYargs().parse(instrumenterArgs)
-
 async function run () {
-  if ([
-    'check-coverage', 'report'
-  ].indexOf(argv._[0]) !== -1) {
+  const instrumenterArgs = hideInstrumenteeArgs()
+  let argv = buildYargs().parse(instrumenterArgs)
+
+  if (['check-coverage', 'report'].includes(argv._[0])) {
     argv = buildYargs(true).parse(process.argv.slice(2))
   } else {
     // fs.promises was not added until Node.js v10.0.0, if it doesn't
@@ -37,16 +36,17 @@ async function run () {
     foreground(hideInstrumenterArgs(argv), async (done) => {
       try {
         await outputReport(argv)
-      } catch (err) {
-        console.error(err.stack)
+      } catch (error) {
+        console.error(error.stack)
         process.exitCode = 1
       }
+
       done()
     })
   }
 }
 
-run().catch((err) => {
-  console.error(err.stack)
+run().catch(error => {
+  console.error(error.stack)
   process.exitCode = 1
 })
