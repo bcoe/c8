@@ -3,37 +3,41 @@ on:
     branches:
       - main
   pull_request:
-    types: [ assigned, opened, synchronize, reopened, labeled ]
+    types: [assigned, opened, synchronize, reopened, labeled]
+  workflow_dispatch:
 name: ci
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         node: [10, 12, 14, 16, 17]
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
-      - run: node --version
-      - run: npm install --engine-strict
+          cache: npm
+      - run: npm ci --engine-strict
       - run: npm test
   windows:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
-          node-version: 14
-      - run: npm install
+          node-version: 16
+          cache: npm
+      - run: npm ci
       - run: npm test
   coverage:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
-          node-version: 14
-      - run: npm install
+          node-version: 16
+          cache: npm
+      - run: npm ci
       - run: npm run coverage
