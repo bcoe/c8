@@ -41,7 +41,7 @@ describe('c8', () => {
     output.toString('utf8').should.matchSnapshot()
   })
 
-  it('supports exeternally set NODE_V8_COVERAGE', () => {
+  it('supports externally set NODE_V8_COVERAGE', () => {
     const { output } = spawnSync(nodePath, [
       c8Path,
       '--exclude="test/*.js"',
@@ -123,7 +123,7 @@ describe('c8', () => {
   it('should allow for multiple overrides of src location for --all', () => {
     // Here we nest this test into the report directory making the multidir
     // directories outside of cwd. Note, that the target srcOverride does not
-    // require fiels from these directories but we want them initialized to 0
+    // require fields from these directories but we want them initialized to 0
     // via --all. As such we --allowExternal and provide multiple --src patterns
     // to override cwd.
     const { output, status } = spawnSync(nodePath, [
