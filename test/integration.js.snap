@@ -278,42 +278,46 @@ exports[`c8 cobertura report escapes special characters 1`] = `
     <source>/foo/file</source>
   </sources>
   <packages>
-    <class name=\\"computed-method.js\\" filename=\\"test/fixtures/computed-method.js\\" line-rate=\\"1\\" branch-rate=\\"1\\">
-      <methods>
-        <method name=\\"Test\\" hits=\\"1\\" signature=\\"()V\\">
+    <package name=\\"main\\" line-rate=\\"1\\" branch-rate=\\"1\\">
+      <classes>
+        <class name=\\"computed-method.js\\" filename=\\"test/fixtures/computed-method.js\\" line-rate=\\"1\\" branch-rate=\\"1\\">
+          <methods>
+            <method name=\\"Test\\" hits=\\"1\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"2\\" hits=\\"1\\"/>
+              </lines>
+            </method>
+            <method name=\\"run\\" hits=\\"1\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"6\\" hits=\\"1\\"/>
+              </lines>
+            </method>
+            <method name=\\"map.&lt;computed&gt;.f\\" hits=\\"1\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"8\\" hits=\\"1\\"/>
+              </lines>
+            </method>
+          </methods>
           <lines>
-            <line number=\\"2\\" hits=\\"1\\"/>
+            <line number=\\"1\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"2\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"3\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"4\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"5\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"6\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"7\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"8\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"9\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"10\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"11\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"12\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"13\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"14\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"15\\" hits=\\"1\\" branch=\\"false\\"/>
           </lines>
-        </method>
-        <method name=\\"run\\" hits=\\"1\\" signature=\\"()V\\">
-          <lines>
-            <line number=\\"6\\" hits=\\"1\\"/>
-          </lines>
-        </method>
-        <method name=\\"map.&lt;computed&gt;.f\\" hits=\\"1\\" signature=\\"()V\\">
-          <lines>
-            <line number=\\"8\\" hits=\\"1\\"/>
-          </lines>
-        </method>
-      </methods>
-      <lines>
-        <line number=\\"1\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
-        <line number=\\"2\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
-        <line number=\\"3\\" hits=\\"1\\" branch=\\"false\\"/>
-        <line number=\\"4\\" hits=\\"1\\" branch=\\"false\\"/>
-        <line number=\\"5\\" hits=\\"1\\" branch=\\"false\\"/>
-        <line number=\\"6\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
-        <line number=\\"7\\" hits=\\"1\\" branch=\\"false\\"/>
-        <line number=\\"8\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
-        <line number=\\"9\\" hits=\\"1\\" branch=\\"false\\"/>
-        <line number=\\"10\\" hits=\\"1\\" branch=\\"false\\"/>
-        <line number=\\"11\\" hits=\\"1\\" branch=\\"false\\"/>
-        <line number=\\"12\\" hits=\\"1\\" branch=\\"false\\"/>
-        <line number=\\"13\\" hits=\\"1\\" branch=\\"false\\"/>
-        <line number=\\"14\\" hits=\\"1\\" branch=\\"false\\"/>
-        <line number=\\"15\\" hits=\\"1\\" branch=\\"false\\"/>
-      </lines>
-    </class>
+        </class>
+      </classes>
+    </package>
   </packages>
 </coverage>
 "
