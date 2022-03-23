@@ -583,7 +583,7 @@ All files         |   88.23 |    83.33 |      80 |   88.23 |
 ,"
 `;
 
-exports[`c8 supports exeternally set NODE_V8_COVERAGE 1`] = `
+exports[`c8 supports externally set NODE_V8_COVERAGE 1`] = `
 ",hey
 i am a line of code
 what

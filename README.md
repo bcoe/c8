@@ -1,15 +1,15 @@
 # c8 - native V8 code-coverage
 
-![ci](https://github.com/bcoe/c8/workflows/ci/badge.svg)
+![ci](https://img.shields.io/github/workflow/status/bcoe/c8/ci?label=ci&logo=github)
 ![nycrc config on GitHub](https://img.shields.io/nycrc/bcoe/c8)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://www.conventionalcommits.org/)
 
 Code-coverage using [Node.js' built in functionality](https://nodejs.org/dist/latest-v10.x/docs/api/cli.html#cli_node_v8_coverage_dir)
 that's compatible with [Istanbul's reporters](https://istanbul.js.org/docs/advanced/alternative-reporters/).
 
 Like [nyc](https://github.com/istanbuljs/nyc), c8 just magically works:
 
-```bash
+```sh
 npm i c8 -g
 c8 node foo.js
 ```
@@ -62,14 +62,14 @@ run `c8 report` to regenerate reports after `c8` has already been run.
 c8 can fail tests if coverage falls below a threshold.
 After running your tests with c8, simply run:
 
-```shell
+```sh
 c8 check-coverage --lines 95 --functions 95 --branches 95
 ```
 
 c8 also accepts a `--check-coverage` shorthand, which can be used to
 both run tests and check that coverage falls within the threshold provided:
 
-```shell
+```sh
 c8 --check-coverage --lines 100 npm test
 ```
 
@@ -77,25 +77,25 @@ The above check fails if coverage falls below 100%.
 
 To check thresholds on a per-file basis run:
 
-```shell
+```sh
 c8 check-coverage --lines 95 --per-file
 ```
 
 If you want to check for 100% coverage across all dimensions, use `--100`:
 
-```shell
+```sh
 c8 --100 npm test
 ```
 
 Is equivalent to
 
-```shell
+```sh
 c8 --check-coverage --lines 100 --functions 100 --branches 100 --statements 100  npm test
 ```
 
 The `--100` flag can be set for the `check-coverage` as well:
 
-```shell
+```sh
 c8 check-coverage --100
 ```
 
@@ -146,8 +146,7 @@ const os = process.platform === 'darwin' ? 'OSXy' /* c8 ignore next */ : 'Window
 
 ## Supported Node.js Versions
 
-c8 uses
-[native V8 coverage](https://github.com/nodejs/node/pull/22527),
+c8 uses [native V8 coverage](https://github.com/nodejs/node/pull/22527),
 make sure you're running Node.js `>= 10.12.0`.
 
 ## Contributing to `c8`
