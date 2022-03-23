@@ -6,6 +6,7 @@ name: release-please
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    if: github.repository == 'bcoe/c8'
     steps:
       - uses: GoogleCloudPlatform/release-please-action@v3
         id: release
