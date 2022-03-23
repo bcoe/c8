@@ -654,7 +654,7 @@ describe('c8', () => {
         '--extension=.js',
         '--extension=.special',
         '--temp-directory=tmp/extension',
-        '--clean=false',
+        '--clean=true',
         nodePath,
         require.resolve('./fixtures/custom-ext.special')
       ])
