@@ -153,72 +153,72 @@ what
 hey
 what
 hey
----------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------------------------------------------------------
-File                                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                                                                         
----------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------------------------------------------------------
-All files                              |   40.77 |    41.32 |   33.76 |   40.77 |                                                                                                           
- c8                                    |       0 |        0 |       0 |       0 |                                                                                                           
-  index.js                             |       0 |        0 |       0 |       0 | 1                                                                                                         
- c8/bin                                |   78.84 |       60 |   66.66 |   78.84 |                                                                                                           
-  c8.js                                |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51                                                                                
- c8/coverage                           |       0 |        0 |       0 |       0 |                                                                                                           
-  block-navigation.js                  |       0 |        0 |       0 |       0 | 1-87                                                                                                      
-  prettify.js                          |       0 |        0 |       0 |       0 | 1-2                                                                                                       
-  sorter.js                            |       0 |        0 |       0 |       0 | 1-196                                                                                                     
- c8/lib                                |   78.49 |    54.23 |   73.07 |   78.49 |                                                                                                           
-  is-cjs-esm-bridge.js                 |      90 |       25 |     100 |      90 | 9                                                                                                         
-  parse-args.js                        |   97.24 |    58.33 |     100 |   97.24 | 159-160,181-182,195-196                                                                                   
-  report.js                            |   75.96 |    57.89 |      80 |   75.96 | 58,60,100-101,106,112-115,121-122,126-130,149-161,181-182,188-222,252-253,280-281,287-289,310-315,326-327 
-  source-map-from-file.js              |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98                                                                                   
- c8/lib/commands                       |   41.44 |    66.66 |   16.66 |   41.44 |                                                                                                           
-  check-coverage.js                    |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70                                                                                    
-  report.js                            |   80.48 |     62.5 |      50 |   80.48 | 9-10,15-20                                                                                                
- c8/test/fixtures                      |   15.95 |    35.29 |      25 |   15.95 |                                                                                                           
-  async.js                             |     100 |      100 |     100 |     100 |                                                                                                           
-  c8-ignore-next.js                    |       0 |        0 |       0 |       0 | 1-22                                                                                                      
-  c8-ignore-start-stop.js              |       0 |        0 |       0 |       0 | 1-21                                                                                                      
-  computed-method.js                   |       0 |        0 |       0 |       0 | 1-15                                                                                                      
-  custom-ext.special                   |      75 |    66.66 |   33.33 |      75 | 14-16,18-20                                                                                               
-  custom-ext2.special                  |       0 |        0 |       0 |       0 | 1-24                                                                                                      
-  disable-fs-promises.js               |       0 |        0 |       0 |       0 | 1-4                                                                                                       
-  issue-254.js                         |       0 |        0 |       0 |       0 | 1-7                                                                                                       
-  multiple-spawn.js                    |       0 |        0 |       0 |       0 | 1-12                                                                                                      
-  normal.js                            |       0 |        0 |       0 |       0 | 1-24                                                                                                      
-  shebang.js                           |       0 |        0 |       0 |       0 | 1-8                                                                                                       
-  subprocess.js                        |       0 |        0 |       0 |       0 | 1-15                                                                                                      
- c8/test/fixtures/all/ts-compiled      |       0 |        0 |       0 |       0 |                                                                                                           
-  loaded.ts                            |       0 |        0 |       0 |       0 | 1-19                                                                                                      
-  main.ts                              |       0 |        0 |       0 |       0 | 1-4                                                                                                       
- c8/test/fixtures/all/ts-compiled/dir  |       0 |        0 |       0 |       0 |                                                                                                           
-  unloaded.ts                          |       0 |        0 |       0 |       0 | 1-5                                                                                                       
- c8/test/fixtures/all/vanilla          |       0 |        0 |       0 |       0 |                                                                                                           
-  loaded.js                            |       0 |        0 |       0 |       0 | 1-19                                                                                                      
-  main.js                              |       0 |        0 |       0 |       0 | 1-4                                                                                                       
- c8/test/fixtures/all/vanilla/dir      |       0 |        0 |       0 |       0 |                                                                                                           
-  unloaded.js                          |       0 |        0 |       0 |       0 | 1-5                                                                                                       
- c8/test/fixtures/multidir1            |       0 |        0 |       0 |       0 |                                                                                                           
-  file1.js                             |       0 |        0 |       0 |       0 | 1                                                                                                         
- c8/test/fixtures/multidir2            |       0 |        0 |       0 |       0 |                                                                                                           
-  file2.js                             |       0 |        0 |       0 |       0 | 1                                                                                                         
- c8/test/fixtures/report               |       0 |        0 |       0 |       0 |                                                                                                           
-  allowExternal.js                     |       0 |        0 |       0 |       0 | 1                                                                                                         
-  report-multi-dir-external.js         |       0 |        0 |       0 |       0 | 1-12                                                                                                      
-  report-single-dir-external.js        |       0 |        0 |       0 |       0 | 1-12                                                                                                      
-  srcOverride.js                       |       0 |        0 |       0 |       0 | 1                                                                                                         
- c8/test/fixtures/source-maps          |       0 |        0 |       0 |       0 |                                                                                                           
-  branches.js                          |       0 |        0 |       0 |       0 | 1-20                                                                                                      
-  fake-source-map.js                   |       0 |        0 |       0 |       0 | 1-7                                                                                                       
- c8/test/fixtures/source-maps/branches |       0 |        0 |       0 |       0 |                                                                                                           
-  branch-1.js                          |       0 |        0 |       0 |       0 | 1-12                                                                                                      
-  branch-2.js                          |       0 |        0 |       0 |       0 | 1-9                                                                                                       
-  branches.js                          |       0 |        0 |       0 |       0 | 1-20                                                                                                      
-  branches.typescript.ts               |       0 |        0 |       0 |       0 | 1-25                                                                                                      
- c8/test/fixtures/source-maps/classes  |       0 |        0 |       0 |       0 |                                                                                                           
-  class-1.js                           |       0 |        0 |       0 |       0 | 1-5                                                                                                       
-  class-2.js                           |       0 |        0 |       0 |       0 | 1-23                                                                                                      
-  classes.js                           |       0 |        0 |       0 |       0 | 1-27                                                                                                      
-  classes.typescript.ts                |       0 |        0 |       0 |       0 | 1-33                                                                                                      
----------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------------------------------------------------------
+---------------------------------------|---------|----------|---------|---------|-------------------
+File                                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------------------------|---------|----------|---------|---------|-------------------
+All files                              |    1.91 |       12 |    8.16 |    1.91 |                   
+ c8                                    |       0 |        0 |       0 |       0 |                   
+  index.js                             |       0 |        0 |       0 |       0 | 1                 
+ c8/bin                                |       0 |        0 |       0 |       0 |                   
+  c8.js                                |       0 |        0 |       0 |       0 | 1-52              
+ c8/coverage                           |       0 |        0 |       0 |       0 |                   
+  block-navigation.js                  |       0 |        0 |       0 |       0 | 1-87              
+  prettify.js                          |       0 |        0 |       0 |       0 | 1-2               
+  sorter.js                            |       0 |        0 |       0 |       0 | 1-196             
+ c8/lib                                |       0 |        0 |       0 |       0 |                   
+  is-cjs-esm-bridge.js                 |       0 |        0 |       0 |       0 | 1-10              
+  parse-args.js                        |       0 |        0 |       0 |       0 | 1-218             
+  report.js                            |       0 |        0 |       0 |       0 | 1-337             
+  source-map-from-file.js              |       0 |        0 |       0 |       0 | 1-100             
+ c8/lib/commands                       |       0 |        0 |       0 |       0 |                   
+  check-coverage.js                    |       0 |        0 |       0 |       0 | 1-70              
+  report.js                            |       0 |        0 |       0 |       0 | 1-41              
+ c8/test/fixtures                      |   15.95 |    35.29 |      25 |   15.95 |                   
+  async.js                             |     100 |      100 |     100 |     100 |                   
+  c8-ignore-next.js                    |       0 |        0 |       0 |       0 | 1-22              
+  c8-ignore-start-stop.js              |       0 |        0 |       0 |       0 | 1-21              
+  computed-method.js                   |       0 |        0 |       0 |       0 | 1-15              
+  custom-ext.special                   |      75 |    66.66 |   33.33 |      75 | 14-16,18-20       
+  custom-ext2.special                  |       0 |        0 |       0 |       0 | 1-24              
+  disable-fs-promises.js               |       0 |        0 |       0 |       0 | 1-4               
+  issue-254.js                         |       0 |        0 |       0 |       0 | 1-7               
+  multiple-spawn.js                    |       0 |        0 |       0 |       0 | 1-12              
+  normal.js                            |       0 |        0 |       0 |       0 | 1-24              
+  shebang.js                           |       0 |        0 |       0 |       0 | 1-8               
+  subprocess.js                        |       0 |        0 |       0 |       0 | 1-15              
+ c8/test/fixtures/all/ts-compiled      |       0 |        0 |       0 |       0 |                   
+  loaded.ts                            |       0 |        0 |       0 |       0 | 1-19              
+  main.ts                              |       0 |        0 |       0 |       0 | 1-4               
+ c8/test/fixtures/all/ts-compiled/dir  |       0 |        0 |       0 |       0 |                   
+  unloaded.ts                          |       0 |        0 |       0 |       0 | 1-5               
+ c8/test/fixtures/all/vanilla          |       0 |        0 |       0 |       0 |                   
+  loaded.js                            |       0 |        0 |       0 |       0 | 1-19              
+  main.js                              |       0 |        0 |       0 |       0 | 1-4               
+ c8/test/fixtures/all/vanilla/dir      |       0 |        0 |       0 |       0 |                   
+  unloaded.js                          |       0 |        0 |       0 |       0 | 1-5               
+ c8/test/fixtures/multidir1            |       0 |        0 |       0 |       0 |                   
+  file1.js                             |       0 |        0 |       0 |       0 | 1                 
+ c8/test/fixtures/multidir2            |       0 |        0 |       0 |       0 |                   
+  file2.js                             |       0 |        0 |       0 |       0 | 1                 
+ c8/test/fixtures/report               |       0 |        0 |       0 |       0 |                   
+  allowExternal.js                     |       0 |        0 |       0 |       0 | 1                 
+  report-multi-dir-external.js         |       0 |        0 |       0 |       0 | 1-12              
+  report-single-dir-external.js        |       0 |        0 |       0 |       0 | 1-12              
+  srcOverride.js                       |       0 |        0 |       0 |       0 | 1                 
+ c8/test/fixtures/source-maps          |       0 |        0 |       0 |       0 |                   
+  branches.js                          |       0 |        0 |       0 |       0 | 1-20              
+  fake-source-map.js                   |       0 |        0 |       0 |       0 | 1-7               
+ c8/test/fixtures/source-maps/branches |       0 |        0 |       0 |       0 |                   
+  branch-1.js                          |       0 |        0 |       0 |       0 | 1-12              
+  branch-2.js                          |       0 |        0 |       0 |       0 | 1-9               
+  branches.js                          |       0 |        0 |       0 |       0 | 1-20              
+  branches.typescript.ts               |       0 |        0 |       0 |       0 | 1-25              
+ c8/test/fixtures/source-maps/classes  |       0 |        0 |       0 |       0 |                   
+  class-1.js                           |       0 |        0 |       0 |       0 | 1-5               
+  class-2.js                           |       0 |        0 |       0 |       0 | 1-23              
+  classes.js                           |       0 |        0 |       0 |       0 | 1-27              
+  classes.typescript.ts                |       0 |        0 |       0 |       0 | 1-33              
+---------------------------------------|---------|----------|---------|---------|-------------------
 ,"
 `;
 
