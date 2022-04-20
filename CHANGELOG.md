@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.11.2](https://github.com/bcoe/c8/compare/v7.11.1...v7.11.2) (2022-04-20)
+
+
+### Bug Fixes
+
+* **perf:** cache `this.exclude.shouldInstrument` for improved performance ([#388](https://github.com/bcoe/c8/issues/388)) ([8b36f23](https://github.com/bcoe/c8/commit/8b36f23c253742d3ef1c9d52c8e843fff63cdacd))
+
 ### [7.11.1](https://github.com/bcoe/c8/compare/v7.11.0...v7.11.1) (2022-04-20)
 
 
