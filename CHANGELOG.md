@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.11.1](https://github.com/bcoe/c8/compare/v7.11.0...v7.11.1) (2022-04-20)
+
+
+### Bug Fixes
+
+* **deps:** update deps to latest ([#384](https://github.com/bcoe/c8/issues/384)) ([78eac8c](https://github.com/bcoe/c8/commit/78eac8c8ddaf034e25e2525db12d40356d9e6162)), closes [#375](https://github.com/bcoe/c8/issues/375)
+* **deps:** v8-to-istanbul with fixes for Node 10/18 ([d5f642a](https://github.com/bcoe/c8/commit/d5f642a31b5de2053fd798b5b1327004be565dfa))
+* fix package.json `test:snap` script to use cross-env ([#366](https://github.com/bcoe/c8/issues/366)) ([5d2981c](https://github.com/bcoe/c8/commit/5d2981c056a8c666c9fdd6847d07c7be38abf181))
+
 ## [7.11.0](https://github.com/bcoe/c8/compare/v7.10.0...v7.11.0) (2021-12-30)
 
 
