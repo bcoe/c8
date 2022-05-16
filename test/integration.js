@@ -639,7 +639,22 @@ describe('c8', () => {
         '--extension=.js',
         '--extension=.special',
         '--temp-directory=tmp/extension',
-        '--clean=false',
+        '--clean=true',
+        nodePath,
+        require.resolve('./fixtures/custom-ext.special')
+      ])
+      output.toString('utf8').should.matchSnapshot()
+    })
+
+    it('includes coverage when extensions specified with --all', () => {
+      const { output } = spawnSync(nodePath, [
+        c8Path,
+        '--all',
+        '--exclude="test/*.js"',
+        '--extension=.js',
+        '--extension=.special',
+        '--temp-directory=tmp/extension',
+        '--clean=true',
         nodePath,
         require.resolve('./fixtures/custom-ext.special')
       ])
