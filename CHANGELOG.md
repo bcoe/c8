@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.11.3](https://github.com/bcoe/c8/compare/v7.11.2...v7.11.3) (2022-05-16)
+
+
+### Bug Fixes
+
+* `--all` now respects `--extension` flag. ([#357](https://github.com/bcoe/c8/issues/357)) ([a5deb27](https://github.com/bcoe/c8/commit/a5deb278dcdd7293e8e758ca892d0a44c6d9bba4))
+
 ### [7.11.2](https://github.com/bcoe/c8/compare/v7.11.1...v7.11.2) (2022-04-20)
 
 
