@@ -144,6 +144,84 @@ All files           |   83.33 |    85.71 |      60 |   83.33 |
 ,"
 `;
 
+exports[`c8 --extension includes coverage when extensions specified with --all 1`] = `
+",hey
+i am a line of code
+what
+hey
+what
+hey
+what
+hey
+---------------------------------------|---------|----------|---------|---------|-------------------
+File                                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------------------------|---------|----------|---------|---------|-------------------
+All files                              |    1.91 |       12 |    6.25 |    1.91 |                   
+ c8                                    |       0 |        0 |       0 |       0 |                   
+  index.js                             |       0 |        0 |       0 |       0 | 1                 
+ c8/bin                                |       0 |        0 |       0 |       0 |                   
+  c8.js                                |       0 |        0 |       0 |       0 | 1-52              
+ c8/coverage                           |       0 |        0 |       0 |       0 |                   
+  block-navigation.js                  |       0 |        0 |       0 |       0 | 1-87              
+  prettify.js                          |       0 |        0 |       0 |       0 | 1-2               
+  sorter.js                            |       0 |        0 |       0 |       0 | 1-196             
+ c8/lib                                |       0 |        0 |       0 |       0 |                   
+  is-cjs-esm-bridge.js                 |       0 |        0 |       0 |       0 | 1-10              
+  parse-args.js                        |       0 |        0 |       0 |       0 | 1-218             
+  report.js                            |       0 |        0 |       0 |       0 | 1-337             
+  source-map-from-file.js              |       0 |        0 |       0 |       0 | 1-100             
+ c8/lib/commands                       |       0 |        0 |       0 |       0 |                   
+  check-coverage.js                    |       0 |        0 |       0 |       0 | 1-70              
+  report.js                            |       0 |        0 |       0 |       0 | 1-41              
+ c8/test/fixtures                      |   15.95 |    35.29 |      20 |   15.95 |                   
+  async.js                             |     100 |      100 |     100 |     100 |                   
+  c8-ignore-next.js                    |       0 |        0 |       0 |       0 | 1-22              
+  c8-ignore-start-stop.js              |       0 |        0 |       0 |       0 | 1-21              
+  computed-method.js                   |       0 |        0 |       0 |       0 | 1-15              
+  custom-ext.special                   |      75 |    66.66 |   33.33 |      75 | 14-16,18-20       
+  custom-ext2.special                  |       0 |        0 |       0 |       0 | 1-24              
+  disable-fs-promises.js               |       0 |        0 |       0 |       0 | 1-4               
+  issue-254.js                         |       0 |        0 |       0 |       0 | 1-7               
+  multiple-spawn.js                    |       0 |        0 |       0 |       0 | 1-12              
+  normal.js                            |       0 |        0 |       0 |       0 | 1-24              
+  shebang.js                           |       0 |        0 |       0 |       0 | 1-8               
+  subprocess.js                        |       0 |        0 |       0 |       0 | 1-15              
+ c8/test/fixtures/all/ts-compiled      |       0 |        0 |       0 |       0 |                   
+  loaded.ts                            |       0 |        0 |       0 |       0 | 1-19              
+  main.ts                              |       0 |        0 |       0 |       0 | 1-4               
+ c8/test/fixtures/all/ts-compiled/dir  |       0 |        0 |       0 |       0 |                   
+  unloaded.ts                          |       0 |        0 |       0 |       0 | 1-5               
+ c8/test/fixtures/all/vanilla          |       0 |        0 |       0 |       0 |                   
+  loaded.js                            |       0 |        0 |       0 |       0 | 1-19              
+  main.js                              |       0 |        0 |       0 |       0 | 1-4               
+ c8/test/fixtures/all/vanilla/dir      |       0 |        0 |       0 |       0 |                   
+  unloaded.js                          |       0 |        0 |       0 |       0 | 1-5               
+ c8/test/fixtures/multidir1            |       0 |        0 |       0 |       0 |                   
+  file1.js                             |       0 |        0 |       0 |       0 | 1                 
+ c8/test/fixtures/multidir2            |       0 |        0 |       0 |       0 |                   
+  file2.js                             |       0 |        0 |       0 |       0 | 1                 
+ c8/test/fixtures/report               |       0 |        0 |       0 |       0 |                   
+  allowExternal.js                     |       0 |        0 |       0 |       0 | 1                 
+  report-multi-dir-external.js         |       0 |        0 |       0 |       0 | 1-12              
+  report-single-dir-external.js        |       0 |        0 |       0 |       0 | 1-12              
+  srcOverride.js                       |       0 |        0 |       0 |       0 | 1                 
+ c8/test/fixtures/source-maps          |       0 |        0 |       0 |       0 |                   
+  branches.js                          |       0 |        0 |       0 |       0 | 1-20              
+  fake-source-map.js                   |       0 |        0 |       0 |       0 | 1-7               
+ c8/test/fixtures/source-maps/branches |       0 |        0 |       0 |       0 |                   
+  branch-1.js                          |       0 |        0 |       0 |       0 | 1-12              
+  branch-2.js                          |       0 |        0 |       0 |       0 | 1-9               
+  branches.js                          |       0 |        0 |       0 |       0 | 1-20              
+  branches.typescript.ts               |       0 |        0 |       0 |       0 | 1-25              
+ c8/test/fixtures/source-maps/classes  |       0 |        0 |       0 |       0 |                   
+  class-1.js                           |       0 |        0 |       0 |       0 | 1-5               
+  class-2.js                           |       0 |        0 |       0 |       0 | 1-23              
+  classes.js                           |       0 |        0 |       0 |       0 | 1-27              
+  classes.typescript.ts                |       0 |        0 |       0 |       0 | 1-33              
+---------------------------------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
 exports[`c8 ESM Modules collects coverage for ESM modules 1`] = `
 ",bar foo
 ------------|---------|----------|---------|---------|-------------------

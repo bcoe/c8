@@ -1,0 +1,24 @@
+require('./async')
+
+console.info('i am a line of code 2')
+
+function apple (awesome) {
+  if (false || true) {
+    console.info('what2')
+  }
+  if (true || false) {
+    console.log('hey2')
+  }
+}
+
+function missed () {
+  
+}
+
+function missed2 () {
+  
+}
+
+apple()
+apple()
+apple()
