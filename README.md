@@ -54,7 +54,9 @@ By supplying `--all` to c8, all files in directories specified with `--src` (def
 and `--exclude` flag checks, will be loaded into the report. If any of those files remain uncovered they will be factored
 into the report with a default of 0% coverage.
 
-## Pre-instrumented versus just-in-time instrumented codebases
+## SourceMap Support
+
+`c8` can handle source-maps, for remapping coverage from generated code to original source files (_useful for TypeScript, JSX, etc).
 
 ### Source map files versus inline source maps
 
