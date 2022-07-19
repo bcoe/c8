@@ -56,7 +56,7 @@ into the report with a default of 0% coverage.
 
 ## SourceMap Support
 
-`c8` can handle source-maps, for remapping coverage from generated code to original source files (_useful for TypeScript, JSX, etc).
+`c8` can handle source-maps, for remapping coverage from generated code to original source files (_useful for TypeScript, JSX, etc_).
 
 ### Source map files versus inline source maps
 
