@@ -66,9 +66,9 @@ Pre-instrumented codebases, e.g., running `tsc` to generate `.js` in a build fol
 
 ### Exclude after remap
 
-For independent projects, feel free to set `--exclude-after-remap` as `true` or `false`, the only difference is that the exclusions are applied to _**source**_ scripts or _**executable**_ scripts.
+Depending on the size and configuration of your project, it may be preferable to apply exclusion logic either before or after source-maps are used to remap compiled to original source files.
 
-For huge 'shared codebase' such as monorepo, your test suites can use common libs as workspace node_modules and _**executable**_ scripts is a single bundle, set `--exclude-after-remap` to true may help to set exclusions more precisely.
+`--exclude-after-remap` is used to control this behaviour.
 
 ## c8 report
 
