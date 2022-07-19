@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.12.0](https://github.com/bcoe/c8/compare/v7.11.3...v7.12.0) (2022-07-19)
+
+
+### Features
+
+* use process.stdout.columns for reporter maxCols ([#409](https://github.com/bcoe/c8/issues/409)) ([7731574](https://github.com/bcoe/c8/commit/77315744b219b90eb6a02efc9d26e5400f99af62))
+
 ### [7.11.3](https://github.com/bcoe/c8/compare/v7.11.2...v7.11.3) (2022-05-16)
 
 
