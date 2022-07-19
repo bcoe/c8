@@ -36,6 +36,7 @@ Here is a list of common options. Run `c8 --help` for the full list and document
 | `--src` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `Array<string>` | `[process.cwd()]`|
 | `-n`, `--include` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `Array<string>` | `[]` (include all files) |
 | `-x`, `--exclude` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `Array<string>` | [list](https://github.com/istanbuljs/schema/blob/master/default-exclude.js) |
+| `--exclude-after-remap` | see [section below](#exclude-after-remap) for more info | `boolean` | `false` |
 | `-e`, `--extension` | only files matching these extensions will show coverage | `string \| Array<string>` | [list](https://github.com/istanbuljs/schema/blob/master/default-extension.js) |
 | `--skip-full` | do not show files with 100% statement, branch, and function coverage | `boolean` | `false` |
 | `--check-coverage` | check whether coverage is within thresholds provided | `boolean` | `false` |
@@ -52,6 +53,24 @@ could show as `100%` for `a.js` when in fact both `main.js` and `b.js` are uncov
 By supplying `--all` to c8, all files in directories specified with `--src` (defaults to `cwd`) that pass the `--include`
 and `--exclude` flag checks, will be loaded into the report. If any of those files remain uncovered they will be factored
 into the report with a default of 0% coverage.
+
+## SourceMap Support
+
+`c8` can handle source-maps, for remapping coverage from generated code to original source files (_useful for TypeScript, JSX, etc_).
+
+### Source map files versus inline source maps
+
+Just-in-time instrumented codebases will often insert source maps inline with the `.js` code they generate at runtime (e.g, `@babel/register` can be configured to insert a source map footer).
+
+Pre-instrumented codebases, e.g., running `tsc` to generate `.js` in a build folder, may generate either inline source maps, or a separate `.map` file stored on disk.
+
+`c8` can handle loading both types of source maps.
+
+### Exclude after remap
+
+Depending on the size and configuration of your project, it may be preferable to apply exclusion logic either before or after source-maps are used to remap compiled to original source files.
+
+`--exclude-after-remap` is used to control this behaviour.
 
 ## c8 report
 
