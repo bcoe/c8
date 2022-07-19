@@ -58,7 +58,7 @@ into the report with a default of 0% coverage.
 
 ### Source map files versus inline source maps
 
-Just-in-time instrumented codebases will often insert source maps inline with the `.js` code they generate at runtime (e.g, `@babel/register` can be configured to insert a source map foote).
+Just-in-time instrumented codebases will often insert source maps inline with the `.js` code they generate at runtime (e.g, `@babel/register` can be configured to insert a source map footer).
 
 Pre-instrumented codebases, e.g., running `tsc` to generate `.js` in a build folder, may generate either inline source maps, or a separate `.map` file stored on disk.
 
