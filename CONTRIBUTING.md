@@ -23,10 +23,10 @@ Pull Requests are the way concrete changes are made to the code, documentation, 
     git fetch upstream
     ```
 
-1. Create local branches to work within. These should also be created directly off of the master branch:
+1. Create local branches to work within. These should also be created directly off of the main branch:
 
     ```sh
-    git checkout -b my-branch -t upstream/master
+    git checkout -b my-branch -t upstream/main
     ```
 
 1. Make your changes
@@ -47,7 +47,7 @@ Pull Requests are the way concrete changes are made to the code, documentation, 
 
     ```sh
     git fetch upstream
-    git rebase upstream/master
+    git rebase upstream/main
     ```
 
 1. Run tests again to make sure all is okay
