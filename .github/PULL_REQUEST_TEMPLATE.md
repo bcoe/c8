@@ -4,7 +4,7 @@ the requirements below.
 
 Bug fixes and new features should include tests and possibly benchmarks.
 
-Contributors guide: https://github.com/bcoe/c8/blob/master/CONTRIBUTING.md
+Contributors guide: https://github.com/bcoe/c8/blob/main/CONTRIBUTING.md
 -->
 
 ##### Checklist
