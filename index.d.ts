@@ -20,7 +20,9 @@ export declare class Report {
     resolve?: string,
     all?: boolean,
     src?: Array<string>,
-    allowExternal?: boolean
+    allowExternal?: boolean,
+    skipFull?: boolean,
+    excludeNodeModules?: boolean
   })
   run(): Promise<void>;
 }
