@@ -168,7 +168,7 @@ All files                              |    1.91 |       12 |    6.25 |    1.91 
  c8/lib                                |       0 |        0 |       0 |       0 |                   
   is-cjs-esm-bridge.js                 |       0 |        0 |       0 |       0 | 1-10              
   parse-args.js                        |       0 |        0 |       0 |       0 | 1-218             
-  report.js                            |       0 |        0 |       0 |       0 | 1-337             
+  report.js                            |       0 |        0 |       0 |       0 | 1-340             
   source-map-from-file.js              |       0 |        0 |       0 |       0 | 1-100             
  c8/lib/commands                       |       0 |        0 |       0 |       0 |                   
   check-coverage.js                    |       0 |        0 |       0 |       0 | 1-70              
