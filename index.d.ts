@@ -8,6 +8,7 @@ export declare class Report {
     include?: string | string[],
     reporter: string[],
     reportsDirectory?: string,
+    reporterOptions?: Record<string, Record<string, unknown>>
     tempDirectory?: string,
     watermarks?: Partial<{
       statements: Watermark;
