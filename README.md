@@ -1,6 +1,6 @@
 # c8 - native V8 code-coverage
 
-![ci](https://img.shields.io/github/workflow/status/bcoe/c8/ci?label=ci&logo=github)
+[![ci](https://github.com/bcoe/c8/actions/workflows/ci.yaml/badge.svg)](https://github.com/bcoe/c8/actions/workflows/ci.yaml)
 ![nycrc config on GitHub](https://img.shields.io/nycrc/bcoe/c8)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://www.conventionalcommits.org/)
 
