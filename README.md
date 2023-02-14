@@ -40,6 +40,7 @@ Here is a list of common options. Run `c8 --help` for the full list and document
 | `-e`, `--extension` | only files matching these extensions will show coverage | `string \| Array<string>` | [list](https://github.com/istanbuljs/schema/blob/master/default-extension.js) |
 | `--skip-full` | do not show files with 100% statement, branch, and function coverage | `boolean` | `false` |
 | `--check-coverage` | check whether coverage is within thresholds provided | `boolean` | `false` |
+| `--per-file` | check thresholds per file | `boolean` | `false` |
 | `--temp-directory` | directory V8 coverage data is written to and read from | `string` | `process.env.NODE_V8_COVERAGE` |
 | `--clean` | should temp files be deleted before script execution | `boolean` | `true` |
 
