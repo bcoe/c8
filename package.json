@@ -47,7 +47,7 @@
     "yargs-parser": "^20.2.9"
   },
   "devDependencies": {
-    "@types/node": "^17.0.23",
+    "@types/node": "^18.0.0",
     "chai": "^4.3.6",
     "chai-jest-snapshot": "^2.0.0",
     "cross-env": "^7.0.3",
