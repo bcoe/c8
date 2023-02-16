@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.13.0](https://github.com/bcoe/c8/compare/v7.12.0...v7.13.0) (2023-02-14)
+
+
+### Features
+
+* add `skipFull` and `excludeNodeModules` to type definitions ([#417](https://github.com/bcoe/c8/issues/417)) ([b93b9c0](https://github.com/bcoe/c8/commit/b93b9c06b2efb4b894406b9aa3cfdf4c8bef419e))
+* support passing reporter options ([#423](https://github.com/bcoe/c8/issues/423)) ([bc347a9](https://github.com/bcoe/c8/commit/bc347a91f06a3fea7b7425c4affd66d7f8b9d416))
+* **types:** add typings for reporterOptions ([#446](https://github.com/bcoe/c8/issues/446)) ([3646e6e](https://github.com/bcoe/c8/commit/3646e6eb3762574d8f70907d7637e47dd9dfac25))
+
 ## [7.12.0](https://github.com/bcoe/c8/compare/v7.11.3...v7.12.0) (2022-07-19)
 
 
