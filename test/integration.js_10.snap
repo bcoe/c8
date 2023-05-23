@@ -156,7 +156,7 @@ hey
 ---------------------------------------|---------|----------|---------|---------|-------------------
 File                                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------------------------|---------|----------|---------|---------|-------------------
-All files                              |    1.91 |       12 |    8.16 |    1.91 |                   
+All files                              |    1.82 |    12.24 |    8.33 |    1.82 |                   
  c8                                    |       0 |        0 |       0 |       0 |                   
   index.js                             |       0 |        0 |       0 |       0 | 1                 
  c8/bin                                |       0 |        0 |       0 |       0 |                   
@@ -167,20 +167,19 @@ All files                              |    1.91 |       12 |    8.16 |    1.91 
   sorter.js                            |       0 |        0 |       0 |       0 | 1-196             
  c8/lib                                |       0 |        0 |       0 |       0 |                   
   is-cjs-esm-bridge.js                 |       0 |        0 |       0 |       0 | 1-10              
-  parse-args.js                        |       0 |        0 |       0 |       0 | 1-218             
-  report.js                            |       0 |        0 |       0 |       0 | 1-340             
+  parse-args.js                        |       0 |        0 |       0 |       0 | 1-224             
+  report.js                            |       0 |        0 |       0 |       0 | 1-407             
   source-map-from-file.js              |       0 |        0 |       0 |       0 | 1-100             
  c8/lib/commands                       |       0 |        0 |       0 |       0 |                   
   check-coverage.js                    |       0 |        0 |       0 |       0 | 1-70              
-  report.js                            |       0 |        0 |       0 |       0 | 1-41              
- c8/test/fixtures                      |   15.95 |    35.29 |      25 |   15.95 |                   
+  report.js                            |       0 |        0 |       0 |       0 | 1-42              
+ c8/test/fixtures                      |    16.3 |     37.5 |   26.66 |    16.3 |                   
   async.js                             |     100 |      100 |     100 |     100 |                   
   c8-ignore-next.js                    |       0 |        0 |       0 |       0 | 1-22              
   c8-ignore-start-stop.js              |       0 |        0 |       0 |       0 | 1-21              
   computed-method.js                   |       0 |        0 |       0 |       0 | 1-15              
   custom-ext.special                   |      75 |    66.66 |   33.33 |      75 | 14-16,18-20       
   custom-ext2.special                  |       0 |        0 |       0 |       0 | 1-24              
-  disable-fs-promises.js               |       0 |        0 |       0 |       0 | 1-4               
   issue-254.js                         |       0 |        0 |       0 |       0 | 1-7               
   multiple-spawn.js                    |       0 |        0 |       0 |       0 | 1-12              
   normal.js                            |       0 |        0 |       0 |       0 | 1-24              
@@ -257,24 +256,24 @@ hey
 --------------------------|---------|----------|---------|---------|--------------------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
 --------------------------|---------|----------|---------|---------|--------------------------------
-All files                 |   74.04 |    58.82 |   63.41 |   74.04 |                                
+All files                 |   71.51 |    57.95 |    61.9 |   71.51 |                                
  bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
   c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
- lib                      |   78.59 |    54.23 |   73.07 |   78.59 |                                
+ lib                      |   74.89 |    53.22 |   70.37 |   74.89 |                                
   is-cjs-esm-bridge.js    |      90 |       25 |     100 |      90 | 9                              
-  parse-args.js           |   97.24 |    58.33 |     100 |   97.24 | 159-160,181-182,195-196        
-  report.js               |   76.17 |    57.89 |      80 |   76.17 | ...284,290-292,313-318,329-330 
+  parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
+  report.js               |   69.53 |    56.09 |      75 |   69.53 | ...351,357-359,380-385,396-397 
   source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
- lib/commands             |   41.44 |    66.66 |   16.66 |   41.44 |                                
+ lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
   check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
-  report.js               |   80.48 |     62.5 |      50 |   80.48 | 9-10,15-20                     
+  report.js               |   80.95 |     62.5 |      50 |   80.95 | 9-10,15-20                     
  test/fixtures            |   83.33 |    85.71 |   66.66 |   83.33 |                                
   async.js                |     100 |      100 |     100 |     100 |                                
   normal.js               |      75 |    66.66 |   33.33 |      75 | 14-16,18-20                    
 --------------------------|---------|----------|---------|---------|--------------------------------
-,ERROR: Coverage for lines (74.04%) does not meet global threshold (101%)
-ERROR: Coverage for branches (58.82%) does not meet global threshold (82%)
-ERROR: Coverage for statements (74.04%) does not meet global threshold (95%)
+,ERROR: Coverage for lines (71.51%) does not meet global threshold (101%)
+ERROR: Coverage for branches (57.95%) does not meet global threshold (82%)
+ERROR: Coverage for statements (71.51%) does not meet global threshold (95%)
 "
 `;
 
@@ -284,17 +283,17 @@ ERROR: Coverage for branches (60%) does not meet threshold (82%) for bin/c8.js
 ERROR: Coverage for statements (78.84%) does not meet threshold (95%) for bin/c8.js
 ERROR: Coverage for lines (18.57%) does not meet threshold (101%) for lib/commands/check-coverage.js
 ERROR: Coverage for statements (18.57%) does not meet threshold (95%) for lib/commands/check-coverage.js
-ERROR: Coverage for lines (80.48%) does not meet threshold (101%) for lib/commands/report.js
+ERROR: Coverage for lines (80.95%) does not meet threshold (101%) for lib/commands/report.js
 ERROR: Coverage for branches (62.5%) does not meet threshold (82%) for lib/commands/report.js
-ERROR: Coverage for statements (80.48%) does not meet threshold (95%) for lib/commands/report.js
+ERROR: Coverage for statements (80.95%) does not meet threshold (95%) for lib/commands/report.js
 ERROR: Coverage for lines (90%) does not meet threshold (101%) for lib/is-cjs-esm-bridge.js
 ERROR: Coverage for branches (25%) does not meet threshold (82%) for lib/is-cjs-esm-bridge.js
 ERROR: Coverage for statements (90%) does not meet threshold (95%) for lib/is-cjs-esm-bridge.js
-ERROR: Coverage for lines (97.24%) does not meet threshold (101%) for lib/parse-args.js
+ERROR: Coverage for lines (97.32%) does not meet threshold (101%) for lib/parse-args.js
 ERROR: Coverage for branches (58.33%) does not meet threshold (82%) for lib/parse-args.js
-ERROR: Coverage for lines (76.17%) does not meet threshold (101%) for lib/report.js
-ERROR: Coverage for branches (57.89%) does not meet threshold (82%) for lib/report.js
-ERROR: Coverage for statements (76.17%) does not meet threshold (95%) for lib/report.js
+ERROR: Coverage for lines (69.53%) does not meet threshold (101%) for lib/report.js
+ERROR: Coverage for branches (56.09%) does not meet threshold (82%) for lib/report.js
+ERROR: Coverage for statements (69.53%) does not meet threshold (95%) for lib/report.js
 ERROR: Coverage for lines (45%) does not meet threshold (101%) for lib/source-map-from-file.js
 ERROR: Coverage for statements (45%) does not meet threshold (95%) for lib/source-map-from-file.js
 ERROR: Coverage for lines (100%) does not meet threshold (101%) for test/fixtures/async.js
@@ -305,19 +304,19 @@ ERROR: Coverage for statements (75%) does not meet threshold (95%) for test/fixt
 `;
 
 exports[`c8 check-coverage check-coverage command with --100 1`] = `
-",,ERROR: Coverage for lines (77.73%) does not meet global threshold (100%)
-ERROR: Coverage for functions (67.44%) does not meet global threshold (100%)
-ERROR: Coverage for branches (62.06%) does not meet global threshold (100%)
-ERROR: Coverage for statements (77.73%) does not meet global threshold (100%)
+",,ERROR: Coverage for lines (74.92%) does not meet global threshold (100%)
+ERROR: Coverage for functions (65.9%) does not meet global threshold (100%)
+ERROR: Coverage for branches (61.11%) does not meet global threshold (100%)
+ERROR: Coverage for statements (74.92%) does not meet global threshold (100%)
 "
 `;
 
 exports[`c8 check-coverage exits with 0 if coverage within threshold 1`] = `",,"`;
 
 exports[`c8 check-coverage exits with 1 if coverage is below threshold 1`] = `
-",,ERROR: Coverage for lines (74.04%) does not meet global threshold (101%)
-ERROR: Coverage for branches (58.82%) does not meet global threshold (82%)
-ERROR: Coverage for statements (74.04%) does not meet global threshold (95%)
+",,ERROR: Coverage for lines (71.51%) does not meet global threshold (101%)
+ERROR: Coverage for branches (57.95%) does not meet global threshold (82%)
+ERROR: Coverage for statements (71.51%) does not meet global threshold (95%)
 "
 `;
 
@@ -385,6 +384,1889 @@ All files   |      75 |       50 |     100 |      75 |
 ,"
 `;
 
+exports[`c8 mergeAsync /* c8 ignore next */ does not incorrectly mark previous branch as uncovered (see #254) 1`] = `
+",--------------|---------|----------|---------|---------|-------------------
+File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------|---------|----------|---------|---------|-------------------
+All files     |     100 |      100 |     100 |     100 |                   
+ issue-254.js |     100 |      100 |     100 |     100 |                   
+--------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync /* c8 ignore next */ ignores lines with special comment 1`] = `
+",covered
+covered
+--------------------------|---------|----------|---------|---------|--------------------------------
+File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
+--------------------------|---------|----------|---------|---------|--------------------------------
+All files                 |   71.52 |    57.14 |   62.16 |   71.52 |                                
+ bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
+  c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
+ lib                      |   74.89 |    51.66 |   70.37 |   74.89 |                                
+  is-cjs-esm-bridge.js    |      90 |       25 |     100 |      90 | 9                              
+  parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
+  report.js               |   69.53 |    53.84 |      75 |   69.53 | ...351,357-359,380-385,396-397 
+  source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
+ lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
+  check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
+  report.js               |   80.95 |     62.5 |      50 |   80.95 | 9-10,15-20                     
+ test/fixtures            |    90.9 |      100 |     100 |    90.9 |                                
+  c8-ignore-next.js       |    90.9 |      100 |     100 |    90.9 | 21-22                          
+--------------------------|---------|----------|---------|---------|--------------------------------
+,"
+`;
+
+exports[`c8 mergeAsync /* c8 ignore start/stop */ ignores lines with special comment 1`] = `
+",covered
+covered
+--------------------------|---------|----------|---------|---------|--------------------------------
+File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
+--------------------------|---------|----------|---------|---------|--------------------------------
+All files                 |    71.7 |    55.42 |   62.16 |    71.7 |                                
+ bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
+  c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
+ lib                      |   74.89 |    51.66 |   70.37 |   74.89 |                                
+  is-cjs-esm-bridge.js    |      90 |       25 |     100 |      90 | 9                              
+  parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
+  report.js               |   69.53 |    53.84 |      75 |   69.53 | ...351,357-359,380-385,396-397 
+  source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
+ lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
+  check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
+  report.js               |   80.95 |     62.5 |      50 |   80.95 | 9-10,15-20                     
+ test/fixtures            |     100 |       75 |     100 |     100 |                                
+  c8-ignore-start-stop.js |     100 |       75 |     100 |     100 | 2                              
+--------------------------|---------|----------|---------|---------|--------------------------------
+,"
+`;
+
+exports[`c8 mergeAsync --all reports coverage for unloaded js files as 0 for line, branch and function 1`] = `
+",zero
+positive
+negative
+--------------|---------|----------|---------|---------|-------------------
+File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------|---------|----------|---------|---------|-------------------
+All files     |   64.28 |    66.66 |      50 |   64.28 |                   
+ vanilla      |   78.26 |       75 |     100 |   78.26 |                   
+  loaded.js   |   73.68 |    71.42 |     100 |   73.68 | 4-5,16-18         
+  main.js     |     100 |      100 |     100 |     100 |                   
+ vanilla/dir  |       0 |        0 |       0 |       0 |                   
+  unloaded.js |       0 |        0 |       0 |       0 | 1-5               
+--------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync --all reports coverage for unloaded transpiled ts files as 0 for line, branch and function 1`] = `
+",zero
+positive
+negative
+-----------------|---------|----------|---------|---------|-------------------
+File             | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------------|---------|----------|---------|---------|-------------------
+All files        |   64.28 |    57.14 |      50 |   64.28 |                   
+ ts-compiled     |   78.26 |    66.66 |     100 |   78.26 |                   
+  loaded.ts      |   73.68 |    66.66 |     100 |   73.68 | 4-5,16-18         
+  main.ts        |     100 |      100 |     100 |     100 |                   
+ ts-compiled/dir |       0 |        0 |       0 |       0 |                   
+  unloaded.ts    |       0 |        0 |       0 |       0 | 1-5               
+-----------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync --all reports coverage for unloaded ts files as 0 for line, branch and function when using ts-node 1`] = `
+",zero
+positive
+negative
+--------------|---------|----------|---------|---------|-------------------
+File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------|---------|----------|---------|---------|-------------------
+All files     |      75 |    77.77 |   66.66 |      75 |                   
+ ts-only      |    91.3 |     87.5 |     100 |    91.3 |                   
+  loaded.ts   |   89.47 |    83.33 |     100 |   89.47 | 8-9               
+  main.ts     |     100 |      100 |     100 |     100 |                   
+ ts-only/dir  |       0 |        0 |       0 |       0 |                   
+  unloaded.ts |       0 |        0 |       0 |       0 | 1-5               
+--------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync --all should allow for --all to be used in conjunction with --check-coverage 1`] = `
+",zero
+positive
+negative
+--------------|---------|----------|---------|---------|-------------------
+File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------|---------|----------|---------|---------|-------------------
+All files     |   64.28 |    66.66 |      50 |   64.28 |                   
+ vanilla      |   78.26 |       75 |     100 |   78.26 |                   
+  loaded.js   |   73.68 |    71.42 |     100 |   73.68 | 4-5,16-18         
+  main.js     |     100 |      100 |     100 |     100 |                   
+ vanilla/dir  |       0 |        0 |       0 |       0 |                   
+  unloaded.js |       0 |        0 |       0 |       0 | 1-5               
+--------------|---------|----------|---------|---------|-------------------
+,ERROR: Coverage for lines (64.28%) does not meet global threshold (100%)
+ERROR: Coverage for branches (66.66%) does not meet global threshold (82%)
+ERROR: Coverage for statements (64.28%) does not meet global threshold (95%)
+"
+`;
+
+exports[`c8 mergeAsync --all should allow for --all to be used with the check-coverage command (2 invocations) 1`] = `
+",,ERROR: Coverage for lines (64.28%) does not meet global threshold (90%)
+ERROR: Coverage for branches (66.66%) does not meet global threshold (82%)
+ERROR: Coverage for statements (64.28%) does not meet global threshold (95%)
+"
+`;
+
+exports[`c8 mergeAsync --exclude-after-remap applies exclude rules after source-maps are applied 1`] = `
+",reachable
+a = true
+a = false
+-------------|---------|----------|---------|---------|-------------------
+File         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------|---------|----------|---------|---------|-------------------
+All files    |     100 |      100 |     100 |     100 |                   
+ branch-2.js |     100 |      100 |     100 |     100 |                   
+-------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync --extension includes coverage when extensions specified 1`] = `
+",hey
+i am a line of code
+what
+hey
+what
+hey
+what
+hey
+--------------------|---------|----------|---------|---------|-------------------
+File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------------|---------|----------|---------|---------|-------------------
+All files           |   83.33 |    85.71 |   66.66 |   83.33 |                   
+ async.js           |     100 |      100 |     100 |     100 |                   
+ custom-ext.special |      75 |    66.66 |   33.33 |      75 | 14-16,18-20       
+--------------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync --extension includes coverage when extensions specified with --all 1`] = `
+",hey
+i am a line of code
+what
+hey
+what
+hey
+what
+hey
+---------------------------------------|---------|----------|---------|---------|-------------------
+File                                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------------------------|---------|----------|---------|---------|-------------------
+All files                              |    1.82 |    12.24 |    8.33 |    1.82 |                   
+ c8                                    |       0 |        0 |       0 |       0 |                   
+  index.js                             |       0 |        0 |       0 |       0 | 1                 
+ c8/bin                                |       0 |        0 |       0 |       0 |                   
+  c8.js                                |       0 |        0 |       0 |       0 | 1-52              
+ c8/coverage                           |       0 |        0 |       0 |       0 |                   
+  block-navigation.js                  |       0 |        0 |       0 |       0 | 1-87              
+  prettify.js                          |       0 |        0 |       0 |       0 | 1-2               
+  sorter.js                            |       0 |        0 |       0 |       0 | 1-196             
+ c8/lib                                |       0 |        0 |       0 |       0 |                   
+  is-cjs-esm-bridge.js                 |       0 |        0 |       0 |       0 | 1-10              
+  parse-args.js                        |       0 |        0 |       0 |       0 | 1-224             
+  report.js                            |       0 |        0 |       0 |       0 | 1-407             
+  source-map-from-file.js              |       0 |        0 |       0 |       0 | 1-100             
+ c8/lib/commands                       |       0 |        0 |       0 |       0 |                   
+  check-coverage.js                    |       0 |        0 |       0 |       0 | 1-70              
+  report.js                            |       0 |        0 |       0 |       0 | 1-42              
+ c8/test/fixtures                      |    16.3 |     37.5 |   26.66 |    16.3 |                   
+  async.js                             |     100 |      100 |     100 |     100 |                   
+  c8-ignore-next.js                    |       0 |        0 |       0 |       0 | 1-22              
+  c8-ignore-start-stop.js              |       0 |        0 |       0 |       0 | 1-21              
+  computed-method.js                   |       0 |        0 |       0 |       0 | 1-15              
+  custom-ext.special                   |      75 |    66.66 |   33.33 |      75 | 14-16,18-20       
+  custom-ext2.special                  |       0 |        0 |       0 |       0 | 1-24              
+  issue-254.js                         |       0 |        0 |       0 |       0 | 1-7               
+  multiple-spawn.js                    |       0 |        0 |       0 |       0 | 1-12              
+  normal.js                            |       0 |        0 |       0 |       0 | 1-24              
+  shebang.js                           |       0 |        0 |       0 |       0 | 1-8               
+  subprocess.js                        |       0 |        0 |       0 |       0 | 1-15              
+ c8/test/fixtures/all/ts-compiled      |       0 |        0 |       0 |       0 |                   
+  loaded.ts                            |       0 |        0 |       0 |       0 | 1-19              
+  main.ts                              |       0 |        0 |       0 |       0 | 1-4               
+ c8/test/fixtures/all/ts-compiled/dir  |       0 |        0 |       0 |       0 |                   
+  unloaded.ts                          |       0 |        0 |       0 |       0 | 1-5               
+ c8/test/fixtures/all/vanilla          |       0 |        0 |       0 |       0 |                   
+  loaded.js                            |       0 |        0 |       0 |       0 | 1-19              
+  main.js                              |       0 |        0 |       0 |       0 | 1-4               
+ c8/test/fixtures/all/vanilla/dir      |       0 |        0 |       0 |       0 |                   
+  unloaded.js                          |       0 |        0 |       0 |       0 | 1-5               
+ c8/test/fixtures/multidir1            |       0 |        0 |       0 |       0 |                   
+  file1.js                             |       0 |        0 |       0 |       0 | 1                 
+ c8/test/fixtures/multidir2            |       0 |        0 |       0 |       0 |                   
+  file2.js                             |       0 |        0 |       0 |       0 | 1                 
+ c8/test/fixtures/report               |       0 |        0 |       0 |       0 |                   
+  allowExternal.js                     |       0 |        0 |       0 |       0 | 1                 
+  report-multi-dir-external.js         |       0 |        0 |       0 |       0 | 1-12              
+  report-single-dir-external.js        |       0 |        0 |       0 |       0 | 1-12              
+  srcOverride.js                       |       0 |        0 |       0 |       0 | 1                 
+ c8/test/fixtures/source-maps          |       0 |        0 |       0 |       0 |                   
+  branches.js                          |       0 |        0 |       0 |       0 | 1-20              
+  fake-source-map.js                   |       0 |        0 |       0 |       0 | 1-7               
+ c8/test/fixtures/source-maps/branches |       0 |        0 |       0 |       0 |                   
+  branch-1.js                          |       0 |        0 |       0 |       0 | 1-12              
+  branch-2.js                          |       0 |        0 |       0 |       0 | 1-9               
+  branches.js                          |       0 |        0 |       0 |       0 | 1-20              
+  branches.typescript.ts               |       0 |        0 |       0 |       0 | 1-25              
+ c8/test/fixtures/source-maps/classes  |       0 |        0 |       0 |       0 |                   
+  class-1.js                           |       0 |        0 |       0 |       0 | 1-5               
+  class-2.js                           |       0 |        0 |       0 |       0 | 1-23              
+  classes.js                           |       0 |        0 |       0 |       0 | 1-27              
+  classes.typescript.ts                |       0 |        0 |       0 |       0 | 1-33              
+---------------------------------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync check-coverage --100 1`] = `
+",hey
+i am a line of code
+what
+hey
+what
+hey
+what
+hey
+-----------|---------|----------|---------|---------|-------------------
+File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------|---------|----------|---------|---------|-------------------
+All files  |   83.33 |    85.71 |   66.66 |   83.33 |                   
+ async.js  |     100 |      100 |     100 |     100 |                   
+ normal.js |      75 |    66.66 |   33.33 |      75 | 14-16,18-20       
+-----------|---------|----------|---------|---------|-------------------
+,ERROR: Coverage for lines (83.33%) does not meet global threshold (100%)
+ERROR: Coverage for functions (66.66%) does not meet global threshold (100%)
+ERROR: Coverage for branches (85.71%) does not meet global threshold (100%)
+ERROR: Coverage for statements (83.33%) does not meet global threshold (100%)
+"
+`;
+
+exports[`c8 mergeAsync check-coverage allows --check-coverage when executing script 1`] = `
+",hey
+i am a line of code
+what
+hey
+what
+hey
+what
+hey
+--------------------------|---------|----------|---------|---------|--------------------------------
+File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
+--------------------------|---------|----------|---------|---------|--------------------------------
+All files                 |    78.1 |    69.64 |   68.18 |    78.1 |                                
+ bin                      |   82.69 |       70 |   66.66 |   82.69 |                                
+  c8.js                   |   82.69 |       70 |   66.66 |   82.69 | 22,27-29,41-43,50-51           
+ lib                      |   78.94 |    64.93 |   74.07 |   78.94 |                                
+  is-cjs-esm-bridge.js    |      90 |     62.5 |     100 |      90 | 9                              
+  parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
+  report.js               |    76.9 |    66.07 |   81.25 |    76.9 | ...323,350-351,357-359,380-385 
+  source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
+ lib/commands             |   68.75 |    83.33 |      50 |   68.75 |                                
+  check-coverage.js       |   52.85 |       75 |      50 |   52.85 | 9-11,14-36,47-49,61-64         
+  report.js               |   95.23 |       90 |      50 |   95.23 | 9-10                           
+ test/fixtures            |   83.33 |    85.71 |   66.66 |   83.33 |                                
+  async.js                |     100 |      100 |     100 |     100 |                                
+  normal.js               |      75 |    66.66 |   33.33 |      75 | 14-16,18-20                    
+--------------------------|---------|----------|---------|---------|--------------------------------
+,ERROR: Coverage for lines (78.1%) does not meet global threshold (101%)
+ERROR: Coverage for branches (69.64%) does not meet global threshold (82%)
+ERROR: Coverage for statements (78.1%) does not meet global threshold (95%)
+"
+`;
+
+exports[`c8 mergeAsync check-coverage allows threshold to be applied on per-file basis 1`] = `
+",,ERROR: Coverage for lines (82.69%) does not meet threshold (101%) for bin/c8.js
+ERROR: Coverage for branches (70%) does not meet threshold (82%) for bin/c8.js
+ERROR: Coverage for statements (82.69%) does not meet threshold (95%) for bin/c8.js
+ERROR: Coverage for lines (52.85%) does not meet threshold (101%) for lib/commands/check-coverage.js
+ERROR: Coverage for branches (75%) does not meet threshold (82%) for lib/commands/check-coverage.js
+ERROR: Coverage for statements (52.85%) does not meet threshold (95%) for lib/commands/check-coverage.js
+ERROR: Coverage for lines (95.23%) does not meet threshold (101%) for lib/commands/report.js
+ERROR: Coverage for lines (90%) does not meet threshold (101%) for lib/is-cjs-esm-bridge.js
+ERROR: Coverage for branches (62.5%) does not meet threshold (82%) for lib/is-cjs-esm-bridge.js
+ERROR: Coverage for statements (90%) does not meet threshold (95%) for lib/is-cjs-esm-bridge.js
+ERROR: Coverage for lines (97.32%) does not meet threshold (101%) for lib/parse-args.js
+ERROR: Coverage for branches (58.33%) does not meet threshold (82%) for lib/parse-args.js
+ERROR: Coverage for lines (76.9%) does not meet threshold (101%) for lib/report.js
+ERROR: Coverage for branches (66.07%) does not meet threshold (82%) for lib/report.js
+ERROR: Coverage for statements (76.9%) does not meet threshold (95%) for lib/report.js
+ERROR: Coverage for lines (45%) does not meet threshold (101%) for lib/source-map-from-file.js
+ERROR: Coverage for statements (45%) does not meet threshold (95%) for lib/source-map-from-file.js
+ERROR: Coverage for lines (100%) does not meet threshold (101%) for test/fixtures/async.js
+ERROR: Coverage for lines (75%) does not meet threshold (101%) for test/fixtures/normal.js
+ERROR: Coverage for branches (66.66%) does not meet threshold (82%) for test/fixtures/normal.js
+ERROR: Coverage for statements (75%) does not meet threshold (95%) for test/fixtures/normal.js
+"
+`;
+
+exports[`c8 mergeAsync check-coverage check-coverage command with --100 1`] = `
+",,ERROR: Coverage for lines (74.92%) does not meet global threshold (100%)
+ERROR: Coverage for functions (63.63%) does not meet global threshold (100%)
+ERROR: Coverage for branches (60.21%) does not meet global threshold (100%)
+ERROR: Coverage for statements (74.92%) does not meet global threshold (100%)
+"
+`;
+
+exports[`c8 mergeAsync check-coverage exits with 0 if coverage within threshold 1`] = `",,"`;
+
+exports[`c8 mergeAsync check-coverage exits with 1 if coverage is below threshold 1`] = `
+",,ERROR: Coverage for lines (78.1%) does not meet global threshold (101%)
+ERROR: Coverage for branches (69.64%) does not meet global threshold (82%)
+ERROR: Coverage for statements (78.1%) does not meet global threshold (95%)
+"
+`;
+
+exports[`c8 mergeAsync cobertura report escapes special characters 1`] = `
+"<?xml version=\\"1.0\\" ?>
+<!DOCTYPE coverage SYSTEM \\"http://cobertura.sourceforge.net/xml/coverage-04.dtd\\">
+<coverage lines-valid=\\"920\\" lines-covered=\\"658\\" line-rate=\\"0.7152\\" branches-valid=\\"83\\" branches-covered=\\"47\\" branch-rate=\\"0.nnnn\\" timestamp=\\"1684878544917\\" complexity=\\"0\\" version=\\"0.1\\">
+  <sources>
+    <source>/foo/file</source>
+  </sources>
+  <packages>
+    <package name=\\"bin\\" line-rate=\\"0.7884\\" branch-rate=\\"0.6\\">
+      <classes>
+        <class name=\\"c8.js\\" filename=\\"bin/c8.js\\" line-rate=\\"0.7884\\" branch-rate=\\"0.6\\">
+          <methods>
+            <method name=\\"run\\" hits=\\"2\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"18\\" hits=\\"2\\"/>
+              </lines>
+            </method>
+            <method name=\\"foreground\\" hits=\\"2\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"37\\" hits=\\"2\\"/>
+              </lines>
+            </method>
+            <method name=\\"run.catch\\" hits=\\"0\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"49\\" hits=\\"0\\"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number=\\"1\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"2\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"3\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"4\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"5\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"6\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"7\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"8\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"9\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"10\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"11\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"12\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"13\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"14\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"15\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"16\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"17\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"18\\" hits=\\"2\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"19\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"20\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"21\\" hits=\\"2\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"22\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"23\\" hits=\\"2\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"24\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"25\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"26\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"27\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"28\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"29\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"30\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"31\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"32\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"33\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"34\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"35\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"36\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"37\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"38\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"39\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"40\\" hits=\\"2\\" branch=\\"true\\" condition-coverage=\\"50% (1/2)\\"/>
+            <line number=\\"41\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"42\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"43\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"44\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"45\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"46\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"47\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"48\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"49\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"50\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"51\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"52\\" hits=\\"1\\" branch=\\"false\\"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name=\\"lib\\" line-rate=\\"0.7489\\" branch-rate=\\"0.5084000000000001\\">
+      <classes>
+        <class name=\\"is-cjs-esm-bridge.js\\" filename=\\"lib/is-cjs-esm-bridge.js\\" line-rate=\\"0.9\\" branch-rate=\\"0.25\\">
+          <methods>
+            <method name=\\"module.exports\\" hits=\\"1\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"1\\" hits=\\"1\\"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number=\\"1\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (2/2)\\"/>
+            <line number=\\"2\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"3\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"4\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"5\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"6\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"7\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"8\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"9\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"10\\" hits=\\"1\\" branch=\\"false\\"/>
+          </lines>
+        </class>
+        <class name=\\"parse-args.js\\" filename=\\"lib/parse-args.js\\" line-rate=\\"0.9732\\" branch-rate=\\"0.5832999999999999\\">
+          <methods>
+            <method name=\\"buildYargs\\" hits=\\"1\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"10\\" hits=\\"1\\"/>
+              </lines>
+            </method>
+            <method name=\\"configParser\\" hits=\\"1\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"17\\" hits=\\"1\\"/>
+              </lines>
+            </method>
+            <method name=\\"default\\" hits=\\"1\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"21\\" hits=\\"1\\"/>
+              </lines>
+            </method>
+            <method name=\\"Yargs.usage.options.option.option.options.options.option.option.option.option.option.options.option.option.option.option.option.option.option.option.option.option.option.option.options.options.pkgConf.demandCommand.check\\" hits=\\"1\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"163\\" hits=\\"1\\"/>
+              </lines>
+            </method>
+            <method name=\\"hideInstrumenterArgs\\" hits=\\"1\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"197\\" hits=\\"1\\"/>
+              </lines>
+            </method>
+            <method name=\\"hideInstrumenteeArgs\\" hits=\\"1\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"206\\" hits=\\"1\\"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number=\\"1\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"2\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"3\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"4\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"5\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"6\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"7\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"8\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"9\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"10\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"11\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"12\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"13\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"14\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"15\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"16\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"17\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"18\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"19\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"20\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"21\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"22\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"23\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"24\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"25\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"26\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"27\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"28\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"29\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"30\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"31\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"32\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"33\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"34\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"35\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"36\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"37\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"38\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"39\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"40\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"41\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"42\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"43\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"44\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"45\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"46\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"47\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"48\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"49\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"50\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"51\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"52\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"53\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"54\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"55\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"56\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"57\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"58\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"59\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"60\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"61\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"62\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"63\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"64\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"65\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"66\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"67\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"68\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"69\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"70\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"71\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"72\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"73\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"74\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"75\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"76\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"77\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"78\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"79\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"80\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"81\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"82\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"83\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"84\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"85\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"86\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"87\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"88\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"89\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"90\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"91\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"92\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"93\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"94\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"95\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"96\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"97\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"98\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"99\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"100\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"101\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"102\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"103\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"104\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"105\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"106\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"107\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"108\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"109\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"110\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"111\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"112\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"113\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"114\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"115\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"116\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"117\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"118\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"119\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"120\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"121\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"122\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"123\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"124\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"125\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"126\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"127\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"128\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"129\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"130\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"131\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"132\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"133\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"134\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"135\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"136\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"137\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"138\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"139\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"140\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"141\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"142\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"143\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"144\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"145\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"146\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"147\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"148\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"149\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"150\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"151\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"152\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"153\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"154\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"155\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"156\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"157\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"158\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"159\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"160\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"161\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"162\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"163\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"164\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"165\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"166\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"167\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"168\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"169\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"170\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"171\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"172\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"173\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"174\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"175\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"176\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"177\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"178\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"179\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"180\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"181\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"182\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"183\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"184\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"185\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"186\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"187\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"188\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"189\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"190\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"191\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"192\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"193\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"194\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"195\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"196\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"197\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"198\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"199\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"200\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"201\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"202\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"203\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"204\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"205\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"206\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"207\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"208\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"209\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"210\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"211\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"212\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"213\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"214\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"215\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"216\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"217\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"218\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"219\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"220\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"221\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"222\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"223\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"224\\" hits=\\"1\\" branch=\\"false\\"/>
+          </lines>
+        </class>
+        <class name=\\"report.js\\" filename=\\"lib/report.js\\" line-rate=\\"0.6953\\" branch-rate=\\"0.5263\\">
+          <methods>
+            <method name=\\"Report\\" hits=\\"1\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"22\\" hits=\\"1\\"/>
+              </lines>
+            </method>
+            <method name=\\"_getSrc\\" hits=\\"1\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"66\\" hits=\\"1\\"/>
+              </lines>
+            </method>
+            <method name=\\"run\\" hits=\\"2\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"76\\" hits=\\"2\\"/>
+              </lines>
+            </method>
+            <method name=\\"getCoverageMapFromAllCoverageFiles\\" hits=\\"2\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"93\\" hits=\\"2\\"/>
+              </lines>
+            </method>
+            <method name=\\"v8toIstanbul\\" hits=\\"5\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"115\\" hits=\\"5\\"/>
+              </lines>
+            </method>
+            <method name=\\"_getSourceMap\\" hits=\\"1\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"162\\" hits=\\"1\\"/>
+              </lines>
+            </method>
+            <method name=\\"sourceMapAndLineLengths.lineLengths.forEach.length\\" hits=\\"0\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"173\\" hits=\\"0\\"/>
+              </lines>
+            </method>
+            <method name=\\"_getMergedProcessCov\\" hits=\\"1\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"191\\" hits=\\"1\\"/>
+              </lines>
+            </method>
+            <method name=\\"_getMergedProcessCovAsync\\" hits=\\"0\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"214\\" hits=\\"0\\"/>
+              </lines>
+            </method>
+            <method name=\\"_includeUncoveredFiles\\" hits=\\"0\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"261\\" hits=\\"0\\"/>
+              </lines>
+            </method>
+            <method name=\\"_isCoverageObject\\" hits=\\"1\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"303\\" hits=\\"1\\"/>
+              </lines>
+            </method>
+            <method name=\\"_loadReports\\" hits=\\"1\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"313\\" hits=\\"1\\"/>
+              </lines>
+            </method>
+            <method name=\\"_normalizeProcessCov\\" hits=\\"1\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"344\\" hits=\\"1\\"/>
+              </lines>
+            </method>
+            <method name=\\"_normalizeSourceMapCache\\" hits=\\"0\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"379\\" hits=\\"0\\"/>
+              </lines>
+            </method>
+            <method name=\\"_shouldInstrument\\" hits=\\"1\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"393\\" hits=\\"1\\"/>
+              </lines>
+            </method>
+            <method name=\\"module.exports\\" hits=\\"1\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"405\\" hits=\\"1\\"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number=\\"1\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"2\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"3\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"4\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"5\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"6\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"7\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"8\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"9\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"10\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"11\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"12\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"13\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"14\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"15\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"16\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"17\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"18\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"19\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"20\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"21\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"22\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"23\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"24\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"25\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"26\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"27\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"28\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"29\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"30\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"31\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"32\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"33\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"34\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"35\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"36\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"37\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"38\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"39\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"40\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"41\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"42\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"43\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"44\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"45\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"46\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"47\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"48\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"49\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"50\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"51\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"52\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"53\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"54\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"55\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"56\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"57\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"58\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"59\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"60\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"61\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"62\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"63\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"64\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"65\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"66\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"67\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"68\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"69\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"70\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"71\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"72\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"73\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"74\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"75\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"76\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"77\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"78\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"79\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"80\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"81\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"82\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"83\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"84\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"85\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"86\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"87\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"88\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"89\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"90\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"91\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"92\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"93\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"94\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"95\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"96\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"97\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"98\\" hits=\\"2\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"99\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"100\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"101\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"102\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"103\\" hits=\\"2\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"104\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"105\\" hits=\\"2\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"106\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"107\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"108\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"109\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"110\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"111\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"112\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"113\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"114\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"115\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"116\\" hits=\\"5\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"117\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"118\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"119\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"120\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"121\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"122\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"123\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"124\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"125\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"126\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"127\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"128\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"129\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"130\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"131\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"132\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"133\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"134\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"135\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"136\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"137\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"138\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"139\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"140\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"141\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"142\\" hits=\\"2\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"143\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"144\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"145\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"146\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"147\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"148\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"149\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"150\\" hits=\\"2\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"151\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"152\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"153\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"154\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"155\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"156\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"157\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"158\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"159\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"160\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"161\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"162\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"163\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"164\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"165\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"166\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"167\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"168\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"169\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"170\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"171\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"172\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"173\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"174\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"175\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"176\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"177\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"178\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"179\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"180\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"181\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"182\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"183\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"184\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"185\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"186\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"187\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"188\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"189\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"190\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"191\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"192\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"193\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"194\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"195\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"196\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"197\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"198\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"199\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"200\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"201\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"202\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"203\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"204\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"205\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"206\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"207\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"208\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"209\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"210\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"211\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"212\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"213\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"214\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"215\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"216\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"217\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"218\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"219\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"220\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"221\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"222\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"223\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"224\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"225\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"226\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"227\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"228\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"229\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"230\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"231\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"232\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"233\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"234\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"235\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"236\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"237\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"238\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"239\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"240\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"241\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"242\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"243\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"244\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"245\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"246\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"247\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"248\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"249\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"250\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"251\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"252\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"253\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"254\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"255\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"256\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"257\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"258\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"259\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"260\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"261\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"262\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"263\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"264\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"265\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"266\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"267\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"268\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"269\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"270\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"271\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"272\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"273\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"274\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"275\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"276\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"277\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"278\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"279\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"280\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"281\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"282\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"283\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"284\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"285\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"286\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"287\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"288\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"289\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"290\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"291\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"292\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"293\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"294\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"295\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"296\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"297\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"298\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"299\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"300\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"301\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"302\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"303\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"304\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"305\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"306\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"307\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"308\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"309\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"310\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"311\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"312\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"313\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"314\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"315\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"316\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"317\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"318\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"319\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"320\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"321\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"322\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"323\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"324\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"325\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"326\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"327\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"328\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"329\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"330\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"331\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"332\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"333\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"334\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"335\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"336\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"337\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"338\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"339\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"340\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"341\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"342\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"343\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"344\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"345\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"346\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"347\\" hits=\\"48\\" branch=\\"false\\"/>
+            <line number=\\"348\\" hits=\\"48\\" branch=\\"false\\"/>
+            <line number=\\"349\\" hits=\\"48\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"350\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"351\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"352\\" hits=\\"48\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"353\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"354\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"355\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"356\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"357\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"358\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"359\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"360\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"361\\" hits=\\"48\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"362\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"363\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"364\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"365\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"366\\" hits=\\"48\\" branch=\\"false\\"/>
+            <line number=\\"367\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"368\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"369\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"370\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"371\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"372\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"373\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"374\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"375\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"376\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"377\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"378\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"379\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"380\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"381\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"382\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"383\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"384\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"385\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"386\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"387\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"388\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"389\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"390\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"391\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"392\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"393\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"394\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"395\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"396\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"397\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"398\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"399\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"400\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"401\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"402\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"403\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"404\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"405\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"406\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"407\\" hits=\\"1\\" branch=\\"false\\"/>
+          </lines>
+        </class>
+        <class name=\\"source-map-from-file.js\\" filename=\\"lib/source-map-from-file.js\\" line-rate=\\"0.45\\" branch-rate=\\"1\\">
+          <methods>
+            <method name=\\"getSourceMapFromFile\\" hits=\\"0\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"39\\" hits=\\"0\\"/>
+              </lines>
+            </method>
+            <method name=\\"dataFromUrl\\" hits=\\"0\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"52\\" hits=\\"0\\"/>
+              </lines>
+            </method>
+            <method name=\\"sourceMapFromFile\\" hits=\\"0\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"69\\" hits=\\"0\\"/>
+              </lines>
+            </method>
+            <method name=\\"sourceMapFromDataUrl\\" hits=\\"0\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"81\\" hits=\\"0\\"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number=\\"1\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"2\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"3\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"4\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"5\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"6\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"7\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"8\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"9\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"10\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"11\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"12\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"13\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"14\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"15\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"16\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"17\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"18\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"19\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"20\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"21\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"22\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"23\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"24\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"25\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"26\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"27\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"28\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"29\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"30\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"31\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"32\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"33\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"34\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"35\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"36\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"37\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"38\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"39\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"40\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"41\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"42\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"43\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"44\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"45\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"46\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"47\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"48\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"49\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"50\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"51\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"52\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"53\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"54\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"55\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"56\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"57\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"58\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"59\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"60\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"61\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"62\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"63\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"64\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"65\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"66\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"67\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"68\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"69\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"70\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"71\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"72\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"73\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"74\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"75\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"76\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"77\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"78\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"79\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"80\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"81\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"82\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"83\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"84\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"85\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"86\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"87\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"88\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"89\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"90\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"91\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"92\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"93\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"94\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"95\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"96\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"97\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"98\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"99\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"100\\" hits=\\"1\\" branch=\\"false\\"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name=\\"lib.commands\\" line-rate=\\"0.41960000000000003\\" branch-rate=\\"0.7\\">
+      <classes>
+        <class name=\\"check-coverage.js\\" filename=\\"lib/commands/check-coverage.js\\" line-rate=\\"0.1857\\" branch-rate=\\"1\\">
+          <methods>
+            <method name=\\"exports.builder\\" hits=\\"0\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"8\\" hits=\\"0\\"/>
+              </lines>
+            </method>
+            <method name=\\"exports.handler\\" hits=\\"0\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"13\\" hits=\\"0\\"/>
+              </lines>
+            </method>
+            <method name=\\"exports.checkCoverages\\" hits=\\"0\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"38\\" hits=\\"0\\"/>
+              </lines>
+            </method>
+            <method name=\\"checkCoverage\\" hits=\\"0\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"55\\" hits=\\"0\\"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number=\\"1\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"2\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"3\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"4\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"5\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"6\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"7\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"8\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"9\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"10\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"11\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"12\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"13\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"14\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"15\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"16\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"17\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"18\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"19\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"20\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"21\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"22\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"23\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"24\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"25\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"26\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"27\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"28\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"29\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"30\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"31\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"32\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"33\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"34\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"35\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"36\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"37\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"38\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"39\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"40\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"41\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"42\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"43\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"44\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"45\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"46\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"47\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"48\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"49\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"50\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"51\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"52\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"53\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"54\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"55\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"56\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"57\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"58\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"59\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"60\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"61\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"62\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"63\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"64\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"65\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"66\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"67\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"68\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"69\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"70\\" hits=\\"0\\" branch=\\"false\\"/>
+          </lines>
+        </class>
+        <class name=\\"report.js\\" filename=\\"lib/commands/report.js\\" line-rate=\\"0.8095\\" branch-rate=\\"0.6666\\">
+          <methods>
+            <method name=\\"exports.handler\\" hits=\\"0\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"8\\" hits=\\"0\\"/>
+              </lines>
+            </method>
+            <method name=\\"exports.outputReport\\" hits=\\"2\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"12\\" hits=\\"2\\"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number=\\"1\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"2\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"3\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"4\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"5\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"6\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"7\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"8\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"9\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"10\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"11\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"12\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"13\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"14\\" hits=\\"2\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"15\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"16\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"17\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"18\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"19\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"20\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"21\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"22\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"23\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"24\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"25\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"26\\" hits=\\"2\\" branch=\\"true\\" condition-coverage=\\"50% (1/2)\\"/>
+            <line number=\\"27\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"28\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"29\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"30\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"31\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"32\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"33\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"34\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"35\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"36\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"37\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"38\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"39\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"40\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"41\\" hits=\\"2\\" branch=\\"true\\" condition-coverage=\\"50% (1/2)\\"/>
+            <line number=\\"42\\" hits=\\"2\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name=\\"test.fixtures\\" line-rate=\\"1\\" branch-rate=\\"1\\">
+      <classes>
+        <class name=\\"computed-method.js\\" filename=\\"test/fixtures/computed-method.js\\" line-rate=\\"1\\" branch-rate=\\"1\\">
+          <methods>
+            <method name=\\"Test\\" hits=\\"2\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"2\\" hits=\\"2\\"/>
+              </lines>
+            </method>
+            <method name=\\"run\\" hits=\\"2\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"6\\" hits=\\"2\\"/>
+              </lines>
+            </method>
+            <method name=\\"map.(anonymous function).f\\" hits=\\"2\\" signature=\\"()V\\">
+              <lines>
+                <line number=\\"8\\" hits=\\"2\\"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number=\\"1\\" hits=\\"2\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"2\\" hits=\\"2\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"3\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"4\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"5\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"6\\" hits=\\"2\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"7\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"8\\" hits=\\"2\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"9\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"10\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"11\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"12\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"13\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"14\\" hits=\\"2\\" branch=\\"false\\"/>
+            <line number=\\"15\\" hits=\\"2\\" branch=\\"false\\"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>
+"
+`;
+
+exports[`c8 mergeAsync collects coverage for script with shebang 1`] = `
+",hello world
+--------------------------|---------|----------|---------|---------|--------------------------------
+File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
+--------------------------|---------|----------|---------|---------|--------------------------------
+All files                 |   71.08 |    54.32 |   61.11 |   71.08 |                                
+ bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
+  c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
+ lib                      |   74.89 |    51.66 |   70.37 |   74.89 |                                
+  is-cjs-esm-bridge.js    |      90 |       25 |     100 |      90 | 9                              
+  parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
+  report.js               |   69.53 |    53.84 |      75 |   69.53 | ...351,357-359,380-385,396-397 
+  source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
+ lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
+  check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
+  report.js               |   80.95 |     62.5 |      50 |   80.95 | 9-10,15-20                     
+ test/fixtures            |      75 |       50 |     100 |      75 |                                
+  shebang.js              |      75 |       50 |     100 |      75 | 7-8                            
+--------------------------|---------|----------|---------|---------|--------------------------------
+,"
+`;
+
+exports[`c8 mergeAsync merges reports from subprocesses together 1`] = `
+",first
+
+second
+
+--------------------------|---------|----------|---------|---------|--------------------------------
+File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
+--------------------------|---------|----------|---------|---------|--------------------------------
+All files                 |    72.1 |    64.44 |   63.15 |    72.1 |                                
+ bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
+  c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
+ lib                      |   75.16 |    61.53 |   70.37 |   75.16 |                                
+  is-cjs-esm-bridge.js    |      90 |     62.5 |     100 |      90 | 9                              
+  parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
+  report.js               |   70.02 |    61.36 |      75 |   70.02 | ...323,350-351,357-359,380-385 
+  source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
+ lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
+  check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
+  report.js               |   80.95 |     62.5 |      50 |   80.95 | 9-10,15-20                     
+ test/fixtures            |     100 |      100 |     100 |     100 |                                
+  multiple-spawn.js       |     100 |      100 |     100 |     100 |                                
+  subprocess.js           |     100 |      100 |     100 |     100 |                                
+--------------------------|---------|----------|---------|---------|--------------------------------
+,"
+`;
+
+exports[`c8 mergeAsync report generates report from existing temporary files 1`] = `
+",--------------------------|---------|----------|---------|---------|--------------------------------
+File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
+--------------------------|---------|----------|---------|---------|--------------------------------
+All files                 |    74.7 |    65.04 |   64.28 |    74.7 |                                
+ bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
+  c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
+ lib                      |   78.94 |    63.63 |   74.07 |   78.94 |                                
+  is-cjs-esm-bridge.js    |      90 |     62.5 |     100 |      90 | 9                              
+  parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
+  report.js               |    76.9 |    64.28 |   81.25 |    76.9 | ...323,350-351,357-359,380-385 
+  source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
+ lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
+  check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
+  report.js               |   80.95 |     62.5 |      50 |   80.95 | 9-10,15-20                     
+ test/fixtures            |   83.33 |    85.71 |   66.66 |   83.33 |                                
+  async.js                |     100 |      100 |     100 |     100 |                                
+  normal.js               |      75 |    66.66 |   33.33 |      75 | 14-16,18-20                    
+--------------------------|---------|----------|---------|---------|--------------------------------
+,"
+`;
+
+exports[`c8 mergeAsync report supports --check-coverage, when generating reports 1`] = `
+",--------------------------|---------|----------|---------|---------|--------------------------------
+File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
+--------------------------|---------|----------|---------|---------|--------------------------------
+All files                 |    74.7 |    65.04 |   64.28 |    74.7 |                                
+ bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
+  c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
+ lib                      |   78.94 |    63.63 |   74.07 |   78.94 |                                
+  is-cjs-esm-bridge.js    |      90 |     62.5 |     100 |      90 | 9                              
+  parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
+  report.js               |    76.9 |    64.28 |   81.25 |    76.9 | ...323,350-351,357-359,380-385 
+  source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
+ lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
+  check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
+  report.js               |   80.95 |     62.5 |      50 |   80.95 | 9-10,15-20                     
+ test/fixtures            |   83.33 |    85.71 |   66.66 |   83.33 |                                
+  async.js                |     100 |      100 |     100 |     100 |                                
+  normal.js               |      75 |    66.66 |   33.33 |      75 | 14-16,18-20                    
+--------------------------|---------|----------|---------|---------|--------------------------------
+,ERROR: Coverage for lines (74.7%) does not meet global threshold (101%)
+ERROR: Coverage for branches (65.04%) does not meet global threshold (82%)
+ERROR: Coverage for statements (74.7%) does not meet global threshold (95%)
+"
+`;
+
+exports[`c8 mergeAsync report supports reporting on directories outside cwd 1`] = `
+",-----------|---------|----------|---------|---------|-------------------
+File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------|---------|----------|---------|---------|-------------------
+All files  |       0 |        0 |       0 |       0 |                   
+ multidir1 |       0 |        0 |       0 |       0 |                   
+  file1.js |       0 |        0 |       0 |       0 | 1                 
+ multidir2 |       0 |        0 |       0 |       0 |                   
+  file2.js |       0 |        0 |       0 |       0 | 1                 
+-----------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync report supports reporting on single directories outside cwd 1`] = `
+",----------|---------|----------|---------|---------|-------------------
+File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------|---------|----------|---------|---------|-------------------
+All files |       0 |        0 |       0 |       0 |                   
+ file1.js |       0 |        0 |       0 |       0 | 1                 
+----------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync reports coverage for script that exits normally 1`] = `
+",hey
+i am a line of code
+what
+hey
+what
+hey
+what
+hey
+--------------------------|---------|----------|---------|---------|--------------------------------
+File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
+--------------------------|---------|----------|---------|---------|--------------------------------
+All files                 |   71.51 |    57.95 |    61.9 |   71.51 |                                
+ bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
+  c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
+ lib                      |   74.89 |    53.22 |   70.37 |   74.89 |                                
+  is-cjs-esm-bridge.js    |      90 |       25 |     100 |      90 | 9                              
+  parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
+  report.js               |   69.53 |    56.09 |      75 |   69.53 | ...351,357-359,380-385,396-397 
+  source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
+ lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
+  check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
+  report.js               |   80.95 |     62.5 |      50 |   80.95 | 9-10,15-20                     
+ test/fixtures            |   83.33 |    85.71 |   66.66 |   83.33 |                                
+  async.js                |     100 |      100 |     100 |     100 |                                
+  normal.js               |      75 |    66.66 |   33.33 |      75 | 14-16,18-20                    
+--------------------------|---------|----------|---------|---------|--------------------------------
+,"
+`;
+
+exports[`c8 mergeAsync should allow for files outside of cwd 1`] = `
+",hi
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |     100 |      100 |     100 |     100 |                   
+ multidir1         |     100 |      100 |     100 |     100 |                   
+  file1.js         |     100 |      100 |     100 |     100 |                   
+ report            |     100 |      100 |     100 |     100 |                   
+  allowExternal.js |     100 |      100 |     100 |     100 |                   
+-------------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync should allow for multiple overrides of src location for --all 1`] = `
+",hihi
+--------------------------------|---------|----------|---------|---------|-------------------
+File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------------------------|---------|----------|---------|---------|-------------------
+All files                       |    3.57 |    16.66 |       0 |    3.57 |                   
+ multidir1                      |       0 |        0 |       0 |       0 |                   
+  file1.js                      |       0 |        0 |       0 |       0 | 1                 
+ multidir2                      |       0 |        0 |       0 |       0 |                   
+  file2.js                      |       0 |        0 |       0 |       0 | 1                 
+ report                         |    3.84 |       25 |       0 |    3.84 |                   
+  allowExternal.js              |       0 |        0 |       0 |       0 | 1                 
+  report-multi-dir-external.js  |       0 |        0 |       0 |       0 | 1-12              
+  report-single-dir-external.js |       0 |        0 |       0 |       0 | 1-12              
+  srcOverride.js                |     100 |      100 |     100 |     100 |                   
+--------------------------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync source-maps TypeScript remaps branches 1`] = `
+",reachable
+a = true
+a = false
+------------------------|---------|----------|---------|---------|-------------------
+File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------------------|---------|----------|---------|---------|-------------------
+All files               |      84 |    57.14 |     100 |      84 |                   
+ branches.typescript.ts |      84 |    57.14 |     100 |      84 | 7,11-12,18        
+------------------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync source-maps TypeScript remaps classes 1`] = `
+",covered
+covered
+covered
+covered
+covered
+-----------------------|---------|----------|---------|---------|-------------------
+File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------------------|---------|----------|---------|---------|-------------------
+All files              |   81.81 |    85.71 |      60 |   81.81 |                   
+ classes.typescript.ts |   81.81 |    85.71 |      60 |   81.81 | 12-13,21-22,27-28 
+-----------------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync source-maps UglifyJS remaps branches 1`] = `
+",reachable
+a = true
+a = false
+-------------|---------|----------|---------|---------|-------------------
+File         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------|---------|----------|---------|---------|-------------------
+All files    |      80 |       50 |     100 |      80 |                   
+ branches.js |      80 |       50 |     100 |      80 | 2,5-6,13          
+-------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync source-maps UglifyJS remaps classes 1`] = `
+",covered
+covered
+covered
+covered
+covered
+------------|---------|----------|---------|---------|-------------------
+File        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------|---------|----------|---------|---------|-------------------
+All files   |   85.18 |    83.33 |      60 |   85.18 |                   
+ classes.js |   85.18 |    83.33 |      60 |   85.18 | 6-7,15,21         
+------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync source-maps does not attempt to load source map URLs that aren't 1`] = `
+",--------------------|---------|----------|---------|---------|-------------------
+File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------------|---------|----------|---------|---------|-------------------
+All files           |   71.42 |       50 |     100 |   71.42 |                   
+ fake-source-map.js |   71.42 |       50 |     100 |   71.42 | 5-6               
+--------------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync source-maps nyc remaps branches 1`] = `
+",reachable
+a = true
+a = false
+-------------|---------|----------|---------|---------|-------------------
+File         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------|---------|----------|---------|---------|-------------------
+All files    |      80 |       40 |     100 |      80 |                   
+ branches.js |      80 |       40 |     100 |      80 | 2,6-7,13          
+-------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync source-maps nyc remaps classes 1`] = `
+",covered
+covered
+covered
+covered
+covered
+------------|---------|----------|---------|---------|-------------------
+File        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------|---------|----------|---------|---------|-------------------
+All files   |   77.77 |    83.33 |      60 |   77.77 |                   
+ classes.js |   77.77 |    83.33 |      60 |   77.77 | 7-8,15-16,21-22   
+------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync source-maps rollup remaps branches 1`] = `
+",reachable
+a = true
+a = false
+-------------|---------|----------|---------|---------|-------------------
+File         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------|---------|----------|---------|---------|-------------------
+All files    |     100 |      100 |     100 |     100 |                   
+ branch-1.js |     100 |      100 |     100 |     100 |                   
+ branch-2.js |     100 |      100 |     100 |     100 |                   
+-------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync source-maps rollup remaps classes 1`] = `
+",covered
+covered
+covered
+covered
+covered
+------------|---------|----------|---------|---------|-------------------
+File        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------|---------|----------|---------|---------|-------------------
+All files   |   78.57 |    83.33 |      60 |   78.57 |                   
+ class-1.js |     100 |      100 |     100 |     100 |                   
+ class-2.js |   73.91 |    83.33 |      60 |   73.91 | 7-8,15-16,21-22   
+------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync source-maps ts-node reads source-map from cache, and applies to coverage 1`] = `
+",covered
+covered
+covered
+covered
+covered
+------------------|---------|----------|---------|---------|-------------------
+File              | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------------|---------|----------|---------|---------|-------------------
+All files         |   76.47 |    85.71 |      60 |   76.47 |                   
+ ts-node-basic.ts |   76.47 |    85.71 |      60 |   76.47 | 13-16,25-26,33-34 
+------------------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`c8 mergeAsync supports externally set NODE_V8_COVERAGE 1`] = `
+",hey
+i am a line of code
+what
+hey
+what
+hey
+what
+hey
+--------------------------|---------|----------|---------|---------|--------------------------------
+File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
+--------------------------|---------|----------|---------|---------|--------------------------------
+All files                 |   71.51 |    57.95 |    61.9 |   71.51 |                                
+ bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
+  c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
+ lib                      |   74.89 |    53.22 |   70.37 |   74.89 |                                
+  is-cjs-esm-bridge.js    |      90 |       25 |     100 |      90 | 9                              
+  parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
+  report.js               |   69.53 |    56.09 |      75 |   69.53 | ...351,357-359,380-385,396-397 
+  source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
+ lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
+  check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
+  report.js               |   80.95 |     62.5 |      50 |   80.95 | 9-10,15-20                     
+ test/fixtures            |   83.33 |    85.71 |   66.66 |   83.33 |                                
+  async.js                |     100 |      100 |     100 |     100 |                                
+  normal.js               |      75 |    66.66 |   33.33 |      75 | 14-16,18-20                    
+--------------------------|---------|----------|---------|---------|--------------------------------
+,"
+`;
+
 exports[`c8 merges reports from subprocesses together 1`] = `
 ",first
 
@@ -404,17 +2286,17 @@ exports[`c8 report generates report from existing temporary files 1`] = `
 ",--------------------------|---------|----------|---------|---------|--------------------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
 --------------------------|---------|----------|---------|---------|--------------------------------
-All files                 |   74.04 |    58.82 |   63.41 |   74.04 |                                
+All files                 |   71.51 |    57.95 |    61.9 |   71.51 |                                
  bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
   c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
- lib                      |   78.59 |    54.23 |   73.07 |   78.59 |                                
+ lib                      |   74.89 |    53.22 |   70.37 |   74.89 |                                
   is-cjs-esm-bridge.js    |      90 |       25 |     100 |      90 | 9                              
-  parse-args.js           |   97.24 |    58.33 |     100 |   97.24 | 159-160,181-182,195-196        
-  report.js               |   76.17 |    57.89 |      80 |   76.17 | ...284,290-292,313-318,329-330 
+  parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
+  report.js               |   69.53 |    56.09 |      75 |   69.53 | ...351,357-359,380-385,396-397 
   source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
- lib/commands             |   41.44 |    66.66 |   16.66 |   41.44 |                                
+ lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
   check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
-  report.js               |   80.48 |     62.5 |      50 |   80.48 | 9-10,15-20                     
+  report.js               |   80.95 |     62.5 |      50 |   80.95 | 9-10,15-20                     
  test/fixtures            |   83.33 |    85.71 |   66.66 |   83.33 |                                
   async.js                |     100 |      100 |     100 |     100 |                                
   normal.js               |      75 |    66.66 |   33.33 |      75 | 14-16,18-20                    
@@ -426,24 +2308,24 @@ exports[`c8 report supports --check-coverage, when generating reports 1`] = `
 ",--------------------------|---------|----------|---------|---------|--------------------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
 --------------------------|---------|----------|---------|---------|--------------------------------
-All files                 |   74.04 |    58.82 |   63.41 |   74.04 |                                
+All files                 |   71.51 |    57.95 |    61.9 |   71.51 |                                
  bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
   c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
- lib                      |   78.59 |    54.23 |   73.07 |   78.59 |                                
+ lib                      |   74.89 |    53.22 |   70.37 |   74.89 |                                
   is-cjs-esm-bridge.js    |      90 |       25 |     100 |      90 | 9                              
-  parse-args.js           |   97.24 |    58.33 |     100 |   97.24 | 159-160,181-182,195-196        
-  report.js               |   76.17 |    57.89 |      80 |   76.17 | ...284,290-292,313-318,329-330 
+  parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
+  report.js               |   69.53 |    56.09 |      75 |   69.53 | ...351,357-359,380-385,396-397 
   source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
- lib/commands             |   41.44 |    66.66 |   16.66 |   41.44 |                                
+ lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
   check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
-  report.js               |   80.48 |     62.5 |      50 |   80.48 | 9-10,15-20                     
+  report.js               |   80.95 |     62.5 |      50 |   80.95 | 9-10,15-20                     
  test/fixtures            |   83.33 |    85.71 |   66.66 |   83.33 |                                
   async.js                |     100 |      100 |     100 |     100 |                                
   normal.js               |      75 |    66.66 |   33.33 |      75 | 14-16,18-20                    
 --------------------------|---------|----------|---------|---------|--------------------------------
-,ERROR: Coverage for lines (74.04%) does not meet global threshold (101%)
-ERROR: Coverage for branches (58.82%) does not meet global threshold (82%)
-ERROR: Coverage for statements (74.04%) does not meet global threshold (95%)
+,ERROR: Coverage for lines (71.51%) does not meet global threshold (101%)
+ERROR: Coverage for branches (57.95%) does not meet global threshold (82%)
+ERROR: Coverage for statements (71.51%) does not meet global threshold (95%)
 "
 `;
 

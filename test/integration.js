@@ -163,8 +163,8 @@ beforeEach(function () {
           '--temp-directory=tmp/check-coverage',
           '--clean=false',
         `--merge-async=${mergeAsync}`,
-          nodePath,
-          require.resolve('./fixtures/normal')
+        nodePath,
+        require.resolve('./fixtures/normal')
         ])
       })
 
@@ -177,7 +177,7 @@ beforeEach(function () {
           '--lines=70',
           '--branches=55',
           '--statements=70',
-          `--merge-async=${mergeAsync}`,
+          `--merge-async=${mergeAsync}`
         ])
         status.should.equal(0)
         output.toString('utf8').should.matchSnapshot()
@@ -190,7 +190,7 @@ beforeEach(function () {
           '--exclude="test/*.js"',
           '--temp-directory=tmp/check-coverage',
           '--lines=101',
-          `--merge-async=${mergeAsync}`,
+          `--merge-async=${mergeAsync}`
         ])
         status.should.equal(1)
         output.toString('utf8').should.matchSnapshot()
@@ -204,7 +204,7 @@ beforeEach(function () {
           '--temp-directory=tmp/check-coverage',
           '--lines=101',
           '--per-file',
-          `--merge-async=${mergeAsync}`,
+          `--merge-async=${mergeAsync}`
         ])
         status.should.equal(1)
         output.toString('utf8').should.matchSnapshot()
@@ -248,7 +248,7 @@ beforeEach(function () {
           '--exclude="test/*.js"',
           '--temp-directory=tmp/check-coverage',
           '--100',
-          `--merge-async=${mergeAsync}`,
+          `--merge-async=${mergeAsync}`
         ])
         status.should.equal(1)
         output.toString('utf8').should.matchSnapshot()
@@ -275,7 +275,7 @@ beforeEach(function () {
           '--exclude="test/*.js"',
           '--temp-directory=./tmp/report',
           '--clean=false',
-          `--merge-async=${mergeAsync}`,
+          `--merge-async=${mergeAsync}`
         ])
         output.toString('utf8').should.matchSnapshot()
       })
@@ -289,7 +289,7 @@ beforeEach(function () {
           '--exclude="test/*.js"',
           '--temp-directory=tmp/report',
           '--clean=false',
-          `--merge-async=${mergeAsync}`,
+          `--merge-async=${mergeAsync}`
         ])
         status.should.equal(1)
         output.toString('utf8').should.matchSnapshot()
@@ -299,7 +299,7 @@ beforeEach(function () {
     describe('ESM Modules', () => {
       it('collects coverage for ESM modules', () => {
         if (nodeMajorVersion === 10) return
-        const args = [
+        const { output } = spawnSync(nodePath, [
           c8Path,
           '--exclude="test/*.js"',
           '--clean=false',
@@ -309,9 +309,7 @@ beforeEach(function () {
           '--experimental-modules',
           '--no-warnings',
           require.resolve('./fixtures/import.mjs')
-        ]
-        console.log(args)
-        const { output } = spawnSync(nodePath, args)
+        ])
         output.toString('utf8').should.matchSnapshot()
       })
     })

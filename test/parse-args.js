@@ -67,7 +67,7 @@ describe('parse-args', () => {
 
   describe('--merge-async', () => {
     it('should default to false', () => {
-      const argv = buildYargs().parse(['node', 'c8' ])
+      const argv = buildYargs().parse(['node', 'c8'])
       argv.mergeAsync.should.be.equal(false)
     })
 
