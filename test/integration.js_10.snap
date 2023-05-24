@@ -156,7 +156,7 @@ hey
 ---------------------------------------|---------|----------|---------|---------|-------------------
 File                                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------------------------|---------|----------|---------|---------|-------------------
-All files                              |    1.82 |    12.24 |    8.33 |    1.82 |                   
+All files                              |    1.81 |    12.24 |    8.33 |    1.81 |                   
  c8                                    |       0 |        0 |       0 |       0 |                   
   index.js                             |       0 |        0 |       0 |       0 | 1                 
  c8/bin                                |       0 |        0 |       0 |       0 |                   
@@ -168,7 +168,7 @@ All files                              |    1.82 |    12.24 |    8.33 |    1.82 
  c8/lib                                |       0 |        0 |       0 |       0 |                   
   is-cjs-esm-bridge.js                 |       0 |        0 |       0 |       0 | 1-10              
   parse-args.js                        |       0 |        0 |       0 |       0 | 1-224             
-  report.js                            |       0 |        0 |       0 |       0 | 1-407             
+  report.js                            |       0 |        0 |       0 |       0 | 1-417             
   source-map-from-file.js              |       0 |        0 |       0 |       0 | 1-100             
  c8/lib/commands                       |       0 |        0 |       0 |       0 |                   
   check-coverage.js                    |       0 |        0 |       0 |       0 | 1-70              
@@ -256,13 +256,13 @@ hey
 --------------------------|---------|----------|---------|---------|--------------------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
 --------------------------|---------|----------|---------|---------|--------------------------------
-All files                 |   71.51 |    57.95 |    61.9 |   71.51 |                                
+All files                 |   71.81 |    57.95 |    61.9 |   71.81 |                                
  bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
   c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
- lib                      |   74.89 |    53.22 |   70.37 |   74.89 |                                
+ lib                      |   75.23 |    53.22 |   70.37 |   75.23 |                                
   is-cjs-esm-bridge.js    |      90 |       25 |     100 |      90 | 9                              
   parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
-  report.js               |   69.53 |    56.09 |      75 |   69.53 | ...351,357-359,380-385,396-397 
+  report.js               |   70.26 |    56.09 |      75 |   70.26 | ...361,367-369,390-395,406-407 
   source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
  lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
   check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
@@ -271,9 +271,9 @@ All files                 |   71.51 |    57.95 |    61.9 |   71.51 |
   async.js                |     100 |      100 |     100 |     100 |                                
   normal.js               |      75 |    66.66 |   33.33 |      75 | 14-16,18-20                    
 --------------------------|---------|----------|---------|---------|--------------------------------
-,ERROR: Coverage for lines (71.51%) does not meet global threshold (101%)
+,ERROR: Coverage for lines (71.81%) does not meet global threshold (101%)
 ERROR: Coverage for branches (57.95%) does not meet global threshold (82%)
-ERROR: Coverage for statements (71.51%) does not meet global threshold (95%)
+ERROR: Coverage for statements (71.81%) does not meet global threshold (95%)
 "
 `;
 
@@ -291,9 +291,9 @@ ERROR: Coverage for branches (25%) does not meet threshold (82%) for lib/is-cjs-
 ERROR: Coverage for statements (90%) does not meet threshold (95%) for lib/is-cjs-esm-bridge.js
 ERROR: Coverage for lines (97.32%) does not meet threshold (101%) for lib/parse-args.js
 ERROR: Coverage for branches (58.33%) does not meet threshold (82%) for lib/parse-args.js
-ERROR: Coverage for lines (69.53%) does not meet threshold (101%) for lib/report.js
+ERROR: Coverage for lines (70.26%) does not meet threshold (101%) for lib/report.js
 ERROR: Coverage for branches (56.09%) does not meet threshold (82%) for lib/report.js
-ERROR: Coverage for statements (69.53%) does not meet threshold (95%) for lib/report.js
+ERROR: Coverage for statements (70.26%) does not meet threshold (95%) for lib/report.js
 ERROR: Coverage for lines (45%) does not meet threshold (101%) for lib/source-map-from-file.js
 ERROR: Coverage for statements (45%) does not meet threshold (95%) for lib/source-map-from-file.js
 ERROR: Coverage for lines (100%) does not meet threshold (101%) for test/fixtures/async.js
@@ -304,19 +304,19 @@ ERROR: Coverage for statements (75%) does not meet threshold (95%) for test/fixt
 `;
 
 exports[`c8 check-coverage check-coverage command with --100 1`] = `
-",,ERROR: Coverage for lines (74.92%) does not meet global threshold (100%)
+",,ERROR: Coverage for lines (75.18%) does not meet global threshold (100%)
 ERROR: Coverage for functions (65.9%) does not meet global threshold (100%)
 ERROR: Coverage for branches (61.11%) does not meet global threshold (100%)
-ERROR: Coverage for statements (74.92%) does not meet global threshold (100%)
+ERROR: Coverage for statements (75.18%) does not meet global threshold (100%)
 "
 `;
 
 exports[`c8 check-coverage exits with 0 if coverage within threshold 1`] = `",,"`;
 
 exports[`c8 check-coverage exits with 1 if coverage is below threshold 1`] = `
-",,ERROR: Coverage for lines (71.51%) does not meet global threshold (101%)
+",,ERROR: Coverage for lines (71.81%) does not meet global threshold (101%)
 ERROR: Coverage for branches (57.95%) does not meet global threshold (82%)
-ERROR: Coverage for statements (71.51%) does not meet global threshold (95%)
+ERROR: Coverage for statements (71.81%) does not meet global threshold (95%)
 "
 `;
 
@@ -400,13 +400,13 @@ covered
 --------------------------|---------|----------|---------|---------|--------------------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
 --------------------------|---------|----------|---------|---------|--------------------------------
-All files                 |   71.52 |    57.14 |   62.16 |   71.52 |                                
+All files                 |   71.82 |    57.14 |   62.16 |   71.82 |                                
  bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
   c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
- lib                      |   74.89 |    51.66 |   70.37 |   74.89 |                                
+ lib                      |   75.23 |    51.66 |   70.37 |   75.23 |                                
   is-cjs-esm-bridge.js    |      90 |       25 |     100 |      90 | 9                              
   parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
-  report.js               |   69.53 |    53.84 |      75 |   69.53 | ...351,357-359,380-385,396-397 
+  report.js               |   70.26 |    53.84 |      75 |   70.26 | ...361,367-369,390-395,406-407 
   source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
  lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
   check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
@@ -423,13 +423,13 @@ covered
 --------------------------|---------|----------|---------|---------|--------------------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
 --------------------------|---------|----------|---------|---------|--------------------------------
-All files                 |    71.7 |    55.42 |   62.16 |    71.7 |                                
+All files                 |      72 |    55.42 |   62.16 |      72 |                                
  bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
   c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
- lib                      |   74.89 |    51.66 |   70.37 |   74.89 |                                
+ lib                      |   75.23 |    51.66 |   70.37 |   75.23 |                                
   is-cjs-esm-bridge.js    |      90 |       25 |     100 |      90 | 9                              
   parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
-  report.js               |   69.53 |    53.84 |      75 |   69.53 | ...351,357-359,380-385,396-397 
+  report.js               |   70.26 |    53.84 |      75 |   70.26 | ...361,367-369,390-395,406-407 
   source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
  lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
   check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
@@ -562,7 +562,7 @@ hey
 ---------------------------------------|---------|----------|---------|---------|-------------------
 File                                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------------------------|---------|----------|---------|---------|-------------------
-All files                              |    1.82 |    12.24 |    8.33 |    1.82 |                   
+All files                              |    1.81 |    12.24 |    8.33 |    1.81 |                   
  c8                                    |       0 |        0 |       0 |       0 |                   
   index.js                             |       0 |        0 |       0 |       0 | 1                 
  c8/bin                                |       0 |        0 |       0 |       0 |                   
@@ -574,7 +574,7 @@ All files                              |    1.82 |    12.24 |    8.33 |    1.82 
  c8/lib                                |       0 |        0 |       0 |       0 |                   
   is-cjs-esm-bridge.js                 |       0 |        0 |       0 |       0 | 1-10              
   parse-args.js                        |       0 |        0 |       0 |       0 | 1-224             
-  report.js                            |       0 |        0 |       0 |       0 | 1-407             
+  report.js                            |       0 |        0 |       0 |       0 | 1-417             
   source-map-from-file.js              |       0 |        0 |       0 |       0 | 1-100             
  c8/lib/commands                       |       0 |        0 |       0 |       0 |                   
   check-coverage.js                    |       0 |        0 |       0 |       0 | 1-70              
@@ -662,13 +662,13 @@ hey
 --------------------------|---------|----------|---------|---------|--------------------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
 --------------------------|---------|----------|---------|---------|--------------------------------
-All files                 |    78.1 |    69.64 |   68.18 |    78.1 |                                
+All files                 |   78.33 |    69.64 |   68.18 |   78.33 |                                
  bin                      |   82.69 |       70 |   66.66 |   82.69 |                                
   c8.js                   |   82.69 |       70 |   66.66 |   82.69 | 22,27-29,41-43,50-51           
- lib                      |   78.94 |    64.93 |   74.07 |   78.94 |                                
+ lib                      |   79.22 |    64.93 |   74.07 |   79.22 |                                
   is-cjs-esm-bridge.js    |      90 |     62.5 |     100 |      90 | 9                              
   parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
-  report.js               |    76.9 |    66.07 |   81.25 |    76.9 | ...323,350-351,357-359,380-385 
+  report.js               |   77.45 |    66.07 |   81.25 |   77.45 | ...333,360-361,367-369,390-395 
   source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
  lib/commands             |   68.75 |    83.33 |      50 |   68.75 |                                
   check-coverage.js       |   52.85 |       75 |      50 |   52.85 | 9-11,14-36,47-49,61-64         
@@ -677,9 +677,9 @@ All files                 |    78.1 |    69.64 |   68.18 |    78.1 |
   async.js                |     100 |      100 |     100 |     100 |                                
   normal.js               |      75 |    66.66 |   33.33 |      75 | 14-16,18-20                    
 --------------------------|---------|----------|---------|---------|--------------------------------
-,ERROR: Coverage for lines (78.1%) does not meet global threshold (101%)
+,ERROR: Coverage for lines (78.33%) does not meet global threshold (101%)
 ERROR: Coverage for branches (69.64%) does not meet global threshold (82%)
-ERROR: Coverage for statements (78.1%) does not meet global threshold (95%)
+ERROR: Coverage for statements (78.33%) does not meet global threshold (95%)
 "
 `;
 
@@ -696,9 +696,9 @@ ERROR: Coverage for branches (62.5%) does not meet threshold (82%) for lib/is-cj
 ERROR: Coverage for statements (90%) does not meet threshold (95%) for lib/is-cjs-esm-bridge.js
 ERROR: Coverage for lines (97.32%) does not meet threshold (101%) for lib/parse-args.js
 ERROR: Coverage for branches (58.33%) does not meet threshold (82%) for lib/parse-args.js
-ERROR: Coverage for lines (76.9%) does not meet threshold (101%) for lib/report.js
+ERROR: Coverage for lines (77.45%) does not meet threshold (101%) for lib/report.js
 ERROR: Coverage for branches (66.07%) does not meet threshold (82%) for lib/report.js
-ERROR: Coverage for statements (76.9%) does not meet threshold (95%) for lib/report.js
+ERROR: Coverage for statements (77.45%) does not meet threshold (95%) for lib/report.js
 ERROR: Coverage for lines (45%) does not meet threshold (101%) for lib/source-map-from-file.js
 ERROR: Coverage for statements (45%) does not meet threshold (95%) for lib/source-map-from-file.js
 ERROR: Coverage for lines (100%) does not meet threshold (101%) for test/fixtures/async.js
@@ -709,26 +709,26 @@ ERROR: Coverage for statements (75%) does not meet threshold (95%) for test/fixt
 `;
 
 exports[`c8 mergeAsync check-coverage check-coverage command with --100 1`] = `
-",,ERROR: Coverage for lines (74.92%) does not meet global threshold (100%)
+",,ERROR: Coverage for lines (75.18%) does not meet global threshold (100%)
 ERROR: Coverage for functions (63.63%) does not meet global threshold (100%)
 ERROR: Coverage for branches (60.21%) does not meet global threshold (100%)
-ERROR: Coverage for statements (74.92%) does not meet global threshold (100%)
+ERROR: Coverage for statements (75.18%) does not meet global threshold (100%)
 "
 `;
 
 exports[`c8 mergeAsync check-coverage exits with 0 if coverage within threshold 1`] = `",,"`;
 
 exports[`c8 mergeAsync check-coverage exits with 1 if coverage is below threshold 1`] = `
-",,ERROR: Coverage for lines (78.1%) does not meet global threshold (101%)
+",,ERROR: Coverage for lines (78.33%) does not meet global threshold (101%)
 ERROR: Coverage for branches (69.64%) does not meet global threshold (82%)
-ERROR: Coverage for statements (78.1%) does not meet global threshold (95%)
+ERROR: Coverage for statements (78.33%) does not meet global threshold (95%)
 "
 `;
 
 exports[`c8 mergeAsync cobertura report escapes special characters 1`] = `
 "<?xml version=\\"1.0\\" ?>
 <!DOCTYPE coverage SYSTEM \\"http://cobertura.sourceforge.net/xml/coverage-04.dtd\\">
-<coverage lines-valid=\\"920\\" lines-covered=\\"658\\" line-rate=\\"0.7152\\" branches-valid=\\"83\\" branches-covered=\\"47\\" branch-rate=\\"0.nnnn\\" timestamp=\\"1684878544917\\" complexity=\\"0\\" version=\\"0.1\\">
+<coverage lines-valid=\\"930\\" lines-covered=\\"668\\" line-rate=\\"0.7182\\" branches-valid=\\"83\\" branches-covered=\\"47\\" branch-rate=\\"0.nnnn\\" timestamp=\\"1684953468857\\" complexity=\\"0\\" version=\\"0.1\\">
   <sources>
     <source>/foo/file</source>
   </sources>
@@ -810,7 +810,7 @@ exports[`c8 mergeAsync cobertura report escapes special characters 1`] = `
         </class>
       </classes>
     </package>
-    <package name=\\"lib\\" line-rate=\\"0.7489\\" branch-rate=\\"0.5084000000000001\\">
+    <package name=\\"lib\\" line-rate=\\"0.7523000000000001\\" branch-rate=\\"0.5084000000000001\\">
       <classes>
         <class name=\\"is-cjs-esm-bridge.js\\" filename=\\"lib/is-cjs-esm-bridge.js\\" line-rate=\\"0.9\\" branch-rate=\\"0.25\\">
           <methods>
@@ -1093,7 +1093,7 @@ exports[`c8 mergeAsync cobertura report escapes special characters 1`] = `
             <line number=\\"224\\" hits=\\"1\\" branch=\\"false\\"/>
           </lines>
         </class>
-        <class name=\\"report.js\\" filename=\\"lib/report.js\\" line-rate=\\"0.6953\\" branch-rate=\\"0.5263\\">
+        <class name=\\"report.js\\" filename=\\"lib/report.js\\" line-rate=\\"0.7026\\" branch-rate=\\"0.5263\\">
           <methods>
             <method name=\\"Report\\" hits=\\"1\\" signature=\\"()V\\">
               <lines>
@@ -1137,42 +1137,42 @@ exports[`c8 mergeAsync cobertura report escapes special characters 1`] = `
             </method>
             <method name=\\"_getMergedProcessCovAsync\\" hits=\\"0\\" signature=\\"()V\\">
               <lines>
-                <line number=\\"214\\" hits=\\"0\\"/>
+                <line number=\\"224\\" hits=\\"0\\"/>
               </lines>
             </method>
             <method name=\\"_includeUncoveredFiles\\" hits=\\"0\\" signature=\\"()V\\">
               <lines>
-                <line number=\\"261\\" hits=\\"0\\"/>
+                <line number=\\"271\\" hits=\\"0\\"/>
               </lines>
             </method>
             <method name=\\"_isCoverageObject\\" hits=\\"1\\" signature=\\"()V\\">
               <lines>
-                <line number=\\"303\\" hits=\\"1\\"/>
+                <line number=\\"313\\" hits=\\"1\\"/>
               </lines>
             </method>
             <method name=\\"_loadReports\\" hits=\\"1\\" signature=\\"()V\\">
               <lines>
-                <line number=\\"313\\" hits=\\"1\\"/>
+                <line number=\\"323\\" hits=\\"1\\"/>
               </lines>
             </method>
             <method name=\\"_normalizeProcessCov\\" hits=\\"1\\" signature=\\"()V\\">
               <lines>
-                <line number=\\"344\\" hits=\\"1\\"/>
+                <line number=\\"354\\" hits=\\"1\\"/>
               </lines>
             </method>
             <method name=\\"_normalizeSourceMapCache\\" hits=\\"0\\" signature=\\"()V\\">
               <lines>
-                <line number=\\"379\\" hits=\\"0\\"/>
+                <line number=\\"389\\" hits=\\"0\\"/>
               </lines>
             </method>
             <method name=\\"_shouldInstrument\\" hits=\\"1\\" signature=\\"()V\\">
               <lines>
-                <line number=\\"393\\" hits=\\"1\\"/>
+                <line number=\\"403\\" hits=\\"1\\"/>
               </lines>
             </method>
             <method name=\\"module.exports\\" hits=\\"1\\" signature=\\"()V\\">
               <lines>
-                <line number=\\"405\\" hits=\\"1\\"/>
+                <line number=\\"415\\" hits=\\"1\\"/>
               </lines>
             </method>
           </methods>
@@ -1391,16 +1391,16 @@ exports[`c8 mergeAsync cobertura report escapes special characters 1`] = `
             <line number=\\"212\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"213\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"214\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"215\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"216\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"217\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"218\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"219\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"220\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"221\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"222\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"223\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"224\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"215\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"216\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"217\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"218\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"219\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"220\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"221\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"222\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"223\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"224\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"225\\" hits=\\"0\\" branch=\\"false\\"/>
             <line number=\\"226\\" hits=\\"0\\" branch=\\"false\\"/>
             <line number=\\"227\\" hits=\\"0\\" branch=\\"false\\"/>
@@ -1429,25 +1429,25 @@ exports[`c8 mergeAsync cobertura report escapes special characters 1`] = `
             <line number=\\"250\\" hits=\\"0\\" branch=\\"false\\"/>
             <line number=\\"251\\" hits=\\"0\\" branch=\\"false\\"/>
             <line number=\\"252\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"253\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"254\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"255\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"256\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"257\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"258\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"259\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"260\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"261\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"253\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"254\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"255\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"256\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"257\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"258\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"259\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"260\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"261\\" hits=\\"0\\" branch=\\"false\\"/>
             <line number=\\"262\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"263\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"264\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"265\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"266\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"267\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"268\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"269\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"270\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"271\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"263\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"264\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"265\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"266\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"267\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"268\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"269\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"270\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"271\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"272\\" hits=\\"0\\" branch=\\"false\\"/>
             <line number=\\"273\\" hits=\\"0\\" branch=\\"false\\"/>
             <line number=\\"274\\" hits=\\"0\\" branch=\\"false\\"/>
@@ -1472,16 +1472,16 @@ exports[`c8 mergeAsync cobertura report escapes special characters 1`] = `
             <line number=\\"293\\" hits=\\"0\\" branch=\\"false\\"/>
             <line number=\\"294\\" hits=\\"0\\" branch=\\"false\\"/>
             <line number=\\"295\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"296\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"297\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"298\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"299\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"300\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"301\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"302\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"303\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
-            <line number=\\"304\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"305\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"296\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"297\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"298\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"299\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"300\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"301\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"302\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"303\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"304\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"305\\" hits=\\"0\\" branch=\\"false\\"/>
             <line number=\\"306\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"307\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"308\\" hits=\\"1\\" branch=\\"false\\"/>
@@ -1497,9 +1497,9 @@ exports[`c8 mergeAsync cobertura report escapes special characters 1`] = `
             <line number=\\"318\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"319\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"320\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"321\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
-            <line number=\\"322\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"323\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"321\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"322\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"323\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
             <line number=\\"324\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"325\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"326\\" hits=\\"1\\" branch=\\"false\\"/>
@@ -1507,9 +1507,9 @@ exports[`c8 mergeAsync cobertura report escapes special characters 1`] = `
             <line number=\\"328\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"329\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"330\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"331\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"332\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"333\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"331\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"332\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"333\\" hits=\\"0\\" branch=\\"false\\"/>
             <line number=\\"334\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"335\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"336\\" hits=\\"1\\" branch=\\"false\\"/>
@@ -1520,70 +1520,80 @@ exports[`c8 mergeAsync cobertura report escapes special characters 1`] = `
             <line number=\\"341\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"342\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"343\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"344\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"344\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"345\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"346\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
-            <line number=\\"347\\" hits=\\"48\\" branch=\\"false\\"/>
-            <line number=\\"348\\" hits=\\"48\\" branch=\\"false\\"/>
-            <line number=\\"349\\" hits=\\"48\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
-            <line number=\\"350\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"351\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"352\\" hits=\\"48\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"346\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"347\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"348\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"349\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"350\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"351\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"352\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"353\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"354\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"354\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
             <line number=\\"355\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"356\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
-            <line number=\\"357\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"358\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"359\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"360\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"361\\" hits=\\"48\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
-            <line number=\\"362\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"356\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"357\\" hits=\\"48\\" branch=\\"false\\"/>
+            <line number=\\"358\\" hits=\\"48\\" branch=\\"false\\"/>
+            <line number=\\"359\\" hits=\\"48\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"360\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"361\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"362\\" hits=\\"48\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
             <line number=\\"363\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"364\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"365\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"366\\" hits=\\"48\\" branch=\\"false\\"/>
-            <line number=\\"367\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"368\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"369\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"366\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"367\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"368\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"369\\" hits=\\"0\\" branch=\\"false\\"/>
             <line number=\\"370\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"371\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"371\\" hits=\\"48\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
             <line number=\\"372\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"373\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"374\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"375\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"376\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"376\\" hits=\\"48\\" branch=\\"false\\"/>
             <line number=\\"377\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"378\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"379\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"380\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"381\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"382\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"383\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"384\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"385\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"380\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"381\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"382\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"383\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"384\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"385\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"386\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"387\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"388\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"389\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"390\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"391\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"392\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"393\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
-            <line number=\\"394\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"395\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
-            <line number=\\"396\\" hits=\\"0\\" branch=\\"false\\"/>
-            <line number=\\"397\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"390\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"391\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"392\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"393\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"394\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"395\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"396\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"397\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"398\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"399\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"400\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"401\\" hits=\\"1\\" branch=\\"false\\"/>
             <line number=\\"402\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"403\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"403\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
             <line number=\\"404\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"405\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
-            <line number=\\"406\\" hits=\\"1\\" branch=\\"false\\"/>
-            <line number=\\"407\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"405\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"0% (0/1)\\"/>
+            <line number=\\"406\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"407\\" hits=\\"0\\" branch=\\"false\\"/>
+            <line number=\\"408\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"409\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"410\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"411\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"412\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"413\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"414\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"415\\" hits=\\"1\\" branch=\\"true\\" condition-coverage=\\"100% (1/1)\\"/>
+            <line number=\\"416\\" hits=\\"1\\" branch=\\"false\\"/>
+            <line number=\\"417\\" hits=\\"1\\" branch=\\"false\\"/>
           </lines>
         </class>
         <class name=\\"source-map-from-file.js\\" filename=\\"lib/source-map-from-file.js\\" line-rate=\\"0.45\\" branch-rate=\\"1\\">
@@ -1922,13 +1932,13 @@ exports[`c8 mergeAsync collects coverage for script with shebang 1`] = `
 --------------------------|---------|----------|---------|---------|--------------------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
 --------------------------|---------|----------|---------|---------|--------------------------------
-All files                 |   71.08 |    54.32 |   61.11 |   71.08 |                                
+All files                 |   71.39 |    54.32 |   61.11 |   71.39 |                                
  bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
   c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
- lib                      |   74.89 |    51.66 |   70.37 |   74.89 |                                
+ lib                      |   75.23 |    51.66 |   70.37 |   75.23 |                                
   is-cjs-esm-bridge.js    |      90 |       25 |     100 |      90 | 9                              
   parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
-  report.js               |   69.53 |    53.84 |      75 |   69.53 | ...351,357-359,380-385,396-397 
+  report.js               |   70.26 |    53.84 |      75 |   70.26 | ...361,367-369,390-395,406-407 
   source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
  lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
   check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
@@ -1947,13 +1957,13 @@ second
 --------------------------|---------|----------|---------|---------|--------------------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
 --------------------------|---------|----------|---------|---------|--------------------------------
-All files                 |    72.1 |    64.44 |   63.15 |    72.1 |                                
+All files                 |   72.39 |    64.44 |   63.15 |   72.39 |                                
  bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
   c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
- lib                      |   75.16 |    61.53 |   70.37 |   75.16 |                                
+ lib                      |   75.49 |    61.53 |   70.37 |   75.49 |                                
   is-cjs-esm-bridge.js    |      90 |     62.5 |     100 |      90 | 9                              
   parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
-  report.js               |   70.02 |    61.36 |      75 |   70.02 | ...323,350-351,357-359,380-385 
+  report.js               |   70.74 |    61.36 |      75 |   70.74 | ...333,360-361,367-369,390-395 
   source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
  lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
   check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
@@ -1969,13 +1979,13 @@ exports[`c8 mergeAsync report generates report from existing temporary files 1`]
 ",--------------------------|---------|----------|---------|---------|--------------------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
 --------------------------|---------|----------|---------|---------|--------------------------------
-All files                 |    74.7 |    65.04 |   64.28 |    74.7 |                                
+All files                 |   74.97 |    65.04 |   64.28 |   74.97 |                                
  bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
   c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
- lib                      |   78.94 |    63.63 |   74.07 |   78.94 |                                
+ lib                      |   79.22 |    63.63 |   74.07 |   79.22 |                                
   is-cjs-esm-bridge.js    |      90 |     62.5 |     100 |      90 | 9                              
   parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
-  report.js               |    76.9 |    64.28 |   81.25 |    76.9 | ...323,350-351,357-359,380-385 
+  report.js               |   77.45 |    64.28 |   81.25 |   77.45 | ...333,360-361,367-369,390-395 
   source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
  lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
   check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
@@ -1991,13 +2001,13 @@ exports[`c8 mergeAsync report supports --check-coverage, when generating reports
 ",--------------------------|---------|----------|---------|---------|--------------------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
 --------------------------|---------|----------|---------|---------|--------------------------------
-All files                 |    74.7 |    65.04 |   64.28 |    74.7 |                                
+All files                 |   74.97 |    65.04 |   64.28 |   74.97 |                                
  bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
   c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
- lib                      |   78.94 |    63.63 |   74.07 |   78.94 |                                
+ lib                      |   79.22 |    63.63 |   74.07 |   79.22 |                                
   is-cjs-esm-bridge.js    |      90 |     62.5 |     100 |      90 | 9                              
   parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
-  report.js               |    76.9 |    64.28 |   81.25 |    76.9 | ...323,350-351,357-359,380-385 
+  report.js               |   77.45 |    64.28 |   81.25 |   77.45 | ...333,360-361,367-369,390-395 
   source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
  lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
   check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
@@ -2006,9 +2016,9 @@ All files                 |    74.7 |    65.04 |   64.28 |    74.7 |
   async.js                |     100 |      100 |     100 |     100 |                                
   normal.js               |      75 |    66.66 |   33.33 |      75 | 14-16,18-20                    
 --------------------------|---------|----------|---------|---------|--------------------------------
-,ERROR: Coverage for lines (74.7%) does not meet global threshold (101%)
+,ERROR: Coverage for lines (74.97%) does not meet global threshold (101%)
 ERROR: Coverage for branches (65.04%) does not meet global threshold (82%)
-ERROR: Coverage for statements (74.7%) does not meet global threshold (95%)
+ERROR: Coverage for statements (74.97%) does not meet global threshold (95%)
 "
 `;
 
@@ -2047,13 +2057,13 @@ hey
 --------------------------|---------|----------|---------|---------|--------------------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
 --------------------------|---------|----------|---------|---------|--------------------------------
-All files                 |   71.51 |    57.95 |    61.9 |   71.51 |                                
+All files                 |   71.81 |    57.95 |    61.9 |   71.81 |                                
  bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
   c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
- lib                      |   74.89 |    53.22 |   70.37 |   74.89 |                                
+ lib                      |   75.23 |    53.22 |   70.37 |   75.23 |                                
   is-cjs-esm-bridge.js    |      90 |       25 |     100 |      90 | 9                              
   parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
-  report.js               |   69.53 |    56.09 |      75 |   69.53 | ...351,357-359,380-385,396-397 
+  report.js               |   70.26 |    56.09 |      75 |   70.26 | ...361,367-369,390-395,406-407 
   source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
  lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
   check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
@@ -2246,24 +2256,13 @@ what
 hey
 what
 hey
---------------------------|---------|----------|---------|---------|--------------------------------
-File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
---------------------------|---------|----------|---------|---------|--------------------------------
-All files                 |   71.51 |    57.95 |    61.9 |   71.51 |                                
- bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
-  c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
- lib                      |   74.89 |    53.22 |   70.37 |   74.89 |                                
-  is-cjs-esm-bridge.js    |      90 |       25 |     100 |      90 | 9                              
-  parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
-  report.js               |   69.53 |    56.09 |      75 |   69.53 | ...351,357-359,380-385,396-397 
-  source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
- lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
-  check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
-  report.js               |   80.95 |     62.5 |      50 |   80.95 | 9-10,15-20                     
- test/fixtures            |   83.33 |    85.71 |   66.66 |   83.33 |                                
-  async.js                |     100 |      100 |     100 |     100 |                                
-  normal.js               |      75 |    66.66 |   33.33 |      75 | 14-16,18-20                    
---------------------------|---------|----------|---------|---------|--------------------------------
+-----------|---------|----------|---------|---------|-------------------
+File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------|---------|----------|---------|---------|-------------------
+All files  |   83.33 |    85.71 |   66.66 |   83.33 |                   
+ async.js  |     100 |      100 |     100 |     100 |                   
+ normal.js |      75 |    66.66 |   33.33 |      75 | 14-16,18-20       
+-----------|---------|----------|---------|---------|-------------------
 ,"
 `;
 
@@ -2286,13 +2285,13 @@ exports[`c8 report generates report from existing temporary files 1`] = `
 ",--------------------------|---------|----------|---------|---------|--------------------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
 --------------------------|---------|----------|---------|---------|--------------------------------
-All files                 |   71.51 |    57.95 |    61.9 |   71.51 |                                
+All files                 |   71.81 |    57.95 |    61.9 |   71.81 |                                
  bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
   c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
- lib                      |   74.89 |    53.22 |   70.37 |   74.89 |                                
+ lib                      |   75.23 |    53.22 |   70.37 |   75.23 |                                
   is-cjs-esm-bridge.js    |      90 |       25 |     100 |      90 | 9                              
   parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
-  report.js               |   69.53 |    56.09 |      75 |   69.53 | ...351,357-359,380-385,396-397 
+  report.js               |   70.26 |    56.09 |      75 |   70.26 | ...361,367-369,390-395,406-407 
   source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
  lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
   check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
@@ -2308,13 +2307,13 @@ exports[`c8 report supports --check-coverage, when generating reports 1`] = `
 ",--------------------------|---------|----------|---------|---------|--------------------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
 --------------------------|---------|----------|---------|---------|--------------------------------
-All files                 |   71.51 |    57.95 |    61.9 |   71.51 |                                
+All files                 |   71.81 |    57.95 |    61.9 |   71.81 |                                
  bin                      |   78.84 |       60 |   66.66 |   78.84 |                                
   c8.js                   |   78.84 |       60 |   66.66 |   78.84 | 22,27-29,32-33,41-43,50-51     
- lib                      |   74.89 |    53.22 |   70.37 |   74.89 |                                
+ lib                      |   75.23 |    53.22 |   70.37 |   75.23 |                                
   is-cjs-esm-bridge.js    |      90 |       25 |     100 |      90 | 9                              
   parse-args.js           |   97.32 |    58.33 |     100 |   97.32 | 165-166,187-188,201-202        
-  report.js               |   69.53 |    56.09 |      75 |   69.53 | ...351,357-359,380-385,396-397 
+  report.js               |   70.26 |    56.09 |      75 |   70.26 | ...361,367-369,390-395,406-407 
   source-map-from-file.js |      45 |      100 |       0 |      45 | 39-50,52-67,69-77,81-98        
  lib/commands             |   41.96 |    66.66 |   16.66 |   41.96 |                                
   check-coverage.js       |   18.57 |      100 |       0 |   18.57 | 9-11,14-36,39-53,55-70         
@@ -2323,9 +2322,9 @@ All files                 |   71.51 |    57.95 |    61.9 |   71.51 |
   async.js                |     100 |      100 |     100 |     100 |                                
   normal.js               |      75 |    66.66 |   33.33 |      75 | 14-16,18-20                    
 --------------------------|---------|----------|---------|---------|--------------------------------
-,ERROR: Coverage for lines (71.51%) does not meet global threshold (101%)
+,ERROR: Coverage for lines (71.81%) does not meet global threshold (101%)
 ERROR: Coverage for branches (57.95%) does not meet global threshold (82%)
-ERROR: Coverage for statements (71.51%) does not meet global threshold (95%)
+ERROR: Coverage for statements (71.81%) does not meet global threshold (95%)
 "
 `;
 

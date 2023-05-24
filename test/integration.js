@@ -48,7 +48,7 @@ beforeEach(function () {
       const { output } = spawnSync(nodePath, [
         c8Path,
         '--exclude="test/*.js"',
-        '--clean=false',
+        '--clean=true',
         `--merge-async=${mergeAsync}`,
         nodePath,
         require.resolve('./fixtures/normal')
