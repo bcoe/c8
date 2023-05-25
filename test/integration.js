@@ -608,7 +608,7 @@ beforeEach(function () {
         c8Path,
         '--exclude="test/*.js"',
         '--temp-directory=tmp/cobertura',
-        '--clean=false',
+        '--clean=true',
         '--reporter=cobertura',
         `--merge-async=${mergeAsync}`,
         nodePath,
