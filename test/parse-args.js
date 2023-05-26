@@ -64,4 +64,16 @@ describe('parse-args', () => {
       argv.functions.should.be.equal(24)
     })
   })
+
+  describe('--merge-async', () => {
+    it('should default to false', () => {
+      const argv = buildYargs().parse(['node', 'c8'])
+      argv.mergeAsync.should.be.equal(false)
+    })
+
+    it('should set to true when flag exists', () => {
+      const argv = buildYargs().parse(['node', 'c8', '--merge-async'])
+      argv.mergeAsync.should.be.equal(true)
+    })
+  })
 })
