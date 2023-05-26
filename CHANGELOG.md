@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.14.0](https://github.com/bcoe/c8/compare/v7.13.0...v7.14.0) (2023-05-26)
+
+
+### Features
+
+* added a new CLI arg `--merge-async` to asynchronously and incrementally merge process coverage files to avoid OOM due to heap exhaustion ([#469](https://github.com/bcoe/c8/issues/469)) ([45f2f84](https://github.com/bcoe/c8/commit/45f2f84e0fa3a10fde718111f57c5352de01d9d1))
+
 ## [7.13.0](https://github.com/bcoe/c8/compare/v7.12.0...v7.13.0) (2023-02-14)
 
 
