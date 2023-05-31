@@ -167,7 +167,7 @@ const os = process.platform === 'darwin' ? 'OSXy' /* c8 ignore next */ : 'Window
 ## Supported Node.js Versions
 
 c8 uses [native V8 coverage](https://github.com/nodejs/node/pull/22527),
-make sure you're running Node.js `>= 10.12.0`.
+make sure you're running Node.js `>= 12`.
 
 ## Contributing to `c8`
 
