@@ -17,14 +17,7 @@ require('chai')
 
 before(cb => rimraf('tmp', cb))
 
-const nodeMajorVersion = Number(process.version.slice(1).split('.')[0])
 beforeEach(function () {
-  // Node 10 is missing some of the patches to V8 that improve coverage in
-  // newer Node.js versions, for this reason it requires its own snapshot file.
-  if (nodeMajorVersion === 10) {
-    const file = this.currentTest.file
-    this.currentTest.file = `${file}_10`
-  }
   chaiJestSnapshot.configureUsingMochaContext(this)
 })
 
@@ -298,7 +291,6 @@ beforeEach(function () {
 
     describe('ESM Modules', () => {
       it('collects coverage for ESM modules', () => {
-        if (nodeMajorVersion === 10) return
         const { output } = spawnSync(nodePath, [
           c8Path,
           '--exclude="test/*.js"',
