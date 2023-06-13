@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.0](https://github.com/bcoe/c8/compare/v7.14.0...v8.0.0) (2023-06-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* dropped Node 10 support ([#475](https://github.com/bcoe/c8/issues/475))
+
+### Miscellaneous Chores
+
+* dropped Node 10 support ([#475](https://github.com/bcoe/c8/issues/475)) ([f8ee1ff](https://github.com/bcoe/c8/commit/f8ee1ffeba0f7b9b36e328226b23e9999f6481e7))
+
 ## [7.14.0](https://github.com/bcoe/c8/compare/v7.13.0...v7.14.0) (2023-05-26)
 
 
