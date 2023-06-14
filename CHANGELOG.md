@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.0](https://github.com/bcoe/c8/compare/v7.14.0...v8.0.0) (2023-06-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* dropped Node 10 support ([#475](https://github.com/bcoe/c8/issues/475))
+
+### Miscellaneous Chores
+
+* dropped Node 10 support ([#475](https://github.com/bcoe/c8/issues/475)) ([f8ee1ff](https://github.com/bcoe/c8/commit/f8ee1ffeba0f7b9b36e328226b23e9999f6481e7))
+
+## [7.14.0](https://github.com/bcoe/c8/compare/v7.13.0...v7.14.0) (2023-05-26)
+
+
+### Features
+
+* added a new CLI arg `--merge-async` to asynchronously and incrementally merge process coverage files to avoid OOM due to heap exhaustion ([#469](https://github.com/bcoe/c8/issues/469)) ([45f2f84](https://github.com/bcoe/c8/commit/45f2f84e0fa3a10fde718111f57c5352de01d9d1))
+
 ## [7.13.0](https://github.com/bcoe/c8/compare/v7.12.0...v7.13.0) (2023-02-14)
 
 
