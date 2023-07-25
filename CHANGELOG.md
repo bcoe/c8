@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.1](https://github.com/bcoe/c8/compare/v8.0.0...v8.0.1) (2023-07-25)
+
+
+### Bug Fixes
+
+* **deps:** update istanbul deps ([#485](https://github.com/bcoe/c8/issues/485)) ([3be8bd9](https://github.com/bcoe/c8/commit/3be8bd97c3fb38b575a48871c170dd5e5041b9a8)), closes [#478](https://github.com/bcoe/c8/issues/478)
+
 ## [8.0.0](https://github.com/bcoe/c8/compare/v7.14.0...v8.0.0) (2023-06-05)
 
 
