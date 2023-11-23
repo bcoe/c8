@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict'
 
-const foreground = require('foreground-child')
+const { foregroundChild } = require('foreground-child')
 const { outputReport } = require('../lib/commands/report')
 const { promises } = require('fs')
 const { promisify } = require('util')
@@ -24,7 +24,7 @@ async function run () {
     // fs.promises was not added until Node.js v10.0.0, if it doesn't
     // exist, assume we're Node.js v8.x and skip coverage.
     if (!promises) {
-      foreground(hideInstrumenterArgs(argv))
+      foregroundChild(hideInstrumenterArgs(argv))
       return
     }
 
@@ -34,19 +34,18 @@ async function run () {
 
     await promises.mkdir(argv.tempDirectory, { recursive: true })
     process.env.NODE_V8_COVERAGE = argv.tempDirectory
-    foreground(hideInstrumenterArgs(argv), async (done) => {
+    foregroundChild(hideInstrumenterArgs(argv), async () => {
       try {
         await outputReport(argv)
       } catch (err) {
         console.error(err.stack)
-        process.exitCode = 1
+        process.exit(1)
       }
-      done()
     })
   }
 }
 
 run().catch((err) => {
   console.error(err.stack)
-  process.exitCode = 1
+  process.exit(1)
 })
