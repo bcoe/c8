@@ -4,7 +4,7 @@
 const foreground = require('foreground-child')
 const { outputReport } = require('../lib/commands/report')
 const { rm, mkdir } = require('fs/promises')
-proconst {
+const {
   buildYargs,
   hideInstrumenteeArgs,
   hideInstrumenterArgs
@@ -19,12 +19,7 @@ async function run () {
   ].indexOf(argv._[0]) !== -1) {
     argv = buildYargs(true).parse(process.argv.slice(2))
   } else {
-    // fs.promises was not added until Node.js v10.0.0, if it doesn't
-    // exist, assume we're Node.js v8.x and skip coverage.
-    if (!promises) {
-      foreground(hideInstrumenterArgs(argv))
-      return
-    }
+    foreground(hideInstrumenterArgs(argv))
 
     if (argv.clean) {
       await rm(argv.tempDirectory, { recursive: true, force: true })
