@@ -3,9 +3,8 @@
 
 const foreground = require('foreground-child')
 const { outputReport } = require('../lib/commands/report')
-const { rm } = require('fs/promises')
-const { promisify } = require('util')
-const {
+const { rm, mkdir } = require('fs/promises')
+proconst {
   buildYargs,
   hideInstrumenteeArgs,
   hideInstrumenterArgs
@@ -31,7 +30,7 @@ async function run () {
       await rm(argv.tempDirectory, { recursive: true, force: true })
     }
 
-    await promises.mkdir(argv.tempDirectory, { recursive: true })
+    await mkdir(argv.tempDirectory, { recursive: true })
     process.env.NODE_V8_COVERAGE = argv.tempDirectory
     foreground(hideInstrumenterArgs(argv), async (done) => {
       try {
