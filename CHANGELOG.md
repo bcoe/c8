@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.0.0](https://github.com/bcoe/c8/compare/v8.0.1...v9.0.0) (2024-01-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* **build:** minimum Node.js version is now 14.14.0
+
+### Features
+
+* **build:** minimum Node.js version is now 14.14.0 ([2cdc86b](https://github.com/bcoe/c8/commit/2cdc86bd0ac67ecf0f700212dc5f8a830ff9164f))
+* **deps:** update foreground-child to promise API ([#512](https://github.com/bcoe/c8/issues/512)) ([b46b640](https://github.com/bcoe/c8/commit/b46b6401274488db5b1027a78090257095ae4f72))
+* **deps:** use Node.js built in rm ([2cdc86b](https://github.com/bcoe/c8/commit/2cdc86bd0ac67ecf0f700212dc5f8a830ff9164f))
+
 ## [8.0.1](https://github.com/bcoe/c8/compare/v8.0.0...v8.0.1) (2023-07-25)
 
 
