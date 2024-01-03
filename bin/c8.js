@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict'
 
-const foreground = require('foreground-child')
+const { foregroundChild } = require('foreground-child')
 const { outputReport } = require('../lib/commands/report')
 const { rm, mkdir } = require('fs/promises')
 const {
@@ -25,14 +25,14 @@ async function run () {
 
     await mkdir(argv.tempDirectory, { recursive: true })
     process.env.NODE_V8_COVERAGE = argv.tempDirectory
-    foreground(hideInstrumenterArgs(argv), async (done) => {
+    foregroundChild(hideInstrumenterArgs(argv), async () => {
       try {
         await outputReport(argv)
+        return process.exitCode
       } catch (err) {
         console.error(err.stack)
-        process.exitCode = 1
+        return 1
       }
-      done()
     })
   }
 }
