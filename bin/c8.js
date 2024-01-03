@@ -3,7 +3,7 @@
 
 const foreground = require('foreground-child')
 const { outputReport } = require('../lib/commands/report')
-const { promises, rmSync } = require('fs')
+const { rm } = require('fs/promises')
 const { promisify } = require('util')
 const {
   buildYargs,
@@ -28,7 +28,7 @@ async function run () {
     }
 
     if (argv.clean) {
-      await promisify(rmSync)(argv.tempDirectory, { recursive: true, force: true })
+      await rm(argv.tempDirectory, { recursive: true, force: true })
     }
 
     await promises.mkdir(argv.tempDirectory, { recursive: true })
