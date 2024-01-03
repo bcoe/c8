@@ -14,7 +14,7 @@ require('chai')
   .use(chaiJestSnapshot)
   .should()
 
-before(cb => rmSync('tmp', { recursive: true, ...cb }))
+before(cb => rmSync('tmp', { recursive: true, force: true, ...cb }))
 
 beforeEach(function () {
   chaiJestSnapshot.configureUsingMochaContext(this)

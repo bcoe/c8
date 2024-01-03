@@ -28,7 +28,7 @@ async function run () {
     }
 
     if (argv.clean) {
-      await promisify(rmSync)(argv.tempDirectory, { recursive: true })
+      await promisify(rmSync)(argv.tempDirectory, { recursive: true, force: true })
     }
 
     await promises.mkdir(argv.tempDirectory, { recursive: true })
