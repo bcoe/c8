@@ -3,9 +3,8 @@
 
 const foreground = require('foreground-child')
 const { outputReport } = require('../lib/commands/report')
-const { promises } = require('fs')
+const { promises, rmSync } = require('fs')
 const { promisify } = require('util')
-const rimraf = require('rimraf')
 const {
   buildYargs,
   hideInstrumenteeArgs,
@@ -29,7 +28,7 @@ async function run () {
     }
 
     if (argv.clean) {
-      await promisify(rimraf)(argv.tempDirectory)
+      await promisify(rmSync)(argv.tempDirectory, { recursive: true })
     }
 
     await promises.mkdir(argv.tempDirectory, { recursive: true })

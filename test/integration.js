@@ -3,19 +3,18 @@
 const { readFileSync } = require('fs')
 const { resolve } = require('path')
 const { spawnSync } = require('child_process')
-const { statSync } = require('fs')
+const { statSync, rmSync } = require('fs')
 const { dirname } = require('path')
 const c8Path = require.resolve('../bin/c8')
 const nodePath = process.execPath
 const tsNodePath = './node_modules/.bin/ts-node'
 const chaiJestSnapshot = require('chai-jest-snapshot')
-const rimraf = require('rimraf')
 
 require('chai')
   .use(chaiJestSnapshot)
   .should()
 
-before(cb => rimraf('tmp', cb))
+before(cb => rmSync('tmp', { recursive: true, ...cb }))
 
 beforeEach(function () {
   chaiJestSnapshot.configureUsingMochaContext(this)
@@ -352,7 +351,7 @@ beforeEach(function () {
     })
 
     describe('source-maps', () => {
-      beforeEach(cb => rimraf('tmp/source-map', cb))
+      beforeEach(cb => rmSync('tmp/source-map', { recursive: true, ...cb }))
 
       describe('TypeScript', () => {
         // Bugs:
