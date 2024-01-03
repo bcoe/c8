@@ -81,7 +81,7 @@ beforeEach(function () {
         env: { NODE_DEBUG: 'c8' }
       })
       output.toString('utf8').should.match(
-        /Error: ENOENT: no such file or directory.*loaders\.js/
+        /Error: ENOENT: no such file or directory.*loader\.js/
       )
     })
 
