@@ -19,8 +19,6 @@ async function run () {
   ].indexOf(argv._[0]) !== -1) {
     argv = buildYargs(true).parse(process.argv.slice(2))
   } else {
-    foreground(hideInstrumenterArgs(argv))
-
     if (argv.clean) {
       await rm(argv.tempDirectory, { recursive: true, force: true })
     }
