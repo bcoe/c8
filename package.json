@@ -1,6 +1,6 @@
 {
   "name": "c8",
-  "version": "9.0.0",
+  "version": "9.1.0",
   "description": "output coverage reports using Node.js' built in coverage",
   "main": "./index.js",
   "types": "./index.d.ts",
