@@ -171,7 +171,7 @@ All files                              |    3.52 |     12.5 |    6.52 |    3.52 
   source-map-from-file.js              |       0 |        0 |       0 |       0 | 1-100                  
  c8/lib/commands                       |       0 |        0 |       0 |       0 |                        
   check-coverage.js                    |       0 |        0 |       0 |       0 | 1-70                   
-  report.js                            |       0 |        0 |       0 |       0 | 1-42                   
+  report.js                            |       0 |        0 |       0 |       0 | 1-43                   
  c8/test/fixtures                      |   30.97 |     37.5 |   21.42 |   30.97 |                        
   async.js                             |     100 |      100 |     100 |     100 |                        
   c8-ignore-next.js                    |   54.54 |        0 |       0 |   54.54 | 1,3-4,9,12,17-19,21-22 
@@ -536,7 +536,7 @@ All files                              |    3.52 |     12.5 |    6.52 |    3.52 
   source-map-from-file.js              |       0 |        0 |       0 |       0 | 1-100                  
  c8/lib/commands                       |       0 |        0 |       0 |       0 |                        
   check-coverage.js                    |       0 |        0 |       0 |       0 | 1-70                   
-  report.js                            |       0 |        0 |       0 |       0 | 1-42                   
+  report.js                            |       0 |        0 |       0 |       0 | 1-43                   
  c8/test/fixtures                      |   30.97 |     37.5 |   21.42 |   30.97 |                        
   async.js                             |     100 |      100 |     100 |     100 |                        
   c8-ignore-next.js                    |   54.54 |        0 |       0 |   54.54 | 1,3-4,9,12,17-19,21-22 

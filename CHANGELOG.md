@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.1.0](https://github.com/bcoe/c8/compare/v9.0.0...v9.1.0) (2024-01-11)
+
+
+### Features
+
+* support passing reporter options from config ([#459](https://github.com/bcoe/c8/issues/459)) ([88db5db](https://github.com/bcoe/c8/commit/88db5db56ece1686b02af7ce3b5480653069b975))
+
+
+### Bug Fixes
+
+* **refactor:** remove stale check for createDynamicModule ([5e18365](https://github.com/bcoe/c8/commit/5e18365b1507682a3d7873b17ebeb6f963b251cb))
+
 ## [9.0.0](https://github.com/bcoe/c8/compare/v8.0.1...v9.0.0) (2024-01-03)
 
 
