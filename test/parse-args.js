@@ -6,7 +6,7 @@ const {
   hideInstrumenterArgs
 } = require('../lib/parse-args')
 
-const { join } = require('path')
+const { join, resolve } = require('path')
 
 describe('parse-args', () => {
   describe('hideInstrumenteeArgs', () => {
@@ -62,6 +62,28 @@ describe('parse-args', () => {
       argv.branches.should.be.equal(55)
       argv.lines.should.be.equal(100)
       argv.functions.should.be.equal(24)
+    })
+    it('should allow relative path reports directories', () => {
+      const argsArray = ['node', 'c8', '--lines', '100', '--reports-dir', './coverage_']
+      const argv = buildYargs().parse(argsArray)
+      argv.reportsDir.should.be.equal('./coverage_')
+    })
+    it('should allow relative path temporary directories', () => {
+      const argsArray = ['node', 'c8', '--lines', '100', '--temp-directory', './coverage/tmp_']
+      const argv = buildYargs().parse(argsArray)
+      argv.tempDirectory.should.be.equal('./coverage/tmp_')
+    })
+    it('should allow absolute path reports directories', () => {
+      const tmpDir = resolve(process.cwd(), 'coverage_')
+      const argsArray = ['node', 'c8', '--lines', '100', '--reports-dir', tmpDir]
+      const argv = buildYargs().parse(argsArray)
+      argv.reportsDir.should.be.equal(tmpDir)
+    })
+    it('should allow absolute path temporary directories', () => {
+      const tmpDir = resolve(process.cwd(), './coverage/tmp_')
+      const argsArray = ['node', 'c8', '--lines', '100', '--temp-directory', tmpDir]
+      const argv = buildYargs().parse(argsArray)
+      argv.tempDirectory.should.be.equal(tmpDir)
     })
   })
 
