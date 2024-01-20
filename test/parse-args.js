@@ -15,6 +15,11 @@ describe('parse-args', () => {
       const instrumenterArgs = hideInstrumenteeArgs()
       instrumenterArgs.should.eql(['--foo=99', 'my-app'])
     })
+    it('test early exit from function if no arguments are passed', () => {
+      process.argv = []
+      const instrumenterArgs = hideInstrumenteeArgs()
+      instrumenterArgs.length.should.eql(0)
+    })
   })
 
   describe('hideInstrumenterArgs', () => {
@@ -25,6 +30,13 @@ describe('parse-args', () => {
       instrumenteeArgs.should.eql(['my-app', '--help'])
       argv.tempDirectory.endsWith(join('coverage', 'tmp')).should.be.equal(true)
     })
+    it('interprets first args after -- as Node.js execArgv', () => {
+      const expected = [process.execPath, '--expose-gc', 'index.js']
+      process.argv = ['node', 'c8', '--', '--expose-gc', 'index.js']
+      const argv = buildYargs().parse(hideInstrumenteeArgs())
+      const munged = hideInstrumenterArgs(argv)
+      munged.should.deep.equal(expected)
+    })
   })
 
   describe('with NODE_V8_COVERAGE already set', () => {
@@ -34,8 +46,20 @@ describe('parse-args', () => {
       process.argv = ['node', 'c8', '--foo=99', 'my-app', '--help']
       const argv = buildYargs().parse(hideInstrumenteeArgs())
       argv.tempDirectory.endsWith('/coverage/tmp_').should.be.equal(true)
+      delete process.env.NODE_V8_COVERAGE
       process.env.NODE_V8_COVERAGE = NODE_V8_COVERAGE
     })
+    /** Commenting out till the print config PR is ready * /
+    it('should set it if undefined', () => {
+      const NODE_V8_COVERAGE = process.env.NODE_V8_COVERAGE
+      process.env.NODE_V8_COVERAGE = undefined
+      process.argv = ['node', 'c8', '--foo=99', 'my-app', '--help']
+      const argv = buildYargs().parse(hideInstrumenteeArgs())
+      argv.tempDirectory.endsWith('/coverage/tmp').should.be.equal(true)
+      delete process.env.NODE_V8_COVERAGE
+      process.env.NODE_V8_COVERAGE = NODE_V8_COVERAGE
+    })
+    /** */
   })
 
   describe('--config', () => {
