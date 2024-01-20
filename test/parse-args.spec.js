@@ -7,6 +7,7 @@ const {
 } = require('../lib/parse-args')
 
 const { join, resolve } = require('path')
+require('chai').should()
 
 describe('parse-args', () => {
   describe('hideInstrumenteeArgs', () => {
