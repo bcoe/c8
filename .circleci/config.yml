@@ -1,0 +1,124 @@
+---
+#
+#  This build use extensive use of parameters
+#  https://circleci.com/docs/reusing-config/#using-the-parameters-declaration
+#
+#  And Conditional Steps
+#  https://circleci.com/docs/reusing-config/#defining-conditional-steps
+
+version: 2.1
+
+orbs:
+  node: circleci/node@5.2.0
+
+commands:
+  project-setup:
+    parameters:
+      working-dir:
+        type: string
+      node-version:
+        type: string
+      windows:
+        type: boolean
+        default: false
+    steps:
+      - checkout:
+          path: << parameters.working-dir >>
+      - when:
+          condition:
+            equal: [ true, << parameters.windows >> ]
+          steps:
+            - run: 
+                name: nvm-install
+                command: choco install nvm -y
+            - run: 
+                name: node-install
+                command: |
+                    Start-Process powershell -verb runAs -Args "-start GeneralProfile"
+                    nvm install << parameters.node-version >>
+                    nvm use << parameters.node-version >>
+            - run:
+                name: npm-install
+                command: npm ci
+      - when:
+          condition:
+            equal: [ false, << parameters.windows >> ]
+          steps:
+            - node/install:
+                node-version: << parameters.node-version >>
+                install-yarn: false
+            - node/install-packages:
+                check-cache: always
+                pkg-manager: npm
+                with-cache: false
+
+  lint-test:
+    steps:
+      - run:
+          command: npm run posttest
+  
+  unit-test:
+    steps:
+      - run:
+          command: npm run test
+  
+
+executors:
+  linux: # a Linux VM running Ubuntu 20.04
+    docker:
+      - image: cimg/base:2024.01
+    working_directory: /home/circleci/project/c8
+  macos: # macos executor running Xcode
+    macos:
+      xcode: 14.2.0
+    working_directory: /Users/distiller/project/c8
+  win:
+    machine:
+      image: 'windows-server-2019-vs2019:2023.10.1'
+      resource_class: windows.medium
+      shell: powershell.exe -ExecutionPolicy Bypass
+    working_directory: C:\Users\circleci\project\c8
+
+jobs:
+  # Refactor to a command
+  test:
+    parameters:
+      os:
+        type: string
+      node-version:
+        type: string
+    executor: << parameters.os >>
+    steps:
+      - when:
+          condition: 
+            equal: [ linux, << parameters.os >> ]
+          steps: 
+            - project-setup:
+                node-version: << parameters.node-version >>
+                working-dir: /home/circleci/project/c8
+      - when:
+          condition: 
+            equal: [ win , << parameters.os >> ]
+          steps: 
+            - project-setup:
+                node-version: << parameters.node-version >>
+                working-dir: C:\Users\circleci\project\c8
+                windows: true
+      - when:
+          condition: 
+            equal: [ macos, << parameters.os >> ]
+          steps:
+            - project-setup:
+                node-version: << parameters.node-version >>
+                working-dir: /Users/distiller/project/c8
+      - lint-test
+      - unit-test
+
+workflows:
+  matrix-test:
+    jobs:
+      - test:
+          matrix:
+            parameters:
+              os: [win, linux, macos]
+              node-version: ["14.21.3", "16.20.2", "18.19.0", "20.11.0"]
