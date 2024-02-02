@@ -1,0 +1,8 @@
+---
+reporter:
+- html
+- text
+statements: 89
+branches: 58
+lines: 69
+functions: 54

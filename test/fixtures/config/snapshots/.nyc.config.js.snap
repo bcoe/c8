@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parse-args --config nyc variations of config file should be able to read config files with .json, .yml, .yaml, .js, .cjs extensions should be able to resolve config file .nyc.config.js by detection 1`] = `
+",hey
+i am a line of code
+what
+hey
+what
+hey
+what
+hey
+-----------|---------|----------|---------|---------|-------------------
+File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------|---------|----------|---------|---------|-------------------
+All files  |   83.33 |    85.71 |      60 |   83.33 |                   
+ async.js  |     100 |      100 |     100 |     100 |                   
+ normal.js |      75 |    66.66 |   33.33 |      75 | 14-16,18-20       
+-----------|---------|----------|---------|---------|-------------------
+,"
+`;
+
+exports[`should be able to resolve config file .nyc.config.js by detection 1`] = `
+",hey
+i am a line of code
+what
+hey
+what
+hey
+what
+hey
+-----------|---------|----------|---------|---------|-------------------
+File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------|---------|----------|---------|---------|-------------------
+All files  |   83.33 |    85.71 |      60 |   83.33 |                   
+ async.js  |     100 |      100 |     100 |     100 |                   
+ normal.js |      75 |    66.66 |   33.33 |      75 | 14-16,18-20       
+-----------|---------|----------|---------|---------|-------------------
+,"
+`;
