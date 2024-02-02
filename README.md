@@ -18,12 +18,24 @@ The above example will output coverage metrics for `foo.js`.
 
 ## CLI Options / Configuration
 
-c8 can be configured via command-line flags, a `c8` section in `package.json`, or a JSON configuration file on disk.
-
-A configuration file can be specified by passing its path on the command line with `--config` or `-c`. If no config option is provided, c8 searches for files named `.c8rc`, `.c8rc.json`, `.nycrc`, or `.nycrc.json`, starting from
-`cwd` and walking up the filesystem tree.
+c8 can be configured via command-line flags, a `c8` section in `package.json`, or a configuration file on disk.
 
 When using `package.json` configuration or a dedicated configuration file, omit the `--` prefix from the long-form of the desired command-line option.
+
+A configuration file can be specified by passing its path on the command line with `--config` or `-c`. If no config option is provided, c8 searches for files named in the table below starting from `cwd` and walking up the filesystem tree.
+
+A robust configuration file naming convention is available in an effort to stay compatible with nyc configuration options and ensure dynamic configuration.
+
+| File name                                                                                           | File Association   |
+|-----------------------------------------------------------------------------------------------------|--------------------|
+| `.c8rc`, `.c8rc.json`                                                                               | JSON               |
+| `.c8rc.yml`, `.c8rc.yaml`                                                                           | YAML               |
+| `.c8rc.js`, `.c8rc.cjs`, `.c8.config.js`, `.c8.config.cjs`, `c8.config.js`, `c8.config.cjs`         | CommonJS export*   |
+| `.nycrc`, `.nycrc.json`                                                                             | JSON               |
+| `.nycrc.yaml`, `.nycrc.yml`                                                                         | YAML               |
+| `.nycrc.js`, `.nycrc.cjs`, `nyc.config.js`, `nyc.config.cjs`, `.nyc.config.js`, `.nyc.config.cjs`   | CommonJS export*   |
+
+For packages written in ESM module syntax, a static configuration option is supported in JSON or YAML syntax. A dynamic configuration is also supported.  These configuration files must be written in CommonJS utilizing one of the .cjs file options in the table above. At the moment ESM syntax is not supported for writing c8 configuration files.  This may change in the future, but please note, C8 is written in CommonJS syntax.  
 
 Here is a list of common options. Run `c8 --help` for the full list and documentation.
 
