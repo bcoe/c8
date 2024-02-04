@@ -1,26 +1,20 @@
-/* global describe, before, beforeEach, it */
+/* global describe, before, it */
 
 const { rm } = require('fs')
+const os = require('os')
+const { expect } = require('chai')
+const chaiJestSnapshot = require('chai-jest-snapshot')
+
 const { runSpawn, textGetConfigKey } = require('./print-config-helpers')
 const c8Path = require.resolve('../bin/c8')
-const os = require('os')
-const isWin = (os.platform() === 'win32')
-const OsStr = (isWin) ? 'windows' : 'unix'
-const chaiJestSnapshot = require('chai-jest-snapshot')
-const { assert } = require('chai')
 
-require('chai').should()
 require('chai')
   .use(chaiJestSnapshot)
-  .should()
 
-before(cb => rm('tmp', { recursive: true, force: true }, cb))
-
-beforeEach(function () {
-  chaiJestSnapshot.configureUsingMochaContext(this)
-})
-
+const isWin = (os.platform() === 'win32')
+const OsStr = (isWin) ? 'windows' : 'unix'
 describe(`print derived configuration CLI option - ${OsStr}`, function () {
+  before(cb => rm('tmp', { recursive: true, force: true }, cb))
   /**
    *
    *  Test: Ensure Valid JSON
@@ -34,9 +28,9 @@ describe(`print derived configuration CLI option - ${OsStr}`, function () {
 
     try {
       const out = runSpawn([c8Path, '--print-config', '--print-config-format=json'])
-      out.should.matchSnapshot()
+      expect(out).to.matchSnapshot()
     } catch (e) {
-      assert.fail('invalid json document produced from --print-config option')
+      expect.fail('invalid json document produced from --print-config option')
     }
   })
 
@@ -48,8 +42,7 @@ describe(`print derived configuration CLI option - ${OsStr}`, function () {
    *  Todo:  There is a bug in yargs where this is not transformedd into an array
    *   Skipping test for now
    */
-  it('ensure comma delimited values transform into an array', function () {
-    this.skip()
+  it.skip('ensure comma delimited values transform into an array', function () {
     const out = runSpawn([
       c8Path,
       '--reporter=lcov,text',
@@ -57,10 +50,8 @@ describe(`print derived configuration CLI option - ${OsStr}`, function () {
       '--print-config-format=json'
     ])
 
-    const includesKey = Object.keys(out).includes('reporter')
-    const checkFor = ['lcov', 'text']
-    includesKey.should.eql(true)
-    out.reporter.should.eql(checkFor)
+    expect(Object.keys(out).includes('reporter')).to.equal(true)
+    expect(out.reporter).to.eql(['lcov', 'text'])
   })
 
   /**
@@ -72,15 +63,13 @@ describe(`print derived configuration CLI option - ${OsStr}`, function () {
   it('ensure default project configuration file is loaded', function () {
     const out = runSpawn([c8Path, '--print-config', '--print-config-format=json'])
 
-    const includesKey = Object.keys(out).includes('config')
-    includesKey.should.eql(true)
+    expect(Object.keys(out).includes('config')).to.equal(true)
     out.config.endsWith('.nycrc')
   })
 
   ;['text', 'json'].forEach((format) => {
     describe(`${format} format option`, function () {
-      // Can I shorten this line?
-      const textParam = (format === 'text')
+      const textParam = format === 'text'
 
       /**
        *
@@ -90,25 +79,27 @@ describe(`print derived configuration CLI option - ${OsStr}`, function () {
        */
       it('ensure loads config file from cli', function () {
         // Can I shorten this line?
+        const configFile = './test/fixtures/config/.c8rc.json'
         const out = runSpawn([
           c8Path,
-          '--config=./test/fixtures/config/.c8rc.json',
+          `--config=${configFile}`,
           '--print-config',
           `--print-config-format=${format}`
         ], textParam)
 
-        if (format === 'json') {
-          const includesKey = Object.keys(out).includes('config')
-          includesKey.should.eql(true)
-          out.config.should.eql('./test/fixtures/config/.c8rc.json')
-        } else if (format === 'text') {
-          const value = textGetConfigKey(out, 'config')
-          if (value) {
-            value.should.eql('./test/fixtures/config/.c8rc.json')
-          } else {
-            assert.fail('couldn\'t find configuration value for option --config')
-          }
-        }
+        if (format === 'json') // eslint-disable-line
+          expect(Object.keys(out)
+            .includes('config')).to.equal(true)
+
+        const value = (format === 'json')
+          ? out.config
+          : textGetConfigKey(out, 'config')
+
+        if (!value) // eslint-disable-line
+          expect
+            .fail('couldn\'t find configuration value for option --config')
+
+        expect(value).to.eql(configFile)
       })
 
       /**
@@ -125,19 +116,20 @@ describe(`print derived configuration CLI option - ${OsStr}`, function () {
           `--print-config-format=${format}`
         ], textParam)
 
-        if (format === 'json') {
-          const includesKey = Object.keys(out).includes('reporter')
-          includesKey.should.eql(true)
-          out.reporter.should.eql('lcov')
-        } else if (format === 'text') {
-          const value = textGetConfigKey(out, 'reporter')
-          if (value) {
-            // Todo: when the load comma delimited text array bug is fixed, need to adjust this line
-            value.should.eql('lcov')
-          } else {
-            assert.fail('couldn\'t find configuration value for option --reporter')
-          }
-        }
+        if (format === 'json') // eslint-disable-line
+          expect(Object.keys(out)
+            .includes('reporter')).to.equal(true)
+
+        const value = (format === 'json')
+          ? out.reporter
+          : textGetConfigKey(out, 'reporter')
+
+        if (!value) // eslint-disable-line
+          expect
+            .fail('couldn\'t find configuration value for option --reporter')
+
+        // Todo: when the load comma delimited text array bug is fixed, need to adjust this line
+        expect(value).to.eql('lcov')
       })
     })
   })
