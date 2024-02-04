@@ -1,27 +1,22 @@
-/* global describe, before, beforeEach, it */
+/* global describe, before, it */
 
-const { runSpawn } = require('./print-config-helpers')
-const c8Path = require.resolve('../bin/c8')
 const { rm } = require('fs')
 const os = require('os')
-const isWin = (os.platform() === 'win32')
-const OsStr = (isWin) ? 'windows' : 'unix'
-const shouldCompressSnapShot = true
-const nodePath = process.execPath
-
 const chaiJestSnapshot = require('chai-jest-snapshot')
-require('chai').should()
+
+const { runSpawn } = require('./print-config-helpers')
+const { expect } = require('chai')
+const c8Path = require.resolve('../bin/c8')
+
 require('chai')
   .use(chaiJestSnapshot)
-  .should()
 
-before(cb => rm('tmp', { recursive: true, force: true }, cb))
-
-beforeEach(function () {
-  chaiJestSnapshot.configureUsingMochaContext(this)
-})
+const shouldCompressSnapShot = true
+const isWin = (os.platform() === 'win32')
+const OsStr = (isWin) ? 'windows' : 'unix'
 
 describe(`Help Message - ${OsStr}`, function () {
+  before(cb => rm('tmp', { recursive: true, force: true }, cb))
   // Ensure the help message is correct - Snapshot of help message
   /**
    *   Test: Ensure Help Message is Correct
@@ -34,7 +29,7 @@ describe(`Help Message - ${OsStr}`, function () {
     chaiJestSnapshot.setFilename(`./test/help-message-${OsStr}.js.snap`)
     const output = runSpawn([c8Path, '--help'], true, shouldCompressSnapShot)
 
-    output.should.matchSnapshot()
+    expect(output).to.matchSnapshot()
   })
 
   describe('should demand arguments', function () {
@@ -50,7 +45,7 @@ describe(`Help Message - ${OsStr}`, function () {
       chaiJestSnapshot.setFilename(`./test/help-message-${OsStr}.js.snap`)
       const output = runSpawn([c8Path], true, shouldCompressSnapShot)
 
-      output.should.matchSnapshot()
+      expect(output).to.matchSnapshot()
     })
 
     /**
@@ -62,8 +57,8 @@ describe(`Help Message - ${OsStr}`, function () {
     it('--print-config=false', function () {
       chaiJestSnapshot.setTestName('--print-config=false')
       chaiJestSnapshot.setFilename(`./test/help-message-${OsStr}.js.snap`)
-      const out = runSpawn([c8Path, '--print-config=false'], true, shouldCompressSnapShot)
-      out.should.matchSnapshot()
+      const output = runSpawn([c8Path, '--print-config=false'], true, shouldCompressSnapShot)
+      expect(output).to.matchSnapshot()
     })
   })
 
@@ -79,8 +74,8 @@ describe(`Help Message - ${OsStr}`, function () {
     it('--print-config=true', function () {
       chaiJestSnapshot.setTestName('--print-config=true')
       chaiJestSnapshot.setFilename(`./test/help-message-${OsStr}.js.snap`)
-      const out = runSpawn([c8Path, '--print-config=true'], true, shouldCompressSnapShot)
-      out.should.matchSnapshot()
+      const output = runSpawn([c8Path, '--print-config=true'], true, shouldCompressSnapShot)
+      expect(output).to.matchSnapshot()
     })
 
     /**
@@ -95,8 +90,8 @@ describe(`Help Message - ${OsStr}`, function () {
     it('--print-config', function () {
       chaiJestSnapshot.setTestName('--print-config')
       chaiJestSnapshot.setFilename(`./test/help-message-${OsStr}.js.snap`)
-      const out = runSpawn([c8Path, '--print-config'], true, shouldCompressSnapShot)
-      out.should.matchSnapshot()
+      const output = runSpawn([c8Path, '--print-config'], true, shouldCompressSnapShot)
+      expect(output).to.matchSnapshot()
     })
 
     /**
@@ -108,6 +103,8 @@ describe(`Help Message - ${OsStr}`, function () {
      *
      */
     it('--print-config=false', function () {
+      const nodePath = process.execPath
+
       chaiJestSnapshot.setTestName('--print-config=false')
       chaiJestSnapshot.setFilename(`./test/help-message-${OsStr}.js.snap`)
       const args = [
@@ -121,8 +118,8 @@ describe(`Help Message - ${OsStr}`, function () {
         nodePath,
         require.resolve('./fixtures/all/vanilla/main')
       ]
-      const out = runSpawn(args, true, shouldCompressSnapShot)
-      out.should.matchSnapshot()
+      const output = runSpawn(args, true, shouldCompressSnapShot)
+      expect(output).to.matchSnapshot()
     })
   })
 })
