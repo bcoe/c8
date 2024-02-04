@@ -7,6 +7,19 @@ const pwd = process.cwd()
 const whiteSpaceReg = /[\\\s]/g
 const pwdReg = new RegExp(pwd, 'g')
 
+/**
+ * Function: runSpawn
+ *
+ * @param {Array} args: array of arguments to pass
+ *  to child spawned process
+ * @param {Boolean} text=false: expect json or cli
+ *  text to be returned
+ * @param {Boolean} stripWhiteSpace=false: should all
+ *  whitespace be removed from the `out` string?
+ * @returns {String} out: a string representing the stdout
+ *   of the child process
+ *
+ */
 const runSpawn = (args, text = false, stripWhiteSpace = false) => {
   const doubleQuoteReg = /"/g
   const slashReg = /\\/g
@@ -30,7 +43,7 @@ const runSpawn = (args, text = false, stripWhiteSpace = false) => {
     out = out.replace(pwdReg, '.')
   }
 
-  // For certain cases we need to strip out all whitespace in
+  // Todo: For certain cases we need to strip out all whitespace in
   // snapshots. It's not ideal and it makes it hard to read
   // but I am concern about this issue in the chai-snapshot
   // package
@@ -44,8 +57,16 @@ const runSpawn = (args, text = false, stripWhiteSpace = false) => {
   return out
 }
 
-// JSON needs to get scrubbed from additional characters
-// when being read from SpawnSync
+/**
+ * Function: cleanJson
+ *
+ * JSON needs to get scrubbed from additional characters
+ * when being read from SpawnSync
+ *
+ * @param {String} out: string of json to scrub
+ * @returns {String} - valid json object
+ *
+ */
 const cleanJson = (out) => {
   const o = out.substring(1)
     .substring(0, out.length - 2)
@@ -54,6 +75,19 @@ const cleanJson = (out) => {
   return JSON.parse(o)
 }
 
+/**
+ * Function: textGetConfigKey
+ *
+ * Get a value of a configuration key from text input
+ *
+ * @param {String} out: utf-8 formated output from
+ *  child process of c8 with --print-config flag
+ * @param {String} key: of configuration setting
+ *  to return
+ * @returns {String|null}: value of key, if
+ *  found or null
+ *
+ */
 const textGetConfigKey = (out, key) => {
   const newLineReturn = (isWin) ? '\r\n' : '\n'
   const newLineRegEx = new RegExp(newLineReturn, 'g')
