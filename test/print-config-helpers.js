@@ -19,6 +19,27 @@ const pwdReg = new RegExp(pwd, 'g')
  * @returns {String} out: a string representing the stdout
  *   of the child process
  *
+ * Todo:  Whitespace for snapshops is showing up in
+ * different amounts on different os platforms.
+ *
+ * I am concern about this issue in the chai-snapshot
+ * package.
+ *
+ * Issue described in jest
+ * https://github.com/jestjs/jest/pull/9203
+ *
+ * Last time chai-jest-snapshot was publish was 6
+ * years ago.
+ *
+ * https://www.npmjs.com/package/chai-jest-snapshot?activeTab=versions
+ *
+ * Alternative packages that might work.
+ *
+ * https://www.npmjs.com/package/mocha-chai-jest-snapshot
+ *
+ * https://www.npmjs.com/package/chai-snapshot-matcher/v/2.0.2
+ *
+ *
  */
 const runSpawn = (args, text = false, stripWhiteSpace = false) => {
   const doubleQuoteReg = /"/g
@@ -44,12 +65,7 @@ const runSpawn = (args, text = false, stripWhiteSpace = false) => {
   }
 
   // Todo: For certain cases we need to strip out all whitespace in
-  // snapshots. It's not ideal and it makes it hard to read
-  // but I am concern about this issue in the chai-snapshot
-  // package
-  //
-  // https://github.com/jestjs/jest/pull/9203
-
+  // snapshots. See notes above
   if (text && stripWhiteSpace) { out = out.replace(whiteSpaceReg, '') }
 
   if (!text) { out = cleanJson(out) }
