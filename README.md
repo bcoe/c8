@@ -43,6 +43,8 @@ Here is a list of common options. Run `c8 --help` for the full list and document
 | `--per-file` | check thresholds per file | `boolean` | `false` |
 | `--temp-directory` | directory V8 coverage data is written to and read from | `string` | `process.env.NODE_V8_COVERAGE` |
 | `--clean` | should temp files be deleted before script execution | `boolean` | `true` |
+| `--print-config` | prints the derived configuration between defaults and a detected configuration file or a file passed as an argument | `boolean` | `false`
+| `--print-config-format` | format in which to print the derived configuration.  Either text or json. | `string` | `text`
 
 ## Checking for "full" source coverage using `--all`
 
