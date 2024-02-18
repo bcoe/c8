@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ensure config prints without a config file 1`] = `"/*________/______/____*//*_____/////////_____////////__*//*___//_____________/_____/__*//*__/_______________////___*//*_/________________////////__*//*_//______________/______//_*//*__///___________//______/__*//*____////___////___*//*_______/////////______/////////_____*/CommandIssued:c8--config=\\"\\"--print-config--lines100ConfigFileLoaded:DerivedConfigurationfromCLIoptionsandconfigurationfile100:falseconfig:''print-config:truelines:100reporter:[\\"html\\",\\"text\\"]branches:82statements:95reports-dir:'./coverage'report-dir:'./coverage'all:falsesrc:undefinedexclude-node-modules:trueinclude:[]exclude:[\\"coverage/**\\",\\"packages/*/test{,s}/**\\",\\"**/*.d.ts\\",\\"test{,s}/**\\",\\"test{,-*}.{js,cjs,mjs,ts,tsx,jsx}\\",\\"**/*{.,-}test.{js,cjs,mjs,ts,tsx,jsx}\\",\\"**/__tests__/**\\",\\"**/{ava,babel,nyc}.config.{js,cjs,mjs}\\",\\"**/jest.config.{js,cjs,mjs,ts}\\",\\"**/{karma,rollup,webpack}.config.js\\",\\"**/.{eslint,mocha}rc.{js,cjs}\\"]extension:[\\".js\\",\\".cjs\\",\\".mjs\\",\\".ts\\",\\".tsx\\",\\".jsx\\"]exclude-after-remap:falseskip-full:falsecheck-coverage:falsefunctions:0per-file:falsetemp-directory:'./coverage/tmp'clean:trueresolve:''omit-relative:trueallow-external:falsemerge-async:falseprint-config-format:'text'"`;
+
+exports[`ensure valid json 1`] = `
+Object {
+  "100": false,
+  "all": false,
+  "allow-external": false,
+  "branches": 82,
+  "check-coverage": false,
+  "clean": true,
+  "config": "./.nycrc",
+  "exclude": Array [
+    "coverage/**",
+    "packages/*/test{,s}/**",
+    "**/*.d.ts",
+    "test{,s}/**",
+    "test{,-*}.{js,cjs,mjs,ts,tsx,jsx}",
+    "**/*{.,-}test.{js,cjs,mjs,ts,tsx,jsx}",
+    "**/__tests__/**",
+    "**/{ava,babel,nyc}.config.{js,cjs,mjs}",
+    "**/jest.config.{js,cjs,mjs,ts}",
+    "**/{karma,rollup,webpack}.config.js",
+    "**/.{eslint,mocha}rc.{js,cjs}",
+  ],
+  "exclude-after-remap": false,
+  "exclude-node-modules": true,
+  "extension": Array [
+    ".js",
+    ".cjs",
+    ".mjs",
+    ".ts",
+    ".tsx",
+    ".jsx",
+  ],
+  "functions": 0,
+  "include": Array [],
+  "lines": 95,
+  "merge-async": false,
+  "omit-relative": true,
+  "per-file": false,
+  "print-config": true,
+  "print-config-format": "json",
+  "report-dir": "./coverage",
+  "reporter": Array [
+    "html",
+    "text",
+  ],
+  "reports-dir": "./coverage",
+  "resolve": "",
+  "skip-full": false,
+  "statements": 95,
+  "temp-directory": "./coverage/tmp",
+}
+`;
