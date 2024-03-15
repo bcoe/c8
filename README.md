@@ -43,6 +43,7 @@ Here is a list of common options. Run `c8 --help` for the full list and document
 | `--per-file` | check thresholds per file | `boolean` | `false` |
 | `--temp-directory` | directory V8 coverage data is written to and read from | `string` | `process.env.NODE_V8_COVERAGE` |
 | `--clean` | should temp files be deleted before script execution | `boolean` | `true` |
+| `--experimental-monocart` | see [section below](#using-monocart-coverage-reports-experimental) for more info | `boolean` | `false` |
 
 ## Checking for "full" source coverage using `--all`
 
@@ -117,6 +118,12 @@ The `--100` flag can be set for the `check-coverage` as well:
 
 ```sh
 c8 check-coverage --100
+```
+
+## Using Monocart coverage reports (experimental)
+[Monocart](https://github.com/cenfun/monocart-coverage-reports) will bring additional support for native V8 coverage reports, for example:
+```sh
+c8 --experimental-monocart --reporter=v8 --reporter=console-details node foo.js
 ```
 
 ## Ignoring Uncovered Lines, Functions, and Blocks
