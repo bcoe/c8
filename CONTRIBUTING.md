@@ -5,7 +5,6 @@ The `c8` project welcomes all contributions from anyone willing to work in good 
 ## Issues
 
 - You can open [issues here](https://github.com/bcoe/c8/issues), please follow the template guide.
-- You can join the `node-tooling/c8` channel, [follow this link](https://devtoolscommunity.herokuapp.com/) to request for an invite.
 
 ## Pull Requests
 
@@ -62,4 +61,4 @@ Pull Requests are the way concrete changes are made to the code, documentation, 
 
 ## Note
 
-This guide is adapted from the [Node.js project](https://github.com/nodejs/node/blob/master/doc/guides/contributing/pull-requests.md#dependencies), check it out for more details.
+This guide is adapted from the [Node.js project](https://github.com/nodejs/node/blob/main/doc/contributing/pull-requests.md), check it out for more details.
