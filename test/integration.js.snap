@@ -156,7 +156,7 @@ hey
 ---------------------------------------|---------|----------|---------|---------|------------------------
 File                                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s      
 ---------------------------------------|---------|----------|---------|---------|------------------------
-All files                              |    3.17 |    12.24 |    6.38 |    3.17 |                        
+All files                              |    3.25 |     12.5 |    6.52 |    3.25 |                        
  c8                                    |       0 |        0 |       0 |       0 |                        
   index.js                             |       0 |        0 |       0 |       0 | 1                      
  c8/bin                                |       0 |        0 |       0 |       0 |                        
@@ -166,13 +166,12 @@ All files                              |    3.17 |    12.24 |    6.38 |    3.17 
   prettify.js                          |       0 |        0 |       0 |       0 | 1-2                    
   sorter.js                            |       0 |        0 |       0 |       0 | 1-196                  
  c8/lib                                |       0 |        0 |       0 |       0 |                        
-  monocart-report.js                   |       0 |        0 |       0 |       0 | 1-165                  
   parse-args.js                        |       0 |        0 |       0 |       0 | 1-229                  
-  report.js                            |       0 |        0 |       0 |       0 | 1-402                  
+  report.js                            |       0 |        0 |       0 |       0 | 1-530                  
   source-map-from-file.js              |       0 |        0 |       0 |       0 | 1-100                  
  c8/lib/commands                       |       0 |        0 |       0 |       0 |                        
   check-coverage.js                    |       0 |        0 |       0 |       0 | 1-70                   
-  report.js                            |       0 |        0 |       0 |       0 | 1-50                   
+  report.js                            |       0 |        0 |       0 |       0 | 1-44                   
  c8/test/fixtures                      |   30.97 |     37.5 |   21.42 |   30.97 |                        
   async.js                             |     100 |      100 |     100 |     100 |                        
   c8-ignore-next.js                    |   54.54 |        0 |       0 |   54.54 | 1,3-4,9,12,17-19,21-22 
@@ -522,7 +521,7 @@ hey
 ---------------------------------------|---------|----------|---------|---------|------------------------
 File                                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s      
 ---------------------------------------|---------|----------|---------|---------|------------------------
-All files                              |    3.17 |    12.24 |    6.38 |    3.17 |                        
+All files                              |    3.25 |     12.5 |    6.52 |    3.25 |                        
  c8                                    |       0 |        0 |       0 |       0 |                        
   index.js                             |       0 |        0 |       0 |       0 | 1                      
  c8/bin                                |       0 |        0 |       0 |       0 |                        
@@ -532,13 +531,12 @@ All files                              |    3.17 |    12.24 |    6.38 |    3.17 
   prettify.js                          |       0 |        0 |       0 |       0 | 1-2                    
   sorter.js                            |       0 |        0 |       0 |       0 | 1-196                  
  c8/lib                                |       0 |        0 |       0 |       0 |                        
-  monocart-report.js                   |       0 |        0 |       0 |       0 | 1-165                  
   parse-args.js                        |       0 |        0 |       0 |       0 | 1-229                  
-  report.js                            |       0 |        0 |       0 |       0 | 1-402                  
+  report.js                            |       0 |        0 |       0 |       0 | 1-530                  
   source-map-from-file.js              |       0 |        0 |       0 |       0 | 1-100                  
  c8/lib/commands                       |       0 |        0 |       0 |       0 |                        
   check-coverage.js                    |       0 |        0 |       0 |       0 | 1-70                   
-  report.js                            |       0 |        0 |       0 |       0 | 1-50                   
+  report.js                            |       0 |        0 |       0 |       0 | 1-44                   
  c8/test/fixtures                      |   30.97 |     37.5 |   21.42 |   30.97 |                        
   async.js                             |     100 |      100 |     100 |     100 |                        
   c8-ignore-next.js                    |   54.54 |        0 |       0 |   54.54 | 1,3-4,9,12,17-19,21-22 
@@ -793,10 +791,12 @@ negative
 ├───────────────────────────┼──────────┼────────────┼──────────┼───────────┼──────────┼─────────────────┤
 │ Summary                   │  65.64 % │    70.59 % │  75.00 % │   50.00 % │  62.96 % │                 │
 └───────────────────────────┴──────────┴────────────┴──────────┴───────────┴──────────┴─────────────────┘
-,ERROR: Empty coverage (untested file) does not meet threshold for test/fixtures/all/vanilla/dir/unloaded.js
-ERROR: Coverage for statements (80%) does not meet threshold (100%) for test/fixtures/all/vanilla/loaded.js
-ERROR: Coverage for branches (75%) does not meet threshold (100%) for test/fixtures/all/vanilla/loaded.js
+,ERROR: Coverage for lines (0%) does not meet threshold (100%) for test/fixtures/all/vanilla/dir/unloaded.js
+ERROR: Coverage for functions (0%) does not meet threshold (100%) for test/fixtures/all/vanilla/dir/unloaded.js
+ERROR: Coverage for statements (0%) does not meet threshold (100%) for test/fixtures/all/vanilla/dir/unloaded.js
 ERROR: Coverage for lines (68.42%) does not meet threshold (100%) for test/fixtures/all/vanilla/loaded.js
+ERROR: Coverage for branches (75%) does not meet threshold (100%) for test/fixtures/all/vanilla/loaded.js
+ERROR: Coverage for statements (80%) does not meet threshold (100%) for test/fixtures/all/vanilla/loaded.js
 "
 `;
 
@@ -840,8 +840,8 @@ hey
 ├───────────────┼──────────┼────────────┼──────────┼───────────┼──────────┼─────────────────┤
 │ Summary       │  84.60 % │    88.89 % │  62.50 % │   66.67 % │  80.77 % │                 │
 └───────────────┴──────────┴────────────┴──────────┴───────────┴──────────┴─────────────────┘
-,ERROR: Coverage for branches (62.5%) does not meet threshold (80%) for test/fixtures/normal.js
-ERROR: Coverage for lines (70.59%) does not meet threshold (80%) for test/fixtures/normal.js
+,ERROR: Coverage for lines (70.59%) does not meet threshold (80%) for test/fixtures/normal.js
+ERROR: Coverage for branches (62.5%) does not meet threshold (80%) for test/fixtures/normal.js
 "
 `;
 
@@ -1184,10 +1184,12 @@ negative
 ├───────────────────────────┼──────────┼────────────┼──────────┼───────────┼──────────┼─────────────────┤
 │ Summary                   │  65.64 % │    70.59 % │  75.00 % │   50.00 % │  62.96 % │                 │
 └───────────────────────────┴──────────┴────────────┴──────────┴───────────┴──────────┴─────────────────┘
-,ERROR: Empty coverage (untested file) does not meet threshold for test/fixtures/all/vanilla/dir/unloaded.js
-ERROR: Coverage for statements (80%) does not meet threshold (100%) for test/fixtures/all/vanilla/loaded.js
-ERROR: Coverage for branches (75%) does not meet threshold (100%) for test/fixtures/all/vanilla/loaded.js
+,ERROR: Coverage for lines (0%) does not meet threshold (100%) for test/fixtures/all/vanilla/dir/unloaded.js
+ERROR: Coverage for functions (0%) does not meet threshold (100%) for test/fixtures/all/vanilla/dir/unloaded.js
+ERROR: Coverage for statements (0%) does not meet threshold (100%) for test/fixtures/all/vanilla/dir/unloaded.js
 ERROR: Coverage for lines (68.42%) does not meet threshold (100%) for test/fixtures/all/vanilla/loaded.js
+ERROR: Coverage for branches (75%) does not meet threshold (100%) for test/fixtures/all/vanilla/loaded.js
+ERROR: Coverage for statements (80%) does not meet threshold (100%) for test/fixtures/all/vanilla/loaded.js
 "
 `;
 
@@ -1231,8 +1233,8 @@ hey
 ├───────────────┼──────────┼────────────┼──────────┼───────────┼──────────┼─────────────────┤
 │ Summary       │  84.60 % │    88.89 % │  62.50 % │   66.67 % │  80.77 % │                 │
 └───────────────┴──────────┴────────────┴──────────┴───────────┴──────────┴─────────────────┘
-,ERROR: Coverage for branches (62.5%) does not meet threshold (80%) for test/fixtures/normal.js
-ERROR: Coverage for lines (70.59%) does not meet threshold (80%) for test/fixtures/normal.js
+,ERROR: Coverage for lines (70.59%) does not meet threshold (80%) for test/fixtures/normal.js
+ERROR: Coverage for branches (62.5%) does not meet threshold (80%) for test/fixtures/normal.js
 "
 `;
 
