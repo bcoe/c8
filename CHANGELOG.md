@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [10.0.0](https://github.com/bcoe/c8/compare/v9.1.0...v10.0.0) (2024-06-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** Node 18 is now the minimum supported Node.js version
+
+### Bug Fixes
+
+* **deps:** update test-exclude with new glob / minimatch ([#531](https://github.com/bcoe/c8/issues/531)) ([e33cf30](https://github.com/bcoe/c8/commit/e33cf30d0c44470f9c87553df487e2f27f58f4ac))
+
 ## [9.1.0](https://github.com/bcoe/c8/compare/v9.0.0...v9.1.0) (2024-01-11)
 
 
