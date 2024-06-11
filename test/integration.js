@@ -3,7 +3,7 @@
 const { readFileSync } = require('fs')
 const { resolve } = require('path')
 const { spawnSync } = require('child_process')
-const { statSync, rm, rename } = require('fs')
+const { statSync, rm } = require('fs')
 const { dirname } = require('path')
 const c8Path = require.resolve('../bin/c8')
 const nodePath = process.execPath
@@ -699,32 +699,10 @@ beforeEach(function () {
     })
 
     describe('monocart report', () => {
-      it('monocart check install', () => {
-        // mock not-installed
-        const mcrPath = require.resolve('monocart-coverage-reports')
-        rename(mcrPath, mcrPath + '.bak', (err) => {
-          if (err) { throw err }
-        })
-
-        const { output, status } = spawnSync(nodePath, [
-          c8Path,
-          '--experimental-monocart',
-          '--exclude="test/*.js"',
-          '--temp-directory=tmp/monocart-normal',
-          '--reports-dir=tmp/monocart-normal-reports',
-          '--reporter=v8',
-          '--reporter=console-details',
-          '--clean=false',
-          `--merge-async=${mergeAsync}`,
-          nodePath,
-          require.resolve('./fixtures/normal')
-        ])
+      it('check import monocart', async () => {
+        const { output, status } = spawnSync(nodePath, ['./test/fixtures/import-mcr.js'])
         status.should.equal(1)
         output.toString('utf8').should.matchSnapshot()
-
-        rename(mcrPath + '.bak', mcrPath, (err) => {
-          if (err) { throw err }
-        })
       })
 
       it('monocart check normal', () => {
