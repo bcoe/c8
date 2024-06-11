@@ -748,7 +748,7 @@ All files          |     100 |      100 |     100 |     100 |
 `;
 
 exports[`c8 mergeAsync monocart report check import monocart 1`] = `
-",,--experimental-monocart requires the plugin monocart-coverage-reports. Run: \\"npm i monocart-coverage-reports --save-dev\\"
+",,--experimental-monocart requires the plugin monocart-coverage-reports. Run: \\"npm i monocart-coverage-reports@2 --save-dev\\"
 "
 `;
 
@@ -1146,7 +1146,7 @@ All files          |     100 |      100 |     100 |     100 |
 `;
 
 exports[`c8 monocart report check import monocart 1`] = `
-",,--experimental-monocart requires the plugin monocart-coverage-reports. Run: \\"npm i monocart-coverage-reports --save-dev\\"
+",,--experimental-monocart requires the plugin monocart-coverage-reports. Run: \\"npm i monocart-coverage-reports@2 --save-dev\\"
 "
 `;
 

@@ -51,12 +51,13 @@
     "chai-jest-snapshot": "^2.0.0",
     "cross-env": "^7.0.3",
     "mocha": "^9.2.2",
+    "monocart-coverage-reports": "^2.8.3",
     "standard": "^16.0.4",
     "ts-node": "^10.7.0",
     "typescript": "^5.0.0"
   },
-  "peerDependencies": {
-    "monocart-coverage-reports": "^2.8.3"
+  "c8Requirements": {
+    "monocart-coverage-reports": "^2"
   },
   "engines": {
     "node": ">=18"
