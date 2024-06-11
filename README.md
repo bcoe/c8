@@ -121,15 +121,14 @@ c8 check-coverage --100
 ```
 
 ## Using Monocart coverage reports (experimental)
-Monocart will bring additional support for native V8 coverage reports, for example:
+Monocart is an alternate library for outputting [v8 code coverage](https://v8.dev/blog/javascript-code-coverage) data as Istanbul reports.
+
+Monocart also provides reporters based directly on v8's byte-offset-based output. Such as, `console-details` and `v8`. This removes a complex transformation step and may be less bug prone for some environments.
+
+**Example usage:**
+
 ```sh
 c8 --experimental-monocart --reporter=v8 --reporter=console-details node foo.js
-```
-There are some differences as follows:
-- `c8` uses `v8-to-istanbul` by default to convert V8 coverage data and generate Istanbul reports.
-- `c8 --experimental-monocart` will use Monocart's new converter to convert V8 coverage data and generate Istanbul reports, it could provide better data for reports. Moreover, it can also directly generate V8 coverage reports (based on Bytes), such as available reports: `v8`, `console-details`, etc.
-
-See [monocart-coverage-reports](https://github.com/cenfun/monocart-coverage-reports) for more info.
 
 ## Ignoring Uncovered Lines, Functions, and Blocks
 
