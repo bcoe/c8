@@ -845,6 +845,19 @@ ERROR: Coverage for branches (62.5%) does not meet threshold (80%) for test/fixt
 "
 `;
 
+exports[`c8 mergeAsync monocart report monocart check install 1`] = `
+",hey
+i am a line of code
+what
+hey
+what
+hey
+what
+hey
+,ERROR: Failed to import module \\"monocart-coverage-reports\\". Please try to install it: npm i monocart-coverage-reports --save-dev
+"
+`;
+
 exports[`c8 mergeAsync monocart report monocart check normal 1`] = `
 ",hey
 i am a line of code
@@ -1235,6 +1248,19 @@ hey
 └───────────────┴──────────┴────────────┴──────────┴───────────┴──────────┴─────────────────┘
 ,ERROR: Coverage for lines (70.59%) does not meet threshold (80%) for test/fixtures/normal.js
 ERROR: Coverage for branches (62.5%) does not meet threshold (80%) for test/fixtures/normal.js
+"
+`;
+
+exports[`c8 monocart report monocart check install 1`] = `
+",hey
+i am a line of code
+what
+hey
+what
+hey
+what
+hey
+,ERROR: Failed to import module \\"monocart-coverage-reports\\". Please try to install it: npm i monocart-coverage-reports --save-dev
 "
 `;
 
