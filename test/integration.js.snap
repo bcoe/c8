@@ -854,7 +854,7 @@ what
 hey
 what
 hey
-,ERROR: Failed to import module \\"monocart-coverage-reports\\". Please try to install it: npm i monocart-coverage-reports --save-dev
+,--experimental-monocart requires the plugin monocart-coverage-reports. Run: \\"npm i monocart-coverage-reports --save-dev\\"
 "
 `;
 
@@ -1260,7 +1260,7 @@ what
 hey
 what
 hey
-,ERROR: Failed to import module \\"monocart-coverage-reports\\". Please try to install it: npm i monocart-coverage-reports --save-dev
+,--experimental-monocart requires the plugin monocart-coverage-reports. Run: \\"npm i monocart-coverage-reports --save-dev\\"
 "
 `;
 
