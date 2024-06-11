@@ -43,6 +43,7 @@ Here is a list of common options. Run `c8 --help` for the full list and document
 | `--per-file` | check thresholds per file | `boolean` | `false` |
 | `--temp-directory` | directory V8 coverage data is written to and read from | `string` | `process.env.NODE_V8_COVERAGE` |
 | `--clean` | should temp files be deleted before script execution | `boolean` | `true` |
+| `--experimental-monocart` | see [section below](#using-monocart-coverage-reports-experimental) for more info | `boolean` | `false` |
 
 ## Checking for "full" source coverage using `--all`
 
@@ -117,6 +118,23 @@ The `--100` flag can be set for the `check-coverage` as well:
 
 ```sh
 c8 check-coverage --100
+```
+
+## Using Monocart coverage reports (experimental)
+Monocart is an alternate library for outputting [v8 code coverage](https://v8.dev/blog/javascript-code-coverage) data as Istanbul reports.
+
+Monocart also provides reporters based directly on v8's byte-offset-based output. Such as, `console-details` and `v8`. This removes a complex transformation step and may be less bug prone for some environments.
+
+**Example usage:**
+
+```sh
+c8 --experimental-monocart --reporter=v8 --reporter=console-details node foo.js
+```
+
+NOTE: Monocart requires additional `monocart-coverage-reports` to be installed:
+
+```sh
+npm i monocart-coverage-reports --save-dev
 ```
 
 ## Ignoring Uncovered Lines, Functions, and Blocks

@@ -685,6 +685,7 @@ beforeEach(function () {
           c8Path,
           '--all',
           '--exclude="test/*.js"',
+          '--exclude="tmp/monocart-*/**/*.js"',
           '--extension=.js',
           '--extension=.special',
           '--temp-directory=tmp/extension',
@@ -692,6 +693,135 @@ beforeEach(function () {
           `--merge-async=${mergeAsync}`,
           nodePath,
           require.resolve('./fixtures/custom-ext.special')
+        ])
+        output.toString('utf8').should.matchSnapshot()
+      })
+    })
+
+    describe('monocart report', () => {
+      it('check import monocart', async () => {
+        const { output, status } = spawnSync(nodePath, ['./test/fixtures/import-mcr.js'])
+        status.should.equal(1)
+        output.toString('utf8').should.matchSnapshot()
+      })
+
+      it('monocart check normal', () => {
+        const { output } = spawnSync(nodePath, [
+          c8Path,
+          '--experimental-monocart',
+          '--exclude="test/*.js"',
+          '--temp-directory=tmp/monocart-normal',
+          '--reports-dir=tmp/monocart-normal-reports',
+          '--reporter=v8',
+          '--reporter=console-details',
+          '--clean=false',
+          `--merge-async=${mergeAsync}`,
+          nodePath,
+          require.resolve('./fixtures/normal')
+        ])
+        output.toString('utf8').should.matchSnapshot()
+      })
+
+      it('monocart check all', () => {
+        const { output } = spawnSync(nodePath, [
+          c8Path,
+          '--experimental-monocart',
+          '--temp-directory=tmp/monocart-vanilla-all',
+          '--reports-dir=tmp/monocart-vanilla-all-reports',
+          '--reporter=v8',
+          '--reporter=console-details',
+          '--all',
+          '--include=test/fixtures/all/vanilla/**/*.js',
+          '--exclude=**/*.ts',
+          '--clean=false',
+          `--merge-async=${mergeAsync}`,
+          nodePath,
+          require.resolve('./fixtures/all/vanilla/main')
+        ])
+        output.toString('utf8').should.matchSnapshot()
+      })
+
+      it('monocart check coverage', () => {
+        const { output, status } = spawnSync(nodePath, [
+          c8Path,
+          '--experimental-monocart',
+          '--exclude="test/*.js"',
+          '--temp-directory=tmp/monocart-check-coverage',
+          '--reports-dir=tmp/monocart-check-coverage-reports',
+          '--reporter=v8',
+          '--reporter=console-details',
+          '--check-coverage',
+          '--statements=80',
+          '--branches=80',
+          '--lines=80',
+          '--clean=false',
+          `--merge-async=${mergeAsync}`,
+          nodePath,
+          require.resolve('./fixtures/normal')
+        ])
+        status.should.equal(1)
+        output.toString('utf8').should.matchSnapshot()
+      })
+
+      it('monocart check coverage pre file', () => {
+        const { output, status } = spawnSync(nodePath, [
+          c8Path,
+          '--experimental-monocart',
+          '--exclude="test/*.js"',
+          '--temp-directory=tmp/monocart-check-per-file',
+          '--reports-dir=tmp/monocart-check-per-file-reports',
+          '--reporter=v8',
+          '--reporter=console-details',
+          '--check-coverage',
+          '--statements=80',
+          '--branches=80',
+          '--lines=80',
+          '--per-file',
+          '--clean=false',
+          `--merge-async=${mergeAsync}`,
+          nodePath,
+          require.resolve('./fixtures/normal')
+        ])
+        status.should.equal(1)
+        output.toString('utf8').should.matchSnapshot()
+      })
+
+      it('monocart check all and 100', () => {
+        const { output, status } = spawnSync(nodePath, [
+          c8Path,
+          '--experimental-monocart',
+          '--temp-directory=tmp/monocart-all-100',
+          '--reports-dir=tmp/monocart-all-100-reports',
+          '--reporter=v8',
+          '--reporter=console-details',
+          '--all',
+          '--100',
+          '--per-file',
+          '--include=test/fixtures/all/vanilla/**/*.js',
+          '--exclude=**/*.ts',
+          '--clean=false',
+          `--merge-async=${mergeAsync}`,
+          nodePath,
+          require.resolve('./fixtures/all/vanilla/main')
+        ])
+        status.should.equal(1)
+        output.toString('utf8').should.matchSnapshot()
+      })
+
+      it('check sourcemap', () => {
+        const { output } = spawnSync(nodePath, [
+          c8Path,
+          '--experimental-monocart',
+          '--exclude="test/*.js"',
+          '--temp-directory=tmp/monocart-source-map',
+          '--reports-dir=tmp/monocart-source-map-reports',
+          '--reporter=v8',
+          '--reporter=text',
+          '--exclude-after-remap',
+          '--clean=false',
+          `--merge-async=${mergeAsync}`,
+          nodePath,
+          require.resolve('./fixtures/source-maps/branches/branches.typescript.js')
         ])
         output.toString('utf8').should.matchSnapshot()
       })
