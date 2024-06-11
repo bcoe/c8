@@ -129,6 +129,13 @@ Monocart also provides reporters based directly on v8's byte-offset-based output
 
 ```sh
 c8 --experimental-monocart --reporter=v8 --reporter=console-details node foo.js
+```
+
+NOTE: Monocart requires additional `monocart-coverage-reports` to be installed:
+
+```sh
+npm i monocart-coverage-reports --save-dev
+```
 
 ## Ignoring Uncovered Lines, Functions, and Blocks
 
