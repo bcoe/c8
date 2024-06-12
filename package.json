@@ -56,8 +56,13 @@
     "ts-node": "^10.7.0",
     "typescript": "^5.0.0"
   },
-  "c8Requirements": {
+  "peerDependencies": {
     "monocart-coverage-reports": "^2"
+  },
+  "peerDependenciesMeta": {
+    "monocart-coverage-reports": {
+      "optional": true
+    }
   },
   "engines": {
     "node": ">=18"
