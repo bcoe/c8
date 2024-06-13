@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [10.1.2](https://github.com/bcoe/c8/compare/v10.1.1...v10.1.2) (2024-06-13)
+
+
+### Bug Fixes
+
+* **deps:** make monocart-coverage-reports an optional with meta defined ([3b91fda](https://github.com/bcoe/c8/commit/3b91fdaa0e5554a72f6e625af3a7254b0cb19e8c))
+
 ## [10.1.1](https://github.com/bcoe/c8/compare/v10.1.0...v10.1.1) (2024-06-11)
 
 
