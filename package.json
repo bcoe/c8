@@ -41,6 +41,7 @@
     "istanbul-lib-report": "^3.0.1",
     "istanbul-reports": "^3.1.6",
     "test-exclude": "^7.0.1",
+    "js-yaml": "^4.1.0",
     "v8-to-istanbul": "^9.0.0",
     "yargs": "^17.7.2",
     "yargs-parser": "^21.1.1"
