@@ -32,12 +32,9 @@ Here is a list of common options. Run `c8 --help` for the full list and document
 | `-c`, `--config` | path to JSON configuration file | `string` | See above |
 | `-r`, `--reporter` | coverage reporter(s) to use | `Array<string>` | `['text']` |
 | `-o`, `--reports-dir`, `--report-dir` | directory where coverage reports will be output to | `string` | `./coverage` |
-| `--all` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `boolean` | `false` |
-| `--src` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `Array<string>` | `[process.cwd()]`|
-| `-n`, `--include` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `Array<string>` | `[]` (include all files) |
-| `-x`, `--exclude` | see [section below](#checking-for-full-source-coverage-using---all) for more info | `Array<string>` | [list](https://github.com/istanbuljs/schema/blob/master/default-exclude.js) |
+| `-n`, `--include` | see [section below](#checking-for-full-source-coverage) for more info | `Array<string>` | `[]` (include all files) |
+| `-x`, `--exclude` | see [section below](#checking-for-full-source-coverage) for more info | `Array<string>` | [list](https://github.com/istanbuljs/schema/blob/master/default-exclude.js) |
 | `--exclude-after-remap` | see [section below](#exclude-after-remap) for more info | `boolean` | `false` |
-| `-e`, `--extension` | only files matching these extensions will show coverage | `string \| Array<string>` | [list](https://github.com/istanbuljs/schema/blob/master/default-extension.js) |
 | `--skip-full` | do not show files with 100% statement, branch, and function coverage | `boolean` | `false` |
 | `--check-coverage` | check whether coverage is within thresholds provided | `boolean` | `false` |
 | `--per-file` | check thresholds per file | `boolean` | `false` |
@@ -45,16 +42,14 @@ Here is a list of common options. Run `c8 --help` for the full list and document
 | `--clean` | should temp files be deleted before script execution | `boolean` | `true` |
 | `--experimental-monocart` | see [section below](#using-monocart-coverage-reports-experimental) for more info | `boolean` | `false` |
 
-## Checking for "full" source coverage using `--all`
+## Checking for "full" source coverage
 
-By default v8 will only give us coverage for files that were loaded by the engine. If there are source files in your
+By default, v8 will only give us coverage for files that were loaded by the engine. If there are source files in your
 project that are flexed in production but not in your tests, your coverage numbers will not reflect this. For example,
 if your project's `main.js` loads `a.js` and `b.js` but your unit tests only load `a.js` your total coverage
 could show as `100%` for `a.js` when in fact both `main.js` and `b.js` are uncovered.
 
-By supplying `--all` to c8, all files in directories specified with `--src` (defaults to `cwd`) that pass the `--include`
-and `--exclude` flag checks, will be loaded into the report. If any of those files remain uncovered they will be factored
-into the report with a default of 0% coverage.
+C8 overcomes this issue: all files that pass the `--include` and `--exclude` flag checks will be loaded into the report. If any of those files remain uncovered, they will be factored into the report with a default of 0% coverage.
 
 ## SourceMap Support
 

@@ -1,12 +1,13 @@
 const Report = require('../../../lib/report')
 const report = new Report({
-  include: ['**/*.js'],
+  basePath: '.',
+  include: [
+    '../multidir1/**/*.js',
+    '../multidir2/**/*.js'
+  ],
   exclude: [],
   reporter: ['text'],
   tempDirectory: './temp',
-  omitRelative: true,
-  all: true,
-  src: ['../multidir1/', '../multidir2/'],
-  allowExternal: true
+  omitRelative: true
 })
 report.run()
