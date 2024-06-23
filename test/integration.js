@@ -120,23 +120,19 @@ beforeEach(function () {
       output.toString('utf8').should.matchSnapshot()
     })
 
-    it('should allow for multiple overrides of src location for --all', () => {
+    it('should allow for multiple include patterns', () => {
       // Here we nest this test into the report directory making the multidir
       // directories outside of cwd. Note, that the target srcOverride does not
-      // require fields from these directories but we want them initialized to 0
-      // via --all. As such we --allowExternal and provide multiple --src patterns
-      // to override cwd.
+      // require fields from these directories.
       const { output, status } = spawnSync(nodePath, [
         c8Path,
         '--exclude="test/*.js"',
         '--temp-directory=../tmp/src',
         '--clean=true',
-        '--allowExternal',
         '--reporter=text',
-        '--all',
-        `--src=${dirname(require.resolve('./fixtures/multidir1/file1.js'))}`,
-        `--src=${dirname(require.resolve('./fixtures/multidir2/file2.js'))}`,
-        `--src=${dirname(require.resolve('./fixtures/report/srcOverride.js'))}`,
+        '--include="./test/fixtures/multidir1/*.js"',
+        '--include="./test/fixtures/multidir2/*.js"',
+        '--include="./test/fixtures/report/*.js"',
         `--merge-async=${mergeAsync}`,
         nodePath,
         require.resolve('./fixtures/report/srcOverride.js')
@@ -475,6 +471,7 @@ beforeEach(function () {
         it('reads source-map from cache, and applies to coverage', () => {
           const { output } = spawnSync(nodePath, [
             c8Path,
+            '--include="./test/fixtures/ts-node-basic.ts"',
             '--exclude="test/*.js"',
             '--temp-directory=tmp/source-map',
             '--clean=true',
@@ -495,100 +492,6 @@ beforeEach(function () {
           `--merge-async=${mergeAsync}`,
           nodePath,
           require.resolve('./fixtures/source-maps/fake-source-map.js')
-        ])
-        output.toString('utf8').should.matchSnapshot()
-      })
-    })
-    describe('--all', () => {
-      it('reports coverage for unloaded js files as 0 for line, branch and function', () => {
-        const { output } = spawnSync(nodePath, [
-          c8Path,
-          '--temp-directory=tmp/vanilla-all',
-          '--clean=false',
-          '--all=true',
-          '--include=test/fixtures/all/vanilla/**/*.js',
-          '--exclude=**/*.ts', // add an exclude to avoid default excludes of test/**
-          `--merge-async=${mergeAsync}`,
-          nodePath,
-          require.resolve('./fixtures/all/vanilla/main')
-        ])
-        output.toString('utf8').should.matchSnapshot()
-      })
-
-      it('reports coverage for unloaded transpiled ts files as 0 for line, branch and function', () => {
-        const { output } = spawnSync(nodePath, [
-          c8Path,
-          '--temp-directory=tmp/all-ts',
-          '--clean=false',
-          '--all=true',
-          '--include=test/fixtures/all/ts-compiled/**/*.js',
-          '--exclude="test/*.js"', // add an exclude to avoid default excludes of test/**
-          `--merge-async=${mergeAsync}`,
-          nodePath,
-          require.resolve('./fixtures/all/ts-compiled/main.js')
-        ])
-        output.toString('utf8').should.matchSnapshot()
-      })
-
-      it('reports coverage for unloaded ts files as 0 for line, branch and function when using ts-node', () => {
-        const { output } = spawnSync(nodePath, [
-          c8Path,
-          '--temp-directory=tmp/all-ts-node',
-          '--clean=false',
-          '--all=true',
-          '--include=test/fixtures/all/ts-only/**/*.ts',
-          '--exclude="test/*.js"', // add an exclude to avoid default excludes of test/**
-          `--merge-async=${mergeAsync}`,
-          tsNodePath,
-          require.resolve('./fixtures/all/ts-only/main.ts')
-        ])
-        output.toString('utf8').should.matchSnapshot()
-      })
-
-      it('should allow for --all to be used in conjunction with --check-coverage', () => {
-        const { output } = spawnSync(nodePath, [
-          c8Path,
-          '--temp-directory=tmp/all-check-coverage',
-          '--clean=false',
-          '--check-coverage',
-          '--lines=100',
-          '--all=true',
-          '--include=test/fixtures/all/vanilla/**/*.js',
-          '--exclude=**/*.ts', // add an exclude to avoid default excludes of test/**
-          `--merge-async=${mergeAsync}`,
-          nodePath,
-          require.resolve('./fixtures/all/vanilla/main')
-        ])
-        output.toString('utf8').should.matchSnapshot()
-      })
-
-      it('should allow for --all to be used with the check-coverage command (2 invocations)', () => {
-        // generate v8 output
-        spawnSync(nodePath, [
-          c8Path,
-          '--temp-directory=tmp/all-check-coverage-as-command',
-          '--clean=false',
-          '--check-coverage',
-          '--lines=90',
-          '--all=true',
-          '--include=test/fixtures/all/vanilla/**/*.js',
-          '--exclude=**/*.ts', // add an exclude to avoid default excludes of test/**
-          `--merge-async=${mergeAsync}`,
-          nodePath,
-          require.resolve('./fixtures/all/vanilla/main')
-        ])
-
-        // invoke check-coverage as a command with --all
-        const { output } = spawnSync(nodePath, [
-          c8Path,
-          'check-coverage',
-          '--lines=90',
-          '--temp-directory=tmp/all-check-coverage-as-command',
-          '--clean=false',
-          '--all=true',
-          '--include=test/fixtures/all/vanilla/**/*.js',
-          '--exclude=**/*.ts', // add an exclude to avoid default excludes of test/**
-          `--merge-async=${mergeAsync}`
         ])
         output.toString('utf8').should.matchSnapshot()
       })
@@ -624,7 +527,7 @@ beforeEach(function () {
       })
 
       it('supports reporting on single directories outside cwd', () => {
-        // invoke a script that uses report as an api and supplies src dirs out
+        // invoke a script that uses report as an api and supplies include dirs out
         // of cwd.
         const { output } = spawnSync(nodePath, [
           require.resolve('./fixtures/report/report-single-dir-external.js')
@@ -679,23 +582,6 @@ beforeEach(function () {
         ])
         output.toString('utf8').should.matchSnapshot()
       })
-
-      it('includes coverage when extensions specified with --all', () => {
-        const { output } = spawnSync(nodePath, [
-          c8Path,
-          '--all',
-          '--exclude="test/*.js"',
-          '--exclude="tmp/monocart-*/**/*.js"',
-          '--extension=.js',
-          '--extension=.special',
-          '--temp-directory=tmp/extension',
-          '--clean=true',
-          `--merge-async=${mergeAsync}`,
-          nodePath,
-          require.resolve('./fixtures/custom-ext.special')
-        ])
-        output.toString('utf8').should.matchSnapshot()
-      })
     })
 
     describe('monocart report', () => {
@@ -718,25 +604,6 @@ beforeEach(function () {
           `--merge-async=${mergeAsync}`,
           nodePath,
           require.resolve('./fixtures/normal')
-        ])
-        output.toString('utf8').should.matchSnapshot()
-      })
-
-      it('monocart check all', () => {
-        const { output } = spawnSync(nodePath, [
-          c8Path,
-          '--experimental-monocart',
-          '--temp-directory=tmp/monocart-vanilla-all',
-          '--reports-dir=tmp/monocart-vanilla-all-reports',
-          '--reporter=v8',
-          '--reporter=console-details',
-          '--all',
-          '--include=test/fixtures/all/vanilla/**/*.js',
-          '--exclude=**/*.ts',
-          '--clean=false',
-          `--merge-async=${mergeAsync}`,
-          nodePath,
-          require.resolve('./fixtures/all/vanilla/main')
         ])
         output.toString('utf8').should.matchSnapshot()
       })
@@ -781,28 +648,6 @@ beforeEach(function () {
           `--merge-async=${mergeAsync}`,
           nodePath,
           require.resolve('./fixtures/normal')
-        ])
-        status.should.equal(1)
-        output.toString('utf8').should.matchSnapshot()
-      })
-
-      it('monocart check all and 100', () => {
-        const { output, status } = spawnSync(nodePath, [
-          c8Path,
-          '--experimental-monocart',
-          '--temp-directory=tmp/monocart-all-100',
-          '--reports-dir=tmp/monocart-all-100-reports',
-          '--reporter=v8',
-          '--reporter=console-details',
-          '--all',
-          '--100',
-          '--per-file',
-          '--include=test/fixtures/all/vanilla/**/*.js',
-          '--exclude=**/*.ts',
-          '--clean=false',
-          `--merge-async=${mergeAsync}`,
-          nodePath,
-          require.resolve('./fixtures/all/vanilla/main')
         ])
         status.should.equal(1)
         output.toString('utf8').should.matchSnapshot()
