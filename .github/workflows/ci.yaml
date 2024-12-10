@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: v20.18.1 # TODO: switch to lts/* once https://github.com/nodejs/node/issues/51766 lands.
           cache: npm
       - run: npm ci
       - run: npm test
