@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [10.1.3](https://github.com/bcoe/c8/compare/v10.1.2...v10.1.3) (2024-12-10)
+
+
+### Bug Fixes
+
+* **deps:** update bcoe/v8-coverage addressing v8 issue ([#552](https://github.com/bcoe/c8/issues/552)) ([b32a563](https://github.com/bcoe/c8/commit/b32a563e257f31cd359ff3adb855bbbdda71e2e7))
+
 ## [10.1.2](https://github.com/bcoe/c8/compare/v10.1.1...v10.1.2) (2024-06-13)
 
 
