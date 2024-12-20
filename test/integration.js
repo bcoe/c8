@@ -295,6 +295,7 @@ beforeEach(function () {
           '--clean=true',
           '--reporter=html',
           '--default-summarizer=flat',
+          '--temp-directory=./tmp/report',
           `--merge-async=${mergeAsync}`
         ])
         const html = readFileSync(resolve(process.cwd(), './coverage/index.html'), 'utf8')
