@@ -1053,9 +1053,9 @@ exports[`c8 mergeAsync report passes defaultSummarizer to report 1`] = `
         
             
             <div class='fl pad1y space-right2'>
-                <span class=\\"strong\\">88.43% </span>
+                <span class=\\"strong\\">88.5% </span>
                 <span class=\\"quiet\\">Branches</span>
-                <span class='fraction'>153/173</span>
+                <span class='fraction'>154/174</span>
             </div>
         
             
@@ -1168,8 +1168,8 @@ exports[`c8 mergeAsync report passes defaultSummarizer to report 1`] = `
 	</td>
 	<td data-value=\\"97.61\\" class=\\"pct high\\">97.61%</td>
 	<td data-value=\\"544\\" class=\\"abs high\\">531/544</td>
-	<td data-value=\\"89.71\\" class=\\"pct high\\">89.71%</td>
-	<td data-value=\\"107\\" class=\\"abs high\\">96/107</td>
+	<td data-value=\\"89.81\\" class=\\"pct high\\">89.81%</td>
+	<td data-value=\\"108\\" class=\\"abs high\\">97/108</td>
 	<td data-value=\\"100\\" class=\\"pct high\\">100%</td>
 	<td data-value=\\"28\\" class=\\"abs high\\">28/28</td>
 	<td data-value=\\"97.61\\" class=\\"pct high\\">97.61%</td>
