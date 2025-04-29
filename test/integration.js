@@ -154,9 +154,9 @@ beforeEach(function () {
           '--exclude="test/*.js"',
           '--temp-directory=tmp/check-coverage',
           '--clean=false',
-        `--merge-async=${mergeAsync}`,
-        nodePath,
-        require.resolve('./fixtures/normal')
+          `--merge-async=${mergeAsync}`,
+          nodePath,
+          require.resolve('./fixtures/normal')
         ])
       })
 
