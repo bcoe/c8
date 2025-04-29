@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: [18, 20]
+        node: [18, 20, 22]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: v20.18.1 # TODO: switch to lts/* once https://github.com/nodejs/node/issues/51766 lands.
+          node-version: lts/*
           cache: npm
       - run: npm ci
       - run: npm test
