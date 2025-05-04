@@ -286,6 +286,23 @@ beforeEach(function () {
         status.should.equal(1)
         output.toString('utf8').should.matchSnapshot()
       })
+
+      it('passes defaultSummarizer to report', () => {
+        spawnSync(nodePath, [
+          c8Path,
+          'report',
+          '--exclude="test/*.js"',
+          '--clean=true',
+          '--reporter=html',
+          '--default-summarizer=flat',
+          '--temp-directory=./tmp/report',
+          `--merge-async=${mergeAsync}`
+        ])
+        const html = readFileSync(resolve(process.cwd(), './coverage/index.html'), 'utf8')
+          // Remove timestamp added in HTML report.
+          .replace(/[0-9]+-[0-9]+-[0-9]+T[0-9]+:[0-9]+:[0-9]+.[0-9]+Z/g, '')
+        html.toString('utf8').should.matchSnapshot()
+      })
     })
 
     describe('ESM Modules', () => {
