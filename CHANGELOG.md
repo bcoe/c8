@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.0.0](https://github.com/bcoe/c8/compare/v10.1.3...v11.0.0) (2026-02-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** transitive deps require 20 || >=22
+
+### Bug Fixes
+
+* **deps:** pull newer minimatch addressing CVE-2026-26996 ([#576](https://github.com/bcoe/c8/issues/576)) ([678eeca](https://github.com/bcoe/c8/commit/678eeca3310a5bb260c4cf5d5fe7cec4f7f20726))
+
 ## [10.1.3](https://github.com/bcoe/c8/compare/v10.1.2...v10.1.3) (2024-12-10)
 
 
