@@ -515,6 +515,26 @@ beforeEach(function () {
         output.toString('utf8').should.matchSnapshot()
       })
 
+      it('should not let files that fail shouldInstrument pollute fileIndex', () => {
+        const { output } = spawnSync(nodePath, [
+          c8Path,
+          '--temp-directory=tmp/filtered-all',
+          '--clean=false',
+          '--all=true',
+          '--include=test/fixtures/all/filtered/src/**/*.js',
+          '--exclude=**/*.ts',
+          `--merge-async=${mergeAsync}`,
+          nodePath,
+          require.resolve('./fixtures/all/filtered/main')
+        ])
+        const report = output.toString('utf8')
+        // unloaded.js should appear as 0%
+        report.should.match(/unloaded\.js/)
+        // excluded files should not appear
+        report.should.not.match(/excluded\.js/)
+        report.should.not.match(/main\.js/)
+      })
+
       it('reports coverage for unloaded transpiled ts files as 0 for line, branch and function', () => {
         const { output } = spawnSync(nodePath, [
           c8Path,
