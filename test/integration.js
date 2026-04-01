@@ -519,16 +519,16 @@ beforeEach(function () {
 
       it('should only track files that pass shouldInstrument in fileIndex', () => {
         const report = createReport({
-          include: ['test/fixtures/all/filtered/src/**/*.js'],
+          include: ['fake/src/**/*.js'],
           exclude: [],
           tempDirectory: 'tmp/filtered-fileindex',
           reportsDirectory: 'coverage/filtered-fileindex',
           reporter: ['text']
         })
 
-        const includedFile = resolve('test/fixtures/all/filtered/src/loaded.js')
-        const excludedFile = resolve('test/fixtures/all/filtered/lib/excluded.js')
-        const entryFile = resolve('test/fixtures/all/filtered/main.js')
+        const includedFile = resolve('fake/src/should-be-in-fileindex.js')
+        const excludedFile = resolve('fake/lib/should-not-be-in-fileindex.js')
+        const entryFile = resolve('fake/should-not-be-in-fileindex.js')
 
         const fileIndex = new Set()
         report._normalizeProcessCov({
