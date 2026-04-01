@@ -517,33 +517,6 @@ beforeEach(function () {
         output.toString('utf8').should.matchSnapshot()
       })
 
-      it('should only track files that pass shouldInstrument in fileIndex', () => {
-        const report = createReport({
-          include: ['fake/src/**/*.js'],
-          exclude: [],
-          tempDirectory: 'tmp/filtered-fileindex',
-          reportsDirectory: 'coverage/filtered-fileindex',
-          reporter: ['text']
-        })
-
-        const includedFile = resolve('fake/src/should-be-in-fileindex.js')
-        const excludedFile = resolve('fake/lib/should-not-be-in-fileindex.js')
-        const entryFile = resolve('fake/should-not-be-in-fileindex.js')
-
-        const fileIndex = new Set()
-        report._normalizeProcessCov({
-          result: [
-            { scriptId: '1', url: pathToFileURL(includedFile).href, functions: [{ functionName: '', ranges: [{ startOffset: 0, endOffset: 100, count: 1 }], isBlockCoverage: true }] },
-            { scriptId: '2', url: pathToFileURL(excludedFile).href, functions: [{ functionName: '', ranges: [{ startOffset: 0, endOffset: 50, count: 1 }], isBlockCoverage: true }] },
-            { scriptId: '3', url: pathToFileURL(entryFile).href, functions: [{ functionName: '', ranges: [{ startOffset: 0, endOffset: 80, count: 1 }], isBlockCoverage: true }] }
-          ]
-        }, fileIndex)
-
-        fileIndex.has(includedFile).should.equal(true)
-        fileIndex.has(excludedFile).should.equal(false)
-        fileIndex.has(entryFile).should.equal(false)
-      })
-
       it('reports coverage for unloaded transpiled ts files as 0 for line, branch and function', () => {
         const { output } = spawnSync(nodePath, [
           c8Path,
@@ -620,6 +593,33 @@ beforeEach(function () {
           `--merge-async=${mergeAsync}`
         ])
         output.toString('utf8').should.matchSnapshot()
+      })
+
+      it('should only track files that pass shouldInstrument in fileIndex', () => {
+        const report = createReport({
+          include: ['fake/src/**/*.js'],
+          exclude: [],
+          tempDirectory: 'tmp/filtered-fileindex',
+          reportsDirectory: 'coverage/filtered-fileindex',
+          reporter: ['text']
+        })
+
+        const includedFile = resolve('fake/src/should-be-in-fileindex.js')
+        const excludedFile = resolve('fake/lib/should-not-be-in-fileindex.js')
+        const entryFile = resolve('fake/should-not-be-in-fileindex.js')
+
+        const fileIndex = new Set()
+        report._normalizeProcessCov({
+          result: [
+            { scriptId: '1', url: pathToFileURL(includedFile).href, functions: [{ functionName: '', ranges: [{ startOffset: 0, endOffset: 100, count: 1 }], isBlockCoverage: true }] },
+            { scriptId: '2', url: pathToFileURL(excludedFile).href, functions: [{ functionName: '', ranges: [{ startOffset: 0, endOffset: 50, count: 1 }], isBlockCoverage: true }] },
+            { scriptId: '3', url: pathToFileURL(entryFile).href, functions: [{ functionName: '', ranges: [{ startOffset: 0, endOffset: 80, count: 1 }], isBlockCoverage: true }] }
+          ]
+        }, fileIndex)
+
+        fileIndex.has(includedFile).should.equal(true)
+        fileIndex.has(excludedFile).should.equal(false)
+        fileIndex.has(entryFile).should.equal(false)
       })
     })
     // see: https://github.com/bcoe/c8/issues/149
