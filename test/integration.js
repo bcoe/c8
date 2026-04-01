@@ -609,11 +609,21 @@ beforeEach(function () {
         const entryFile = resolve('fake/should-not-be-in-fileindex.js')
 
         const fileIndex = new Set()
+        const fakeCovEntry = (scriptId, filepath) => ({
+          scriptId,
+          url: pathToFileURL(filepath).href,
+          functions: [{
+            functionName: '',
+            ranges: [{ startOffset: 0, endOffset: 100, count: 1 }],
+            isBlockCoverage: true
+          }]
+        })
+
         report._normalizeProcessCov({
           result: [
-            { scriptId: '1', url: pathToFileURL(includedFile).href, functions: [{ functionName: '', ranges: [{ startOffset: 0, endOffset: 100, count: 1 }], isBlockCoverage: true }] },
-            { scriptId: '2', url: pathToFileURL(excludedFile).href, functions: [{ functionName: '', ranges: [{ startOffset: 0, endOffset: 50, count: 1 }], isBlockCoverage: true }] },
-            { scriptId: '3', url: pathToFileURL(entryFile).href, functions: [{ functionName: '', ranges: [{ startOffset: 0, endOffset: 80, count: 1 }], isBlockCoverage: true }] }
+            fakeCovEntry('1', includedFile),
+            fakeCovEntry('2', excludedFile),
+            fakeCovEntry('3', entryFile)
           ]
         }, fileIndex)
 
