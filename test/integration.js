@@ -5,6 +5,8 @@ const { resolve } = require('path')
 const { spawnSync } = require('child_process')
 const { statSync, rm } = require('fs')
 const { dirname } = require('path')
+const { pathToFileURL } = require('url')
+const createReport = require('../lib/report')
 const c8Path = require.resolve('../bin/c8')
 const nodePath = process.execPath
 const tsNodePath = './node_modules/.bin/ts-node'
@@ -515,7 +517,7 @@ beforeEach(function () {
         output.toString('utf8').should.matchSnapshot()
       })
 
-      it('should not let files that fail shouldInstrument pollute fileIndex', () => {
+      it('reports uncovered files that match include pattern as 0 for line, branch and function', () => {
         const { output } = spawnSync(nodePath, [
           c8Path,
           '--temp-directory=tmp/filtered-all',
@@ -528,11 +530,36 @@ beforeEach(function () {
           require.resolve('./fixtures/all/filtered/main')
         ])
         const report = output.toString('utf8')
-        // unloaded.js should appear as 0%
         report.should.match(/unloaded\.js/)
-        // excluded files should not appear
         report.should.not.match(/excluded\.js/)
         report.should.not.match(/main\.js/)
+      })
+
+      it('should only track files that pass shouldInstrument in fileIndex', () => {
+        const report = createReport({
+          include: ['test/fixtures/all/filtered/src/**/*.js'],
+          exclude: [],
+          tempDirectory: 'tmp/filtered-fileindex',
+          reportsDirectory: 'coverage/filtered-fileindex',
+          reporter: ['text']
+        })
+
+        const includedFile = resolve('test/fixtures/all/filtered/src/loaded.js')
+        const excludedFile = resolve('test/fixtures/all/filtered/lib/excluded.js')
+        const entryFile = resolve('test/fixtures/all/filtered/main.js')
+
+        const fileIndex = new Set()
+        report._normalizeProcessCov({
+          result: [
+            { scriptId: '1', url: pathToFileURL(includedFile).href, functions: [{ functionName: '', ranges: [{ startOffset: 0, endOffset: 100, count: 1 }], isBlockCoverage: true }] },
+            { scriptId: '2', url: pathToFileURL(excludedFile).href, functions: [{ functionName: '', ranges: [{ startOffset: 0, endOffset: 50, count: 1 }], isBlockCoverage: true }] },
+            { scriptId: '3', url: pathToFileURL(entryFile).href, functions: [{ functionName: '', ranges: [{ startOffset: 0, endOffset: 80, count: 1 }], isBlockCoverage: true }] }
+          ]
+        }, fileIndex)
+
+        fileIndex.has(includedFile).should.equal(true)
+        fileIndex.has(excludedFile).should.equal(false)
+        fileIndex.has(entryFile).should.equal(false)
       })
 
       it('reports coverage for unloaded transpiled ts files as 0 for line, branch and function', () => {
