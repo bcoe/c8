@@ -53,7 +53,7 @@
     "mocha": "^11.0.1",
     "standard": "^16.0.4",
     "ts-node": "^10.7.0",
-    "typescript": "^5.0.0"
+    "typescript": "^6.0.0"
   },
   "peerDependencies": {
     "monocart-coverage-reports": "^2"
