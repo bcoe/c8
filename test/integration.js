@@ -5,6 +5,8 @@ const { resolve } = require('path')
 const { spawnSync } = require('child_process')
 const { statSync, rm } = require('fs')
 const { dirname } = require('path')
+const { pathToFileURL } = require('url')
+const createReport = require('../lib/report')
 const c8Path = require.resolve('../bin/c8')
 const nodePath = process.execPath
 const tsNodePath = './node_modules/.bin/ts-node'
@@ -591,6 +593,43 @@ beforeEach(function () {
           `--merge-async=${mergeAsync}`
         ])
         output.toString('utf8').should.matchSnapshot()
+      })
+
+      it('should only track files that pass shouldInstrument in fileIndex', () => {
+        const report = createReport({
+          include: ['fake/src/**/*.js'],
+          exclude: [],
+          tempDirectory: 'tmp/filtered-fileindex',
+          reportsDirectory: 'coverage/filtered-fileindex',
+          reporter: ['text']
+        })
+
+        const includedFile = resolve('fake/src/should-be-in-fileindex.js')
+        const excludedFile = resolve('fake/lib/should-not-be-in-fileindex.js')
+        const entryFile = resolve('fake/should-not-be-in-fileindex.js')
+
+        const fileIndex = new Set()
+        const fakeCovEntry = (scriptId, filepath) => ({
+          scriptId,
+          url: pathToFileURL(filepath).href,
+          functions: [{
+            functionName: '',
+            ranges: [{ startOffset: 0, endOffset: 100, count: 1 }],
+            isBlockCoverage: true
+          }]
+        })
+
+        report._normalizeProcessCov({
+          result: [
+            fakeCovEntry('1', includedFile),
+            fakeCovEntry('2', excludedFile),
+            fakeCovEntry('3', entryFile)
+          ]
+        }, fileIndex)
+
+        fileIndex.has(includedFile).should.equal(true)
+        fileIndex.has(excludedFile).should.equal(false)
+        fileIndex.has(entryFile).should.equal(false)
       })
     })
     // see: https://github.com/bcoe/c8/issues/149
