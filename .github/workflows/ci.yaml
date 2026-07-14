@@ -31,6 +31,7 @@ jobs:
           cache: npm
       - run: npm config set update-notifier false
       - run: npm ci
+      - run: npm i monocart-coverage-reports@2 --save-dev
       - run: npm test
   coverage:
     runs-on: ubuntu-latest
@@ -41,4 +42,5 @@ jobs:
           node-version: lts/*
           cache: npm
       - run: npm ci
+      - run: npm i monocart-coverage-reports@2 --save-dev
       - run: npm run coverage
