@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [12.0.0](https://github.com/bcoe/c8/compare/v11.0.0...v12.0.0) (2026-07-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* yargs enforces a stricter range of Node versions ^20.19.0 || ^22.12.0 || >=23
+
+### Features
+
+* update yargs to 18.x.x ([#599](https://github.com/bcoe/c8/issues/599)) ([dc2d6c8](https://github.com/bcoe/c8/commit/dc2d6c81e0b82aad80ffcc38d78bd4a76665675e))
+
 ## [11.0.0](https://github.com/bcoe/c8/compare/v10.1.3...v11.0.0) (2026-02-22)
 
 
