@@ -51,7 +51,7 @@
     "chai-jest-snapshot": "^2.0.0",
     "cross-env": "^7.0.3",
     "mocha": "^11.0.1",
-    "standard": "^16.0.4",
+    "standard": "^17.1.2",
     "ts-node": "^10.7.0",
     "typescript": "^5.0.0"
   },
