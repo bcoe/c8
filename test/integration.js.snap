@@ -166,7 +166,7 @@ All files                              |    3.18 |    12.24 |    6.38 |    3.18 
   prettify.js                          |       0 |        0 |       0 |       0 | 1-2                    
   sorter.js                            |       0 |        0 |       0 |       0 | 1-210                  
  c8/lib                                |       0 |        0 |       0 |       0 |                        
-  parse-args.js                        |       0 |        0 |       0 |       0 | 1-229                  
+  parse-args.js                        |       0 |        0 |       0 |       0 | 1-231                  
   report.js                            |       0 |        0 |       0 |       0 | 1-542                  
   source-map-from-file.js              |       0 |        0 |       0 |       0 | 1-100                  
  c8/lib/commands                       |       0 |        0 |       0 |       0 |                        
@@ -532,7 +532,7 @@ All files                              |    3.18 |    12.24 |    6.38 |    3.18 
   prettify.js                          |       0 |        0 |       0 |       0 | 1-2                    
   sorter.js                            |       0 |        0 |       0 |       0 | 1-210                  
  c8/lib                                |       0 |        0 |       0 |       0 |                        
-  parse-args.js                        |       0 |        0 |       0 |       0 | 1-229                  
+  parse-args.js                        |       0 |        0 |       0 |       0 | 1-231                  
   report.js                            |       0 |        0 |       0 |       0 | 1-542                  
   source-map-from-file.js              |       0 |        0 |       0 |       0 | 1-100                  
  c8/lib/commands                       |       0 |        0 |       0 |       0 |                        

@@ -6,7 +6,11 @@ const {
   hideInstrumenterArgs
 } = require('../lib/parse-args')
 
+const { spawnSync } = require('child_process')
+const { mkdtempSync, writeFileSync } = require('fs')
+const { tmpdir } = require('os')
 const { join, resolve } = require('path')
+const { version } = require('../package.json')
 
 describe('parse-args', () => {
   describe('hideInstrumenteeArgs', () => {
@@ -84,6 +88,27 @@ describe('parse-args', () => {
       const argsArray = ['node', 'c8', '--lines', '100', '--temp-directory', tmpDir]
       const argv = buildYargs().parse(argsArray)
       argv.tempDirectory.should.be.equal(tmpDir)
+    })
+  })
+
+  describe('--version', () => {
+    it('prints the c8 package version from a cwd whose package.json differs', () => {
+      const dir = mkdtempSync(join(tmpdir(), 'c8-version-'))
+      writeFileSync(join(dir, 'package.json'), JSON.stringify({
+        name: 'app',
+        version: '1.0.0'
+      }))
+      const env = { ...process.env }
+      delete env.NODE_V8_COVERAGE
+      const result = spawnSync(process.execPath, [require.resolve('../bin/c8'), '--version'], {
+        cwd: dir,
+        encoding: 'utf8',
+        env
+      })
+      result.status.should.equal(0)
+      result.stdout.trim().should.equal(version)
+      result.stdout.trim().should.not.equal('1.0.0')
+      result.stdout.trim().should.not.equal('unknown')
     })
   })
 
