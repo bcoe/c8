@@ -164,7 +164,7 @@ beforeEach(function () {
         const { output, status } = spawnSync(nodePath, [
           c8Path,
           'check-coverage',
-          '--exclude="test/fixtures/*.js"',
+          '--exclude="test/fixtures/all/**"',
           '--temp-directory=tmp/check-coverage',
           '--lines=70',
           '--branches=55',
@@ -243,6 +243,67 @@ beforeEach(function () {
           `--merge-async=${mergeAsync}`
         ])
         status.should.equal(1)
+        output.toString('utf8').should.matchSnapshot()
+      })
+
+      it('exits with 1 if there is no coverage data to check', () => {
+        const { output, status } = spawnSync(nodePath, [
+          c8Path,
+          '--exclude="test/*.js"',
+          '--temp-directory=tmp/check-coverage-empty',
+          '--clean=true',
+          '--lines=100',
+          '--branches=0',
+          '--functions=0',
+          '--statements=0',
+          '--check-coverage',
+          `--merge-async=${mergeAsync}`,
+          nodePath,
+          '-e',
+          '1'
+        ])
+        status.should.equal(1)
+        output.toString('utf8').should.matchSnapshot()
+      })
+
+      it('exits with 1 if there is no coverage data to check per file', () => {
+        const { output, status } = spawnSync(nodePath, [
+          c8Path,
+          '--exclude="test/*.js"',
+          '--temp-directory=tmp/check-coverage-empty',
+          '--clean=true',
+          '--lines=100',
+          '--branches=0',
+          '--functions=0',
+          '--statements=0',
+          '--check-coverage',
+          '--per-file',
+          `--merge-async=${mergeAsync}`,
+          nodePath,
+          '-e',
+          '1'
+        ])
+        status.should.equal(1)
+        output.toString('utf8').should.matchSnapshot()
+      })
+
+      it('exits with 0 if there is no coverage data but the threshold is 0', () => {
+        const { output, status } = spawnSync(nodePath, [
+          c8Path,
+          '--exclude="test/*.js"',
+          '--temp-directory=tmp/check-coverage-empty',
+          '--clean=true',
+          '--lines=0',
+          '--branches=0',
+          '--functions=0',
+          '--statements=0',
+          '--check-coverage',
+          `--merge-async=${mergeAsync}`,
+          nodePath,
+          '-e',
+          '1'
+        ])
+        status.should.equal(0)
         output.toString('utf8').should.matchSnapshot()
       })
     })
