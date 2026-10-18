@@ -56,7 +56,7 @@
     "typescript": "^5.0.0"
   },
   "peerDependencies": {
-    "monocart-coverage-reports": "^2"
+    "monocart-coverage-reports": "^3.0.0"
   },
   "peerDependenciesMeta": {
     "monocart-coverage-reports": {
