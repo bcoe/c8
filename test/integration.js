@@ -20,6 +20,18 @@ beforeEach(function () {
   chaiJestSnapshot.configureUsingMochaContext(this)
 })
 
+describe('quoted --exclude', () => {
+  it('excludes matching files when an npm script single-quotes a glob', () => {
+    const { status, stderr } = spawnSync('npm run coverage', {
+      cwd: resolve(__dirname, 'fixtures/all/vanilla'),
+      shell: true
+    })
+    status.should.equal(0, stderr.toString())
+    const coverage = JSON.parse(readFileSync('tmp/quoted-exclude/coverage-final.json'))
+    Object.keys(coverage).should.eql([require.resolve('./fixtures/all/vanilla/main')])
+  })
+})
+
 ;[false, true].forEach((mergeAsync) => {
   const title = mergeAsync ? 'c8 mergeAsync' : 'c8'
   describe(title, () => {
