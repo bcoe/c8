@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "scripts": {
+    "coverage": "node ../../../../bin/c8.js --exclude '{loaded,missing}.js' --reporter=json --reports-dir=../../../../tmp/quoted-exclude --temp-directory=../../../../tmp/quoted-exclude/tmp node main.js"
+  }
+}

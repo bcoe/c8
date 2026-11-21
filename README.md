@@ -25,6 +25,8 @@ A configuration file can be specified by passing its path on the command line wi
 
 When using `package.json` configuration or a dedicated configuration file, omit the `--` prefix from the long-form of the desired command-line option.
 
+On Windows, c8 removes one matching pair of outer single quotes from a command-line `--exclude` or `-x` value. This lets npm scripts use patterns such as `--exclude '{test,fixtures}/**'` with the default Windows shell. Quotes inside the pattern are preserved. To match literal single quotes at both ends of a pattern, specify it in the configuration file.
+
 Here is a list of common options. Run `c8 --help` for the full list and documentation.
 
 | Option | Description | Type | Default |
